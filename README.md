@@ -37,6 +37,7 @@ client/
         RelatedItemsNComparison.jsx   |       
 server/
   server.js
+  requestHandler.js
   apiToken.js
   
         
