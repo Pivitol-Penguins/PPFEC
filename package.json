@@ -4,7 +4,7 @@
   "description": "This is the greatest front end capstone project EVER",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"circleci\" && exit 1",
     "react-dev": "webpack --watch",
     "start": "nodemon server/server.js"
   },
