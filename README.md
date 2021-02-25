@@ -2,14 +2,26 @@
 
 Technologies Used:
 
+----Testing----
+ESLint 
+..Jest
+..circleCI
+
 ----Front End----
+WebPack
+Babel
 
 --Client--
+react
+react-dom
+styled-components
+axios
 
 ----Back End----
-
+nodemon
 --Server--
-
+express
+axios
 
 
 Product Detail Page
@@ -29,12 +41,9 @@ client/
     index.jsx
     components/
       app.jsx
-      serverHandler.jsx --possibly
-      subComponents/
-        ProductDetailHead.jsx         
-        RatingNReviews.jsx            |
-        QandA.jsx                     |--- Take One of These Out
-        RelatedItemsNComparison.jsx   |       
+      Product.jsx  --JP      
+      QnA.jsx      --NP                     
+      Reviews.jsx  --BW         
 server/
   server.js
   requestHandler.js
