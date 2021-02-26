@@ -15,7 +15,7 @@ class App extends React.Component {
   //componentdidmount get request for product id and set state to pass down to components
   componentDidMount() {
     //axios get request to something
-    axios.get('/products')
+    axios.get('/products/14931')
     .then((data)=>{console.log(data.data)})
     .catch((err) => {console.log(err)})
   }

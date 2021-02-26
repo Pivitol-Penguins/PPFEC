@@ -10,11 +10,17 @@ const staticMiddleware = express.static(path.join(__dirname, '../client/dist'));
 
 app.use('/', staticMiddleware);
 
-app.get('/products', (req, res) => {
-  api.fetchProducts((data) => {
-    res.send(data.data);
+app.get('/products/:q', (req, res) => {
+  const memCache = [];
+  var id = req.params.q
+  api.fetchProducts(id, (productDetails) => {
+    // store the data
+    memCache.push(productDetails.data);
+    api.fetchProductStyles(id, (productStyles) => {
+      memCache.push(productStyles.data);
+      res.send(memCache);
+    })
   })
-
 });
 
 app.listen(port, () => {
