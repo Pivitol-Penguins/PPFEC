@@ -1,8 +1,7 @@
 const axios = require('axios');
+const API_KEY = require('./API.js');
 
-const API_KEY = '0810105ecbde64279290872b3135e6c90eea84c8';
-
-axios.defaults.headers.common['Authorization'] = API_KEY;
+axios.defaults.headers.common['Authorization'] = API_KEY.API_KEY;
 
 const API_URL = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo';
 
