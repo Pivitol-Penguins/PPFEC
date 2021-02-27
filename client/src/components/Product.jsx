@@ -9,9 +9,16 @@ class Product extends React.Component {
   }
 
   render () {
-    // console.log('HERE IS PRODUCT: ', this.props);
+    console.log('PRODUCT: ', this.props.productDetails);
     return (
-      <div>Product</div>
+      <div>
+        <div>{this.props.productDetails.category}</div>
+        <div>{this.props.productDetails.name}</div>
+        <div>{this.props.productDetails.default_price}</div>
+        <div>{this.props.productDetails.description}</div>
+        {/* <div>{this.props.productDetails.features[0]}</div>
+        <div>{this.props.productDetails.features[1]}</div> */}
+      </div>
     );
   }
 
