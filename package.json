@@ -4,7 +4,7 @@
   "description": "This is the greatest front end capstone project EVER",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "test-u": "npm run test -- -u",
     "react-dev": "webpack --watch",
     "start": "nodemon server/server.js"
