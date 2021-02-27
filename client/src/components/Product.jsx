@@ -9,6 +9,7 @@ class Product extends React.Component {
   }
 
   render () {
+    // console.log('HERE IS PRODUCT: ', this.props);
     return (
       <div>Product</div>
     );

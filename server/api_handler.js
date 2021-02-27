@@ -5,8 +5,8 @@ axios.defaults.headers.common['Authorization'] = API_KEY.API_KEY;
 
 const API_URL = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo';
 
-const fetchProducts = (id, callback) => {
-  axios.get(API_URL + '/products/' + id)
+const fetchData = (path, query, callback) => {
+  axios.get(API_URL + path, query)
      .then((data) => {
     callback(data);
   }) .catch(err => {
@@ -14,14 +14,4 @@ const fetchProducts = (id, callback) => {
   })
 }
 
-const fetchProductStyles = (id, callback) => {
-  axios.get(API_URL + '/products/' + id + '/styles')
-     .then((data) => {
-    callback(data);
-  }) .catch(err => {
-    console.log(err);
-  })
-}
-
-module.exports.fetchProducts = fetchProducts;
-module.exports.fetchProductStyles = fetchProductStyles;
+module.exports.fetchData = fetchData;
