@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductImages from './ProductImages.jsx';
 import ProductOverview from './ProductOverview.jsx';
-import Features from './Features.jsx';
+import FeaturesList from './FeaturesList.jsx';
 
 class Product extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Product extends React.Component {
         </div>
         <div className='bottomLevel'>
           <div>{this.props.productDetails.description}</div>
-          <Features features={this.props.productDetails.features}/>
+          <FeaturesList features={this.props.productDetails.features}/>
         </div>
       </div>
     );
