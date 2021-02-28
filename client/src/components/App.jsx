@@ -16,7 +16,6 @@ class App extends React.Component {
     }
   }
 
-  //componentdidmount get request for product id and set state to pass down to components
   componentDidMount() {
     var path = window.location.pathname;
     axios.get(path.slice(-6))
@@ -34,13 +33,17 @@ class App extends React.Component {
 
 
   render() {
-    return (
-      <div>
-        <Product productDetails={this.state.productDetails} productStyles={this.state.productStyles} />
-        <QnA questions={this.state.questions} />
-        <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
-      </div>
-    );
+    if (this.state.productDetails) {
+      return (
+        <div>
+          <Product productDetails={this.state.productDetails} productStyles={this.state.productStyles} />
+          <QnA questions={this.state.questions} />
+          <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
+        </div>
+      );
+    } else {
+      return <div></div>
+    }
   }
 }
 
