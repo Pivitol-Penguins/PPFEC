@@ -29,8 +29,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: center;
 `;
@@ -40,7 +38,6 @@ const RatingWrapper = styled.div`
   height: 100%
   display: flex;
   flex-grow: 1;
-  flex-wrap: nowrap;
   flex-direction: column;
   align-items: flex-start;
 `;
@@ -55,7 +52,6 @@ class Reviews extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     if (this.props.reviews !== null && this.props.reviewsMeta !== null) {
       return (
         <ReviewsContainer>

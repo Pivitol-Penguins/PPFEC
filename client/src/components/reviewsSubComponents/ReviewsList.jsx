@@ -21,7 +21,19 @@ const ButtonWrapper = styled.div`
 `;
 
 const ListWrapper = styled.div`
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
 
+`;
+
+const ReviewButton = styled.button`
+  font-size: 15px;
+  padding: 20px 10px;
+  margin: 10px 15px;
+  width: 200px;
+  height: 55px;
 `;
 
 
@@ -34,10 +46,11 @@ class ReviewsList extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     var count = 0;
     return (
       <ReviewsWrapper>
-        <div>
+        <ListWrapper>
           <h4>{this.props.reviews.count} reviews, sorted by relevance</h4>
           {this.props.reviews.results.map((review => {
             if (count === 2) {
@@ -46,10 +59,10 @@ class ReviewsList extends React.Component {
             count++;
             return ( <ReviewTile key={review.review_id} review={review} />)
           }))}
-        </div>
+        </ListWrapper>
         <ButtonWrapper>
-          <button>MORE REVIEWS</button>
-          <button>ADD A REVIEW</button>
+          <ReviewButton>MORE REVIEWS</ReviewButton>
+          <ReviewButton>ADD A REVIEW   +</ReviewButton>
         </ButtonWrapper>
       </ReviewsWrapper>
     )
