@@ -12,12 +12,11 @@ class Product extends React.Component {
   }
 
   render () {
-    console.log('PRODUCT: ', this.props.productStyles);
     return (
       <div>
         <div className='topLevel'>
           <ProductImages />
-          <ProductOverview category={this.props.productDetails.category} name={this.props.productDetails.name} price={this.props.productDetails.default_price}/>
+          <ProductOverview category={this.props.productDetails.category} name={this.props.productDetails.name} price={this.props.productDetails.default_price} styles={this.props.productStyles}/>
         </div>
         <div className='bottomLevel'>
           <div>{this.props.productDetails.description}</div>

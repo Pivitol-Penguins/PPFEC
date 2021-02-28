@@ -8,8 +8,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productDetails: null,
-      productStyles: null,
+      productDetails: {},
+      productStyles: {},
       reviews: null,
       reviewsMeta: null,
       questions: null,
