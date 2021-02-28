@@ -1,23 +1,28 @@
 import React from 'react';
+import ProductImages from './ProductImages.jsx';
+import ProductOverview from './ProductOverview.jsx';
+import Features from './Features.jsx';
 
 class Product extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      currentStyle: 0,
     }
   }
 
   render () {
-    console.log('PRODUCT: ', this.props.productDetails);
+    console.log('PRODUCT: ', this.props.productStyles);
     return (
       <div>
-        <div>{this.props.productDetails.category}</div>
-        <div>{this.props.productDetails.name}</div>
-        <div>{this.props.productDetails.default_price}</div>
-        <div>{this.props.productDetails.description}</div>
-        {/* <div>{this.props.productDetails.features[0]}</div>
-        <div>{this.props.productDetails.features[1]}</div> */}
+        <div className='topLevel'>
+          <ProductImages />
+          <ProductOverview category={this.props.productDetails.category} name={this.props.productDetails.name} price={this.props.productDetails.default_price}/>
+        </div>
+        <div className='bottomLevel'>
+          <div>{this.props.productDetails.description}</div>
+          <Features features={this.props.productDetails.features}/>
+        </div>
       </div>
     );
   }
