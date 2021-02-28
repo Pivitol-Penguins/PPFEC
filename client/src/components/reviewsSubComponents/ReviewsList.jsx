@@ -46,7 +46,7 @@ class ReviewsList extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     var count = 0;
     return (
       <ReviewsWrapper>

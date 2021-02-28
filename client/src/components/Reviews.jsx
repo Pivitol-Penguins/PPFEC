@@ -52,26 +52,19 @@ class Reviews extends React.Component {
   }
 
   render () {
-    if (this.props.reviews !== null && this.props.reviewsMeta !== null) {
-      return (
-        <ReviewsContainer>
-          <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
-          <Wrapper>
-            <RatingWrapper>
-              <RatingSummary />
-              <RatingBreakDown />
-              <ProductBreakDown />
-            </RatingWrapper>
-            <ReviewsList reviews={this.props.reviews} />
-          </Wrapper>
-        </ReviewsContainer>
-      );
-    } else {
-      return (
-        <h1>Loading Data.....</h1>
-      )
-    }
-
+    return (
+      <ReviewsContainer>
+        <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
+        <Wrapper>
+          <RatingWrapper>
+            <RatingSummary />
+            <RatingBreakDown />
+            <ProductBreakDown />
+          </RatingWrapper>
+          <ReviewsList reviews={this.props.reviews} />
+        </Wrapper>
+      </ReviewsContainer>
+    );
   }
 
 }

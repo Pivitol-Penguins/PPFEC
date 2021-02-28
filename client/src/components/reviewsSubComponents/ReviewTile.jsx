@@ -41,7 +41,7 @@ class ReviewTile extends React.Component {
           <label><RatingStars
                    rating={this.props.review.rating}
                    starRatedColor='gold'
-                   numberofStars={6}
+                   numberofStars={5}
                    starDimension='15px'
                    starSpacing='0px'
                    />
