@@ -15,7 +15,7 @@ class Product extends React.Component {
     return (
       <div>
         <div className='topLevel'>
-          <ProductImages />
+          <ProductImages images={this.props.productStyles}/>
           <ProductOverview category={this.props.productDetails.category} name={this.props.productDetails.name} price={this.props.productDetails.default_price} styles={this.props.productStyles}/>
         </div>
         <div className='bottomLevel'>
