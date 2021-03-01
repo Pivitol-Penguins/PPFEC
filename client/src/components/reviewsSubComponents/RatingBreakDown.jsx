@@ -66,8 +66,8 @@ class RatingBreakDown extends React.Component {
 
   getRecommendRate() {
     const { reviewsMeta } = this.props;
-    return (Number(reviewsMeta.recommended.true)
-    / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100;
+    return Math.floor((Number(reviewsMeta.recommended.true)
+    / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100);
   }
 
   render() {
