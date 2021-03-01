@@ -1,11 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyleWrapper = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
 
 const Styles = () => (
-  <div>
-    <div>Style</div>
-    <div>Selected Style</div>
+  <StyleWrapper>
+    <div>STYLE</div>
+    <div>SELECTED STYLE</div>
     <div>Style thumbnails</div>
-  </div>
+  </StyleWrapper>
 );
 
 export default Styles;

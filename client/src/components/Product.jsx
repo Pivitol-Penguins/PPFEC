@@ -6,7 +6,15 @@ import ProductOverview from './ProductOverview.jsx';
 import Description from './Description.jsx';
 import FeaturesList from './FeaturesList.jsx';
 
+const TopWrapper = styled.div`
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 5px;
+`;
+
 const BottomWrapper = styled.div`
+  margin: auto;
   display: flex;
   flex-direction: row;
   padding-top: 5px;
@@ -14,10 +22,10 @@ const BottomWrapper = styled.div`
 
 const Product = ({ productDetails, productStyles }) => (
   <div>
-    <div className="topLevel">
+    <TopWrapper>
       <ProductImages images={productStyles} />
       <ProductOverview details={productDetails} styles={productStyles} />
-    </div>
+    </TopWrapper>
     <BottomWrapper>
       <Description info={productDetails} />
       <FeaturesList features={productDetails.features} />
