@@ -35,8 +35,10 @@ class App extends React.Component {
     if (this.state.productDetails) {
       return (
         <div>
-          <Product productDetails={this.state.productDetails}
-          productStyles={this.state.productStyles} />
+          <Product
+            productDetails={this.state.productDetails}
+            productStyles={this.state.productStyles}
+          />
           <QnA questions={this.state.questions} />
           <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
         </div>

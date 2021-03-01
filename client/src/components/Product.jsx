@@ -6,8 +6,15 @@ import ProductOverview from './ProductSubs/ProductOverview.jsx';
 import Description from './ProductSubs/Description.jsx';
 import FeaturesList from './ProductSubs/FeaturesList.jsx';
 
-const TopWrapper = styled.div`
+const Wrapper = styled.div`
+  width: 70vw;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+const TopWrapper = styled.div`
+  width: 70vw;
   display: flex;
   flex-direction: row;
   padding-top: 5px;
@@ -15,13 +22,14 @@ const TopWrapper = styled.div`
 
 const BottomWrapper = styled.div`
   margin: auto;
+  width: 60vw;
   display: flex;
   flex-direction: row;
   padding-top: 5px;
 `;
 
 const Product = ({ productDetails, productStyles }) => (
-  <div>
+  <Wrapper>
     <TopWrapper>
       <ProductImages images={productStyles} />
       <ProductOverview details={productDetails} styles={productStyles} />
@@ -30,7 +38,7 @@ const Product = ({ productDetails, productStyles }) => (
       <Description info={productDetails} />
       <FeaturesList features={productDetails.features} />
     </BottomWrapper>
-  </div>
+  </Wrapper>
 );
 
 export default Product;
