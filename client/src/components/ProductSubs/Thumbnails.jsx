@@ -8,7 +8,7 @@ const Thumbs = styled.div`
 
 const Thumbnails = ({ images }) => (
   <Thumbs>
-    { images.map((image) => <img key={image.style_id} src={image.photos[0].thumbmail_url} alt="" width="100" height="100" />)}
+    { images.map((image) => <img key={image.style_id} src={image.photos[0].thumbnail_url} alt="" width="100" height="100" />)}
   </Thumbs>
 );
 
