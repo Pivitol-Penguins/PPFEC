@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// const RatingBar = styled.
+
 const RatingBreakDown = () => (
   <div>
     <div>

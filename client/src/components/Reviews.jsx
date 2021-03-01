@@ -46,13 +46,13 @@ const RatingWrapper = styled.div`
 
 const Reviews = (props) => {
   const { reviews, reviewsMeta } = props;
-
+  console.log(reviewsMeta);
   return (
     <ReviewsContainer>
       <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
       <Wrapper>
         <RatingWrapper>
-          <RatingSummary reviews={reviews} reviewsMeta={reviewsMeta} />
+          <RatingSummary reviewsMeta={reviewsMeta} />
           <RatingBreakDown reviewsMeta={reviewsMeta} />
           <ProductBreakDown reviewsMeta={reviewsMeta} />
         </RatingWrapper>
