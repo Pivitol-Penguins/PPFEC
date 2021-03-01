@@ -6,17 +6,17 @@ const ListItem = styled.li`
     color: #80ccc4;
     padding-right: .5rem; };
   color: #424242;
-`
+`;
 
-const Feature = ({feature}) => {
+const Feature = ({ feature }) => {
   if (feature.value) {
     return (
-      <ListItem>{feature.feature + ': ' + feature.value}</ListItem>
-    )
+      <ListItem>{`${feature.feature}: ${feature.value}`}</ListItem>
+    );
   }
   return (
     <ListItem>{feature.feature}</ListItem>
-  )
-}
+  );
+};
 
 export default Feature;
