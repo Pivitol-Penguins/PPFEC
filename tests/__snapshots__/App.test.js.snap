@@ -1,18 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render correctly in "debug" mode 1`] = `
-<div>
-  App
-  <Product
-    productDetails={null}
-    productStyles={null}
-  />
-  <QnA
-    questions={null}
-  />
-  <Reviews
-    reviews={null}
-    reviewsMeta={null}
-  />
-</div>
-`;
+exports[`App should render correctly in "debug" mode 1`] = `<div />`;
