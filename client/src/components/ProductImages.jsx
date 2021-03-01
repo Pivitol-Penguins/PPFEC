@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Thumbnails from './thumbnails.jsx';
+import Thumbnails from './Thumbnails.jsx';
 
 const Wrapper = styled.div`
   display: flex;

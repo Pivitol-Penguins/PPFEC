@@ -32,7 +32,7 @@ const ProductOverview = ({ details, styles }) => (
       <div>Ratings component will go here</div>
       <Category>{details.category.toUpperCase()}</Category>
       <Name>{details.name}</Name>
-      <Price>${details.default_price}</Price>
+      <Price>{`$${details.default_price}`}</Price>
     </div>
     <Styles styles={styles} />
     <button type="button">Buttons and size selectors go here</button>
