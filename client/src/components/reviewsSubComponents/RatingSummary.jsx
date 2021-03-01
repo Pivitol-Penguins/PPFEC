@@ -10,10 +10,11 @@ const RatingScore = styled.span`
 const RatingSummary = ({ reviewsMeta }) => {
   let totalRating = 0;
   let totalRatingCount = 0;
-  for (let star in reviewsMeta.ratings) {
-      totalRating += (Number(star) * Number(reviewsMeta.ratings[star]));
-      totalRatingCount += Number(reviewsMeta.ratings[star]);
-  }
+  const stars = Object.keys(reviewsMeta.ratings);
+  stars.forEach((star) => {
+    totalRating += (Number(star) * Number(reviewsMeta.ratings[star]));
+    totalRatingCount += Number(reviewsMeta.ratings[star]);
+  });
 
   const avgRating = Number((totalRating / totalRatingCount).toPrecision(2));
   return (
