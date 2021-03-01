@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ProductImages from './ProductImages.jsx';
-import ProductOverview from './ProductOverview.jsx';
-import Description from './Description.jsx';
-import FeaturesList from './FeaturesList.jsx';
+import ProductImages from './ProductSubs/ProductImages.jsx';
+import ProductOverview from './ProductSubs/ProductOverview.jsx';
+import Description from './ProductSubs/Description.jsx';
+import FeaturesList from './ProductSubs/FeaturesList.jsx';
 
 const TopWrapper = styled.div`
   margin: auto;
