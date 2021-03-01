@@ -7,12 +7,16 @@ const RatingScore = styled.span`
   margin-left: 30px;
 `;
 
-const RatingSummary = ({ reviews }) => {
+const RatingSummary = ({ reviewsMeta }) => {
   let totalRating = 0;
-  for (let i = 0; i < reviews.results.length; i += 1) {
-    totalRating += reviews.results[i].rating;
-  }
-  const avgRating = totalRating / reviews.results.length;
+  let totalRatingCount = 0;
+  const stars = Object.keys(reviewsMeta.ratings);
+  stars.forEach((star) => {
+    totalRating += (Number(star) * Number(reviewsMeta.ratings[star]));
+    totalRatingCount += Number(reviewsMeta.ratings[star]);
+  });
+
+  const avgRating = Number((totalRating / totalRatingCount).toPrecision(2));
   return (
     <div>
       <RatingScore>{avgRating}</RatingScore>
