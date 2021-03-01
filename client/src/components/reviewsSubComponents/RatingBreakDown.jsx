@@ -5,6 +5,9 @@ const BreakDownWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
 `;
 
 const BarContainer = styled.div`
@@ -30,6 +33,12 @@ const Percentage = styled(BaseBox)`
   width: ${({ percent }) => percent}%;
 `;
 
+const RecommendPercentage = styled.div`
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+`;
+
 class RatingBreakDown extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +46,7 @@ class RatingBreakDown extends React.Component {
 
     };
     this.getPercentage = this.getPercentage.bind(this);
+    this.getRecommendRate = this.getRecommendRate.bind(this);
   }
 
   getPercentage(starNumber) {
@@ -52,6 +62,12 @@ class RatingBreakDown extends React.Component {
     }
     percentage = (reviewsMeta.ratings[starNumber] / totalRating) * 100;
     return percentage;
+  }
+
+  getRecommendRate() {
+    const { reviewsMeta } = this.props;
+    return (Number(reviewsMeta.recommended.true)
+    / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100;
   }
 
   render() {
@@ -73,7 +89,10 @@ class RatingBreakDown extends React.Component {
             </BreakDownWrapper>
           ))}
         </div>
-        <div>100% of reviews recommend this product</div>
+        <RecommendPercentage>
+          {this.getRecommendRate()}
+          % of reviews recommend this product
+        </RecommendPercentage>
       </div>
     );
   }
