@@ -2,18 +2,17 @@ import React from 'react';
 
 class QnA extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
 
-    }
+    };
   }
 
-  render () {
+  render() {
     return (
       <div>QnA</div>
     );
   }
-
 }
 
 export default QnA;
