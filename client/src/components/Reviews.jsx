@@ -34,41 +34,32 @@ const Wrapper = styled.div`
 `;
 
 const RatingWrapper = styled.div`
-  background-color: yellow;
+  background-color: lightblue;
   height: 100%
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0 auto;
+  padding: 30px 20px;
 `;
 
-class Reviews extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      reviews: this.props.reviews,
-      reviewsMeta: this.props.reviewsMeta,
-    }
-  }
+const Reviews = (props) => {
+  const { reviews, reviewsMeta } = props;
 
-  render () {
-    return (
-      <ReviewsContainer>
-        <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
-        <Wrapper>
-          <RatingWrapper>
-            <RatingSummary />
-            <RatingBreakDown />
-            <ProductBreakDown />
-          </RatingWrapper>
-          <ReviewsList reviews={this.props.reviews} />
-        </Wrapper>
-      </ReviewsContainer>
-    );
-  }
-
-}
+  return (
+    <ReviewsContainer>
+      <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
+      <Wrapper>
+        <RatingWrapper>
+          <RatingSummary reviews={reviews} reviewsMeta={reviewsMeta} />
+          <RatingBreakDown reviewsMeta={reviewsMeta} />
+          <ProductBreakDown reviewsMeta={reviewsMeta} />
+        </RatingWrapper>
+        <ReviewsList reviews={reviews} />
+      </Wrapper>
+    </ReviewsContainer>
+  );
+};
 
 export default Reviews;
-
-
