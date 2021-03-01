@@ -36,28 +36,32 @@ const ReviewButton = styled.button`
   height: 55px;
 `;
 
-
 class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
 
-    }
+    };
   }
 
   render() {
-    // console.log(this.props)
-    var count = 0;
+    const { reviews } = this.props;
+    let count = 0;
     return (
       <ReviewsWrapper>
         <ListWrapper>
-          <h4>{this.props.reviews.count} reviews, sorted by relevance</h4>
-          {this.props.reviews.results.map((review => {
+          <h4>
+            {reviews.count}
+            {' '}
+            reviews, sorted by relevance
+          </h4>
+          {reviews.results.map(((review) => {
             if (count === 2) {
               return;
             }
-            count++;
-            return ( <ReviewTile key={review.review_id} review={review} />)
+            count += 1;
+            // eslint-disable-next-line consistent-return
+            return (<ReviewTile key={review.review_id} review={review} />);
           }))}
         </ListWrapper>
         <ButtonWrapper>
@@ -65,7 +69,7 @@ class ReviewsList extends React.Component {
           <ReviewButton>ADD A REVIEW   +</ReviewButton>
         </ButtonWrapper>
       </ReviewsWrapper>
-    )
+    );
   }
 }
 

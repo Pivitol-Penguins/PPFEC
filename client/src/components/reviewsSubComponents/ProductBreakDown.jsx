@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const ProductBreakDown = () => (
   <div>
     <div>
@@ -29,7 +28,6 @@ const ProductBreakDown = () => (
       <div>BAR===========================</div>
     </div>
   </div>
-)
-
+);
 
 export default ProductBreakDown;
