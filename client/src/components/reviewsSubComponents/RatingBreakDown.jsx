@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const BreakDownWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+`;
+
 const BarContainer = styled.div`
   height: 10px;
-  width: 250px;
+  width: 200px;
   position: relative;
 `;
 
@@ -49,85 +55,28 @@ class RatingBreakDown extends React.Component {
   }
 
   render() {
+    const starsArr = [5, 4, 3, 2, 1];
     return (
       <div>
         <div>
-          <div>
-            <a href="">5 stars</a>
-            <BarContainer>
-              <Background />
-              <Percentage percent={this.getPercentage(5)} />
-            </BarContainer>
-          </div>
-          <div>
-            <a href="">4 stars</a>
-            <BarContainer>
-              <Background />
-              <Percentage percent={this.getPercentage(4)} />
-            </BarContainer>
-          </div>
-          <div>
-            <a href="">3 stars</a>
-            <BarContainer>
-              <Background />
-              <Percentage percent={this.getPercentage(3)} />
-            </BarContainer>
-          </div>
-          <div>
-            <a href="">2 stars</a>
-            <BarContainer>
-              <Background />
-              <Percentage percent={this.getPercentage(2)} />
-            </BarContainer>
-          </div>
-          <div>
-            <a href="">1 stars</a>
-            <BarContainer>
-              <Background />
-              <Percentage percent={this.getPercentage(1)} />
-            </BarContainer>
-          </div>
+          {starsArr.map((star) => (
+            <BreakDownWrapper key={star + this.getPercentage(star)}>
+              <span>
+                {star}
+                {' '}
+                stars
+              </span>
+              <BarContainer>
+                <Background />
+                <Percentage percent={this.getPercentage(star)} />
+              </BarContainer>
+            </BreakDownWrapper>
+          ))}
         </div>
         <div>100% of reviews recommend this product</div>
       </div>
     );
   }
 }
-
-// const RatingBreakDown = ({ reviewsMeta }) => {
-//   let totalRating = 0;
-//   const stars = Object.keys(reviewsMeta.ratings);
-//   stars.forEach((star) => {
-//     totalRating += (Number(star) * Number(reviewsMeta.ratings[star]));
-//   });
-
-//   return (
-//     <div>
-//       <div>
-//         <div>
-//           <a href="">5 stars</a>
-//           <span>BAR</span>
-//         </div>
-//         <div>
-//           <a href="">4 stars</a>
-//           <span>BAR</span>
-//         </div>
-//         <div>
-//           <a href="">3 stars</a>
-//           <span>BAR</span>
-//         </div>
-//         <div>
-//           <a href="">2 stars</a>
-//           <span>BAR</span>
-//         </div>
-//         <div>
-//           <a href="">1 stars</a>
-//           <span>BAR</span>
-//         </div>
-//       </div>
-//       <div>100% of reviews recommend this product</div>
-//     </div>
-//   );
-// };
 
 export default RatingBreakDown;
