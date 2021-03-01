@@ -12,7 +12,7 @@ const BreakDownWrapper = styled.div`
 
 const BarContainer = styled.div`
   height: 10px;
-  width: 200px;
+  width: 150px;
   position: relative;
 `;
 
@@ -43,7 +43,7 @@ class RatingBreakDown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      stars: [5, 4, 3, 2, 1],
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
@@ -71,11 +71,11 @@ class RatingBreakDown extends React.Component {
   }
 
   render() {
-    const starsArr = [5, 4, 3, 2, 1];
+    const { stars } = this.state;
     return (
       <div>
         <div>
-          {starsArr.map((star) => (
+          {stars.map((star) => (
             <BreakDownWrapper key={star + this.getPercentage(star)}>
               <span>
                 {star}

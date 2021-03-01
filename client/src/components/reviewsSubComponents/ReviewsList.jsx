@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
 
 const ReviewsWrapper = styled.div`
-  background-color: lightblue;
   height: 100%;
   display: flex;
   flex-grow: 3;

@@ -10,6 +10,33 @@ const FeedbackWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const CharcBarContainer = styled.div`
+  height: 10px;
+  width: 200px;
+  position: relative;
+`;
+
+const BaseBox = styled.div`
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+`;
+
+const Background = styled(BaseBox)`
+  background: grey;
+  width: 100%;
+`;
+
+const TriangleScaleIcon = styled(BaseBox)`
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 15px solid black;
+  left: ${({ percent }) => (percent / 100) * 200}px;
+`;
+
 function getRange(characteristic) {
   const smallLarge = ['Size', 'Width', 'Length'];
   const splRange = ['Too small', 'Perfect', 'Too large'];
@@ -24,11 +51,16 @@ const ProductBreakDown = ({ reviewsMeta }) => {
   const characteristics = Object.keys(reviewsMeta.characteristics);
   return (
     characteristics.map((characteristic) => {
+      const charValue = (Number(reviewsMeta.characteristics[characteristic].value / 5) * 100);
       const ranges = getRange(characteristic);
       return (
         <CharacBreakDownWrapper key={reviewsMeta.characteristics[characteristic].id}>
           <div>{characteristic}</div>
-          <div>BAR===========================</div>
+          <CharcBarContainer>
+            <Background />
+            {/* <CharValuePercentage percent={charValue} /> */}
+            <TriangleScaleIcon percent={charValue} />
+          </CharcBarContainer>
           <FeedbackWrapper>
             { ranges.map((range) => (
               <span key={reviewsMeta.characteristics[characteristic].id
