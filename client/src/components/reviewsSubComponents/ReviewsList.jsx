@@ -40,9 +40,8 @@ class ReviewsList extends React.Component {
       displayLimit: 2,
       reviewsArr: [],
       tileMax: 0,
-      displayCount: 0,
     };
-    this.loadReview = this.loadReview.bind(this);
+    this.loadReviews = this.loadReviews.bind(this);
   }
 
   componentDidMount() {
@@ -55,20 +54,18 @@ class ReviewsList extends React.Component {
     this.setState({
       tileMax: this.props.reviews.results.length,
       reviewsArr: displayArr,
-      displayCount: tileCount,
     });
   }
 
-  loadReview() {
+  loadReviews() {
     const loadArr = [];
     let count = 0;
-    console.log(this.state.displayCount);
-    while (count < this.state.displayLimit && this.state.displayCount < this.state.tileMax) {
-      loadArr.push(this.props.reviews.results[this.state.displayCount]);
+    let totalLength = loadArr.length + this.state.reviewsArr.length;
+    while (count < this.state.displayLimit && totalLength < this.state.tileMax) {
+      loadArr.push(this.props.reviews.results[totalLength]);
       count += 1;
-      this.setState((prevState) => ({ displayCount: prevState.displayCount + 1 }));
+      totalLength += 1;
     }
-    console.log(this.state.displayCount);
     this.setState((prevState) => ({
       reviewsArr: [...prevState.reviewsArr, ...loadArr],
     }));
@@ -77,8 +74,8 @@ class ReviewsList extends React.Component {
   render() {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
-    if (this.state.displayCount !== this.state.tileMax) {
-      moreReviewBtn = <ReviewButton onClick={this.loadReview}>MORE REVIEWS</ReviewButton>;
+    if (this.state.reviewsArr.length !== this.state.tileMax) {
+      moreReviewBtn = <ReviewButton onClick={this.loadReviews}>MORE REVIEWS</ReviewButton>;
     }
 
     const { reviews } = this.props;
