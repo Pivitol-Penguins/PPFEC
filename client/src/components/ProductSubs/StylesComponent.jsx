@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import StyleThumbnails from './StyleThumbnails.jsx';
+
 const StyleWrapper = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
 `;
 
-const Styles = () => (
+const Styles = ({ styles }) => (
   <StyleWrapper>
     <div>STYLE</div>
     <div>SELECTED STYLE</div>
-    <div>Style thumbnails</div>
+    <StyleThumbnails images={styles.results} />
   </StyleWrapper>
 );
 

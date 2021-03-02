@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Thumbnails from './Thumbnails.jsx';
+import ViewerThumbnails from './ViewerThumbnails.jsx';
 
 const Wrapper = styled.div`
   flex_basis 60%;
@@ -27,9 +27,9 @@ const Thumbs = styled.div`
 const ProductImages = ({ images }) => (
   <Wrapper>
     <Thumbs>
-      <Thumbnails images={images.results} />
+      <ViewerThumbnails images={images.results} />
     </Thumbs>
-    <Image src={images.results[0].photos[0].url} alt="style photograph"/>
+    <Image src={images.results[0].photos[0].url} alt="style photograph" />
   </Wrapper>
 );
 
