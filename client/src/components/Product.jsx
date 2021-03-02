@@ -28,17 +28,37 @@ const BottomWrapper = styled.div`
   padding-top: 5px;
 `;
 
-const Product = ({ productDetails, productStyles }) => (
-  <Wrapper>
-    <TopWrapper>
-      <ProductImages images={productStyles} />
-      <ProductOverview details={productDetails} styles={productStyles} />
-    </TopWrapper>
-    <BottomWrapper>
-      <Description info={productDetails} />
-      <FeaturesList features={productDetails.features} />
-    </BottomWrapper>
-  </Wrapper>
-);
+class Product extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentStyle: null,
+    };
+    this.getStyleID = this.getStyleID.bind(this);
+  }
+
+  getStyleID(style) {
+    this.setState({ currentStyle: style }, () => console.log('in product', this.state.currentStyle));
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <TopWrapper>
+          <ProductImages images={this.props.productStyles} />
+          <ProductOverview
+            details={this.props.productDetails}
+            styles={this.props.productStyles}
+            getStyleID={this.getStyleID}
+          />
+        </TopWrapper>
+        <BottomWrapper>
+          <Description info={this.props.productDetails} />
+          <FeaturesList features={this.props.productDetails.features} />
+        </BottomWrapper>
+      </Wrapper>
+    );
+  }
+}
 
 export default Product;

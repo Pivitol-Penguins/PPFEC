@@ -43,6 +43,7 @@ class Styles extends React.Component {
       style_id: null,
     };
     this.clickHandler = this.clickHandler.bind(this);
+    this.passUpStyle = this.passUpStyle.bind(this);
   }
 
   componentDidMount() {
@@ -56,7 +57,11 @@ class Styles extends React.Component {
     this.setState({
       currentStyle: event.target.alt,
       style_id: event.target.id,
-    });
+    }, () => this.passUpStyle(this.state.style_id));
+  }
+
+  passUpStyle(style) {
+    this.props.passUpStyle(style);
   }
 
   render() {
