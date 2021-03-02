@@ -42,7 +42,7 @@ const QuantitySelector = styled.select`
 `;
 
 const Selectors = ({ styles }) => {
-  // console.log(styles);
+  console.log(styles);
   return (
     <Wrapper>
       <form>
