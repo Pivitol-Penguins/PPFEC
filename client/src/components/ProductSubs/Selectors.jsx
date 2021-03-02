@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 `;
 
 const Selectors = ({ styles }) => {
-  console.log(styles);
+  // console.log(styles);
   return (
     <Wrapper>
       <button>Select Size</button>
