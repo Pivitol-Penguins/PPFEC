@@ -7,7 +7,6 @@ const StarsContainer = styled.div`
   font-size: 22px;
   height: 22px;
   line-height: 22px;
-  width: 100px;
   position: relative;
   padding: 0;
   text-shadow: 0px 1px 0 #a2a2a2;
