@@ -18,17 +18,9 @@ const Image = styled.img`
   z-index: 0;
 `;
 
-const Thumbs = styled.div`
-  z-index: 10;
-  position: absolute;
-  left: 17vw; top: 10vh; right: 0; bottom: 0;
-`;
-
 const ProductImages = ({ images }) => (
   <Wrapper>
-    <Thumbs>
-      <ViewerThumbnails images={images.results} />
-    </Thumbs>
+    <ViewerThumbnails images={images.results} />
     <Image src={images.results[0].photos[0].url} alt="style photograph" />
   </Wrapper>
 );

@@ -8,15 +8,21 @@ const Wrapper = styled.div`
   flex-direction: row;
 `;
 
+// const Form = styled.form`
+//    width: 100%;
+//    display: flex;
+//    flex-direction: row;
+// `;
+
 const SizeSelector = styled.select`
   flex-basis: 60%;
+  flex-grow: 3;
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
-  width: 15vw;
   height: 5vh;
   padding: 0 1vw;
   background: none;
@@ -25,14 +31,14 @@ const SizeSelector = styled.select`
 `;
 
 const QuantitySelector = styled.select`
-  flex-basis: 40%;
+  flex-basis: 60%;
+  flex-grow: 2;
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
-  width: 5vw;
   height: 5vh;
   padding: 0 1.25vw;
   background: none;
@@ -41,12 +47,24 @@ const QuantitySelector = styled.select`
   margin-left: 1vw;
 `;
 
-const Selectors = ({ styles }) => {
-  console.log(styles);
-  return (
-    <Wrapper>
-      <form>
-        <SizeSelector>
+class Selectors extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      size: 'SELECT SIZE',
+      quantity: 1,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <SizeSelector name="size" value={this.state.size} onChange={this.handleChange}>
           <option value="SELECT SIZE">SELECT SIZE</option>
           <option value="XS">XS</option>
           <option value="S">S</option>
@@ -54,16 +72,16 @@ const Selectors = ({ styles }) => {
           <option value="L">L</option>
           <option value="XL">XL</option>
         </SizeSelector>
-      </form>
-      <QuantitySelector>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </QuantitySelector>
-    </Wrapper>
-  );
-};
+        <QuantitySelector name="quantity" value={this.state.quantity} onChange={this.handleChange}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </QuantitySelector>
+      </Wrapper>
+    );
+  }
+}
 
 export default Selectors;
