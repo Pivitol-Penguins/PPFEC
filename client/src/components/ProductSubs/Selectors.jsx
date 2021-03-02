@@ -64,7 +64,7 @@ class Selectors extends React.Component {
   render() {
     return (
       <Wrapper>
-        <SizeSelector name="size" value={this.state.size} onChange={this.handleChange}>
+        <SizeSelector label="Choose your size" name="size" value={this.state.size} onChange={this.handleChange}>
           <option value="SELECT SIZE">SELECT SIZE</option>
           <option value="XS">XS</option>
           <option value="S">S</option>
@@ -72,7 +72,7 @@ class Selectors extends React.Component {
           <option value="L">L</option>
           <option value="XL">XL</option>
         </SizeSelector>
-        <QuantitySelector name="quantity" value={this.state.quantity} onChange={this.handleChange}>
+        <QuantitySelector label="Choose quantity" name="quantity" value={this.state.quantity} onChange={this.handleChange}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
