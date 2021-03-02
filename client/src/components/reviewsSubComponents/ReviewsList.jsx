@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
+import Modal from './Modal.jsx';
+import AddReviewForm from './AddReviewForm.jsx';
 
 const ReviewsWrapper = styled.div`
   height: 100%;
@@ -40,8 +42,10 @@ class ReviewsList extends React.Component {
       displayLimit: 2,
       reviewsArr: [],
       tileMax: 0,
+      addReviewShow: false,
     };
     this.loadReviews = this.loadReviews.bind(this);
+    this.addReview = this.addReview.bind(this);
   }
 
   componentDidMount() {
@@ -71,6 +75,12 @@ class ReviewsList extends React.Component {
     }));
   }
 
+  addReview() {
+    this.setState({
+      addReviewShow: true,
+    });
+  }
+
   render() {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
@@ -92,7 +102,8 @@ class ReviewsList extends React.Component {
         </ListWrapper>
         <ButtonWrapper>
           {moreReviewBtn}
-          <ReviewButton>ADD A REVIEW   +</ReviewButton>
+          <ReviewButton onClick={this.addReview}>ADD A REVIEW   +</ReviewButton>
+          {this.state.addReviewShow && (<Modal content={<AddReviewForm />} />)}
         </ButtonWrapper>
       </ReviewsWrapper>
     );
