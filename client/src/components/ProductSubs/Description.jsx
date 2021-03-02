@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const DescWrapper = styled.div`
   border-right: 3px solid #aeaeae;
-  flex-basis: 60%
+  flex-basis: 70%;
+  padding: 0 1.5vw;
 `;
 
 const Slogan = styled.h1`

@@ -6,6 +6,7 @@ const ListItem = styled.li`
     color: #80ccc4;
     padding-right: .5rem; };
   color: #424242;
+  line-height: 1.5rem;
 `;
 
 const Feature = ({ feature }) => {

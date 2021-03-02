@@ -4,7 +4,8 @@ import Feature from './Feature.jsx';
 
 const List = styled.ul`
   list-style: none;
-  flex-basis: 40%;
+  flex-basis: 30%;
+  padding-left: 1.5vw;
 `;
 
 const FeaturesList = ({ features }) => (
