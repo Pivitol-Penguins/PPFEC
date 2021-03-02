@@ -8,10 +8,10 @@ const Thumbs = styled.div`
   margin: 0;
 `;
 
-const Thumbnails = ({ images }) => (
+const ViewerThumbnails = ({ images }) => (
   <Thumbs>
     { images.map((image) => <img key={image.style_id} src={image.photos[0].thumbnail_url} alt="" width="70" height="70" />)}
   </Thumbs>
 );
 
-export default Thumbnails;
+export default ViewerThumbnails;
