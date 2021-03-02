@@ -40,7 +40,7 @@ class ViewerThumbnails extends React.Component {
   }
 
   render() {
-    console.log('viewerthumbs state', this.state);
+    // console.log('viewerthumbs state', this.state);
     return (
       <Thumbs>
         {this.props.images.map((image) => <Image onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="70px" height="70px" />)}
