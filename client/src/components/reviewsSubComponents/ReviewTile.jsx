@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
-import RatingStars from 'react-star-ratings';
+import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
   margin: 0 auto;
@@ -15,6 +15,7 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
 const StarDateWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 `;
 
 class ReviewTile extends React.Component {
@@ -36,16 +37,12 @@ class ReviewTile extends React.Component {
     const day = reviewDate.getUTCDate();
     const year = reviewDate.getUTCFullYear();
 
+    // calculating the percentage for stars
+    const percentage = (rating / 5) * 100;
     return (
       <TileContainer>
         <StarDateWrapper>
-          <RatingStars
-            rating={rating}
-            starRatedColor="gold"
-            numberofStars={5}
-            starDimension="15px"
-            starSpacing="0px"
-          />
+          <RatingStars percent={percentage} />
           <span>
             { reviewer_name }
             ,

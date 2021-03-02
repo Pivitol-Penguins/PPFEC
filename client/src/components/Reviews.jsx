@@ -43,6 +43,7 @@ const RatingWrapper = styled.div`
 
 const Reviews = (props) => {
   const { reviews, reviewsMeta } = props;
+  console.log(reviews);
   console.log(reviewsMeta);
   return (
     <ReviewsContainer>
