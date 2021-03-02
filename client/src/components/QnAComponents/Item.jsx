@@ -7,7 +7,6 @@ class Item extends React.Component {
     super(props);
     this.state = {
       answers: [],
-
       dd: [],
       max: 0,
       displayed: 0,
@@ -22,7 +21,6 @@ class Item extends React.Component {
     });
     this.setState((prevState) => ({
       answers: prevState.answers,
-
     }));
     this.loadTwoItems();
   }

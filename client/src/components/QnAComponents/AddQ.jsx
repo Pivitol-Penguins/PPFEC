@@ -2,21 +2,20 @@ import React from 'react';
 
 class Item extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      
-    }
+
+    };
   }
 
-  render () {
+  render() {
     return (
       <div>
-      <h1>ITEM</h1>
-     
+        <h1>ITEM</h1>
+
       </div>
     );
   }
-
 }
 
 export default Item;
