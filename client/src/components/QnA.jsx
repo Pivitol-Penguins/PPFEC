@@ -1,6 +1,7 @@
 import React from 'react';
 import QuestionList from './QnAComponents/QuestionList.jsx';
 import MoreQ from './QnAComponents/MoreQ.jsx';
+import Search from './QnAComponents/Search.jsx';
 
 class QnA extends React.Component {
   constructor(props) {
@@ -13,10 +14,34 @@ class QnA extends React.Component {
       buttonDisplay: true,
     };
     this.loadTwoItems = this.loadTwoItems.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.resetDefault = this.resetDefault.bind(this);
   }
 
   componentDidMount() {
     this.loadTwoItems();
+  }
+
+  handleSearch(string) {
+    this.setState({ dd: [] });
+    const results = [];
+    this.state.data.forEach((element, index) => {
+      if (element.question_body.includes(string)) {
+        results.push(this.state.data[index]);
+      }
+      Object.entries(element.answers).forEach((answer) => {
+        if (answer[1].body.includes(string)) {
+          const obj = {};
+          Object.assign(obj, this.state.data[index]);
+          obj.answers = { [answer[0]]: answer[1] };
+          results.push(obj);
+        }
+      });
+    });
+    this.setState({
+      dd: results,
+      buttonDisplay: false,
+    });
   }
 
   loadTwoItems() {
@@ -39,10 +64,20 @@ class QnA extends React.Component {
     }));
   }
 
+  resetDefault() {
+    this.setState({
+      dd: [],
+      max: 0,
+      displayed: 0,
+      buttonDisplay: true,
+    }, () => (this.loadTwoItems()));
+  }
+
   render() {
     return (
       <div>
         <h1>QnA</h1>
+        <Search func={this.handleSearch} reset={this.resetDefault} />
         <QuestionList items={this.state.dd} />
         <MoreQ func={this.loadTwoItems} buttonDisplay={this.state.buttonDisplay} />
       </div>

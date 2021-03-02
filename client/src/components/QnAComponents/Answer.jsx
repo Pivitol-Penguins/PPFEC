@@ -13,7 +13,6 @@ class Answer extends React.Component {
     return (
       <div>
         A:
-        {' '}
         {this.props.answer.body}
         <div>
           {this.props.answer.photos.length !== 0
