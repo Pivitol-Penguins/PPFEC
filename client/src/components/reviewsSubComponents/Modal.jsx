@@ -13,6 +13,7 @@ const StyledModal = styled.div`
   justify-content: center;
   z-index: 2000;
   width: 800px;
+  height: 100%;
   margin: 40px auto;
 `;
 
@@ -29,6 +30,7 @@ const DarkLayer = styled.div`
   justify-content: center;
   z-index: 200;
   width: 100%;
+  height: 100%;
   margin: 40px auto;
 `;
 class Modal extends React.Component {

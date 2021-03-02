@@ -45,7 +45,7 @@ class ReviewsList extends React.Component {
       addReviewShow: false,
     };
     this.loadReviews = this.loadReviews.bind(this);
-    this.addReview = this.addReview.bind(this);
+    this.addReviewToggle = this.addReviewToggle.bind(this);
   }
 
   componentDidMount() {
@@ -75,10 +75,16 @@ class ReviewsList extends React.Component {
     }));
   }
 
-  addReview() {
-    this.setState({
-      addReviewShow: true,
-    });
+  addReviewToggle() {
+    if (!this.state.addReviewShow) {
+      this.setState({
+        addReviewShow: true,
+      });
+    } else {
+      this.setState({
+        addReviewShow: false,
+      });
+    }
   }
 
   render() {
@@ -102,8 +108,9 @@ class ReviewsList extends React.Component {
         </ListWrapper>
         <ButtonWrapper>
           {moreReviewBtn}
-          <ReviewButton onClick={this.addReview}>ADD A REVIEW   +</ReviewButton>
-          {this.state.addReviewShow && (<Modal content={<AddReviewForm />} />)}
+          <ReviewButton onClick={this.addReviewToggle}>ADD A REVIEW   +</ReviewButton>
+          {this.state.addReviewShow && (
+          <Modal content={<AddReviewForm cancel={this.addReviewToggle} />} />)}
         </ButtonWrapper>
       </ReviewsWrapper>
     );
