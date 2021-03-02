@@ -39,13 +39,14 @@ class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      tileLimit: 2,
 
     };
   }
 
   render() {
     const { reviews } = this.props;
-    let count = 0;
+
     return (
       <ReviewsWrapper>
         <ListWrapper>
@@ -55,7 +56,8 @@ class ReviewsList extends React.Component {
             reviews, sorted by relevance
           </h4>
           {reviews.results.map(((review) => {
-            if (count === 2) {
+            let count = 0;
+            if (count === this.state.tileLimit) {
               return;
             }
             count += 1;

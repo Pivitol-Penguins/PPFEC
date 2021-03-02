@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import RatingStars from 'react-star-ratings';
+import RatingStars from './RatingStars.jsx';
 
 const RatingScore = styled.span`
   font-size: 70px;
   margin-left: 30px;
+`;
+
+const SummaryWrapper = styled.div`
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between
+  align-item: flex-start;
 `;
 
 const RatingSummary = ({ reviewsMeta }) => {
@@ -18,16 +25,10 @@ const RatingSummary = ({ reviewsMeta }) => {
 
   const avgRating = Number((totalRating / totalRatingCount).toPrecision(2));
   return (
-    <div>
+    <SummaryWrapper>
       <RatingScore>{avgRating}</RatingScore>
-      <RatingStars
-        rating={avgRating}
-        starRatedColor="gold"
-        numberofStars={5}
-        starDimension="15px"
-        starSpacing="0px"
-      />
-    </div>
+      <RatingStars percent={(avgRating / 5) * 100} />
+    </SummaryWrapper>
   );
 };
 
