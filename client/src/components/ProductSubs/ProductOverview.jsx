@@ -30,12 +30,14 @@ const Price = styled.p`
 `;
 
 const PurchaseLikeButtons = styled.div`
+  width: 100%;
   display: flex;
   margin-top: 10px;
   flex-direction: row;
 `;
 
 const AddToCart = styled.button`
+  flex-basis 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
@@ -51,6 +53,7 @@ const AddToCart = styled.button`
 `;
 
 const Like = styled.button`
+  flex-basis 20%;
   height: ${AddToCart.height};
   min-width: ${AddToCart.height};
   margin-left: 1vw;
