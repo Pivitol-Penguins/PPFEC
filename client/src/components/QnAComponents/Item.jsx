@@ -1,72 +1,65 @@
 import React from 'react';
 import AnswerList from './AnswerList.jsx';
-import MoreA from './MoreA.jsx'
+import MoreA from './MoreA.jsx';
 
 class Item extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       answers: [],
-      //answersId: [],
+
       dd: [],
       max: 0,
       displayed: 0,
       buttonDisplay: true,
-    }
+    };
     this.loadTwoItems = this.loadTwoItems.bind(this);
   }
 
-
-  componentDidMount () {
-    // for(var key in this.props.item.answers) {
-    //   this.state.answers.push(this.props.item.answers[key])
-    // }
-
+  componentDidMount() {
     Object.entries(this.props.item.answers).forEach((answer) => {
-      this.state.answers.push(answer[1]); 
-      //this.state.answersId.push([answer[0]])
+      this.state.answers.push(answer[1]);
     });
-    this.setState({
-      answers: this.state.answers,
-      //answersId: this.state.answersId
-    })
+    this.setState((prevState) => ({
+      answers: prevState.answers,
+
+    }));
     this.loadTwoItems();
   }
 
   loadTwoItems() {
     this.state.max += 2;
     while (this.state.displayed < this.state.max) {
-      if(!this.state.answers[this.state.displayed]){
+      if (!this.state.answers[this.state.displayed]) {
         break;
       }
-      this.state.dd.push(this.state.answers[this.state.displayed])
-      this.state.displayed++;
+      this.state.dd.push(this.state.answers[this.state.displayed]);
+      this.state.displayed += 1;
     }
-    if(!this.state.answers[this.state.displayed]) {
+    if (!this.state.answers[this.state.displayed]) {
       this.state.buttonDisplay = false;
     }
-    this.setState({
-      dd: this.state.dd,
-      displayed: this.state.displayed,
-      max: this.state.max,
-      buttonDisplay: this.state.buttonDisplay
-    })
+    this.setState((prevState) => ({
+      dd: prevState.dd,
+      displayed: prevState.displayed,
+      max: prevState.max,
+      buttonDisplay: prevState.buttonDisplay,
+    }));
   }
 
-
-
-  render () {
-    
+  render() {
     return (
       <div>
-      <h3>Q:{this.props.item.question_body}</h3>
-      <div>{`Helpful? (${this.props.item.question_helpfulness})`}</div>
-      <AnswerList answers={this.state.dd} />
-      <MoreA func={this.loadTwoItems} display={this.state.buttonDisplay}/>
+        <h3>
+          Q:
+          {this.props.item.question_body}
+        </h3>
+        <div>{`Helpful? (${this.props.item.question_helpfulness})`}</div>
+        <AnswerList answers={this.state.dd} />
+        <MoreA func={this.loadTwoItems} display={this.state.buttonDisplay} />
       </div>
     );
   }
-
 }
 
 export default Item;
