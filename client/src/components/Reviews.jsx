@@ -25,10 +25,9 @@ const ReviewsTitle = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
 const RatingWrapper = styled.div`

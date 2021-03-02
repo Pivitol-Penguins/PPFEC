@@ -5,10 +5,8 @@ import ReviewTile from './ReviewTile.jsx';
 const ReviewsWrapper = styled.div`
   height: 100%;
   display: flex;
-  flex-grow: 3;
   flex-wrap: nowrap;
   flex-direction: column;
-  align-items: baseline;
   justify-content: center;
 `;
 
@@ -39,14 +37,51 @@ class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tileLimit: 2,
-
+      displayLimit: 2,
+      reviewsArr: [],
+      tileMax: 0,
+      displayCount: 0,
     };
+    this.loadReview = this.loadReview.bind(this);
+  }
+
+  componentDidMount() {
+    const displayArr = [];
+    let tileCount = 0;
+    while (tileCount < this.state.displayLimit) {
+      displayArr.push(this.props.reviews.results[tileCount]);
+      tileCount += 1;
+    }
+    this.setState({
+      tileMax: this.props.reviews.results.length,
+      reviewsArr: displayArr,
+      displayCount: tileCount,
+    });
+  }
+
+  loadReview() {
+    const loadArr = [];
+    let count = 0;
+    console.log(this.state.displayCount);
+    while (count < this.state.displayLimit && this.state.displayCount < this.state.tileMax) {
+      loadArr.push(this.props.reviews.results[this.state.displayCount]);
+      count += 1;
+      this.setState((prevState) => ({ displayCount: prevState.displayCount + 1 }));
+    }
+    console.log(this.state.displayCount);
+    this.setState((prevState) => ({
+      reviewsArr: [...prevState.reviewsArr, ...loadArr],
+    }));
   }
 
   render() {
-    const { reviews } = this.props;
+    // conditionlal rendering MORE VIEW button
+    let moreReviewBtn;
+    if (this.state.displayCount !== this.state.tileMax) {
+      moreReviewBtn = <ReviewButton onClick={this.loadReview}>MORE REVIEWS</ReviewButton>;
+    }
 
+    const { reviews } = this.props;
     return (
       <ReviewsWrapper>
         <ListWrapper>
@@ -55,18 +90,11 @@ class ReviewsList extends React.Component {
             {' '}
             reviews, sorted by relevance
           </h4>
-          {reviews.results.map(((review) => {
-            let count = 0;
-            if (count === this.state.tileLimit) {
-              return;
-            }
-            count += 1;
-            // eslint-disable-next-line consistent-return
-            return (<ReviewTile key={review.review_id} review={review} />);
-          }))}
+          {this.state.reviewsArr.map(((review) => (
+            <ReviewTile key={review.review_id} review={review} />)))}
         </ListWrapper>
         <ButtonWrapper>
-          <ReviewButton>MORE REVIEWS</ReviewButton>
+          {moreReviewBtn}
           <ReviewButton>ADD A REVIEW   +</ReviewButton>
         </ButtonWrapper>
       </ReviewsWrapper>
