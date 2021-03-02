@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
 import RatingStars from 'react-star-ratings';

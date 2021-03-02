@@ -6,7 +6,6 @@ import RatingBreakDown from './reviewsSubComponents/RatingBreakDown.jsx';
 import ProductBreakDown from './reviewsSubComponents/ProductBreakDown.jsx';
 
 const ReviewsContainer = styled.div`
-  background-color: grey;
   width: 1024px;
   height: 740px;
   display: flex;
@@ -25,7 +24,6 @@ const ReviewsTitle = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: white;
   width: 100%;
   height: 100%;
   display: flex;
@@ -34,8 +32,7 @@ const Wrapper = styled.div`
 `;
 
 const RatingWrapper = styled.div`
-  background-color: lightblue;
-  height: 100%
+  height: 100%;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
