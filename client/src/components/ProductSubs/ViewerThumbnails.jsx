@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Thumbs = styled.div`
   z-index: 10;
   position: absolute;
-  left: 17vw; top: 10vh; right: 0; bottom: 0;
+  left: 17vw; top: 15vh; right: 0; bottom: 0;
   width: 8vw;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@ const Thumbs = styled.div`
 
 const Image = styled.img`
   margin: 5px;
+  border: 2px solid #aeaeae;
 `;
 
 class ViewerThumbnails extends React.Component {
@@ -40,12 +41,14 @@ class ViewerThumbnails extends React.Component {
   }
 
   render() {
-    // console.log('viewerthumbs state', this.state);
-    return (
-      <Thumbs>
-        {this.props.images.map((image) => <Image onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="70px" height="70px" />)}
-      </Thumbs>
-    );
+    if (this.props.images) {
+      return (
+        <Thumbs>
+          {this.props.images.map((image) => <Image onClick={this.clickHandler} src={image.thumbnail_url} key={this.props.id} width="70px" height="70px" />)}
+        </Thumbs>
+      );
+    }
+    return <div>.</div>;
   }
 }
 

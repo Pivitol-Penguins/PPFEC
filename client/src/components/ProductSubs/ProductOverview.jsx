@@ -64,40 +64,24 @@ const Like = styled.button`
   &:hover { color: #80ccc4; };
 `;
 
-class ProductOverview extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentStyle: null,
-    };
-    this.passUpStyle = this.passUpStyle.bind(this);
-  }
-
-  passUpStyle(style) {
-    this.setState({ currentStyle: style }, () => this.props.getStyleID(this.state.currentStyle));
-  }
-
-  render() {
-    return (
-      <Wrapper>
-        <div>Ratings component will go here</div>
-        <div className="productInfo">
-          <Category>{this.props.details.category.toUpperCase()}</Category>
-          <Name>{this.props.details.name}</Name>
-          <Price>{`$${this.props.details.default_price}`}</Price>
-        </div>
-        <Styles styles={this.props.styles} passUpStyle={this.passUpStyle} />
-        <Selectors styles={this.props.styles} />
-        <PurchaseLikeButtons>
-          <AddToCart>
-            <div>ADD TO BAG</div>
-            <div>+</div>
-          </AddToCart>
-          <Like>☆</Like>
-        </PurchaseLikeButtons>
-      </Wrapper>
-    );
-  }
-}
+const ProductOverview = ({ details, styles, getStyleID }) => (
+  <Wrapper>
+    <div>Ratings component will go here</div>
+    <div className="productInfo">
+      <Category>{details.category.toUpperCase()}</Category>
+      <Name>{details.name}</Name>
+      <Price>{`$${details.default_price}`}</Price>
+    </div>
+    <Styles styles={styles} getStyleID={getStyleID} />
+    <Selectors styles={styles} />
+    <PurchaseLikeButtons>
+      <AddToCart>
+        <div>ADD TO BAG</div>
+        <div>+</div>
+      </AddToCart>
+      <Like>☆</Like>
+    </PurchaseLikeButtons>
+  </Wrapper>
+);
 
 export default ProductOverview;

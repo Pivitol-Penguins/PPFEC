@@ -33,31 +33,58 @@ class Product extends React.Component {
     super(props);
     this.state = {
       currentStyle: null,
+      stylePhotos: null,
     };
     this.getStyleID = this.getStyleID.bind(this);
+    this.styleFinder = this.styleFinder.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      currentStyle: this.props.productStyles.results[0].style_id,
+      stylePhotos: this.props.productStyles.results[0].photos,
+    });
   }
 
   getStyleID(style) {
-    this.setState({ currentStyle: style }, () => console.log('in product', this.state.currentStyle));
+    this.setState({ currentStyle: style }, () => {
+      this.styleFinder(this.state.currentStyle);
+    });
+  }
+
+  styleFinder(style) {
+    this.props.productStyles.results.forEach((image) => {
+      if (image.style_id === Number(style)) {
+        this.setState({
+          stylePhotos: image.photos,
+        });
+      }
+    });
   }
 
   render() {
-    return (
-      <Wrapper>
-        <TopWrapper>
-          <ProductImages images={this.props.productStyles} />
-          <ProductOverview
-            details={this.props.productDetails}
-            styles={this.props.productStyles}
-            getStyleID={this.getStyleID}
-          />
-        </TopWrapper>
-        <BottomWrapper>
-          <Description info={this.props.productDetails} />
-          <FeaturesList features={this.props.productDetails.features} />
-        </BottomWrapper>
-      </Wrapper>
-    );
+    if (this.state.currentStyle) {
+      return (
+        <Wrapper>
+          <TopWrapper>
+            <ProductImages
+              images={this.state.stylePhotos}
+              id={this.state.currentStyle}
+            />
+            <ProductOverview
+              details={this.props.productDetails}
+              styles={this.props.productStyles}
+              getStyleID={this.getStyleID}
+            />
+          </TopWrapper>
+          <BottomWrapper>
+            <Description info={this.props.productDetails} />
+            <FeaturesList features={this.props.productDetails.features} />
+          </BottomWrapper>
+        </Wrapper>
+      );
+    }
+    return <div>empty</div>;
   }
 }
 
