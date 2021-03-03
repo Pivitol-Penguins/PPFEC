@@ -5,26 +5,35 @@ import Styles from './StylesComponent.jsx';
 import Selectors from './Selectors.jsx';
 
 const Wrapper = styled.div`
-  flex_basis 40%;
+  flex-basis 35%;
   display: flex;
-  margin-top: 5vh;
+  margin-top: 2vh;
   flex-direction: column;
+  justify-content: center;
   padding-left: 10px;
 `;
 
+const Ratings = styled.div`
+  margin-left: 1vw;
+`;
+
 const Category = styled.p`
-  margin-top: 5vh;
+  margin-left: 1vw;
+  margin-top: 2vh;
   font-weight: thin;
 `;
 
 const Name = styled.h1`
-  line-height: 0;
+  margin-left: 1vw;
+  letter-spacing: 2px;
+  line-height: 1.25rem;
   margin-bottom: 1vh;
   font-weight: bold;
 `;
 
 const Price = styled.p`
-  margin-top: 5vh;
+  margin-left: 1vw;
+  margin-top: 3vh;
   margin-bottom: 1vh;
   font-weight: thin;
 `;
@@ -32,6 +41,7 @@ const Price = styled.p`
 const PurchaseLikeButtons = styled.div`
   width: 100%;
   display: flex;
+  margin-left: 1vw;
   margin-top: 10px;
   flex-direction: row;
 `;
@@ -68,7 +78,7 @@ const ProductOverview = ({
   details, styles, skus, getStyleID,
 }) => (
   <Wrapper>
-    <div>Ratings component will go here</div>
+    <Ratings>Ratings component will go here</Ratings>
     <div className="productInfo">
       <Category>{details.category.toUpperCase()}</Category>
       <Name>{details.name}</Name>

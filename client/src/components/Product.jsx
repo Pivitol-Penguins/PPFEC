@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
 const TopWrapper = styled.div`
   width: 70vw;
+  height: 80vh;
   display: flex;
   flex-direction: row;
   padding-top: 5px;
@@ -66,7 +67,6 @@ class Product extends React.Component {
   }
 
   render() {
-    console.log(this.props.productStyles);
     if (this.state.currentStyle) {
       return (
         <Wrapper>

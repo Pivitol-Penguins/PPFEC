@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Thumbs = styled.div`
   z-index: 10;
   position: absolute;
-  left: 17vw; top: 15vh; right: 0; bottom: 0;
+  left: 17vw; top: 10vh; right: 0; bottom: 0;
   width: 8vw;
   display: flex;
   flex-direction: column;
