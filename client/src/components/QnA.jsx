@@ -1,7 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import QuestionList from './QnAComponents/QuestionList.jsx';
 import MoreQ from './QnAComponents/MoreQ.jsx';
 import Search from './QnAComponents/Search.jsx';
+import AddQ from './QnAComponents/AddQ.jsx';
+
+const QnAContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 class QnA extends React.Component {
   constructor(props) {
@@ -23,24 +30,28 @@ class QnA extends React.Component {
   }
 
   handleSearch(string) {
-    this.setState({ dd: [] });
-    const results = [];
-    this.state.data.forEach((element, index) => {
-      if (element.question_body.includes(string)) {
-        results.push(this.state.data[index]);
-      }
-      Object.entries(element.answers).forEach((answer) => {
-        if (answer[1].body.includes(string)) {
-          const obj = {};
-          Object.assign(obj, this.state.data[index]);
-          obj.answers = { [answer[0]]: answer[1] };
-          results.push(obj);
+    this.setState({ dd: [] }, () => {
+      const results = [];
+      this.state.data.forEach((element, index) => {
+        if (element.question_body.includes(string)) {
+          results.push(this.state.data[index]);
         }
+        let count = 0;
+        Object.entries(element.answers).forEach((answer) => {
+          if (answer[1].body.includes(string)) {
+            const obj = {};
+            Object.assign(obj, this.state.data[index]);
+            obj.answers = { [answer[0]]: answer[1] };
+            count += 1;
+            obj.question_id += `a${count}`;
+            results.push(obj);
+          }
+        });
       });
-    });
-    this.setState({
-      dd: results,
-      buttonDisplay: false,
+      this.setState({
+        dd: results,
+        buttonDisplay: false,
+      });
     });
   }
 
@@ -75,12 +86,13 @@ class QnA extends React.Component {
 
   render() {
     return (
-      <div>
+      <QnAContainer>
         <h1>QnA</h1>
         <Search func={this.handleSearch} reset={this.resetDefault} />
         <QuestionList items={this.state.dd} />
         <MoreQ func={this.loadTwoItems} buttonDisplay={this.state.buttonDisplay} />
-      </div>
+        <AddQ />
+      </QnAContainer>
     );
   }
 }

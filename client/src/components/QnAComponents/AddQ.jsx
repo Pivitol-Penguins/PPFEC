@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Item extends React.Component {
+class AddQ extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,11 +11,10 @@ class Item extends React.Component {
   render() {
     return (
       <div>
-        <h1>ITEM</h1>
-
+        <button type="submit">Add A Question</button>
       </div>
     );
   }
 }
 
-export default Item;
+export default AddQ;
