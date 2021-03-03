@@ -32,7 +32,17 @@ display: flex;
 const Image = styled.img`
   flex: 1 0 21%;
   margin: 5px;
+  border: 2px solid #aeaeae;
   border-radius: 100%;
+  z-index: 0;
+`;
+
+const SelectedImage = styled.img`
+  flex: 1 0 21%;
+  margin: 5px;
+  border: 2px solid #80ccc4;
+  border-radius: 100%;
+  z-index: 0;
 `;
 
 class Styles extends React.Component {
@@ -54,6 +64,7 @@ class Styles extends React.Component {
   }
 
   clickHandler(event) {
+    event.preventDefault();
     this.setState({
       currentStyle: event.target.alt,
       style_id: event.target.id,
@@ -61,7 +72,7 @@ class Styles extends React.Component {
   }
 
   passUpStyle(style) {
-    this.props.passUpStyle(style);
+    this.props.getStyleID(style);
   }
 
   render() {
@@ -73,7 +84,15 @@ class Styles extends React.Component {
             <SelectedStyle>{this.state.currentStyle.toUpperCase()}</SelectedStyle>
           </TextWrapper>
           <Thumbs>
-            { this.props.styles.results.map((image) => <Image onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="70" height="70" />)}
+            { this.props.styles.results.map((image) => {
+              if (image.style_id === this.state.style_id) {
+                return <SelectedImage onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="70" height="70" />;
+              }
+              if (image.style_id !== this.state.style_id) {
+                return <Image onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="70" height="70" />;
+              }
+              return <div>Hello</div>;
+            })}
           </Thumbs>
         </StyleWrapper>
       );

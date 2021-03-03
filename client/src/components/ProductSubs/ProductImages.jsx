@@ -18,11 +18,10 @@ const Image = styled.img`
   z-index: 0;
 `;
 
-const ProductImages = ({ images }) => (
+const ProductImages = ({ images, id }) => (
   <Wrapper>
-    <ViewerThumbnails images={images.results} />
-    <Image src={images.results[0].photos[0].url} alt="style photograph" />
+    <ViewerThumbnails images={images} id={id} alt="" />
+    <Image src={images[0].url} key={id} alt="style photograph" height="70vh" />
   </Wrapper>
 );
-
 export default ProductImages;
