@@ -18,6 +18,24 @@ const StarDateWrapper = styled.div`
   align-items: baseline;
 `;
 
+const ResponseWrapper = styled.div`
+  margin: 0 auto;
+  backgound-color: lighblue;
+`;
+
+const ReviewThumbsWrapper = styled.img`
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: flex-star;
+  border: 1px solid #ddd;
+  padding: 5px;
+  width: 80px;
+
+  & :hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+`;
+
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +57,34 @@ class ReviewTile extends React.Component {
 
     // calculating the percentage for stars
     const percentage = (rating / 5) * 100;
+
+    // conditional rendering for recommend label
+    let recommendLabel;
+    let response;
+    if (review.recommend) {
+      recommendLabel = <div>✓ I recommend this product</div>;
+    }
+    // conditional rendering for response
+    if (review.response) {
+      response = (
+        <ResponseWrapper>
+          <h4>Response from seller</h4>
+          <p>{review.response}</p>
+        </ResponseWrapper>
+      );
+    }
+    // conditional rendering for photos
+    let photos;
+    if (review.photos.length > 0) {
+      photos = (
+        <div>
+          {review.photos.map((photo, index) => (
+            <ReviewThumbsWrapper key={photo.id} src={photo.url} alt={`${index}reviewPhoto`} />
+          ))}
+        </div>
+      );
+    }
+
     return (
       <TileContainer>
         <StarDateWrapper>
@@ -57,6 +103,9 @@ class ReviewTile extends React.Component {
         </StarDateWrapper>
         <h3>{summary}</h3>
         <p>{body}</p>
+        {photos}
+        {recommendLabel}
+        {response}
         <div>
           <span>
             Helpful?
