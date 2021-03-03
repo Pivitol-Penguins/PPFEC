@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
-import Modal from './Modal.jsx';
 import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
