@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import ReviewTile from './ReviewTile.jsx';
 import Modal from './Modal.jsx';
 import AddReviewForm from './AddReviewForm.jsx';
@@ -35,6 +36,13 @@ const ReviewButton = styled.button`
   height: 55px;
 `;
 
+const ReviewSortWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+  margin: 10px;
+  padding: 5px;
+`;
+
 class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
@@ -43,9 +51,11 @@ class ReviewsList extends React.Component {
       reviewsArr: [],
       tileMax: 0,
       addReviewShow: false,
+      sortValue: 'Revelant',
     };
     this.loadReviews = this.loadReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
+    this.sortSelected = this.sortSelected.bind(this);
   }
 
   componentDidMount() {
@@ -87,6 +97,21 @@ class ReviewsList extends React.Component {
     }
   }
 
+  sortSelected(event) {
+    console.log(event.target.value);
+    this.setState({
+      sortValue: event.target.value,
+    });
+    var path = window.location.pathname;
+    axios.get(`${path.slice(-6)}reviews/${event.target.value}`)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => { throw err; });
+
+    event.preventDefault();
+  }
+
   render() {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
@@ -97,12 +122,19 @@ class ReviewsList extends React.Component {
     const { reviews } = this.props;
     return (
       <ReviewsWrapper>
-        <ListWrapper>
-          <h4>
+        <ReviewSortWrapper>
+          <h2>
             {reviews.count}
             {' '}
-            reviews, sorted by relevance
-          </h4>
+            reviews, sorted by
+          </h2>
+          <select value={this.state.sortValue} onChange={this.sortSelected}>
+            <option defaultValue="relevant">Relevant</option>
+            <option value="helpful">Helpful</option>
+            <option value="newest">Newest</option>
+          </select>
+        </ReviewSortWrapper>
+        <ListWrapper>
           {this.state.reviewsArr.map(((review) => (
             <ReviewTile key={review.review_id} review={review} />)))}
         </ListWrapper>

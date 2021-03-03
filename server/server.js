@@ -11,7 +11,7 @@ const staticMiddleware = express.static(path.join(__dirname, '../client/dist'));
 app.use('/products/:q', staticMiddleware);
 
 app.get('/products/:q/:b', (req, res) => {
-  // console.log('SERVER URL=> ', req.url);
+  console.log('SERVER URL=> ', req.url);
   const memCache = [];
   var id = req.params.b;
   // console.log('SERVER params==> ', id);
@@ -33,6 +33,15 @@ app.get('/products/:q/:b', (req, res) => {
     })
   })
 });
+
+// handle get request for sort option in Review component
+app.get('/products/:q/:b/reviews/:sort', (req, res) => {
+  var product_id = req.params.q;
+  var sort = req.params.sort;
+  api.fetchData('/reviews', { params: { "sort": sort, "product_id": Number(product_id) } }, (reviews) => {
+    res.send(reviews.data);
+  })
+})
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
