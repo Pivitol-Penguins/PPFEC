@@ -64,7 +64,9 @@ const Like = styled.button`
   &:hover { color: #80ccc4; };
 `;
 
-const ProductOverview = ({ details, styles, getStyleID }) => (
+const ProductOverview = ({
+  details, styles, skus, getStyleID,
+}) => (
   <Wrapper>
     <div>Ratings component will go here</div>
     <div className="productInfo">
@@ -73,7 +75,7 @@ const ProductOverview = ({ details, styles, getStyleID }) => (
       <Price>{`$${details.default_price}`}</Price>
     </div>
     <Styles styles={styles} getStyleID={getStyleID} />
-    <Selectors styles={styles} />
+    <Selectors skus={skus} />
     <PurchaseLikeButtons>
       <AddToCart>
         <div>ADD TO BAG</div>

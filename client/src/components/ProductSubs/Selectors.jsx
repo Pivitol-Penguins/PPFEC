@@ -52,32 +52,46 @@ class Selectors extends React.Component {
     super(props);
     this.state = {
       size: 'SELECT SIZE',
+      available: null,
       quantity: 1,
+      maxQuantity: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    if (event.target.name === 'size') {
+      const value = JSON.parse(event.target.value);
+      this.setState({
+        size: value.size,
+        available: value.quantity,
+      }, () => console.log('size', this.state.size));
+    } else {
+      this.setState({
+        quantity: event.target.value,
+      });
+    }
   }
 
   render() {
+    const skus = Object.values(this.props.skus);
     return (
       <Wrapper>
         <SizeSelector label="Choose your size" name="size" value={this.state.size} onChange={this.handleChange}>
           <option value="SELECT SIZE">SELECT SIZE</option>
-          <option value="XS">XS</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
+          { skus.map((sku) => {
+            if (sku.quantity > 0) {
+              return <option value={JSON.stringify(sku)} key={sku.size}>{sku.size}</option>;
+            }
+          })}
         </SizeSelector>
         <QuantitySelector label="Choose quantity" name="quantity" value={this.state.quantity} onChange={this.handleChange}>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          <option value="-">-</option>
+          { this.state.maxQuantity.map((quantity) => {
+            if (quantity < this.state.available) {
+              return <option value={quantity} key={quantity}>{quantity}</option>;
+            }
+          })}
         </QuantitySelector>
       </Wrapper>
     );
