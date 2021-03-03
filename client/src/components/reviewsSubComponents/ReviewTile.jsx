@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
+import Modal from './Modal.jsx';
 import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
@@ -26,21 +27,27 @@ const ResponseWrapper = styled.div`
 const ReviewThumbsWrapper = styled.img`
   display: inline-flex;
   justify-content: space-around;
-  align-items: flex-star;
+  align-items: flex-start;
   border: 1px solid #ddd;
   padding: 5px;
-  width: 80px;
+  height: 80px;
 
   & :hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   }
 `;
 
+const HelpfulnessWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+`;
+
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      helpfulnessSelected: false,
     };
   }
 
@@ -106,19 +113,17 @@ class ReviewTile extends React.Component {
         {photos}
         {recommendLabel}
         {response}
-        <div>
+        <HelpfulnessWrapper>
+          Helpful?
+          <span>Yes</span>
           <span>
-            Helpful?
-            <a href="">Yes</a>
             (
             {helpfulness}
             )
           </span>
-          {' '}
-          |
-          {' '}
-          <span><a href="">Report</a></span>
-        </div>
+          <div>|</div>
+          <span>No</span>
+        </HelpfulnessWrapper>
       </TileContainer>
     );
   }
