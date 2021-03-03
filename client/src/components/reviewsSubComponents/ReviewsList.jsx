@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import ReviewTile from './ReviewTile.jsx';
 import Modal from './Modal.jsx';
 import AddReviewForm from './AddReviewForm.jsx';
@@ -35,38 +36,53 @@ const ReviewButton = styled.button`
   height: 55px;
 `;
 
+const ReviewSortWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+  margin: 10px;
+  padding: 5px;
+`;
+
 class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       displayLimit: 2,
       reviewsArr: [],
+      fullreviewsArr: [],
       tileMax: 0,
       addReviewShow: false,
     };
-    this.loadReviews = this.loadReviews.bind(this);
+    this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
+    this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
+    this.sortSelected = this.sortSelected.bind(this);
   }
 
   componentDidMount() {
+    this.loadFirstTwoReviews(this.props.reviews.results);
+  }
+
+  loadFirstTwoReviews(data) {
     const displayArr = [];
     let tileCount = 0;
     while (tileCount < this.state.displayLimit) {
-      displayArr.push(this.props.reviews.results[tileCount]);
+      displayArr.push(data[tileCount]);
       tileCount += 1;
     }
     this.setState({
-      tileMax: this.props.reviews.results.length,
+      tileMax: data.length,
       reviewsArr: displayArr,
+      fullreviewsArr: data,
     });
   }
 
-  loadReviews() {
+  loadMoreReviews() {
     const loadArr = [];
     let count = 0;
     let totalLength = loadArr.length + this.state.reviewsArr.length;
     while (count < this.state.displayLimit && totalLength < this.state.tileMax) {
-      loadArr.push(this.props.reviews.results[totalLength]);
+      loadArr.push(this.state.fullreviewsArr[totalLength]);
       count += 1;
       totalLength += 1;
     }
@@ -87,22 +103,43 @@ class ReviewsList extends React.Component {
     }
   }
 
+  sortSelected(event) {
+    const path = window.location.pathname;
+    axios.get(`${path.slice(-6)}reviews/${event.target.value}`)
+      .then((res) => {
+        this.loadFirstTwoReviews(res.data.results);
+        this.setState({
+          fullreviewsArr: res.data.results,
+        });
+      })
+      .catch((err) => { throw err; });
+
+    event.preventDefault();
+  }
+
   render() {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
     if (this.state.reviewsArr.length !== this.state.tileMax) {
-      moreReviewBtn = <ReviewButton onClick={this.loadReviews}>MORE REVIEWS</ReviewButton>;
+      moreReviewBtn = <ReviewButton onClick={this.loadMoreReviews}>MORE REVIEWS</ReviewButton>;
     }
 
     const { reviews } = this.props;
     return (
       <ReviewsWrapper>
-        <ListWrapper>
-          <h4>
+        <ReviewSortWrapper>
+          <h2>
             {reviews.count}
             {' '}
-            reviews, sorted by relevance
-          </h4>
+            reviews, sorted by
+          </h2>
+          <select value={this.state.sortValue} onChange={this.sortSelected}>
+            <option defaultValue="relevant">Relevant</option>
+            <option value="helpful">Helpful</option>
+            <option value="newest">Newest</option>
+          </select>
+        </ReviewSortWrapper>
+        <ListWrapper>
           {this.state.reviewsArr.map(((review) => (
             <ReviewTile key={review.review_id} review={review} />)))}
         </ListWrapper>

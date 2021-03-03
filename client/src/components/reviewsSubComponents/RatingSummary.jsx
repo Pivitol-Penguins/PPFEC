@@ -23,7 +23,7 @@ const RatingSummary = ({ reviewsMeta }) => {
     totalRatingCount += Number(reviewsMeta.ratings[star]);
   });
 
-  const avgRating = Number((totalRating / totalRatingCount).toPrecision(2));
+  const avgRating = (Math.round((totalRating / totalRatingCount) * 10) / 10).toFixed(1);
   return (
     <SummaryWrapper>
       <RatingScore>{avgRating}</RatingScore>

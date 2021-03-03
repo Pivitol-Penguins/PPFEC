@@ -34,6 +34,15 @@ app.get('/products/:q/:b', (req, res) => {
   })
 });
 
+// handle get request for sort option in Review component
+app.get('/products/:q/:b/reviews/:sort', (req, res) => {
+  var product_id = req.params.q;
+  var sort = req.params.sort;
+  api.fetchData('/reviews', { params: { "sort": sort, "product_id": Number(product_id) } }, (reviews) => {
+    res.send(reviews.data);
+  })
+})
+
 app.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`Example app listening at http://localhost:${port}`);
