@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
+import Modal from './Modal.jsx';
 import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
@@ -18,11 +19,35 @@ const StarDateWrapper = styled.div`
   align-items: baseline;
 `;
 
+const ResponseWrapper = styled.div`
+  margin: 0 auto;
+  backgound-color: lighblue;
+`;
+
+const ReviewThumbsWrapper = styled.img`
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 5px;
+  height: 80px;
+
+  & :hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+`;
+
+const HelpfulnessWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+`;
+
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      helpfulnessSelected: false,
     };
   }
 
@@ -39,6 +64,34 @@ class ReviewTile extends React.Component {
 
     // calculating the percentage for stars
     const percentage = (rating / 5) * 100;
+
+    // conditional rendering for recommend label
+    let recommendLabel;
+    let response;
+    if (review.recommend) {
+      recommendLabel = <div>✓ I recommend this product</div>;
+    }
+    // conditional rendering for response
+    if (review.response) {
+      response = (
+        <ResponseWrapper>
+          <h4>Response from seller</h4>
+          <p>{review.response}</p>
+        </ResponseWrapper>
+      );
+    }
+    // conditional rendering for photos
+    let photos;
+    if (review.photos.length > 0) {
+      photos = (
+        <div>
+          {review.photos.map((photo, index) => (
+            <ReviewThumbsWrapper key={photo.id} src={photo.url} alt={`${index}reviewPhoto`} />
+          ))}
+        </div>
+      );
+    }
+
     return (
       <TileContainer>
         <StarDateWrapper>
@@ -57,19 +110,20 @@ class ReviewTile extends React.Component {
         </StarDateWrapper>
         <h3>{summary}</h3>
         <p>{body}</p>
-        <div>
+        {photos}
+        {recommendLabel}
+        {response}
+        <HelpfulnessWrapper>
+          Helpful?
+          <span>Yes</span>
           <span>
-            Helpful?
-            <a href="">Yes</a>
             (
             {helpfulness}
             )
           </span>
-          {' '}
-          |
-          {' '}
-          <span><a href="">Report</a></span>
-        </div>
+          <div>|</div>
+          <span>No</span>
+        </HelpfulnessWrapper>
       </TileContainer>
     );
   }
