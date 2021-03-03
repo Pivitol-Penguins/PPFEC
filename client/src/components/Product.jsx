@@ -34,6 +34,7 @@ class Product extends React.Component {
     this.state = {
       currentStyle: null,
       stylePhotos: null,
+      skus: null,
     };
     this.getStyleID = this.getStyleID.bind(this);
     this.styleFinder = this.styleFinder.bind(this);
@@ -43,6 +44,7 @@ class Product extends React.Component {
     this.setState({
       currentStyle: this.props.productStyles.results[0].style_id,
       stylePhotos: this.props.productStyles.results[0].photos,
+      skus: this.props.productStyles.results[0].skus,
     });
   }
 
@@ -57,12 +59,14 @@ class Product extends React.Component {
       if (image.style_id === Number(style)) {
         this.setState({
           stylePhotos: image.photos,
+          skus: image.skus,
         });
       }
     });
   }
 
   render() {
+    console.log(this.props.productStyles);
     if (this.state.currentStyle) {
       return (
         <Wrapper>
@@ -74,6 +78,7 @@ class Product extends React.Component {
             <ProductOverview
               details={this.props.productDetails}
               styles={this.props.productStyles}
+              skus={this.state.skus}
               getStyleID={this.getStyleID}
             />
           </TopWrapper>
