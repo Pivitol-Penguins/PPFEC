@@ -11,7 +11,7 @@ class Photos extends React.Component {
   render() {
     return (
       <div>
-        {this.props.photos.map((photo) => <img src={photo} height="200" width="200" alt="" />)}
+        {this.props.photos.map((photo) => <img src={photo} height="100" width="" alt={photo} key={photo} />)}
       </div>
     );
   }

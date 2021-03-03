@@ -4,9 +4,10 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
+      input: 'Search Here',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(e) {
@@ -19,10 +20,14 @@ class Search extends React.Component {
     });
   }
 
+  handleClick() {
+    this.setState({ input: '' });
+  }
+
   render() {
     return (
       <div>
-        <input value={this.state.input} onChange={this.handleChange} />
+        <input value={this.state.input} onChange={this.handleChange} onClick={this.handleClick} />
       </div>
     );
   }
