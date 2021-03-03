@@ -20,7 +20,7 @@ const Image = styled.img`
 
 const ProductImages = ({ images, id }) => (
   <Wrapper>
-    <ViewerThumbnails images={images} id={id} />
+    <ViewerThumbnails images={images} id={id} alt="" />
     <Image src={images[0].url} key={id} alt="style photograph" height="70vh" />
   </Wrapper>
 );
