@@ -3,6 +3,32 @@ import FontAwesome from 'react-fontawesome';
 
 import styled from 'styled-components';
 
+const DDWrapper = styled.div`
+  position: relative;
+  flex-basis 60%;
+  flex-grow: 3;
+  width: 10vw;
+  font-size: 1.6rem;
+  user-select: none;
+`;
+
+const DDHeader = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border: 1px solid #424242;
+  border-radius: 3px;
+  background-color: white;
+  line-height: 38px;
+  cursor: default;
+  cursor: pointer;
+`;
+
+const DDHeaderTitle = styled.div`
+  font-weight: 300;
+`;
+
 class SizeDropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -33,17 +59,17 @@ class SizeDropdown extends React.Component {
     const { list } = this.props;
 
     return (
-      <div className="dd-wrapper">
-        <button
+      <DDWrapper>
+        <DDHeader
           type="button"
           className="dd-header"
           onClick={this.toggleList}
         >
-          <div className="dd-header-title">{headerTitle}</div>
+          <DDHeaderTitle>{headerTitle}</DDHeaderTitle>
           {isListOpen
             ? <FontAwesome name="angle-up" size="2x" />
             : <FontAwesome name="angle-down" size="2x" />}
-        </button>
+        </DDHeader>
         {isListOpen && (
           <div
             role="list"
@@ -67,7 +93,7 @@ class SizeDropdown extends React.Component {
             })}
           </div>
         )}
-      </div>
+      </DDWrapper>
     );
   }
 }
