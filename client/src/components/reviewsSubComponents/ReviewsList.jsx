@@ -49,34 +49,40 @@ class ReviewsList extends React.Component {
     this.state = {
       displayLimit: 2,
       reviewsArr: [],
+      fullreviewsArr: [],
       tileMax: 0,
       addReviewShow: false,
-      sortValue: 'Revelant',
     };
-    this.loadReviews = this.loadReviews.bind(this);
+    this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
+    this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.sortSelected = this.sortSelected.bind(this);
   }
 
   componentDidMount() {
+    this.loadFirstTwoReviews(this.props.reviews.results);
+  }
+
+  loadFirstTwoReviews(data) {
     const displayArr = [];
     let tileCount = 0;
     while (tileCount < this.state.displayLimit) {
-      displayArr.push(this.props.reviews.results[tileCount]);
+      displayArr.push(data[tileCount]);
       tileCount += 1;
     }
     this.setState({
-      tileMax: this.props.reviews.results.length,
+      tileMax: data.length,
       reviewsArr: displayArr,
+      fullreviewsArr: data,
     });
   }
 
-  loadReviews() {
+  loadMoreReviews() {
     const loadArr = [];
     let count = 0;
     let totalLength = loadArr.length + this.state.reviewsArr.length;
     while (count < this.state.displayLimit && totalLength < this.state.tileMax) {
-      loadArr.push(this.props.reviews.results[totalLength]);
+      loadArr.push(this.state.fullreviewsArr[totalLength]);
       count += 1;
       totalLength += 1;
     }
@@ -98,14 +104,13 @@ class ReviewsList extends React.Component {
   }
 
   sortSelected(event) {
-    console.log(event.target.value);
-    this.setState({
-      sortValue: event.target.value,
-    });
-    var path = window.location.pathname;
+    const path = window.location.pathname;
     axios.get(`${path.slice(-6)}reviews/${event.target.value}`)
       .then((res) => {
-        console.log(res.data);
+        this.loadFirstTwoReviews(res.data.results);
+        this.setState({
+          fullreviewsArr: res.data.results,
+        });
       })
       .catch((err) => { throw err; });
 
@@ -116,7 +121,7 @@ class ReviewsList extends React.Component {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
     if (this.state.reviewsArr.length !== this.state.tileMax) {
-      moreReviewBtn = <ReviewButton onClick={this.loadReviews}>MORE REVIEWS</ReviewButton>;
+      moreReviewBtn = <ReviewButton onClick={this.loadMoreReviews}>MORE REVIEWS</ReviewButton>;
     }
 
     const { reviews } = this.props;

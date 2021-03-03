@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
-  margin: 0 auto;
   padding: 10px 30px;
   border-bottom: 1px solid black;
 `;
@@ -20,7 +19,7 @@ const StarDateWrapper = styled.div`
 
 const ResponseWrapper = styled.div`
   margin: 0 auto;
-  backgound-color: lighblue;
+  background-color: bisque;
 `;
 
 const ReviewThumbsWrapper = styled.img`

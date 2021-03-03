@@ -11,7 +11,7 @@ const staticMiddleware = express.static(path.join(__dirname, '../client/dist'));
 app.use('/products/:q', staticMiddleware);
 
 app.get('/products/:q/:b', (req, res) => {
-  console.log('SERVER URL=> ', req.url);
+  // console.log('SERVER URL=> ', req.url);
   const memCache = [];
   var id = req.params.b;
   // console.log('SERVER params==> ', id);
