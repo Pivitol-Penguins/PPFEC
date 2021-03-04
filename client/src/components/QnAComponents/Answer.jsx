@@ -5,7 +5,7 @@ import Photos from './Photos.jsx';
 const BottomContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 1vh;
+  padding-bottom: 4vh;
   font-size: 13px;
 `;
 
@@ -30,7 +30,7 @@ const Report = styled.u`
 `;
 
 const Body = styled.div`
-  padding-bottom: 1vh;
+  padding-bottom: 2vh;
   font-size: 16px;
 `;
 
@@ -49,6 +49,7 @@ class Answer extends React.Component {
   }
 
   handleClick() {
+    this.setState({});
   }
 
   dateTranslate(date) {
@@ -71,7 +72,7 @@ class Answer extends React.Component {
         </div>
         <BottomContainer>
           <NameDate>
-            {`By ${this.props.answer.answerer_name}, ${this.state.date}`}
+            {`By ${this.props.answer.answerer_name} on ${this.state.date}`}
           </NameDate>
           |
           <Helpful>

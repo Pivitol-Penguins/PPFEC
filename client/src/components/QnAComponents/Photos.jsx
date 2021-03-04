@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const Photo = styled.img`
   height: 10vh;
   weight: 10vw;
-  padding: 0 1vw 1vh 0;
+  margin: 0 1vw 1vh 0;
+  border: 2px solid #424242;
+ 
 `;
 
 const Photos = (props) => (

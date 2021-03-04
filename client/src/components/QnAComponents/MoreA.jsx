@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LoadMoreA = styled.div`
+const LoadMoreA = styled.b`
   padding: 2vh 0 2vh 0;
 `;
 

@@ -8,7 +8,7 @@ import AddQ from './QnAComponents/AddQ.jsx';
 const QnAContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  width: 65vw;
   margin: 0 auto;
 `;
 

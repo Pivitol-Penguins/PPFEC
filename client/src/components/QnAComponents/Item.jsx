@@ -6,10 +6,10 @@ import MoreA from './MoreA.jsx';
 const TopWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   font-size: 20px;
   padding: 2vh 0;
-`;
+  justify-content: space-between;
+  `;
 
 const BottomWrapper = styled.div`
   display: flex;
@@ -19,8 +19,9 @@ const BottomWrapper = styled.div`
 const Helper = styled.div`
   display: flex;
   font-size: 15px;
+  min-width: 220px;
   padding-left: 4vw;
-`;
+  `;
 
 const Yes = styled.u`
   padding: 0 2px 0 1vw;
@@ -78,6 +79,7 @@ class Item extends React.Component {
   }
 
   handleClick() {
+    this.setState({});
   }
 
   loadTwoItems() {

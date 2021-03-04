@@ -5,8 +5,8 @@ const Input = styled.input.attrs(() => ({
   type: 'text',
 }))`
   border-radius: 1px;
-  border-color: black;
-  width: 66vw;
+  border-color: #424242;
+  width: 60vw;
   z-index: 0;
   position: relative;
   padding: 1.5vh 2vw;
@@ -22,10 +22,10 @@ const Magnify = styled.div`
   z-index: 50;
   position: relative;
   top: -5.5vh;
-  left: 66vw;
+  left: 60vw;
   width: 1rem;
   padding-right: 4vw;
-  color: black;
+  color: #424242;
   -webkit-transform: rotate(-45deg); 
   -moz-transform: rotate(-45deg); 
   -o-transform: rotate(-45deg);
