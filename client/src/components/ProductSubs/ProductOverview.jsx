@@ -10,12 +10,35 @@ const Wrapper = styled.div`
   margin-top: 2vh;
   flex-direction: column;
   justify-content: space-between;
-  margin: 4vh 0 4vh 2vw;
+  margin: 3.5vh 0 3.5vh 2vw;
 `;
 
-// const Ratings = styled.div`
-//   margin-left: 1vw;
-// `;
+const RatingWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Rating = styled.div`
+  font-size: 1rem;
+  font-weight: 300;
+  color: #424242;
+  &:hover {
+    color: #80ccc4;
+    cursor: pointer;
+  };
+`;
+
+const RatingsAnchor = styled.a`
+  font-size: .85rem;
+  font-weight: 300;
+  color: #424242;
+  margin-left: .5vw;
+  &:hover {
+    color: #80ccc4;
+    cursor: pointer;
+  };
+`;
 
 const Category = styled.p`
   margin-top: 2vh;
@@ -57,6 +80,14 @@ const AddToCart = styled.button`
   color: #424242;
 `;
 
+const Plus = styled.div`
+  font-size: 2rem;
+  font-weight: 300;
+  &:hover {
+    color: #80ccc4;
+  };
+`;
+
 const Like = styled.button`
   flex-basis: 17.5%;
   height: ${AddToCart.height};
@@ -73,7 +104,10 @@ const ProductOverview = ({
   details, styles, skus, getStyleID,
 }) => (
   <Wrapper>
-    <div>Ratings component will go here</div>
+    <RatingWrapper>
+      <Rating>★★★★☆</Rating>
+      <RatingsAnchor href="RATINGS">Read all reviews</RatingsAnchor>
+    </RatingWrapper>
     <div className="productInfo">
       <Category>{details.category.toUpperCase()}</Category>
       <Name>{details.name}</Name>
@@ -84,7 +118,7 @@ const ProductOverview = ({
     <PurchaseLikeButtons>
       <AddToCart>
         <div>ADD TO BAG</div>
-        <div>+</div>
+        <Plus>+</Plus>
       </AddToCart>
       <Like>☆</Like>
     </PurchaseLikeButtons>
