@@ -5,28 +5,57 @@ import styled from 'styled-components';
 
 const DDWrapper = styled.div`
   position: relative;
-  flex-basis 60%;
-  flex-grow: 3;
-  width: 10vw;
-  font-size: 1.6rem;
+  width: 100%;
+  font-size: 0;
   user-select: none;
 `;
 
 const DDHeader = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  font-size: .9rem;
   position: relative;
-  border: 1px solid #424242;
-  border-radius: 3px;
+  height: 5vh;
+  width: 100%;
+  padding: 0 1.25vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  line-height: 38px;
+  color: #424242;
+  border: 1px solid #424242;
   cursor: default;
   cursor: pointer;
 `;
 
 const DDHeaderTitle = styled.div`
-  font-weight: 300;
+  font-weight: bold;
+`;
+
+const DDList = styled.div`
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  max-height: 5vh;
+  font-weight: 400;
+  -webkit-overflow-scrolling: touch;
+`;
+
+const DDListItem = styled.button`
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1rem;
+  cursor: default;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #aeaeae;
+  border-bottom: none;
+  &:last-child {
+    border-bottom: 1px solid #aeaeae;
+  };
+  &:hover {
+    background-color: #80ccc4;
+    color: white; };
 `;
 
 class SizeDropdown extends React.Component {
@@ -61,8 +90,6 @@ class SizeDropdown extends React.Component {
     return (
       <DDWrapper>
         <DDHeader
-          type="button"
-          className="dd-header"
           onClick={this.toggleList}
         >
           <DDHeaderTitle>{headerTitle}</DDHeaderTitle>
@@ -71,14 +98,14 @@ class SizeDropdown extends React.Component {
             : <FontAwesome name="angle-down" size="2x" />}
         </DDHeader>
         {isListOpen && (
-          <div
+          <DDList
             role="list"
             className="dd-list"
           >
             {list.map((item) => {
               if (item.quantity > 0) {
                 return (
-                  <button
+                  <DDListItem
                     type="button"
                     key={item.size}
                     className="dd-list-item"
@@ -87,11 +114,11 @@ class SizeDropdown extends React.Component {
                     {item.size}
                     {' '}
                     {item.selected && <FontAwesome name="check" />}
-                  </button>
+                  </DDListItem>
                 );
               }
             })}
-          </div>
+          </DDList>
         )}
       </DDWrapper>
     );

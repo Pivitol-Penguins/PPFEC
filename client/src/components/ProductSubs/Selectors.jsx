@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 // `;
 
 const QuantitySelector = styled.select`
-  flex-basis: 60%;
+  flex-basis: 40%;
   flex-grow: 2;
   display: flex;
   flex-direction: row;
