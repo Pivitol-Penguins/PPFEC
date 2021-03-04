@@ -4,16 +4,25 @@ import styled from 'styled-components';
 const Thumbs = styled.div`
   z-index: 10;
   position: absolute;
-  left: 17vw; top: 10vh; right: 0; bottom: 0;
+  left: 14.5vw;
+  top: 4.5vh;
   width: 8vw;
   display: flex;
   flex-direction: column;
   margin: 0;
 `;
 
-const Image = styled.img`
-  margin: 5px;
+const ImageContainer = styled.div`
+  margin: 1vh 0;
   border: 2px solid #aeaeae;
+  height: 65px;
+  width: 65px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 class ViewerThumbnails extends React.Component {
@@ -44,7 +53,16 @@ class ViewerThumbnails extends React.Component {
     if (this.props.images) {
       return (
         <Thumbs>
-          {this.props.images.map((image) => <Image onClick={this.clickHandler} src={image.thumbnail_url} key={this.props.id} width="70px" height="70px" alt={this.props.id} />)}
+          {this.props.images.map((image) => (
+            <ImageContainer>
+              <Image
+                onClick={this.clickHandler}
+                src={image.thumbnail_url}
+                key={this.props.id}
+                alt={this.props.id}
+              />
+            </ImageContainer>
+          ))}
         </Thumbs>
       );
     }

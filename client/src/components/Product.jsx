@@ -7,23 +7,25 @@ import Description from './ProductSubs/Description.jsx';
 import FeaturesList from './ProductSubs/FeaturesList.jsx';
 
 const Wrapper = styled.div`
-  width: 70vw;
+  width: 75vw;
+  font-family: 'Lato', sans-serif;
   margin: auto;
   display: flex;
   flex-direction: column;
 `;
 
 const TopWrapper = styled.div`
-  width: 70vw;
-  height: 80vh;
+  width: 75vw;
+  height: 70vh;
   display: flex;
   flex-direction: row;
   padding-top: 5px;
+  margin-bottom: 4vh;
 `;
 
 const BottomWrapper = styled.div`
   margin: auto;
-  width: 60vw;
+  width: 65vw;
   display: flex;
   flex-direction: row;
   padding-top: 5px;

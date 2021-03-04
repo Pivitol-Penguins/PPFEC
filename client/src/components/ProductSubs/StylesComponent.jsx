@@ -11,14 +11,14 @@ const TextWrapper = styled.div`
 `;
 
 const Style = styled.p`
-  margin-left: 1vw;
-  font-weight: bold;
-  color: #424242
+  font-weight: 700;
+  color: #424242;
 `;
 
 const SelectedStyle = styled.p`
   margin-left: 1vw;
-  color: #424242
+  font-weight: 300;
+  color: #424242;
 `;
 
 const Thumbs = styled.div`
@@ -30,7 +30,7 @@ display: flex;
 
 const Image = styled.img`
   flex: 1 0 22%;
-  margin: .5vh .75vw;
+  margin: 1vh 1.2vw 1vh 0;
   border: 2px solid #aeaeae;
   border-radius: 100%;
   z-index: 0;
@@ -38,8 +38,8 @@ const Image = styled.img`
 
 const SelectedImage = styled.img`
   flex: 1 0 22%;
-  margin: .5vh .75vw;
-  border: 2px solid #80ccc4;
+  margin: 1vh 1.2vw 1vh 0;
+  border: 3px solid #80ccc4;
   border-radius: 100%;
   z-index: 0;
 `;
