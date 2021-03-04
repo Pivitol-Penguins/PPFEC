@@ -27,7 +27,7 @@ const RatingSummary = ({ reviewsMeta }) => {
   return (
     <SummaryWrapper>
       <RatingScore>{avgRating}</RatingScore>
-      <RatingStars percent={(avgRating / 5) * 100} />
+      <RatingStars rating={avgRating} />
     </SummaryWrapper>
   );
 };

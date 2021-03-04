@@ -12,6 +12,15 @@ const productCharateristics = {
   Fit: ['Runs tight', 'Runs slightly tight', 'Perfect', 'Runs slightly long', 'Runs long'],
 };
 
+const characteristicsNumber = {
+  Size: 14,
+  Width: 15,
+  Comfort: 16,
+  Quality: 17,
+  Length: 18,
+  Fit: 19,
+};
+
 const RatingWraper = styled.div`
   display: flex;
   align-items: baseline;
@@ -41,8 +50,28 @@ class AddReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      rating: 0,
+      recommend: true,
+      characteristics: {
+        sizeId: 0,
+        widthId: 0,
+        comfortId: 0,
+        qualityId: 0,
+        lengthId: 0,
+        fitId: 0,
+      },
+      summary: '',
+      body: '',
+      name: '',
+      email: '',
     };
+    this.getRating = this.getRating.bind(this);
+  }
+
+  getRating(inputRating) {
+    this.setState({
+      rating: inputRating,
+    });
   }
 
   render() {
@@ -52,7 +81,7 @@ class AddReviewForm extends React.Component {
         <h2>Write A Review</h2>
         <RatingWraper>
           <span>Overall Rating</span>
-          <RatingStars percent={0} />
+          <RatingStars percent={0} getRating={this.getRating} />
         </RatingWraper>
         <div>
           <span>Do you recommend this product?</span>
@@ -70,7 +99,7 @@ class AddReviewForm extends React.Component {
                 {productCharateristics[key].map((value, index) => (
                   <ValueButtonWrapper key={value}>
                     <span>{value}</span>
-                    <input type="radio" name={value} value={index + 1} required />
+                    <input type="radio" name={characteristicsNumber[key]} value={index + 1} required />
                   </ValueButtonWrapper>
                 ))}
               </CharateristicsSelectorWrapper>
@@ -79,29 +108,30 @@ class AddReviewForm extends React.Component {
         </div>
         <div>
           <label>Review Summary</label>
-          <input type="text" id="reviewSummary" name="reviewSummary" cols="60" maxLength="60" placeholder="Example: Best purchase ever!" />
+          <input type="text" id="reviewSummary" name="summary" cols="100" maxLength="60" placeholder="Example: Best purchase ever!" />
         </div>
         <div>
           <label>Your Review</label>
           <div>
-            <textarea id="reviewBody" name="reviewBody" cols="60" rows="10" maxLength="1000" placeholder="Why did you like the product or not?" required />
+            <textarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" placeholder="Why did you like the product or not?" required />
           </div>
         </div>
         <div>
           <label>Upload the photos of your purchase</label>
-          <div><input type="file" name="reviewPhotos" /></div>
+          <div><input type="file" name="photos" /></div>
         </div>
         <div>
           <span>Your Nickname</span>
-          <input type="text" id="nickname" name="nickname" maxLength="60" placeholder="Example: jackson11!" required />
+          <input type="text" id="reviewer_name" name="name" maxLength="60" placeholder="Example: jackson11!" required />
         </div>
         <div>
           <span>Your Email</span>
-          <input type="email" id="email" name="email" maxLength="60" placeholder="Example: jackson11!" required />
+          <input type="email" id="email" name="email" maxLength="60" placeholder="Example: jackson11@mail.com" required />
         </div>
         <input type="submit" name="submit" />
         <button type="button" onClick={this.props.cancel}>Cancel</button>
       </StyledForm>
+
     );
   }
 }
