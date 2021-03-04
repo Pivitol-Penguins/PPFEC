@@ -61,7 +61,7 @@ class ReviewTile extends React.Component {
     const year = reviewDate.getUTCFullYear();
 
     // calculating the percentage for stars
-    const percentage = (rating / 5) * 100;
+    // const percentage = (rating / 5) * 100;
 
     // conditional rendering for recommend label
     let recommendLabel;
@@ -93,7 +93,7 @@ class ReviewTile extends React.Component {
     return (
       <TileContainer>
         <StarDateWrapper>
-          <RatingStars percent={percentage} />
+          <RatingStars rating={rating} />
           <span>
             { reviewer_name }
             ,
