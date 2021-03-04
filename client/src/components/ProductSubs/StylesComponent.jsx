@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
-  margin-top: 10px;
   margin-bottom: 10px;
 `;
 
@@ -30,16 +29,16 @@ display: flex;
 `;
 
 const Image = styled.img`
-  flex: 1 0 21%;
-  margin: 5px;
+  flex: 1 0 22%;
+  margin: .5vh .75vw;
   border: 2px solid #aeaeae;
   border-radius: 100%;
   z-index: 0;
 `;
 
 const SelectedImage = styled.img`
-  flex: 1 0 21%;
-  margin: 5px;
+  flex: 1 0 22%;
+  margin: .5vh .75vw;
   border: 2px solid #80ccc4;
   border-radius: 100%;
   z-index: 0;
@@ -86,10 +85,10 @@ class Styles extends React.Component {
           <Thumbs>
             { this.props.styles.results.map((image) => {
               if (image.style_id === this.state.style_id) {
-                return <SelectedImage onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="70" height="70" />;
+                return <SelectedImage onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
               }
               if (image.style_id !== this.state.style_id) {
-                return <Image onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="70" height="70" />;
+                return <Image onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
               }
               return <div>Hello</div>;
             })}

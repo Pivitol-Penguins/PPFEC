@@ -4,16 +4,18 @@ import styled from 'styled-components';
 import ViewerThumbnails from './ViewerThumbnails.jsx';
 
 const Wrapper = styled.div`
-  flex_basis 60%;
+  flex-basis: 65%;
+  width: 50vw;
   display: flex;
   flex-direction: row;
+  border: 2px solid #aeaeae;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 80vh;
+  height: 100%;
+  object-fit: cover;
   padding: 0;
-  object-fit: contain;
   position: relative;
   z-index: 0;
 `;
@@ -21,7 +23,7 @@ const Image = styled.img`
 const ProductImages = ({ images, id }) => (
   <Wrapper>
     <ViewerThumbnails images={images} id={id} alt="" />
-    <Image src={images[0].url} key={id} alt="style photograph" height="70vh" />
+    <Image src={images[0].url} key={id} alt="style photograph" />
   </Wrapper>
 );
 export default ProductImages;
