@@ -35,7 +35,8 @@ const DDList = styled.div`
   position: absolute;
   z-index: 10;
   width: 100%;
-  max-height: 5vh;
+  max-height: 25vh;
+  overflow-y: scroll;
   font-weight: 400;
   -webkit-overflow-scrolling: touch;
 `;
@@ -104,7 +105,7 @@ class QuantityDropdown extends React.Component {
             className="dd-list"
           >
             {list.map((item) => {
-              if (item < this.props.available) {
+              if (item - 1 < this.props.available) {
                 return (
                   <DDListItem
                     type="button"
@@ -113,8 +114,6 @@ class QuantityDropdown extends React.Component {
                     onClick={() => this.selectItem(item)}
                   >
                     {item}
-                    {' '}
-                    {item.selected && <FontAwesome name="check" />}
                   </DDListItem>
                 );
               }

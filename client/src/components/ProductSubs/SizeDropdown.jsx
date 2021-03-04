@@ -34,7 +34,7 @@ const DDList = styled.div`
   position: absolute;
   z-index: 10;
   width: 100%;
-  max-height: 5vh;
+  max-height: 25vh;
   font-weight: 400;
   -webkit-overflow-scrolling: touch;
 `;
@@ -112,8 +112,6 @@ class SizeDropdown extends React.Component {
                     onClick={() => this.selectItem(item)}
                   >
                     {item.size}
-                    {' '}
-                    {item.selected && <FontAwesome name="check" />}
                   </DDListItem>
                 );
               }
