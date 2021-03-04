@@ -53,7 +53,7 @@ const Reviews = (props) => {
           <RatingBreakDown reviewsMeta={reviewsMeta} />
           <ProductBreakDown reviewsMeta={reviewsMeta} />
         </RatingWrapper>
-        <ReviewsList reviews={reviews} />
+        <ReviewsList reviews={reviews} reviewsMeta={reviewsMeta} />
       </Wrapper>
     </ReviewsContainer>
   );

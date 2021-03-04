@@ -124,7 +124,7 @@ class ReviewsList extends React.Component {
       moreReviewBtn = <ReviewButton onClick={this.loadMoreReviews}>MORE REVIEWS</ReviewButton>;
     }
 
-    const { reviews } = this.props;
+    const { reviews, reviewsMeta } = this.props;
     return (
       <ReviewsWrapper>
         <ReviewSortWrapper>
@@ -147,7 +147,15 @@ class ReviewsList extends React.Component {
           {moreReviewBtn}
           <ReviewButton onClick={this.addReviewToggle}>ADD A REVIEW   +</ReviewButton>
           {this.state.addReviewShow && (
-          <Modal content={<AddReviewForm cancel={this.addReviewToggle} />} />)}
+          <Modal content={(
+            <AddReviewForm
+              toggle={this.addReviewToggle}
+              productId={Number(reviews.product)}
+              characteristics={reviewsMeta.characteristics}
+            />
+)}
+          />
+          )}
         </ButtonWrapper>
       </ReviewsWrapper>
     );
