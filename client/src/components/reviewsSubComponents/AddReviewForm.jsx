@@ -13,8 +13,6 @@ const productCharacteristics = {
   Fit: ['Runs tight', 'Runs slightly tight', 'Perfect', 'Runs slightly long', 'Runs long'],
 };
 
-
-
 const RatingWraper = styled.div`
   display: flex;
   align-items: baseline;
@@ -46,11 +44,13 @@ class AddReviewForm extends React.Component {
     this.state = {
       productId: this.props.productId,
       rating: 0,
-      recommend: true,
+      characteristics: {},
+      recommend: undefined,
       summary: '',
       body: '',
       name: '',
       email: '',
+      photos: [],
     };
     this.getRating = this.getRating.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,15 +58,39 @@ class AddReviewForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+    if (!Number.isNaN(Number(event.target.name))) {
+      event.persist();
+      this.setState((prevState) => {
+        Object.assign(prevState.characteristics,
+          { [event.target.name]: Number(event.target.value) });
+      });
+    } else if (event.target.name === 'recommend') {
+      if (event.target.value === 'true') {
+        this.setState({
+          recommend: true,
+        });
+      } else {
+        this.setState({
+          recommend: false,
+        });
+      }
+    } else {
+      this.setState({
+        [event.target.name]: event.target.value,
+      });
+    }
   }
 
   handleSubmit(event) {
     console.log(this.state);
-    axios.post();
-    this.props.toggle();
+    const query = this.state;
+    const path = window.location.pathname;
+    axios.post(`${path.slice(-6)}reviews`, query)
+      .then((res) => {
+        console.log('FROM server', res.data);
+      })
+      .catch((err) => { throw err; })
+      .then(this.props.toggle());
     event.preventDefault();
   }
 
@@ -124,11 +148,11 @@ class AddReviewForm extends React.Component {
         </div>
         <div>
           <span>Your Nickname</span>
-          <input type="text" id="reviewer_name" name="name" maxLength="60" placeholder="Example: jackson11!" required onChange={this.handleChange}/>
+          <input type="text" id="reviewer_name" name="name" maxLength="60" placeholder="Example: jackson11!" required onChange={this.handleChange} />
         </div>
         <div>
           <span>Your Email</span>
-          <input type="email" id="email" name="email" maxLength="60" placeholder="Example: jackson11@mail.com" required onChange={this.handleChange}/>
+          <input type="email" id="email" name="email" maxLength="60" placeholder="Example: jackson11@mail.com" required onChange={this.handleChange} />
         </div>
         <input type="submit" name="submit" />
         <button type="button" onClick={this.props.toggle}>Cancel</button>

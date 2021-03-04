@@ -6,8 +6,8 @@ import RatingBreakDown from './reviewsSubComponents/RatingBreakDown.jsx';
 import ProductBreakDown from './reviewsSubComponents/ProductBreakDown.jsx';
 
 const ReviewsContainer = styled.div`
-  width: 100vw;
-  height: 70vw;
+  width: 60vw;
+  // height: 70vw;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;

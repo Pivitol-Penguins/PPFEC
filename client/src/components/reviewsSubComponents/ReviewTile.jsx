@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
-  padding: 10px 30px;
+  padding: 10px 0;
   border-bottom: 1px solid black;
 `;
 
