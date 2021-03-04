@@ -54,11 +54,10 @@ class ViewerThumbnails extends React.Component {
       return (
         <Thumbs>
           {this.props.images.map((image) => (
-            <ImageContainer>
+            <ImageContainer key={image.url}>
               <Image
                 onClick={this.clickHandler}
                 src={image.thumbnail_url}
-                key={this.props.id}
                 alt={this.props.id}
               />
             </ImageContainer>
