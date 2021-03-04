@@ -8,6 +8,17 @@ import AddQ from './QnAComponents/AddQ.jsx';
 const QnAContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 70vw;
+  margin: 0 auto;
+`;
+
+const QnATitle = styled.div`
+  padding: 2vh 0;
+`;
+
+const BottomWrap = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 class QnA extends React.Component {
@@ -87,11 +98,13 @@ class QnA extends React.Component {
   render() {
     return (
       <QnAContainer>
-        <h1>QnA</h1>
+        <QnATitle>QUESTIONS & ANSWERS</QnATitle>
         <Search func={this.handleSearch} reset={this.resetDefault} />
         <QuestionList items={this.state.dd} />
-        <MoreQ func={this.loadTwoItems} buttonDisplay={this.state.buttonDisplay} />
-        <AddQ />
+        <BottomWrap>
+          <MoreQ func={this.loadTwoItems} buttonDisplay={this.state.buttonDisplay} />
+          <AddQ />
+        </BottomWrap>
       </QnAContainer>
     );
   }

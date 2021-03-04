@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const LoadMoreA = styled.div`
+  padding: 2vh 0 2vh 0;
+`;
 
 class MoreA extends React.Component {
   constructor(props) {
@@ -16,7 +21,7 @@ class MoreA extends React.Component {
   render() {
     return (
       <div>
-        {this.props.display ? <button type="submit" onClick={this.handleClick}>More Answers</button> : null}
+        {this.props.display ? <LoadMoreA type="submit" onClick={this.handleClick}>LOAD MORE ANSWERS</LoadMoreA> : null}
       </div>
     );
   }
