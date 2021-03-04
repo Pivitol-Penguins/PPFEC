@@ -9,53 +9,48 @@ const Wrapper = styled.div`
   display: flex;
   margin-top: 2vh;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 10px;
+  justify-content: space-between;
+  margin: 4vh 0 4vh 2vw;
 `;
 
-const Ratings = styled.div`
-  margin-left: 1vw;
-`;
+// const Ratings = styled.div`
+//   margin-left: 1vw;
+// `;
 
 const Category = styled.p`
-  margin-left: 1vw;
   margin-top: 2vh;
-  font-weight: thin;
+  font-weight: 300;
 `;
 
 const Name = styled.h1`
-  margin-left: 1vw;
-  letter-spacing: 2px;
-  line-height: 1.25rem;
-  margin-bottom: 1vh;
-  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  margin-top: -1rem;
 `;
 
 const Price = styled.p`
-  margin-left: 1vw;
-  margin-top: 3vh;
   margin-bottom: 1vh;
-  font-weight: thin;
+  font-weight: 300;
 `;
 
 const PurchaseLikeButtons = styled.div`
-  width: 100%;
+  width: 95%;
   display: flex;
-  margin-left: 1vw;
-  margin-top: 10px;
+  margin-top: 2.75vh;
   flex-direction: row;
 `;
 
 const AddToCart = styled.button`
-  flex-basis 80%;
+  flex-basis: 82.5%;
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
   justify-content: space-between;
   align-items: center;
+  font-size: 1rem;
   font-weight: bold;
-  width: 15vw;
-  height: 5vh;
+  height: 7vh;
   padding: 0 1.25vw;
   background: none;
   border: 1px solid #424242;
@@ -63,11 +58,11 @@ const AddToCart = styled.button`
 `;
 
 const Like = styled.button`
-  flex-basis 20%;
+  flex-basis: 17.5%;
   height: ${AddToCart.height};
-  min-width: ${AddToCart.height};
-  margin-left: 1vw;
+  margin-left: 1.5vw;
   font-weight: bold;
+  font-size: 2.1vh;
   background: none;
   border: 1px solid #424242;
   color: #424242;
@@ -78,11 +73,11 @@ const ProductOverview = ({
   details, styles, skus, getStyleID,
 }) => (
   <Wrapper>
-    <Ratings>Ratings component will go here</Ratings>
+    <div>Ratings component will go here</div>
     <div className="productInfo">
       <Category>{details.category.toUpperCase()}</Category>
       <Name>{details.name}</Name>
-      <Price>{`$${details.default_price}`}</Price>
+      <Price>{`$${Math.round(details.default_price)}`}</Price>
     </div>
     <Styles styles={styles} getStyleID={getStyleID} />
     <Selectors skus={skus} />

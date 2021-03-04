@@ -5,15 +5,15 @@ import styled from 'styled-components';
 
 const DDWrapper = styled.div`
   position: relative;
-  width: 60%;
+  width: 65%;
   font-size: 0;
   user-select: none;
 `;
 
 const DDHeader = styled.button`
-  font-size: .85rem;
+  font-size: 1rem;
   position: relative;
-  height: 5vh;
+  height: 7vh;
   width: 100%;
   padding: 0 1.25vw;
   display: flex;
@@ -27,7 +27,7 @@ const DDHeader = styled.button`
 `;
 
 const DDHeaderTitle = styled.div`
-  font-weight: bold;
+  font-weight: 600;
 `;
 
 const DDList = styled.div`
@@ -35,7 +35,9 @@ const DDList = styled.div`
   z-index: 10;
   width: 100%;
   max-height: 25vh;
+  overflow-y: scroll;
   font-weight: 400;
+  border-bottom: 1px solid #aeaeae;
   -webkit-overflow-scrolling: touch;
 `;
 

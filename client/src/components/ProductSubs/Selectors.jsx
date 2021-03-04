@@ -5,9 +5,8 @@ import SizeDropdown from './SizeDropdown.jsx';
 import QuantityDropdown from './QuantityDropdown.jsx';
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 95%;
   margin-top: 1vh;
-  margin-left: 1vw;
   display: flex;
   flex-direction: row;
 `;
@@ -27,7 +26,7 @@ class Selectors extends React.Component {
   resetThenSet(quantity, size) {
     if (arguments.length === 1) {
       this.setState({
-        quantity: quantity,
+        quantity,
       });
     } else {
       this.setState({

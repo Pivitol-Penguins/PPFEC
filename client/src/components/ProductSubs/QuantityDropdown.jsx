@@ -5,16 +5,16 @@ import styled from 'styled-components';
 
 const DDWrapper = styled.div`
   position: relative;
-  width: 40%;
+  width: 35%;
   font-size: 0;
   user-select: none;
-  margin-left: 1vw;
+  margin-left: 1.5vw;
 `;
 
 const DDHeader = styled.button`
-  font-size: .85rem;
+  font-size: 1rem;
   position: relative;
-  height: 5vh;
+  height: 7vh;
   width: 100%;
   padding: 0 1.25vw;
   display: flex;
@@ -38,6 +38,7 @@ const DDList = styled.div`
   max-height: 25vh;
   overflow-y: scroll;
   font-weight: 400;
+  border-bottom: 1px solid #aeaeae;
   -webkit-overflow-scrolling: touch;
 `;
 
