@@ -1,19 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 
-class Photos extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+const Photo = styled.img`
+  height: 10vh;
+  weight: 10vw;
+  padding: 0 1vw 1vh 0;
+`;
 
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        {this.props.photos.map((photo) => <img src={photo} height="100" width="" alt={photo} key={photo} />)}
-      </div>
-    );
-  }
-}
+const Photos = (props) => (
+  <div>
+    {props.photos.map((photo) => <Photo src={photo} alt={photo} key={photo} />)}
+  </div>
+);
 export default Photos;
