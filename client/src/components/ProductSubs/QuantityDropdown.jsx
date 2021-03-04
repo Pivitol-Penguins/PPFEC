@@ -5,9 +5,10 @@ import styled from 'styled-components';
 
 const DDWrapper = styled.div`
   position: relative;
-  width: 60%;
+  width: 40%;
   font-size: 0;
   user-select: none;
+  margin-left: 1vw;
 `;
 
 const DDHeader = styled.button`
@@ -58,7 +59,7 @@ const DDListItem = styled.button`
     color: white; };
 `;
 
-class SizeDropdown extends React.Component {
+class QuantityDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,9 +79,9 @@ class SizeDropdown extends React.Component {
   selectItem(item) {
     const { resetThenSet } = this.props;
     this.setState({
-      headerTitle: item.size,
+      headerTitle: item,
       isListOpen: false,
-    }, () => resetThenSet(item.quantity, item.size));
+    }, () => resetThenSet(item));
   }
 
   render() {
@@ -103,15 +104,15 @@ class SizeDropdown extends React.Component {
             className="dd-list"
           >
             {list.map((item) => {
-              if (item.quantity > 0) {
+              if (item < this.props.available) {
                 return (
                   <DDListItem
                     type="button"
-                    key={item.size}
+                    key={item}
                     className="dd-list-item"
                     onClick={() => this.selectItem(item)}
                   >
-                    {item.size}
+                    {item}
                     {' '}
                     {item.selected && <FontAwesome name="check" />}
                   </DDListItem>
@@ -125,4 +126,4 @@ class SizeDropdown extends React.Component {
   }
 }
 
-export default SizeDropdown;
+export default QuantityDropdown;
