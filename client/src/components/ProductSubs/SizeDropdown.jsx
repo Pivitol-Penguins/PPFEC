@@ -102,7 +102,6 @@ class SizeDropdown extends React.Component {
         {isListOpen && (
           <DDList
             role="list"
-            className="dd-list"
           >
             {list.map((item) => {
               if (item.quantity > 0) {
@@ -110,7 +109,6 @@ class SizeDropdown extends React.Component {
                   <DDListItem
                     type="button"
                     key={item.size}
-                    className="dd-list-item"
                     onClick={() => this.selectItem(item)}
                   >
                     {item.size}

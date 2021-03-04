@@ -103,7 +103,6 @@ class QuantityDropdown extends React.Component {
         {isListOpen && (
           <DDList
             role="list"
-            className="dd-list"
           >
             {list.map((item) => {
               if (item - 1 < this.props.available) {
@@ -111,7 +110,6 @@ class QuantityDropdown extends React.Component {
                   <DDListItem
                     type="button"
                     key={item}
-                    className="dd-list-item"
                     onClick={() => this.selectItem(item)}
                   >
                     {item}
