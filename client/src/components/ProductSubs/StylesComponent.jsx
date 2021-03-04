@@ -29,16 +29,19 @@ display: flex;
 `;
 
 const Image = styled.img`
-  flex: 1 0 22%;
+  flex: 1 0 21%;
   margin: 1vh 1.2vw 1vh 0;
-  border: 2px solid #aeaeae;
+  padding: 2px;
+  border: 3px solid #e0e0e0;
   border-radius: 100%;
   z-index: 0;
+  &:hover { border: 3px solid #a0a0a0; };
 `;
 
 const SelectedImage = styled.img`
-  flex: 1 0 22%;
+  flex: 1 0 21%;
   margin: 1vh 1.2vw 1vh 0;
+  padding: 2px;
   border: 3px solid #80ccc4;
   border-radius: 100%;
   z-index: 0;
@@ -48,6 +51,7 @@ class Styles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      previousStyle: null,
       currentStyle: null,
       style_id: null,
     };
@@ -66,7 +70,7 @@ class Styles extends React.Component {
     event.preventDefault();
     this.setState({
       currentStyle: event.target.alt,
-      style_id: event.target.id,
+      style_id: Number(event.target.id),
     }, () => this.passUpStyle(this.state.style_id));
   }
 
@@ -88,7 +92,7 @@ class Styles extends React.Component {
                 return <SelectedImage onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
               }
               if (image.style_id !== this.state.style_id) {
-                return <Image onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
+                return <Image onMouseEnter={() => this.setState({previousStyle: this.state.currentStyle, currentStyle: image.name})} onMouseLeave={() => this.setState({currentStyle: this.state.previousStyle})} onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
               }
               return <div>Hello</div>;
             })}

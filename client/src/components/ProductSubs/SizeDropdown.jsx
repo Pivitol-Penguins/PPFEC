@@ -32,13 +32,13 @@ const DDHeaderTitle = styled.div`
 
 const DDList = styled.div`
   position: absolute;
+  top: 0;
   z-index: 10;
   width: 100%;
   max-height: 25vh;
   overflow-y: scroll;
   font-weight: 400;
-  border-bottom: 1px solid #aeaeae;
-  -webkit-overflow-scrolling: touch;
+  box-shadow: 0px 0px 5px #a0a0a0;
 `;
 
 const DDListItem = styled.button`
@@ -50,14 +50,13 @@ const DDListItem = styled.button`
   cursor: default;
   cursor: pointer;
   background-color: white;
-  border: 1px solid #aeaeae;
-  border-bottom: none;
-  &:last-child {
-    border-bottom: 1px solid #aeaeae;
-  };
+  border: none;
+  border-bottom: 1px solid #aeaeae;
   &:hover {
-    background-color: #80ccc4;
-    color: white; };
+    border-bottom: 2px solid #424242;
+    border-top: 1px solid #aeaeae;
+    transform: scale(1.1);
+  };
 `;
 
 class SizeDropdown extends React.Component {
