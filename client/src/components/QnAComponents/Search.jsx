@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = styled.input.attrs(() => ({
-  type: 'text',
-}))`
+const Input = styled.input`
   border: 1px solid #424242;
   width: 60vw;
   z-index: 0;
@@ -61,7 +59,7 @@ class Search extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Input value={this.state.input} onChange={this.handleChange} placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..." />
+        <Input value={this.state.input} onChange={this.handleChange} placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..." type="text" />
         <Magnify>⚲</Magnify>
       </Wrapper>
     );

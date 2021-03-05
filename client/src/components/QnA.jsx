@@ -11,7 +11,7 @@ const QnAContainer = styled.div`
   width: 65vw;
   margin: 0 auto;
   color: #424242;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
 `;
 
 const QnATitle = styled.div`
@@ -46,12 +46,12 @@ class QnA extends React.Component {
     this.setState({ dd: [] }, () => {
       const results = [];
       this.state.data.forEach((element, index) => {
-        if (element.question_body.includes(string)) {
+        if (element.question_body.toLowerCase().includes(string.toLowerCase())) {
           results.push(this.state.data[index]);
         }
         let count = 0;
         Object.entries(element.answers).forEach((answer) => {
-          if (answer[1].body.includes(string)) {
+          if (answer[1].body.toLowerCase().includes(string.toLowerCase())) {
             const obj = {};
             Object.assign(obj, this.state.data[index]);
             obj.answers = { [answer[0]]: answer[1] };

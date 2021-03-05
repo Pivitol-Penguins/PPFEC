@@ -7,8 +7,8 @@ const BottomContainer = styled.div`
   justify-content: flex-start;
   padding-bottom: 4vh;
   font-size: 13px;
-  font-weight: 50;
-  color: #aeaeae;
+  font-weight: 300;
+  color: #424242;
 `;
 
 const NameDate = styled.div`
@@ -44,8 +44,10 @@ const Report = styled.div`
 `;
 
 const Body = styled.div`
-  padding-bottom: 2vh;
+  padding-top: 2px;
+  padding-bottom: 1.75vh;
   font-size: 16px;
+  font-weight: 400;
   color: #424242;
 `;
 

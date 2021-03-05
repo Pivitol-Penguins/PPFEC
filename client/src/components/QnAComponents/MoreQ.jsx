@@ -11,9 +11,9 @@ const MoreAQ = styled.button`
   &:hover {
     cursor: pointer;
     color: #80CCC4;
+    border: 1px solid #80CCC4;
   };
   &:focus {
-    border: 1px solid #424242;
     outline: none;
   };
 `;

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import AnswerList from './AnswerList.jsx';
 import MoreA from './MoreA.jsx';
+import Modal from './Modal.jsx';
+import FormA from './FormAnswer.jsx';
 
 const TopWrapper = styled.div`
   display: flex;
@@ -9,7 +11,8 @@ const TopWrapper = styled.div`
   font-size: 20px;
   padding: 2vh 0;
   justify-content: space-between;
-  `;
+  align-items: center;
+`;
 
 const BottomWrapper = styled.div`
   display: flex;
@@ -19,7 +22,7 @@ const BottomWrapper = styled.div`
 const Helper = styled.div`
   display: flex;
   font-size: 15px;
-  min-width: 220px;
+  min-width: 245px;
   padding-left: 4vw;
   color: #424242;
 `;
@@ -61,9 +64,11 @@ const Q = styled.div`
   color: #424242;
 `;
 
-const QB = styled.div`
+const QB = styled.h4`
   display: flex;
   flex-direction: row;
+  font-weight: 700;
+  font-size: 1.3rem;
 `;
 
 const ListContainer = styled.div`
@@ -80,9 +85,11 @@ class Item extends React.Component {
       max: 0,
       displayed: 0,
       buttonDisplay: true,
+      modal: false,
     };
     this.loadTwoItems = this.loadTwoItems.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.exitModal = this.exitModal.bind(this);
   }
 
   componentDidMount() {
@@ -96,7 +103,11 @@ class Item extends React.Component {
   }
 
   handleClick() {
-    this.setState({});
+    this.setState({ modal: true });
+  }
+
+  exitModal() {
+    this.setState({ modal: false });
   }
 
   loadTwoItems() {
@@ -134,6 +145,14 @@ class Item extends React.Component {
             >
               Yes
             </Yes>
+            {this.state.modal ? (
+              <Modal content={(
+                <FormA
+                  func={this.exitModal}
+                />
+              )}
+              />
+            ) : null}
             <Helpfulness>{`(${this.props.item.question_helpfulness})`}</Helpfulness>
             <div>|</div>
             <AddAButton
