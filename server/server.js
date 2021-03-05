@@ -48,6 +48,7 @@ app.use(express.urlencoded({ extended: true }));
 // handle get request for Add Review Form Submit
 app.post('/products/:q/:b/reviews', (req, res) => {
   const query = req.body;
+  console.log('IN SERVER==> ', req.body);
   api.postData('/reviews', {
     product_id: query.productId,
     rating: query.rating,
