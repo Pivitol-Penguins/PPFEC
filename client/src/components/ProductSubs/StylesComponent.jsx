@@ -92,7 +92,7 @@ class Styles extends React.Component {
                 return <SelectedImage onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
               }
               if (image.style_id !== this.state.style_id) {
-                return <Image onMouseEnter={() => this.setState({previousStyle: this.state.currentStyle, currentStyle: image.name})} onMouseLeave={() => this.setState({currentStyle: this.state.previousStyle})} onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
+                return <Image onMouseEnter={() => this.setState({ previousStyle: this.state.currentStyle, currentStyle: image.name })} onMouseLeave={() => this.setState({ currentStyle: this.state.previousStyle })} onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
               }
               return <div>Hello</div>;
             })}
