@@ -52,9 +52,12 @@ class ProductImages extends React.Component {
     super(props);
     this.state = {
       index: 0,
+      start: 0,
+      end: 4,
     };
     this.clickNavHandler = this.clickNavHandler.bind(this);
     this.clickedThumb = this.clickedThumb.bind(this);
+    this.indexUpdater = this.indexUpdater.bind(this);
   }
 
   clickNavHandler(event) {
@@ -69,10 +72,20 @@ class ProductImages extends React.Component {
     this.setState({ index: Number(index) });
   }
 
+  indexUpdater(amount) {
+    if (this.state.start + amount >= 0
+      && this.state.end + amount < this.props.images.length) {
+      this.setState((prevState) => ({
+        start: prevState.start += amount,
+        end: prevState.end += amount,
+      }));
+    }
+  }
+
   render() {
     return (
       <Wrapper>
-        <ViewerThumbnails start={this.state.start} end={this.state.end} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
+        <ViewerThumbnails start={this.state.start} end={this.state.end} indexUpdater={this.indexUpdater} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
         <RightArrow onClick={this.clickNavHandler}><FontAwesome id="1" name="angle-right" size="2x" /></RightArrow>
         <LeftArrow onClick={this.clickNavHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></LeftArrow>
         <Image src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
