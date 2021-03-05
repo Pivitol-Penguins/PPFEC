@@ -4,12 +4,15 @@ import styled from 'styled-components';
 const Input = styled.input.attrs(() => ({
   type: 'text',
 }))`
-  border-radius: 1px;
-  border-color: #424242;
+  border: 1px solid #424242;
   width: 60vw;
   z-index: 0;
   position: relative;
   padding: 1.5vh 2vw;
+  &:focus {
+    border: 1px solid #424242;
+    outline: none;
+  };
   
 `;
 
@@ -21,15 +24,19 @@ const Magnify = styled.div`
   text-align: right;
   z-index: 50;
   position: relative;
-  top: -5.5vh;
+  bottom: 5.5vh;
   left: 60vw;
   width: 1rem;
   padding-right: 4vw;
-  color: #424242;
+  color: #80CCC4;
   -webkit-transform: rotate(-45deg); 
   -moz-transform: rotate(-45deg); 
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  &:hover {
+    cursor: pointer;
+    color: #424242;
+  }
 `;
 
 class Search extends React.Component {

@@ -10,6 +10,7 @@ const QnAContainer = styled.div`
   flex-direction: column;
   width: 65vw;
   margin: 0 auto;
+  color: #424242;
 `;
 
 const QnATitle = styled.div`

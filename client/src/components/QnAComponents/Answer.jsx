@@ -7,6 +7,8 @@ const BottomContainer = styled.div`
   justify-content: flex-start;
   padding-bottom: 4vh;
   font-size: 13px;
+  font-weight: 50;
+  color: #aeaeae;
 `;
 
 const NameDate = styled.div`
@@ -17,21 +19,34 @@ const Helpful = styled.div`
   padding: 0 1vw 0 1vw;
 `;
 
-const Yes = styled.u`
+const Yes = styled.div`
   padding: 0 2px 0 0;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
 `;
 
 const Help = styled.div`
   padding-right: 1vw;
 `;
 
-const Report = styled.u`
+const Report = styled.div`
   padding-left: 1vw;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
 `;
 
 const Body = styled.div`
   padding-bottom: 2vh;
   font-size: 16px;
+  color: #424242;
 `;
 
 class Answer extends React.Component {
@@ -80,9 +95,6 @@ class Answer extends React.Component {
           </Helpful>
           <Yes
             onClick={this.handleClick}
-            onKeyPress={this.handleClick}
-            role="button"
-            tabIndex="0"
           >
             Yes
           </Yes>
@@ -90,9 +102,6 @@ class Answer extends React.Component {
           |
           <Report
             onClick={this.handleClick}
-            onKeyPress={this.handleClick}
-            role="button"
-            tabIndex="0"
           >
             Report
           </Report>

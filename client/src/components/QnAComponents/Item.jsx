@@ -21,14 +21,27 @@ const Helper = styled.div`
   font-size: 15px;
   min-width: 220px;
   padding-left: 4vw;
-  `;
-
-const Yes = styled.u`
-  padding: 0 2px 0 1vw;
+  color: #424242;
 `;
 
-const AddAButton = styled.u`
+const Yes = styled.div`
+  padding: 0 2px 0 1vw;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
+`;
+
+const AddAButton = styled.div`
   padding-left: 1vw;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
 `;
 
 const Helpfulness = styled.div`
@@ -38,10 +51,14 @@ const Helpfulness = styled.div`
 const A = styled.div`
   font-size: 20px;
   padding-right: 1vw;
+  font-weight: 700;
+  color: #424242;
 `;
 
 const Q = styled.div`
- padding-right: 1vw;
+  font-weight: 700;
+  padding-right: 1vw;
+  color: #424242;
 `;
 
 const QB = styled.div`
@@ -114,9 +131,6 @@ class Item extends React.Component {
             <div>Helpful?</div>
             <Yes
               onClick={this.handleClick}
-              onKeyPress={this.handleClick}
-              role="button"
-              tabIndex="0"
             >
               Yes
             </Yes>
@@ -124,9 +138,6 @@ class Item extends React.Component {
             <div>|</div>
             <AddAButton
               onClick={this.handleClick}
-              onKeyPress={this.handleClick}
-              role="button"
-              tabIndex="0"
             >
               Add Answer
             </AddAButton>
