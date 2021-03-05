@@ -58,13 +58,14 @@ class ProductImages extends React.Component {
     this.clickNavHandler = this.clickNavHandler.bind(this);
     this.clickedThumb = this.clickedThumb.bind(this);
     this.indexUpdater = this.indexUpdater.bind(this);
+    this.indexChecker = this.indexChecker.bind(this);
   }
 
   clickNavHandler(event) {
     const direction = Number(event.target.id);
     if (this.state.index + direction >= 0
       && this.state.index + direction < this.props.images.length) {
-      this.setState((prevState) => ({ index: prevState.index += direction }));
+      this.setState((prevState) => ({ index: prevState.index += direction }), () => this.indexChecker());
     }
   }
 
@@ -78,6 +79,20 @@ class ProductImages extends React.Component {
       this.setState((prevState) => ({
         start: prevState.start += amount,
         end: prevState.end += amount,
+      }));
+    }
+  }
+
+  indexChecker() {
+    if (this.state.index < this.state.start) {
+      this.setState((prevState) => ({
+        start: prevState.start -= 1,
+        end: prevState.end -= 1,
+      }));
+    } else if (this.state.index > this.state.end) {
+      this.setState((prevState) => ({
+        start: prevState.start += 1,
+        end: prevState.end += 1,
       }));
     }
   }
