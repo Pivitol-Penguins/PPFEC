@@ -69,13 +69,11 @@ class ReviewsList extends React.Component {
       fullreviewsArr: [],
       tileMax: 0,
       addReviewShow: false,
-      addReviewClick: false,
     };
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.sortSelected = this.sortSelected.bind(this);
-    this.freshPage = this.freshPage.bind(this);
   }
 
   componentDidMount() {
@@ -136,12 +134,6 @@ class ReviewsList extends React.Component {
     event.preventDefault();
   }
 
-  freshPage() {
-    this.setState({
-      addReviewClick: true,
-    });
-  }
-
   render() {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
@@ -183,7 +175,6 @@ class ReviewsList extends React.Component {
               toggle={this.addReviewToggle}
               productId={Number(reviews.product)}
               characteristics={reviewsMeta.characteristics}
-              freshPage={this.freshPage}
             />
 )}
           />

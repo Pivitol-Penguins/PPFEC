@@ -82,6 +82,7 @@ class AddReviewForm extends React.Component {
   }
 
   handleSubmit(event) {
+    // let bodyFormData = new FormData();
     console.log(this.state);
     const query = this.state;
     const path = window.location.pathname;
@@ -147,7 +148,7 @@ class AddReviewForm extends React.Component {
         </div>
         <div>
           <label>Upload the photos of your purchase</label>
-          <div><input type="file" name="photos" value={this.state.photos} onChange={this.handleChange} /></div>
+          <div><input type="file" name="photos" value={this.state.photos} onChange={this.handleChange} multiple /></div>
         </div>
         <div>
           <span>Your Nickname</span>
