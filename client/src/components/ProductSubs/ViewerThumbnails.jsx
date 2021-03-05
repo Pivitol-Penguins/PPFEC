@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import FontAwesome from 'react-fontawesome';
 
 const Thumbs = styled.div`
   z-index: 10;
   position: absolute;
-  left: 14.5vw;
-  top: 4.5vh;
-  width: 8vw;
+  left: 14.25vw;
+  top: 2vh;
+  width: 6vw;
+  height: 53vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
   margin: 0;
 `;
 
@@ -25,14 +30,41 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
+const UpArrow = styled.div`
+  color: #e0e0e0;
+  font-size: 1rem;
+  z-index: 12;
+  top: 1vh;
+  position: relative;
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
+`;
+
+const DownArrow = styled.div`
+  color: #e0e0e0;
+  font-size: 1rem;
+  z-index: 12;
+  bottom: 1vh;
+  position: relative;
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
+`;
+
 class ViewerThumbnails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentStyle: null,
       style_id: null,
+      start: 0,
+      end: 4,
     };
     this.clickHandler = this.clickHandler.bind(this);
+    this.clickThumbNavHandler = this.clickThumbNavHandler.bind(this);
   }
 
   componentDidMount() {
@@ -44,25 +76,41 @@ class ViewerThumbnails extends React.Component {
 
   clickHandler(event) {
     this.setState({
-      currentStyle: event.target.alt,
-      style_id: event.target.id,
-    });
+      currentStyle: event.target.id,
+    }, () => this.props.clickedThumb(this.state.currentStyle));
+  }
+
+  clickThumbNavHandler(event) {
+    const direction = Number(event.target.id);
+    if (this.state.start + direction >= 0
+      && this.state.end + direction < this.props.images.length) {
+      this.setState((prevState) => ({
+        start: prevState.start += direction,
+        end: prevState.end += direction,
+      }));
+    }
   }
 
   render() {
     if (this.props.images) {
       return (
         <Thumbs>
-          {this.props.images.map((image) => (
-            <ImageContainer>
-              <Image
-                onClick={this.clickHandler}
-                src={image.thumbnail_url}
-                key={this.props.id}
-                alt={this.props.id}
-              />
-            </ImageContainer>
-          ))}
+          <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow>
+          {this.props.images.map((image, index) => {
+            if (Number(index) >= this.state.start && Number(index) <= this.state.end) {
+              return (
+                <ImageContainer key={image.url}>
+                  <Image
+                    onClick={this.clickHandler}
+                    src={image.thumbnail_url}
+                    alt={this.props.id}
+                    id={index}
+                  />
+                </ImageContainer>
+              );
+            }
+          })}
+          <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow>
         </Thumbs>
       );
     }

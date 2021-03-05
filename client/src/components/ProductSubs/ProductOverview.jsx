@@ -57,11 +57,17 @@ const Price = styled.p`
   font-weight: 300;
 `;
 
+const Purchasing = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 const PurchaseLikeButtons = styled.div`
-  width: 95%;
+  width: 100%;
   display: flex;
   margin-top: 2.75vh;
-  flex-direction: row;
 `;
 
 const AddToCart = styled.button`
@@ -114,14 +120,16 @@ const ProductOverview = ({
       <Price>{`$${Math.round(details.default_price)}`}</Price>
     </div>
     <Styles styles={styles} getStyleID={getStyleID} />
-    <Selectors skus={skus} />
-    <PurchaseLikeButtons>
-      <AddToCart>
-        <div>ADD TO BAG</div>
-        <Plus>+</Plus>
-      </AddToCart>
-      <Like>☆</Like>
-    </PurchaseLikeButtons>
+    <Purchasing>
+      <Selectors skus={skus} />
+      <PurchaseLikeButtons>
+        <AddToCart>
+          <div>ADD TO BAG</div>
+          <Plus>+</Plus>
+        </AddToCart>
+        <Like>☆</Like>
+      </PurchaseLikeButtons>
+    </Purchasing>
   </Wrapper>
 );
 
