@@ -36,7 +36,10 @@ const UpArrow = styled.div`
   z-index: 12;
   top: 1vh;
   position: relative;
-  &:hover {color: #80ccc4; };
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
 `;
 
 const DownArrow = styled.div`
@@ -45,7 +48,10 @@ const DownArrow = styled.div`
   z-index: 12;
   bottom: 1vh;
   position: relative;
-  &:hover {color: #80ccc4; };
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
 `;
 
 class ViewerThumbnails extends React.Component {

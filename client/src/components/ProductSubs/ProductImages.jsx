@@ -14,22 +14,28 @@ const Wrapper = styled.div`
 
 const RightArrow = styled.div`
   color: #e0e0e0;
-  font-size: 2rem;
+  font-size: 1.75rem;
   z-index: 11;
   position: absolute;
   top: 30vh;
   right: 40.1vw;
-  &:hover {color: #80ccc4; };
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
 `;
 
 const LeftArrow = styled.div`
   color: #e0e0e0;
-  font-size: 2rem;
+  font-size: 1.75rem;
   z-index: 12;
   position: absolute;
   top: 30vh;
   left: 12.75vw;
-  &:hover {color: #80ccc4; };
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
 `;
 
 const Image = styled.img`
