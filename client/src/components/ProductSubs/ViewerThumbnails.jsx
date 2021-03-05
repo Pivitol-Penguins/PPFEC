@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import FontAwesome from 'react-fontawesome';
 
 const Thumbs = styled.div`
   z-index: 10;
@@ -25,14 +26,37 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
+const UpArrow = styled.div`
+  color: #e0e0e0;
+  font-size: 1rem;
+  z-index: 12;
+  position: absolute;
+  top: -2vh;
+  left: 1.5vw;
+  &:hover {color: #80ccc4; };
+`;
+
+const DownArrow = styled.div`
+  color: #e0e0e0;
+  font-size: 1rem;
+  z-index: 12;
+  position: absolute;
+  bottom: -2vh;
+  left: 1.5vw;
+  &:hover {color: #80ccc4; };
+`;
+
 class ViewerThumbnails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentStyle: null,
       style_id: null,
+      start: 0,
+      end: 4,
     };
     this.clickHandler = this.clickHandler.bind(this);
+    this.clickThumbNavHandler = this.clickThumbNavHandler.bind(this);
   }
 
   componentDidMount() {
@@ -48,12 +72,25 @@ class ViewerThumbnails extends React.Component {
     }, () => this.props.clickedThumb(this.state.currentStyle));
   }
 
+  clickThumbNavHandler(event) {
+    const direction = Number(event.target.id);
+    if (this.state.start + direction >= 0
+      && this.state.end + direction < this.props.images.length) {
+      this.setState((prevState) => ({
+        start: prevState.start += direction,
+        end: prevState.end += direction,
+      }));
+    }
+  }
+
   render() {
     if (this.props.images) {
       return (
         <Thumbs>
+          <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow>
+          <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow>
           {this.props.images.map((image, index) => {
-            if (Number(index) >= this.props.start && Number(index) <= this.props.end) {
+            if (Number(index) >= this.state.start && Number(index) <= this.state.end) {
               return (
                 <ImageContainer key={image.url}>
                   <Image
