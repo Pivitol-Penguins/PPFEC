@@ -7,7 +7,7 @@ const Photo = styled.img`
   margin: 0 1vw 1vh 0;
   border: 2px solid #424242;
   &:hover {
-    transform: scale(2);
+    transform: scale(1.75);
   }
 `;
 

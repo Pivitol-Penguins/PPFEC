@@ -11,6 +11,7 @@ const QnAContainer = styled.div`
   width: 65vw;
   margin: 0 auto;
   color: #424242;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 const QnATitle = styled.div`
