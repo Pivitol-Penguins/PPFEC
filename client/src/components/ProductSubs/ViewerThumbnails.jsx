@@ -5,11 +5,15 @@ import FontAwesome from 'react-fontawesome';
 const Thumbs = styled.div`
   z-index: 10;
   position: absolute;
-  left: 14.5vw;
-  top: 4.5vh;
-  width: 8vw;
+  left: 14.25vw;
+  top: 2vh;
+  width: 6vw;
+  height: 53vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
   margin: 0;
 `;
 
@@ -30,9 +34,8 @@ const UpArrow = styled.div`
   color: #e0e0e0;
   font-size: 1rem;
   z-index: 12;
-  position: absolute;
-  top: -2vh;
-  left: 1.5vw;
+  top: 1vh;
+  position: relative;
   &:hover {color: #80ccc4; };
 `;
 
@@ -40,9 +43,8 @@ const DownArrow = styled.div`
   color: #e0e0e0;
   font-size: 1rem;
   z-index: 12;
-  position: absolute;
-  bottom: -2vh;
-  left: 1.5vw;
+  bottom: 1vh;
+  position: relative;
   &:hover {color: #80ccc4; };
 `;
 
@@ -88,7 +90,6 @@ class ViewerThumbnails extends React.Component {
       return (
         <Thumbs>
           <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow>
-          <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow>
           {this.props.images.map((image, index) => {
             if (Number(index) >= this.state.start && Number(index) <= this.state.end) {
               return (
@@ -103,6 +104,7 @@ class ViewerThumbnails extends React.Component {
               );
             }
           })}
+          <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow>
         </Thumbs>
       );
     }
