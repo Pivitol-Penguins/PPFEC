@@ -5,8 +5,10 @@ import Photos from './Photos.jsx';
 const BottomContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 1vh;
+  padding-bottom: 4vh;
   font-size: 13px;
+  font-weight: 300;
+  color: #424242;
 `;
 
 const NameDate = styled.div`
@@ -17,21 +19,36 @@ const Helpful = styled.div`
   padding: 0 1vw 0 1vw;
 `;
 
-const Yes = styled.u`
+const Yes = styled.div`
   padding: 0 2px 0 0;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
 `;
 
 const Help = styled.div`
   padding-right: 1vw;
 `;
 
-const Report = styled.u`
+const Report = styled.div`
   padding-left: 1vw;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
 `;
 
 const Body = styled.div`
-  padding-bottom: 1vh;
+  padding-top: 2px;
+  padding-bottom: 1.75vh;
   font-size: 16px;
+  font-weight: 400;
+  color: #424242;
 `;
 
 class Answer extends React.Component {
@@ -49,6 +66,7 @@ class Answer extends React.Component {
   }
 
   handleClick() {
+    this.setState({});
   }
 
   dateTranslate(date) {
@@ -71,7 +89,7 @@ class Answer extends React.Component {
         </div>
         <BottomContainer>
           <NameDate>
-            {`By ${this.props.answer.answerer_name}, ${this.state.date}`}
+            {`By ${this.props.answer.answerer_name} on ${this.state.date}`}
           </NameDate>
           |
           <Helpful>
@@ -79,9 +97,6 @@ class Answer extends React.Component {
           </Helpful>
           <Yes
             onClick={this.handleClick}
-            onKeyPress={this.handleClick}
-            role="button"
-            tabIndex="0"
           >
             Yes
           </Yes>
@@ -89,9 +104,6 @@ class Answer extends React.Component {
           |
           <Report
             onClick={this.handleClick}
-            onKeyPress={this.handleClick}
-            role="button"
-            tabIndex="0"
           >
             Report
           </Report>

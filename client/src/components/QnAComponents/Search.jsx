@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = styled.input.attrs(() => ({
-  type: 'text',
-}))`
-  border-radius: 1px;
-  border-color: black;
-  width: 66vw;
+const Input = styled.input`
+  border: 1px solid #424242;
+  width: 60vw;
   z-index: 0;
   position: relative;
   padding: 1.5vh 2vw;
+  &:focus {
+    border: 1px solid #424242;
+    outline: none;
+  };
   
 `;
 
@@ -21,15 +22,19 @@ const Magnify = styled.div`
   text-align: right;
   z-index: 50;
   position: relative;
-  top: -5.5vh;
-  left: 66vw;
+  bottom: 5.5vh;
+  left: 60vw;
   width: 1rem;
   padding-right: 4vw;
-  color: black;
+  color: #80CCC4;
   -webkit-transform: rotate(-45deg); 
   -moz-transform: rotate(-45deg); 
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  &:hover {
+    cursor: pointer;
+    color: #424242;
+  }
 `;
 
 class Search extends React.Component {
@@ -54,7 +59,7 @@ class Search extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Input value={this.state.input} onChange={this.handleChange} placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..." />
+        <Input value={this.state.input} onChange={this.handleChange} placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..." type="text" />
         <Magnify>⚲</Magnify>
       </Wrapper>
     );

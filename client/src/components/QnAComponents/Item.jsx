@@ -2,13 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import AnswerList from './AnswerList.jsx';
 import MoreA from './MoreA.jsx';
+import Modal from './Modal.jsx';
+import FormA from './FormAnswer.jsx';
 
 const TopWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   font-size: 20px;
   padding: 2vh 0;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const BottomWrapper = styled.div`
@@ -19,15 +22,29 @@ const BottomWrapper = styled.div`
 const Helper = styled.div`
   display: flex;
   font-size: 15px;
+  min-width: 245px;
   padding-left: 4vw;
+  color: #424242;
 `;
 
-const Yes = styled.u`
+const Yes = styled.div`
   padding: 0 2px 0 1vw;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
 `;
 
-const AddAButton = styled.u`
+const AddAButton = styled.div`
   padding-left: 1vw;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  };
 `;
 
 const Helpfulness = styled.div`
@@ -37,15 +54,21 @@ const Helpfulness = styled.div`
 const A = styled.div`
   font-size: 20px;
   padding-right: 1vw;
+  font-weight: 700;
+  color: #424242;
 `;
 
 const Q = styled.div`
- padding-right: 1vw;
+  font-weight: 700;
+  padding-right: 1vw;
+  color: #424242;
 `;
 
-const QB = styled.div`
+const QB = styled.h4`
   display: flex;
   flex-direction: row;
+  font-weight: 700;
+  font-size: 1.3rem;
 `;
 
 const ListContainer = styled.div`
@@ -62,9 +85,11 @@ class Item extends React.Component {
       max: 0,
       displayed: 0,
       buttonDisplay: true,
+      modal: false,
     };
     this.loadTwoItems = this.loadTwoItems.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.exitModal = this.exitModal.bind(this);
   }
 
   componentDidMount() {
@@ -78,6 +103,11 @@ class Item extends React.Component {
   }
 
   handleClick() {
+    this.setState({ modal: true });
+  }
+
+  exitModal() {
+    this.setState({ modal: false });
   }
 
   loadTwoItems() {
@@ -112,19 +142,21 @@ class Item extends React.Component {
             <div>Helpful?</div>
             <Yes
               onClick={this.handleClick}
-              onKeyPress={this.handleClick}
-              role="button"
-              tabIndex="0"
             >
               Yes
             </Yes>
+            {this.state.modal ? (
+              <Modal content={(
+                <FormA
+                  func={this.exitModal}
+                />
+              )}
+              />
+            ) : null}
             <Helpfulness>{`(${this.props.item.question_helpfulness})`}</Helpfulness>
             <div>|</div>
             <AddAButton
               onClick={this.handleClick}
-              onKeyPress={this.handleClick}
-              role="button"
-              tabIndex="0"
             >
               Add Answer
             </AddAButton>
