@@ -5,7 +5,7 @@ import SizeDropdown from './SizeDropdown.jsx';
 import QuantityDropdown from './QuantityDropdown.jsx';
 
 const Wrapper = styled.div`
-  width: 95%;
+  width: 100%;
   margin-top: 1vh;
   display: flex;
   flex-direction: row;

@@ -81,6 +81,18 @@ class SizeDropdown extends React.Component {
     };
     this.toggleList = this.toggleList.bind(this);
     this.selectItem = this.selectItem.bind(this);
+    this.close = this.close.bind(this);
+  }
+
+  componentDidUpdate() {
+    const { isListOpen } = this.state;
+    setTimeout(() => {
+      if (isListOpen) {
+        window.addEventListener('click', this.close);
+      } else {
+        window.removeEventListener('click', this.close);
+      }
+    }, 0);
   }
 
   toggleList() {
@@ -95,6 +107,12 @@ class SizeDropdown extends React.Component {
       headerTitle: item.size,
       isListOpen: false,
     }, () => resetThenSet(item.quantity, item.size));
+  }
+
+  close() {
+    this.setState({
+      isListOpen: false,
+    });
   }
 
   render() {
