@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
+  width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid black;
 `;
@@ -30,7 +31,7 @@ const ReviewThumbsWrapper = styled.img`
   padding: 5px;
   height: 80px;
 
-  & :hover {
+  &:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   }
 `;
@@ -39,6 +40,16 @@ const HelpfulnessWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
+`;
+
+const ClickTag = styled.div`
+  padding: 2px 1vw 0 1vw;
+  text-decoration:underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  }
 `;
 
 class ReviewTile extends React.Component {
@@ -113,14 +124,15 @@ class ReviewTile extends React.Component {
         {response}
         <HelpfulnessWrapper>
           Helpful?
-          <span>Yes</span>
-          <span>
+          <ClickTag>
+            Yes
+            {' '}
             (
-            {helpfulness}
+            {helpfulness || 0}
             )
-          </span>
-          <div>|</div>
-          <span>No</span>
+          </ClickTag>
+          <div>  |  </div>
+          <ClickTag>Report</ClickTag>
         </HelpfulnessWrapper>
       </TileContainer>
     );

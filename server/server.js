@@ -20,7 +20,7 @@ app.get('/products/:q/:b', (req, res) => {
     memCache.push(productDetails.data);
     api.fetchData(`/products/${id}/styles`, null, (productStyles) => {
       memCache.push(productStyles.data);
-      api.fetchData('/reviews/', { params: { product_id: Number(id), sort: 'relevant' } }, (reviews) => {
+      api.fetchData('/reviews/', { params: { product_id: Number(id), sort: 'relevant', count: 20 } }, (reviews) => {
         memCache.push(reviews.data);
         api.fetchData('/reviews/meta', { params: { product_id: Number(id) } }, (reviewsMeta) => {
           memCache.push(reviewsMeta.data);
@@ -38,7 +38,7 @@ app.get('/products/:q/:b', (req, res) => {
 app.get('/products/:q/:b/reviews/:sort', (req, res) => {
   const product_id = req.params.q;
   const { sort } = req.params;
-  api.fetchData('/reviews', { params: { sort, product_id: Number(product_id) } }, (reviews) => {
+  api.fetchData('/reviews', { params: { product_id: Number(product_id), sort: sort, count: 20} }, (reviews) => {
     res.send(reviews.data);
   });
 });
@@ -61,7 +61,8 @@ app.post('/products/:q/:b/reviews', (req, res) => {
     email: query.email,
     photos: query.photos,
   }, (data) => {
-    res.send(data);
+    console.log(data);
+    res.send('Review added');
   });
 });
 

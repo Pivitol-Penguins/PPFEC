@@ -33,11 +33,11 @@ const Wrapper = styled.div`
 const RatingWrapper = styled.div`
   height: 100%;
   display: flex;
-  flex-grow: 1;
+  flex-basis: 35%;
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 30px 0;
 `;
 
 const Reviews = (props) => {
