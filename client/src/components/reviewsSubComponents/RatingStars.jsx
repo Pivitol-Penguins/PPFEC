@@ -53,14 +53,11 @@ class RatingStars extends React.Component {
     this.hoverRating = this.hoverRating.bind(this);
   }
 
-  setRating(inputRating) {
+  setRating(inputRating, callback) {
     this.setState({
       rating: inputRating,
     });
-
-    if (this.props.getRating) {
-      this.props.getRating(this.state.rating);
-    }
+    callback();
   }
 
   hoverRating(rating) {
@@ -100,7 +97,7 @@ class RatingStars extends React.Component {
             return (
               <span
                 key={star}
-                onClick={() => { this.setRating(star); }}
+                onClick={() => { this.setRating(star, () => this.props.getRating(star)); }}
                 onMouseEnter={() => { this.hoverRating(star); }}
                 onMouseLeave={() => { this.hoverRating(0); }}
               >

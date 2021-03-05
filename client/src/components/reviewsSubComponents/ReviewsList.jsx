@@ -8,6 +8,7 @@ import AddReviewForm from './AddReviewForm.jsx';
 const ReviewsWrapper = styled.div`
   height: 100%;
   display: flex;
+  flex-basis: 65%;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
@@ -21,11 +22,16 @@ const ButtonWrapper = styled.div`
 `;
 
 const ListWrapper = styled.div`
-  margin: 0 auto;
-  padding: 10px 20px;
+  width: 100%;
   display: flex;
+  max-height: 500px;
+  overflow-y: scroll;
   flex-direction: column;
-
+  ::-webkit-scrollbar {
+    display: none;
+  };
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 const ReviewButton = styled.button`
@@ -43,6 +49,17 @@ const ReviewSortWrapper = styled.div`
   padding: 5px;
 `;
 
+const SelectTag = styled.select`
+  width: 120px;
+  height: 100%;
+  font-size: 20px;
+  padding-left: 3px;
+  text-decoration: underline;
+  border: 0px;
+  outline: 0px;
+  font-weight: 600;
+`;
+
 class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
@@ -52,11 +69,13 @@ class ReviewsList extends React.Component {
       fullreviewsArr: [],
       tileMax: 0,
       addReviewShow: false,
+      addReviewClick: false,
     };
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.sortSelected = this.sortSelected.bind(this);
+    this.freshPage = this.freshPage.bind(this);
   }
 
   componentDidMount() {
@@ -117,6 +136,12 @@ class ReviewsList extends React.Component {
     event.preventDefault();
   }
 
+  freshPage() {
+    this.setState({
+      addReviewClick: true,
+    });
+  }
+
   render() {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
@@ -124,20 +149,26 @@ class ReviewsList extends React.Component {
       moreReviewBtn = <ReviewButton onClick={this.loadMoreReviews}>MORE REVIEWS</ReviewButton>;
     }
 
-    const { reviews } = this.props;
+    const { reviews, reviewsMeta } = this.props;
+    // get totalReviewCount
+    let totalReviewCount = 0;
+    Object.entries(reviewsMeta.ratings).forEach((rating) => {
+      totalReviewCount += Number(rating[1]);
+    });
+
     return (
       <ReviewsWrapper>
         <ReviewSortWrapper>
           <h2>
-            {reviews.count}
+            {totalReviewCount}
             {' '}
             reviews, sorted by
           </h2>
-          <select value={this.state.sortValue} onChange={this.sortSelected}>
+          <SelectTag value={this.state.sortValue} onChange={this.sortSelected}>
             <option defaultValue="relevant">Relevant</option>
             <option value="helpful">Helpful</option>
             <option value="newest">Newest</option>
-          </select>
+          </SelectTag>
         </ReviewSortWrapper>
         <ListWrapper>
           {this.state.reviewsArr.map(((review) => (
@@ -147,7 +178,16 @@ class ReviewsList extends React.Component {
           {moreReviewBtn}
           <ReviewButton onClick={this.addReviewToggle}>ADD A REVIEW   +</ReviewButton>
           {this.state.addReviewShow && (
-          <Modal content={<AddReviewForm cancel={this.addReviewToggle} />} />)}
+          <Modal content={(
+            <AddReviewForm
+              toggle={this.addReviewToggle}
+              productId={Number(reviews.product)}
+              characteristics={reviewsMeta.characteristics}
+              freshPage={this.freshPage}
+            />
+)}
+          />
+          )}
         </ButtonWrapper>
       </ReviewsWrapper>
     );

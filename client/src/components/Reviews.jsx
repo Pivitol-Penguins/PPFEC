@@ -6,8 +6,8 @@ import RatingBreakDown from './reviewsSubComponents/RatingBreakDown.jsx';
 import ProductBreakDown from './reviewsSubComponents/ProductBreakDown.jsx';
 
 const ReviewsContainer = styled.div`
-  width: 100vw;
-  height: 70vw;
+  width: 60vw;
+  // height: 70vw;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -33,11 +33,11 @@ const Wrapper = styled.div`
 const RatingWrapper = styled.div`
   height: 100%;
   display: flex;
-  flex-grow: 1;
+  flex-basis: 35%;
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 30px 0;
 `;
 
 const Reviews = (props) => {
@@ -53,7 +53,7 @@ const Reviews = (props) => {
           <RatingBreakDown reviewsMeta={reviewsMeta} />
           <ProductBreakDown reviewsMeta={reviewsMeta} />
         </RatingWrapper>
-        <ReviewsList reviews={reviews} />
+        <ReviewsList reviews={reviews} reviewsMeta={reviewsMeta} />
       </Wrapper>
     </ReviewsContainer>
   );

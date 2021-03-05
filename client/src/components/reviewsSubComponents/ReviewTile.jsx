@@ -1,10 +1,12 @@
 /* eslint-disable camelcase */
 import React from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import RatingStars from './RatingStars.jsx';
 
 const TileContainer = styled.div`
-  padding: 10px 30px;
+  width: 100%;
+  padding: 10px 0;
   border-bottom: 1px solid black;
 `;
 
@@ -30,7 +32,7 @@ const ReviewThumbsWrapper = styled.img`
   padding: 5px;
   height: 80px;
 
-  & :hover {
+  &:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   }
 `;
@@ -41,12 +43,62 @@ const HelpfulnessWrapper = styled.div`
   align-items: baseline;
 `;
 
+const ClickTag = styled.div`
+  padding: 2px 1vw 0 1vw;
+  text-decoration:underline;
+
+  &.not-click {
+    &:hover {
+      cursor: pointer;
+      color: #80CCC4;
+      transform: scale(1.1);
+    }
+  }
+
+`;
+
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      helpfulnessSelected: false,
+      review_id: this.props.review.review_id,
+      yesClick: false,
+      reportClick: false,
     };
+    this.handleClickYes = this.handleClickYes.bind(this);
+    this.handleClickReport = this.handleClickReport.bind(this);
+  }
+
+  handleClickYes() {
+    const path = window.location.pathname;
+    axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/helpful`)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        throw err;
+      })
+      .then(() => {
+        this.setState({
+          yesClick: true,
+        });
+      });
+  }
+
+  handleClickReport() {
+    const path = window.location.pathname;
+    axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/report`)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        throw err;
+      })
+      .then(() => {
+        this.setState({
+          reportClick: true,
+        });
+      });
   }
 
   render() {
@@ -113,14 +165,20 @@ class ReviewTile extends React.Component {
         {response}
         <HelpfulnessWrapper>
           Helpful?
-          <span>Yes</span>
-          <span>
+          <ClickTag
+            className={this.state.yesClick ? undefined : 'not-click'}
+            onClick={this.state.yesClick ? undefined : this.handleClickYes}
+          >
+            Yes
+            {' '}
             (
-            {helpfulness}
+            {helpfulness || 0}
             )
-          </span>
-          <div>|</div>
-          <span>No</span>
+          </ClickTag>
+          <div>  |  </div>
+          <ClickTag onClick={this.handleClickReport}>
+            Report
+          </ClickTag>
         </HelpfulnessWrapper>
       </TileContainer>
     );
