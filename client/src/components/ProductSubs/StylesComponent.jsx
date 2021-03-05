@@ -29,6 +29,9 @@ display: flex;
 `;
 
 const Image = styled.img`
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
   flex: 1 0 21%;
   margin: 1vh 1.2vw 1vh 0;
   padding: 2px;
@@ -39,6 +42,9 @@ const Image = styled.img`
 `;
 
 const SelectedImage = styled.img`
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
   flex: 1 0 21%;
   margin: 1vh 1.2vw 1vh 0;
   padding: 2px;
@@ -89,10 +95,28 @@ class Styles extends React.Component {
           <Thumbs>
             { this.props.styles.results.map((image) => {
               if (image.style_id === this.state.style_id) {
-                return <SelectedImage onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
+                return (
+                  <SelectedImage
+                    onClick={this.clickHandler}
+                    key={image.style_id}
+                    id={image.style_id}
+                    src={image.photos[0].thumbnail_url}
+                    alt={image.name}
+                  />
+                );
               }
               if (image.style_id !== this.state.style_id) {
-                return <Image onMouseEnter={() => this.setState({ previousStyle: this.state.currentStyle, currentStyle: image.name })} onMouseLeave={() => this.setState({ currentStyle: this.state.previousStyle })} onClick={this.clickHandler} key={image.style_id} id={image.style_id} src={image.photos[0].thumbnail_url} alt={image.name} width="65" height="65" />;
+                return (
+                  <Image
+                    onMouseEnter={() => this.setState({ previousStyle: this.state.currentStyle, currentStyle: image.name })}
+                    onMouseLeave={() => this.setState({ currentStyle: this.state.previousStyle })}
+                    onClick={this.clickHandler}
+                    key={image.style_id}
+                    id={image.style_id}
+                    src={image.photos[0].thumbnail_url}
+                    alt={image.name}
+                  />
+                );
               }
               return <div>Hello</div>;
             })}

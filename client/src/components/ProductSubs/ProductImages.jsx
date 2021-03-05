@@ -48,6 +48,7 @@ class ProductImages extends React.Component {
       index: 0,
     };
     this.clickHandler = this.clickHandler.bind(this);
+    this.clickedThumb = this.clickedThumb.bind(this);
   }
 
   clickHandler(event) {
@@ -58,10 +59,15 @@ class ProductImages extends React.Component {
     }
   }
 
+  clickedThumb(index) {
+    // console.log(Number(index));
+    this.setState({ index: Number(index) });
+  }
+
   render() {
     return (
       <Wrapper>
-        <ViewerThumbnails images={this.props.images} id={this.props.id} alt="" />
+        <ViewerThumbnails images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
         <RightArrow onClick={this.clickHandler}><FontAwesome id="1" name="angle-right" size="2x" /></RightArrow>
         <LeftArrow onClick={this.clickHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></LeftArrow>
         <Image src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />

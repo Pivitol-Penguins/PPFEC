@@ -44,21 +44,21 @@ class ViewerThumbnails extends React.Component {
 
   clickHandler(event) {
     this.setState({
-      currentStyle: event.target.alt,
-      style_id: event.target.id,
-    });
+      currentStyle: event.target.id,
+    }, () => this.props.clickedThumb(this.state.currentStyle));
   }
 
   render() {
     if (this.props.images) {
       return (
         <Thumbs>
-          {this.props.images.map((image) => (
+          {this.props.images.map((image, index) => (
             <ImageContainer key={image.url}>
               <Image
                 onClick={this.clickHandler}
                 src={image.thumbnail_url}
                 alt={this.props.id}
+                id={index}
               />
             </ImageContainer>
           ))}
