@@ -48,8 +48,6 @@ app.use(express.urlencoded({ extended: true }));
 // handle get request for Add Review Form Submit
 app.post('/products/:q/:b/reviews', (req, res) => {
   const query = req.body;
-  console.log(req.body);
-  console.log('POST REQUEST====> ', query);
   api.postData('/reviews', {
     product_id: query.productId,
     rating: query.rating,
@@ -63,6 +61,24 @@ app.post('/products/:q/:b/reviews', (req, res) => {
   }, (data) => {
     console.log(data);
     res.send('Review added');
+  });
+});
+
+// handle put request from review section
+app.put('/products/:q/:b/reviews/:review_id/report', (req, res) => {
+  const {review_id} = req.params;
+  console.log(req.params);
+  api.updateData(`/reviews/${review_id}/report`, { review_id: review_id }, (data) => {
+    console.log(data);
+    res.send('Report!');
+  });
+});
+
+app.put('/products/:q/:b/reviews/:review_id/helpful', (req, res) => {
+  const {review_id} = req.params;
+  api.updateData(`/reviews/${review_id}/helpful`, { review_id: review_id }, (data) => {
+    console.log(data);
+    res.send('Yes!');
   });
 });
 

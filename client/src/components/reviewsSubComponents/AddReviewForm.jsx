@@ -90,7 +90,10 @@ class AddReviewForm extends React.Component {
         console.log('FROM server', res.data);
       })
       .catch((err) => { throw err; })
-      .then(this.props.toggle());
+      .then(() => {
+        this.props.toggle();
+        this.props.freshPage();
+      });
     event.preventDefault();
   }
 
