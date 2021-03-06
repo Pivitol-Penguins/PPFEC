@@ -103,7 +103,7 @@ class ProductImages extends React.Component {
     } else if (this.state.index > this.state.end) {
       this.setState((prevState) => ({
         start: prevState.index - 4,
-        end: prevState.index + 1,
+        end: prevState.index,
       }));
     }
   }
