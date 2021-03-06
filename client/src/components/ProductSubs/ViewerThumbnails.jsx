@@ -122,39 +122,40 @@ class ViewerThumbnails extends React.Component {
           && <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow> }
           {this.props.start === 0
           && <NoArrow><FontAwesome id="-1" name="angle-up" size="2x" /></NoArrow> }
-          {this.props.images.map((image, index) => {
-            if (this.props.viewerIndex === Number(index)
+
+          {this.props.images.map((image, index) => (
+            this.props.viewerIndex === Number(index)
             && Number(index) >= this.props.start
-            && Number(index) <= this.props.end) {
-              return (
-                <div>
-                  <ViewerImageContainer key={image.url}>
-                    <Image
-                      onClick={this.clickHandler}
-                      src={image.thumbnail_url}
-                      alt={this.props.id}
-                      id={index}
-                    />
-                  </ViewerImageContainer>
-                  <Highlight />
-                </div>
-              );
-            }
-            if (this.props.viewerIndex !== Number(index)
+            && Number(index) <= this.props.end
+            && (
+            <div>
+              <ViewerImageContainer key={image.url}>
+                <Image
+                  onClick={this.clickHandler}
+                  src={image.thumbnail_url}
+                  alt={this.props.id}
+                  id={index}
+                />
+              </ViewerImageContainer>
+              <Highlight />
+            </div>
+            )))}
+
+          {this.props.images.map((image, index) => (
+            this.props.viewerIndex !== Number(index)
             && Number(index) >= this.props.start
-            && Number(index) <= this.props.end) {
-              return (
-                <ImageContainer key={image.url}>
-                  <Image
-                    onClick={this.clickHandler}
-                    src={image.thumbnail_url}
-                    alt={this.props.id}
-                    id={index}
-                  />
-                </ImageContainer>
-              );
-            }
-          })}
+            && Number(index) <= this.props.end
+            && (
+            <ImageContainer key={image.url}>
+              <Image
+                onClick={this.clickHandler}
+                src={image.thumbnail_url}
+                alt={this.props.id}
+                id={index}
+              />
+            </ImageContainer>
+            )))}
+
           {this.props.end !== this.props.images.length - 1
           && <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow> }
         </Thumbs>
