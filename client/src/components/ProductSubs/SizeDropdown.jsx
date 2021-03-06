@@ -134,19 +134,17 @@ class SizeDropdown extends React.Component {
           <DDList
             role="list"
           >
-            {list.map((item) => {
-              if (item.quantity > 0) {
-                return (
-                  <DDListItem
-                    type="button"
-                    key={item.size}
-                    onClick={() => this.selectItem(item)}
-                  >
-                    {item.size}
-                  </DDListItem>
-                );
-              }
-            })}
+            {list.map((item) => (
+              item.quantity > 0 && (
+                <DDListItem
+                  type="button"
+                  key={item.size}
+                  onClick={() => this.selectItem(item)}
+                >
+                  {item.size}
+                </DDListItem>
+              )
+            ))}
           </DDList>
         )}
       </DDWrapper>

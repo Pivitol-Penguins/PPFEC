@@ -135,19 +135,17 @@ class QuantityDropdown extends React.Component {
           <DDList
             role="list"
           >
-            {list.map((item) => {
-              if (item - 1 < this.props.available) {
-                return (
-                  <DDListItem
-                    type="button"
-                    key={item}
-                    onClick={() => this.selectItem(item)}
-                  >
-                    {item}
-                  </DDListItem>
-                );
-              }
-            })}
+            {list.map((item) => (
+              item - 1 < this.props.available && (
+              <DDListItem
+                type="button"
+                key={item}
+                onClick={() => this.selectItem(item)}
+              >
+                {item}
+              </DDListItem>
+              )
+            ))}
           </DDList>
         )}
       </DDWrapper>
