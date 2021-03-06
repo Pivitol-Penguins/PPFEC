@@ -12,11 +12,14 @@ const Discounted = styled.div`
 `;
 
 const SaleReg = styled.p`
+  margin: 0;
   font-weight: 300;
   text-decoration: line-through;
 `;
 
 const SalePrice = styled.p`
+  margin: 0;
+  padding-left: 1vw;
   font-weight: 300;
   color: red;
 `;
@@ -26,14 +29,13 @@ const Price = ({ price, sale }) => {
     return (
       <NoSale>{`$${Math.round(price)}`}</NoSale>
     );
-  } else {
-    return (
-      <Discounted>
-        <SaleReg>{`$${Math.round(price)}`}</SaleReg>
-        <SalePrice>{`$${Math.round(sale)}`}</SalePrice>
-      </Discounted>
-    );
   }
+  return (
+    <Discounted>
+      <SaleReg>{`$${Math.round(price)}`}</SaleReg>
+      <SalePrice>{`$${Math.round(sale)}`}</SalePrice>
+    </Discounted>
+  );
 };
 
 export default Price;
