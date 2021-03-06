@@ -24,7 +24,7 @@ const BaseBox = styled.div`
 `;
 
 const Background = styled(BaseBox)`
-  background: grey;
+  background: #c1bdbd;
   width: 100%;
 `;
 
@@ -37,6 +37,16 @@ const RecommendPercentage = styled.div`
   margin: 0 auto;
   padding-top: 5px;
   padding-bottom: 5px;
+`;
+
+const ClickTag = styled.div`
+  padding: 2px 1vw 0 1vw;
+  text-decoration:underline;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
+  }
 `;
 
 class RatingBreakDown extends React.Component {
@@ -77,11 +87,11 @@ class RatingBreakDown extends React.Component {
         <div>
           {stars.map((star) => (
             <BreakDownWrapper key={star + this.getPercentage(star)}>
-              <span>
+              <ClickTag>
                 {star}
                 {' '}
                 stars
-              </span>
+              </ClickTag>
               <BarContainer>
                 <Background />
                 <Percentage percent={this.getPercentage(star)} />

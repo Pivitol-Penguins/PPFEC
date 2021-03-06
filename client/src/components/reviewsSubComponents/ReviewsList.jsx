@@ -12,6 +12,7 @@ const ReviewsWrapper = styled.div`
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
+  padding: 2vw;
 `;
 
 const ButtonWrapper = styled.div`
@@ -45,8 +46,6 @@ const ReviewButton = styled.button`
 const ReviewSortWrapper = styled.div`
   display: flex;
   align-items: baseline;
-  margin: 10px;
-  padding: 5px;
 `;
 
 const SelectTag = styled.select`
@@ -58,6 +57,7 @@ const SelectTag = styled.select`
   border: 0px;
   outline: 0px;
   font-weight: 600;
+  font-family: 'Lato',sans-serif;
 `;
 
 class ReviewsList extends React.Component {
@@ -74,6 +74,7 @@ class ReviewsList extends React.Component {
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.sortSelected = this.sortSelected.bind(this);
+    this.removeTile = this.removeTile.bind(this);
   }
 
   componentDidMount() {
@@ -164,7 +165,12 @@ class ReviewsList extends React.Component {
         </ReviewSortWrapper>
         <ListWrapper>
           {this.state.reviewsArr.map(((review) => (
-            <ReviewTile key={review.review_id} review={review} />)))}
+            <ReviewTile
+              key={review.review_id}
+              review={review}
+              loadReview={this.loadFirstTwoReviews}
+            />
+          )))}
         </ListWrapper>
         <ButtonWrapper>
           {moreReviewBtn}
@@ -175,6 +181,7 @@ class ReviewsList extends React.Component {
               toggle={this.addReviewToggle}
               productId={Number(reviews.product)}
               characteristics={reviewsMeta.characteristics}
+              loadReview={this.loadFirstTwoReviews}
             />
 )}
           />

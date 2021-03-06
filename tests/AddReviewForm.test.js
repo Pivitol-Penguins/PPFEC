@@ -16,17 +16,16 @@ describe('Add Review', () => {
   };
   const AddReviewFormComponent = mount(<AddReviewForm {...props} debug />);
 
-  it('render correctly Add Review Form', () => {
+  it('Should render correctly Add Review Form', () => {
     // mount render the whole dom with styled-component
     expect(AddReviewFormComponent).toMatchSnapshot();
   });
 
-  it('check if the form contains RatingStar component', () => {
+  it('The form should contain RatingStar component', () => {
     expect(AddReviewFormComponent.find(<RatingStars />)).toBeTruthy();
   });
 
-  // it('check if the number of characteristics section is the same as the props'), () => {
-
-  //   expect(AddReviewFormComponent.)
-  // }
+  it('The characteristics rating section should has the same number of characteristics as the props', () => {
+    expect(AddReviewFormComponent.find('Charateristics')).to.have.lengthOf(4);
+  });
 });

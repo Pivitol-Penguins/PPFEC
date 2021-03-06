@@ -24,7 +24,7 @@ const BaseBox = styled.div`
 `;
 
 const Background = styled(BaseBox)`
-  background: grey;
+  background: #c1bdbd;
   width: 100%;
 `;
 

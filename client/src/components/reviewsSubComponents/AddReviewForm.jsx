@@ -36,6 +36,8 @@ const StyledForm = styled.form`
   background-color: white;
   width: 800px;
   height: 100%;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 0 19px 38px #6d6d6d, 0 15px 12px #6d6d6d;
 `;
 
 class AddReviewForm extends React.Component {
@@ -55,6 +57,7 @@ class AddReviewForm extends React.Component {
     this.getRating = this.getRating.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handlePhotosUpload = this.handlePhotosUpload.bind(this);
   }
 
   handleChange(event) {
@@ -81,19 +84,42 @@ class AddReviewForm extends React.Component {
     }
   }
 
+  handlePhotosUpload(event) {
+    event.persist();
+    const uploadPhotos = event.target.files;
+    if (uploadPhotos.length > 5) {
+      alert('The number of the photos you selected is exceeded 5.');
+    } else {
+      Object.entries(uploadPhotos).forEach(([number, photo]) => {
+        console.log(photo.name);
+        this.setState((prevState) => ({
+          photos: [...prevState.photos, photo],
+        }));
+      });
+    }
+  }
+
   handleSubmit(event) {
-    // let bodyFormData = new FormData();
-    console.log(this.state);
-    const query = this.state;
+    const formdata = new FormData();
+    Object.entries(this.state).forEach(([key, value]) => {
+      if (key === 'photos') {
+        Object.entries(this.state.photos).forEach(([photoKey, photo]) => {
+          formdata.append('photos', photo);
+        });
+      } else {
+        formdata.append(key, JSON.stringify(value));
+      }
+    });
     const path = window.location.pathname;
-    axios.post(`${path.slice(-6)}reviews`, query)
+    axios.post(`${path.slice(-6)}reviews`, formdata, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    })
       .then((res) => {
-        console.log('FROM server', res.data);
+        this.props.loadReview(res.data.results);
       })
       .catch((err) => { throw err; })
       .then(() => {
         this.props.toggle();
-        this.props.freshPage();
       });
     event.preventDefault();
   }
@@ -116,9 +142,9 @@ class AddReviewForm extends React.Component {
         <div>
           <span>Do you recommend this product?</span>
           <input type="radio" name="recommend" value="true" required onChange={this.handleChange} />
-          <label>Yes</label>
+          <span>Yes</span>
           <input type="radio" name="recommend" value="false" required onChange={this.handleChange} />
-          <label>No</label>
+          <span>No</span>
         </div>
         <div>
           <span>Charateristics</span>
@@ -137,26 +163,28 @@ class AddReviewForm extends React.Component {
           ))}
         </div>
         <div>
-          <label>Review Summary</label>
-          <input type="text" id="reviewSummary" name="summary" cols="100" maxLength="60" placeholder="Example: Best purchase ever!" onChange={this.handleChange} />
+          <span>Review Summary</span>
+          <input type="text" id="reviewSummary" name="summary" cols="100" maxLength="60" value={this.state.summary} placeholder="Example: Best purchase ever!" onChange={this.handleChange} />
         </div>
         <div>
-          <label>Your Review</label>
+          <span>Your Review</span>
           <div>
-            <textarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
+            <textarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" value={this.state.body} placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
           </div>
         </div>
         <div>
-          <label>Upload the photos of your purchase</label>
-          <div><input type="file" name="photos" value={this.state.photos} onChange={this.handleChange} multiple /></div>
+          <span>Upload the photos of your purchase</span>
+          <div>
+            <input type="file" name="photos" ref={this.photosUpload} onChange={this.handlePhotosUpload} multiple />
+          </div>
         </div>
         <div>
           <span>Your Nickname</span>
-          <input type="text" id="reviewer_name" name="name" maxLength="60" placeholder="Example: jackson11!" required onChange={this.handleChange} />
+          <input type="text" id="reviewer_name" name="name" maxLength="60" value={this.state.name} placeholder="Example: jackson11!" required onChange={this.handleChange} />
         </div>
         <div>
           <span>Your Email</span>
-          <input type="email" id="email" name="email" maxLength="60" placeholder="Example: jackson11@mail.com" required onChange={this.handleChange} />
+          <input type="email" id="email" name="email" maxLength="60" value={this.state.email} placeholder="Example: jackson11@mail.com" required onChange={this.handleChange} />
         </div>
         <input type="submit" name="submit" />
         <button type="button" onClick={this.props.toggle}>Cancel</button>

@@ -14,7 +14,7 @@ const ReviewsContainer = styled.div`
   align-items: flex-start;
   margin: 0 auto;
   padding: 10px 20px 10px 20px;
-
+  font-family: 'Lato', sans-serif;
 `;
 
 const ReviewsTitle = styled.div`
@@ -35,9 +35,9 @@ const RatingWrapper = styled.div`
   display: flex;
   flex-basis: 35%;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px 40px;
 `;
 
 const Reviews = (props) => {
