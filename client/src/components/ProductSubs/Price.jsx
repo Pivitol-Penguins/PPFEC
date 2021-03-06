@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const NoSale = styled.p`
+  margin: 0;
   margin-bottom: 1vh;
   font-weight: 300;
 `;

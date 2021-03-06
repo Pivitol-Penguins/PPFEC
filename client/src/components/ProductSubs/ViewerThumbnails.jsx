@@ -85,8 +85,8 @@ class ViewerThumbnails extends React.Component {
     if (this.state.start + direction >= 0
       && this.state.end + direction < this.props.images.length) {
       this.setState((prevState) => ({
-        start: prevState.start += direction,
-        end: prevState.end += direction,
+        start: prevState.start + direction,
+        end: prevState.end + direction,
       }));
     }
   }

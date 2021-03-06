@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Price from './Price.jsx';
 import Styles from './StylesComponent.jsx';
 import Selectors from './Selectors.jsx';
 
@@ -113,9 +112,9 @@ const ProductOverview = ({
     <div className="productInfo">
       <Category>{details.category.toUpperCase()}</Category>
       <Name>{details.name}</Name>
-      <Price price={price} sale={sale} />
+      {/* <Price price={price} sale={sale} /> */}
     </div>
-    <Styles styles={styles} getStyleID={getStyleID} />
+    <Styles styles={styles} price={price} sale={sale} getStyleID={getStyleID} />
     <Purchasing>
       <Selectors skus={skus} />
       <PurchaseLikeButtons>
