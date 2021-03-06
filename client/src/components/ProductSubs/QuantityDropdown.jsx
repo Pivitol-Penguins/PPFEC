@@ -46,6 +46,7 @@ const DDList = styled.div`
   width: 100%;
   max-height: 25vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-weight: 400;
   box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
 `;

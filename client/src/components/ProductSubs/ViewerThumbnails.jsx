@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 
 const Thumbs = styled.div`
-  z-index: 10;
+  z-index: 1;
   position: absolute;
   left: 14.25vw;
   top: 2vh;
@@ -33,7 +33,17 @@ const ViewerImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #80ccc4;
+`;
+
+const Highlight = styled.div`
+  z-index: 2;
+  position: absolute;
+  margin-top: -4px;
+  height: 3px;
+  color: #80ccc4;
+  background: #80ccc4;
+  width: 65px;
+  border-radius: 15px;
 `;
 
 const Image = styled.img`
@@ -105,16 +115,22 @@ class ViewerThumbnails extends React.Component {
             && Number(index) >= this.props.start
             && Number(index) <= this.props.end) {
               return (
-                <ViewerImageContainer key={image.url}>
-                  <Image
-                    onClick={this.clickHandler}
-                    src={image.thumbnail_url}
-                    alt={this.props.id}
-                    id={index}
-                  />
-                </ViewerImageContainer>
+                <div>
+                  <ViewerImageContainer key={image.url}>
+                    <Image
+                      onClick={this.clickHandler}
+                      src={image.thumbnail_url}
+                      alt={this.props.id}
+                      id={index}
+                    />
+                  </ViewerImageContainer>
+                  <Highlight />
+                </div>
               );
-            } else if (Number(index) >= this.props.start && Number(index) <= this.props.end) {
+            }
+            if (this.props.viewerIndex !== Number(index)
+            && Number(index) >= this.props.start
+            && Number(index) <= this.props.end) {
               return (
                 <ImageContainer key={image.url}>
                   <Image
