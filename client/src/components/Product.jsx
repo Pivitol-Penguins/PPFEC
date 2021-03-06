@@ -92,7 +92,10 @@ class Product extends React.Component {
           </TopWrapper>
           <BottomWrapper>
             <Description info={this.props.productDetails} />
-            <FeaturesList features={this.props.productDetails.features} />
+            <FeaturesList
+              id={this.props.productDetails.id}
+              features={this.props.productDetails.features}
+            />
           </BottomWrapper>
         </Wrapper>
       );

@@ -45,6 +45,7 @@ const DDList = styled.div`
   width: 100%;
   max-height: 25vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-weight: 400;
   box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
 `;
@@ -133,19 +134,17 @@ class SizeDropdown extends React.Component {
           <DDList
             role="list"
           >
-            {list.map((item) => {
-              if (item.quantity > 0) {
-                return (
-                  <DDListItem
-                    type="button"
-                    key={item.size}
-                    onClick={() => this.selectItem(item)}
-                  >
-                    {item.size}
-                  </DDListItem>
-                );
-              }
-            })}
+            {list.map((item) => (
+              item.quantity > 0 && (
+                <DDListItem
+                  type="button"
+                  key={item.size}
+                  onClick={() => this.selectItem(item)}
+                >
+                  {item.size}
+                </DDListItem>
+              )
+            ))}
           </DDList>
         )}
       </DDWrapper>

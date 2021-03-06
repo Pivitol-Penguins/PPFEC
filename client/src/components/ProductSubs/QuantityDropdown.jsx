@@ -46,6 +46,7 @@ const DDList = styled.div`
   width: 100%;
   max-height: 25vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-weight: 400;
   box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
 `;
@@ -134,19 +135,17 @@ class QuantityDropdown extends React.Component {
           <DDList
             role="list"
           >
-            {list.map((item) => {
-              if (item - 1 < this.props.available) {
-                return (
-                  <DDListItem
-                    type="button"
-                    key={item}
-                    onClick={() => this.selectItem(item)}
-                  >
-                    {item}
-                  </DDListItem>
-                );
-              }
-            })}
+            {list.map((item) => (
+              item - 1 < this.props.available && (
+              <DDListItem
+                type="button"
+                key={item}
+                onClick={() => this.selectItem(item)}
+              >
+                {item}
+              </DDListItem>
+              )
+            ))}
           </DDList>
         )}
       </DDWrapper>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 
 const Thumbs = styled.div`
-  z-index: 10;
+  z-index: 1;
   position: absolute;
   left: 14.25vw;
   top: 2vh;
@@ -18,16 +18,40 @@ const Thumbs = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  margin: 1vh 0;
-  border: 2px solid #aeaeae;
+  margin: .85vh 0;
   height: 65px;
   width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ViewerImageContainer = styled.div`
+  margin: .85vh 0;
+  height: 65px;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Highlight = styled.div`
+  z-index: 2;
+  position: absolute;
+  margin-top: -4px;
+  height: 3px;
+  color: #80ccc4;
+  background: #80ccc4;
+  width: 65px;
+  border-radius: 15px;
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 1px solid #aeaeae;
+  &:hover {transform: scale(1.05);};
 `;
 
 const UpArrow = styled.div`
@@ -40,6 +64,14 @@ const UpArrow = styled.div`
     color: #80ccc4;
     transform: scale(1.1);
   };
+`;
+
+const NoArrow = styled.div`
+  visibility: hidden;
+  font-size: 1rem;
+  z-index: 12;
+  top: 1vh;
+  position: relative;
 `;
 
 const DownArrow = styled.div`
@@ -59,7 +91,6 @@ class ViewerThumbnails extends React.Component {
     super(props);
     this.state = {
       currentStyle: null,
-      style_id: null,
     };
     this.clickHandler = this.clickHandler.bind(this);
     this.clickThumbNavHandler = this.clickThumbNavHandler.bind(this);
@@ -68,7 +99,6 @@ class ViewerThumbnails extends React.Component {
   componentDidMount() {
     this.setState({
       currentStyle: this.props.images[0].name,
-      style_id: this.props.images[0].style_id,
     });
   }
 
@@ -86,9 +116,32 @@ class ViewerThumbnails extends React.Component {
     if (this.props.images) {
       return (
         <Thumbs>
-          <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow>
+          {this.props.start !== 0
+          && <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow> }
+          {this.props.start === 0
+          && <NoArrow><FontAwesome id="-1" name="angle-up" size="2x" /></NoArrow> }
+
           {this.props.images.map((image, index) => {
-            if (Number(index) >= this.props.start && Number(index) <= this.props.end) {
+            if (this.props.viewerIndex === Number(index)
+            && Number(index) >= this.props.start
+            && Number(index) <= this.props.end) {
+              return (
+                <div>
+                  <ViewerImageContainer key={image.url}>
+                    <Image
+                      onClick={this.clickHandler}
+                      src={image.thumbnail_url}
+                      alt={this.props.id}
+                      id={index}
+                    />
+                  </ViewerImageContainer>
+                  <Highlight />
+                </div>
+              );
+            }
+            if (this.props.viewerIndex !== Number(index)
+            && Number(index) >= this.props.start
+            && Number(index) <= this.props.end) {
               return (
                 <ImageContainer key={image.url}>
                   <Image
@@ -101,7 +154,9 @@ class ViewerThumbnails extends React.Component {
               );
             }
           })}
-          <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow>
+
+          {this.props.end !== this.props.images.length - 1
+          && <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow> }
         </Thumbs>
       );
     }

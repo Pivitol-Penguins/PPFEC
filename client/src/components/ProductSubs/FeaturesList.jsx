@@ -8,9 +8,9 @@ const List = styled.ul`
   padding-left: 1.5vw;
 `;
 
-const FeaturesList = ({ features }) => (
+const FeaturesList = ({ id, features }) => (
   <List>
-    {features.map((feature, index) => <Feature key={index} feature={feature} />)}
+    {features.map((feature) => <Feature key={`${id} + ${feature.feature}`} feature={feature} />)}
   </List>
 );
 
