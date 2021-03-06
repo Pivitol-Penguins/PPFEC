@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const CharacBreakDownWrapper = styled.div`
   padding: 10px 5px;
+  width: 15vw;
 `;
 
 const FeedbackWrapper = styled.div`
@@ -12,7 +13,7 @@ const FeedbackWrapper = styled.div`
 
 const CharcBarContainer = styled.div`
   height: 10px;
-  width: 200px;
+  width: 100%;
   position: relative;
 `;
 
@@ -34,7 +35,7 @@ const TriangleScaleIcon = styled(BaseBox)`
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 15px solid black;
-  left: ${({ percent }) => (percent / 100) * 200}px;
+  left: ${({ percent }) => (percent / 100) * 15}vw;
 `;
 
 function getRange(characteristic) {

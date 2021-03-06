@@ -12,7 +12,7 @@ const BreakDownWrapper = styled.div`
 
 const BarContainer = styled.div`
   height: 10px;
-  width: 150px;
+  width: 12vw;
   position: relative;
 `;
 
@@ -35,12 +35,13 @@ const Percentage = styled(BaseBox)`
 
 const RecommendPercentage = styled.div`
   margin: 0 auto;
-  padding-top: 5px;
+  padding-top: 18px;
   padding-bottom: 5px;
+  font-size: 15px;
 `;
 
 const ClickTag = styled.div`
-  padding: 2px 1vw 0 1vw;
+  padding: 2px 1vw 0 0;
   text-decoration:underline;
   &:hover {
     cursor: pointer;
@@ -87,7 +88,7 @@ class RatingBreakDown extends React.Component {
         <div>
           {stars.map((star) => (
             <BreakDownWrapper key={star + this.getPercentage(star)}>
-              <ClickTag>
+              <ClickTag onClick={(e) => { this.props.starFilter(star); e.preventDefault(); }}>
                 {star}
                 {' '}
                 stars
