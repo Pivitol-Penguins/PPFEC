@@ -113,8 +113,6 @@ class ViewerThumbnails extends React.Component {
   }
 
   render() {
-    console.log('start', this.props.start);
-    console.log('end', this.props.end);
     if (this.props.images) {
       return (
         <Thumbs>
