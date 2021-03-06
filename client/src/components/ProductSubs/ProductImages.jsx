@@ -67,7 +67,6 @@ class ProductImages extends React.Component {
       && this.state.index + direction < this.props.images.length) {
       this.setState((prevState) => ({ index: prevState.index + direction }),
         () => this.indexChecker());
-    }
   }
 
   clickedThumb(index) {
