@@ -52,11 +52,6 @@ const Name = styled.h1`
   margin-top: -1rem;
 `;
 
-const Price = styled.p`
-  margin-bottom: 1vh;
-  font-weight: 300;
-`;
-
 const Purchasing = styled.div`
   width: 100%;
   display: flex;
@@ -107,19 +102,16 @@ const Like = styled.button`
 `;
 
 const ProductOverview = ({
-  details, styles, skus, getStyleID,
+  details, styles, skus, getStyleID, price, sale,
 }) => (
   <Wrapper>
     <RatingWrapper>
       <Rating>★★★★☆</Rating>
       <RatingsAnchor href="RATINGS">Read all reviews</RatingsAnchor>
     </RatingWrapper>
-    <div className="productInfo">
-      <Category>{details.category.toUpperCase()}</Category>
-      <Name>{details.name}</Name>
-      <Price>{`$${Math.round(details.default_price)}`}</Price>
-    </div>
-    <Styles styles={styles} getStyleID={getStyleID} />
+    <Category>{details.category.toUpperCase()}</Category>
+    <Name>{details.name}</Name>
+    <Styles styles={styles} price={price} sale={sale} getStyleID={getStyleID} />
     <Purchasing>
       <Selectors skus={skus} />
       <PurchaseLikeButtons>

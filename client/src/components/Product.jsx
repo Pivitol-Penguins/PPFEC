@@ -48,6 +48,8 @@ class Product extends React.Component {
       currentStyle: this.props.productStyles.results[0].style_id,
       stylePhotos: this.props.productStyles.results[0].photos,
       skus: this.props.productStyles.results[0].skus,
+      price: this.props.productStyles.results[0].original_price,
+      sale: this.props.productStyles.results[0].sale_price,
     });
   }
 
@@ -63,6 +65,8 @@ class Product extends React.Component {
         this.setState({
           stylePhotos: image.photos,
           skus: image.skus,
+          price: image.original_price,
+          sale: image.sale_price,
         });
       }
     });
@@ -82,6 +86,8 @@ class Product extends React.Component {
               styles={this.props.productStyles}
               skus={this.state.skus}
               getStyleID={this.getStyleID}
+              price={this.state.price}
+              sale={this.state.sale}
             />
           </TopWrapper>
           <BottomWrapper>
