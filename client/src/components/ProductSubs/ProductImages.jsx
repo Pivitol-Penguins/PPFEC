@@ -18,7 +18,7 @@ const RightArrow = styled.div`
   z-index: 11;
   position: absolute;
   top: 30vh;
-  right: 40.1vw;
+  right: 40.3vw;
   &:hover {
     color: #80ccc4;
     transform: scale(1.1);
@@ -61,7 +61,7 @@ class ProductImages extends React.Component {
     const direction = Number(event.target.id);
     if (this.state.index + direction >= 0
       && this.state.index + direction < this.props.images.length) {
-      this.setState((prevState) => ({ index: prevState.index += direction }));
+      this.setState((prevState) => ({ index: prevState.index + direction }));
     }
   }
 

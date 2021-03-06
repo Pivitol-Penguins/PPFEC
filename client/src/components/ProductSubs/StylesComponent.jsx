@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Price from './Price.jsx';
+
 const StyleWrapper = styled.div`
   margin-bottom: 10px;
 `;
@@ -60,6 +62,10 @@ class Styles extends React.Component {
       previousStyle: null,
       currentStyle: null,
       style_id: null,
+      previousPrice: null,
+      previousSale: null,
+      currentPrice: null,
+      currentSale: null,
     };
     this.clickHandler = this.clickHandler.bind(this);
     this.passUpStyle = this.passUpStyle.bind(this);
@@ -69,6 +75,8 @@ class Styles extends React.Component {
     this.setState({
       currentStyle: this.props.styles.results[0].name,
       style_id: this.props.styles.results[0].style_id,
+      currentPrice: this.props.styles.results[0].original_price,
+      currentSale: this.props.styles.results[0].sale_price,
     });
   }
 
@@ -88,6 +96,7 @@ class Styles extends React.Component {
     if (this.state.currentStyle) {
       return (
         <StyleWrapper>
+          <Price price={this.state.currentPrice} sale={this.state.currentSale} />
           <TextWrapper>
             <Style>STYLE &gt;</Style>
             <SelectedStyle>{this.state.currentStyle.toUpperCase()}</SelectedStyle>
@@ -108,8 +117,19 @@ class Styles extends React.Component {
               if (image.style_id !== this.state.style_id) {
                 return (
                   <Image
-                    onMouseEnter={() => this.setState({ previousStyle: this.state.currentStyle, currentStyle: image.name })}
-                    onMouseLeave={() => this.setState({ currentStyle: this.state.previousStyle })}
+                    onMouseEnter={() => this.setState((prevState) => ({
+                      previousStyle: prevState.currentStyle,
+                      currentStyle: image.name,
+                      previousPrice: prevState.currentPrice,
+                      currentPrice: image.original_price,
+                      previousSale: prevState.currentSale,
+                      currentSale: image.sale_price,
+                    }))}
+                    onMouseLeave={() => this.setState((prevState) => ({
+                      currentStyle: prevState.previousStyle,
+                      currentPrice: prevState.previousPrice,
+                      currentSale: prevState.previousSale,
+                    }))}
                     onClick={this.clickHandler}
                     key={image.style_id}
                     id={image.style_id}
