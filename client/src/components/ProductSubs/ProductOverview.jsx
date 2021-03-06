@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Price from './Price.jsx';
 import Styles from './StylesComponent.jsx';
 import Selectors from './Selectors.jsx';
 
@@ -50,11 +51,6 @@ const Name = styled.h1`
   line-height: 2.5rem;
   font-weight: 700;
   margin-top: -1rem;
-`;
-
-const Price = styled.p`
-  margin-bottom: 1vh;
-  font-weight: 300;
 `;
 
 const Purchasing = styled.div`
@@ -107,7 +103,7 @@ const Like = styled.button`
 `;
 
 const ProductOverview = ({
-  details, styles, skus, getStyleID,
+  details, styles, skus, getStyleID, price, sale,
 }) => (
   <Wrapper>
     <RatingWrapper>
@@ -117,7 +113,7 @@ const ProductOverview = ({
     <div className="productInfo">
       <Category>{details.category.toUpperCase()}</Category>
       <Name>{details.name}</Name>
-      <Price>{`$${Math.round(details.default_price)}`}</Price>
+      <Price price={price} sale={sale} />
     </div>
     <Styles styles={styles} getStyleID={getStyleID} />
     <Purchasing>
