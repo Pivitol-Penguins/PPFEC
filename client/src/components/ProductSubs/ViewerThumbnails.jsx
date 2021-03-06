@@ -18,16 +18,29 @@ const Thumbs = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  margin: 1vh 0;
-  border: 2px solid #aeaeae;
+  margin: .85vh 0;
   height: 65px;
   width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ViewerImageContainer = styled.div`
+  margin: .85vh 0;
+  height: 65px;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #80ccc4;
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  padding: 2px;
 `;
 
 const UpArrow = styled.div`
@@ -88,7 +101,20 @@ class ViewerThumbnails extends React.Component {
         <Thumbs>
           <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow>
           {this.props.images.map((image, index) => {
-            if (Number(index) >= this.props.start && Number(index) <= this.props.end) {
+            if (this.props.viewerIndex === Number(index)
+            && Number(index) >= this.props.start
+            && Number(index) <= this.props.end) {
+              return (
+                <ViewerImageContainer key={image.url}>
+                  <Image
+                    onClick={this.clickHandler}
+                    src={image.thumbnail_url}
+                    alt={this.props.id}
+                    id={index}
+                  />
+                </ViewerImageContainer>
+              );
+            } else if (Number(index) >= this.props.start && Number(index) <= this.props.end) {
               return (
                 <ImageContainer key={image.url}>
                   <Image

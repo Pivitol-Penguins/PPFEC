@@ -111,7 +111,7 @@ class ProductImages extends React.Component {
   render() {
     return (
       <Wrapper>
-        <ViewerThumbnails start={this.state.start} end={this.state.end} indexUpdater={this.indexUpdater} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
+        <ViewerThumbnails viewerIndex={this.state.index} start={this.state.start} end={this.state.end} indexUpdater={this.indexUpdater} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
         <RightArrow onClick={this.clickNavHandler}><FontAwesome id="1" name="angle-right" size="2x" /></RightArrow>
         <LeftArrow onClick={this.clickNavHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></LeftArrow>
         <Image src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
