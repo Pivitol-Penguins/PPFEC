@@ -54,7 +54,6 @@ const ClickTag = styled.div`
       transform: scale(1.1);
     }
   }
-
 `;
 
 class ReviewTile extends React.Component {
@@ -176,7 +175,7 @@ class ReviewTile extends React.Component {
             )
           </ClickTag>
           <div>  |  </div>
-          <ClickTag onClick={this.handleClickReport}>
+          <ClickTag className="not-click" onClick={this.handleClickReport}>
             Report
           </ClickTag>
         </HelpfulnessWrapper>

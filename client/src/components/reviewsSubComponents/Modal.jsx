@@ -18,8 +18,8 @@ const StyledModal = styled.div`
 `;
 
 const DarkLayer = styled.div`
-  background-color: #424242;
-  opacity: 0.6;
+  // background-color: #424242;
+  // opacity: 0.6;
   position: absolute;
   top: 0;
   left: 0;

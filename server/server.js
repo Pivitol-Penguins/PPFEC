@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
-const axios = require('axios');
+const multer = require('multer');
+const multiparty = require('multiparty');
 const api = require('./api_handler.js');
-
 const app = express();
 const port = 3000;
 
@@ -20,7 +20,7 @@ app.get('/products/:q/:b', (req, res) => {
     memCache.push(productDetails.data);
     api.fetchData(`/products/${id}/styles`, null, (productStyles) => {
       memCache.push(productStyles.data);
-      api.fetchData('/reviews/', { params: { product_id: Number(id), sort: 'relevant', count: 20 } }, (reviews) => {
+      api.fetchData('/reviews/', { params: { product_id: Number(id), sort: 'relevant', count: 100 } }, (reviews) => {
         memCache.push(reviews.data);
         api.fetchData('/reviews/meta', { params: { product_id: Number(id) } }, (reviewsMeta) => {
           memCache.push(reviewsMeta.data);
@@ -38,7 +38,7 @@ app.get('/products/:q/:b', (req, res) => {
 app.get('/products/:q/:b/reviews/:sort', (req, res) => {
   const product_id = req.params.q;
   const { sort } = req.params;
-  api.fetchData('/reviews', { params: { product_id: Number(product_id), sort: sort, count: 20} }, (reviews) => {
+  api.fetchData('/reviews', { params: { product_id: Number(product_id), sort: sort, count: 100 } }, (reviews) => {
     res.send(reviews.data);
   });
 });
@@ -47,21 +47,32 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // handle get request for Add Review Form Submit
 app.post('/products/:q/:b/reviews', (req, res) => {
-  const query = req.body;
-  console.log('IN SERVER==> ', req.body);
-  api.postData('/reviews', {
-    product_id: query.productId,
-    rating: query.rating,
-    characteristics: query.characteristics,
-    recommend: query.recommend,
-    summary: query.summary,
-    body: query.body,
-    name: query.name,
-    email: query.email,
-    photos: query.photos,
-  }, (data) => {
-    console.log(data);
-    res.send('Review added');
+  const form = new multiparty.Form();
+  form.parse(req, (err, fields, files) => {
+    if (err) {
+      throw new Error(err);
+    }
+    // console.log('FILES: ', files);
+    // console.log('FIELDS: ', fields);
+    const photoPaths = [];
+    files.photos.forEach((photo) => {
+      photoPaths.push(photo.path);
+    });
+    const query = fields;
+    api.postData('/reviews', {
+      product_id: Number(query.productId),
+      rating: Number(query.rating),
+      characteristics: JSON.parse(query.characteristics),
+      recommend: JSON.parse(query.recommend),
+      summary: JSON.parse(query.summary),
+      body: JSON.parse(query.body),
+      name: JSON.parse(query.name),
+      email: JSON.parse(query.email),
+      photos: photoPaths,
+    }, (data) => {
+      console.log(data.data);
+      res.send('Review added');
+    });
   });
 });
 

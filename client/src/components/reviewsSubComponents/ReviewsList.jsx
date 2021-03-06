@@ -12,6 +12,8 @@ const ReviewsWrapper = styled.div`
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
+
+  padding: 2vw;
 `;
 
 const ButtonWrapper = styled.div`
@@ -45,8 +47,6 @@ const ReviewButton = styled.button`
 const ReviewSortWrapper = styled.div`
   display: flex;
   align-items: baseline;
-  margin: 10px;
-  padding: 5px;
 `;
 
 const SelectTag = styled.select`
@@ -58,6 +58,7 @@ const SelectTag = styled.select`
   border: 0px;
   outline: 0px;
   font-weight: 600;
+  font-family: 'Lato',sans-serif;
 `;
 
 class ReviewsList extends React.Component {
