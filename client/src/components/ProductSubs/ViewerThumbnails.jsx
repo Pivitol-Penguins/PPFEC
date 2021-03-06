@@ -51,6 +51,7 @@ const Image = styled.img`
   height: 100%;
   object-fit: cover;
   padding: 2px;
+  &:hover {transform: scale(1.05);};
 `;
 
 const UpArrow = styled.div`
