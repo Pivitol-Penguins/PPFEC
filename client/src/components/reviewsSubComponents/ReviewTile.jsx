@@ -88,9 +88,6 @@ class ReviewTile extends React.Component {
   handleClickReport() {
     const path = window.location.pathname;
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/report`)
-      // .then(() => {
-      //   this.props.removeTile(this.state.review_id);
-      // })
       .catch((err) => {
         throw err;
       })

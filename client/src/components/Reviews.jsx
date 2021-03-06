@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ReviewsList from './reviewsSubComponents/ReviewsList.jsx';
 import RatingSummary from './reviewsSubComponents/RatingSummary.jsx';
@@ -37,26 +37,59 @@ const RatingWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 30px 40px;
+  padding: 30px 30px;
 `;
 
-const Reviews = (props) => {
-  const { reviews, reviewsMeta } = props;
-  console.log(reviews);
-  console.log(reviewsMeta);
-  return (
-    <ReviewsContainer>
-      <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
-      <Wrapper>
-        <RatingWrapper>
-          <RatingSummary reviewsMeta={reviewsMeta} />
-          <RatingBreakDown reviewsMeta={reviewsMeta} />
-          <ProductBreakDown reviewsMeta={reviewsMeta} />
-        </RatingWrapper>
-        <ReviewsList reviews={reviews} reviewsMeta={reviewsMeta} />
-      </Wrapper>
-    </ReviewsContainer>
-  );
-};
+class Reviews extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      reviews: this.props.reviews.results,
+      reviewsMeta: this.props.reviewsMeta,
+      filterRating: 0,
+      filterOn: false,
+      product_id: this.props.product,
+      entriesCount: this.props.count,
+      page: this.props.page,
+    };
+    this.starFilter = this.starFilter.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({});
+  }
+
+  starFilter(star) {
+    this.setState({
+      reviews: this.props.reviews.results.filter((review) => review.rating === star),
+      filterRating: star,
+    });
+  }
+
+  render() {
+    // const { reviews, reviewsMeta } = this.props;
+    console.log(this.state.reviews);
+    console.log(this.state.reviewsMeta);
+    return (
+      <ReviewsContainer>
+        <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
+        <Wrapper>
+          <RatingWrapper>
+            <RatingSummary reviewsMeta={this.state.reviewsMeta} />
+            <RatingBreakDown reviewsMeta={this.state.reviewsMeta} starFilter={this.starFilter} />
+            <ProductBreakDown
+              reviewsMeta={this.state.reviewsMeta}
+            />
+          </RatingWrapper>
+          <ReviewsList
+            reviews={this.state.reviews}
+            reviewsMeta={this.state.reviewsMeta}
+            filterRating={this.state.filterRating}
+          />
+        </Wrapper>
+      </ReviewsContainer>
+    );
+  }
+}
 
 export default Reviews;

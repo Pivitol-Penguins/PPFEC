@@ -5,6 +5,7 @@ import RatingStars from './RatingStars.jsx';
 const RatingScore = styled.span`
   font-size: 70px;
   margin-left: 30px;
+  font-weight: bold;
 `;
 
 const SummaryWrapper = styled.div`

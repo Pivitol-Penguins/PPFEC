@@ -69,19 +69,21 @@ class ReviewsList extends React.Component {
       fullreviewsArr: [],
       tileMax: 0,
       addReviewShow: false,
+      filterRating: this.props.filterRating,
     };
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.sortSelected = this.sortSelected.bind(this);
-    this.removeTile = this.removeTile.bind(this);
+    // this.filterList = this.filterList.bind(this);
   }
 
   componentDidMount() {
-    this.loadFirstTwoReviews(this.props.reviews.results);
+    this.loadFirstTwoReviews(this.props.reviews);
   }
 
   loadFirstTwoReviews(data) {
+    console.log('IN REVIEWLIST', data);
     const displayArr = [];
     let tileCount = 0;
     while (tileCount < this.state.displayLimit) {
@@ -135,6 +137,19 @@ class ReviewsList extends React.Component {
     event.preventDefault();
   }
 
+  // filterList(filter) {
+  //   console.log(this.props.filterOn);
+  //   console.log(this.props.rating);
+  //   if (filter) {
+  //     this.setState((prevState) => ({
+  //       fullreviewsArr: prevState.fullreviewsArr.filter((tile) => (tile.rating === this.props.rating)),
+  //     }), () => {
+  //       console.log(this.state.fullreviewsArr);
+  //       this.loadFirstTwoReviews(this.state.fullreviewsArr);
+  //     });
+  //   }
+  // }
+
   render() {
     // conditionlal rendering MORE VIEW button
     let moreReviewBtn;
@@ -179,7 +194,7 @@ class ReviewsList extends React.Component {
           <Modal content={(
             <AddReviewForm
               toggle={this.addReviewToggle}
-              productId={Number(reviews.product)}
+              productId={Number(reviewsMeta.product_id)}
               characteristics={reviewsMeta.characteristics}
               loadReview={this.loadFirstTwoReviews}
             />

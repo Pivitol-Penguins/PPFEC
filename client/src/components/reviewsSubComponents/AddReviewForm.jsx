@@ -7,7 +7,7 @@ import RatingStars from './RatingStars.jsx';
 const productCharacteristics = {
   Size: ['A size too small', '½ a size too small', 'Perfect', '½ a size too big', 'A size too wide'],
   Width: ['Too narrow', 'Slightly narrow', 'Perfect', 'Slightly wide', 'Too wide'],
-  Comfort: ['Uncomfortable', 'Slightly uncomfortable', 'Ok', 'Comfortable', 'Perfect'],
+  Comfort: ['Uncomfortable', 'Slightly uncomfortable', 'OK', 'Comfortable', 'Perfect'],
   Quality: ['Poor', 'Below average', 'What I expected', 'Pretty great', 'Perfect'],
   Length: ['Runs Short', 'Runs slightly short', 'Perfect', 'Runs slightly long', 'Runs long'],
   Fit: ['Runs tight', 'Runs slightly tight', 'Perfect', 'Runs slightly long', 'Runs long'],
@@ -22,6 +22,7 @@ const ValueButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
 const CharateristicsSelectorWrapper = styled.div`
@@ -148,19 +149,21 @@ class AddReviewForm extends React.Component {
         </div>
         <div>
           <span>Charateristics</span>
-          {charateristicsKeys.map((key) => (
-            <div key={key}>
-              <div>{key}</div>
-              <CharateristicsSelectorWrapper>
-                {productCharacteristics[key].map((value, index) => (
-                  <ValueButtonWrapper key={value}>
-                    <span>{value}</span>
-                    <input type="radio" name={this.props.characteristics[key].id} value={index + 1} required onChange={this.handleChange} />
-                  </ValueButtonWrapper>
-                ))}
-              </CharateristicsSelectorWrapper>
-            </div>
-          ))}
+          <ul>
+            {charateristicsKeys.map((key) => (
+              <li key={key}>
+                <div>{key}</div>
+                <CharateristicsSelectorWrapper>
+                  {productCharacteristics[key].map((value, index) => (
+                    <ValueButtonWrapper key={value}>
+                      <span>{value}</span>
+                      <input type="radio" name={this.props.characteristics[key].id} value={index + 1} required onChange={this.handleChange} />
+                    </ValueButtonWrapper>
+                  ))}
+                </CharateristicsSelectorWrapper>
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <span>Review Summary</span>

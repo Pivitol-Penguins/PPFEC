@@ -83,7 +83,7 @@ app.post('/products/:q/:b/reviews', (req, res) => {
 app.put('/products/:q/:b/reviews/:review_id/report', (req, res) => {
   const {review_id} = req.params;
   const product_id = req.params.q;
-  console.log(req.params);
+  // console.log(req.params);
   api.updateData(`/reviews/${review_id}/report`, { review_id: review_id }, (data) => {
     api.fetchData('/reviews', { params: { product_id: Number(product_id), count: 100 } }, (reviews) => {
       res.send(reviews.data);
