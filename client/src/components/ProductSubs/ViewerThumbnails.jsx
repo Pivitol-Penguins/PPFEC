@@ -91,7 +91,6 @@ class ViewerThumbnails extends React.Component {
     super(props);
     this.state = {
       currentStyle: null,
-      style_id: null,
     };
     this.clickHandler = this.clickHandler.bind(this);
     this.clickThumbNavHandler = this.clickThumbNavHandler.bind(this);
@@ -100,7 +99,6 @@ class ViewerThumbnails extends React.Component {
   componentDidMount() {
     this.setState({
       currentStyle: this.props.images[0].name,
-      style_id: this.props.images[0].style_id,
     });
   }
 
