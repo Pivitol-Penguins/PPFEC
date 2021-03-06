@@ -66,6 +66,14 @@ const UpArrow = styled.div`
   };
 `;
 
+const NoArrow = styled.div`
+  visibility: hidden;
+  font-size: 1rem;
+  z-index: 12;
+  top: 1vh;
+  position: relative;
+`;
+
 const DownArrow = styled.div`
   color: #e0e0e0;
   font-size: 1rem;
@@ -110,7 +118,10 @@ class ViewerThumbnails extends React.Component {
     if (this.props.images) {
       return (
         <Thumbs>
-          <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow>
+          {this.props.start !== 0
+          && <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow> }
+          {this.props.start === 0
+          && <NoArrow><FontAwesome id="-1" name="angle-up" size="2x" /></NoArrow> }
           {this.props.images.map((image, index) => {
             if (this.props.viewerIndex === Number(index)
             && Number(index) >= this.props.start
@@ -144,7 +155,8 @@ class ViewerThumbnails extends React.Component {
               );
             }
           })}
-          <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow>
+          {this.props.end !== this.props.images.length - 1
+          && <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow> }
         </Thumbs>
       );
     }
