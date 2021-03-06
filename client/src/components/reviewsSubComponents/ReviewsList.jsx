@@ -60,151 +60,66 @@ const SelectTag = styled.select`
   font-family: 'Lato',sans-serif;
 `;
 
-class ReviewsList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayLimit: 2,
-      reviewsArr: [],
-      fullreviewsArr: [],
-      tileMax: 0,
-      addReviewShow: false,
-      filterRating: this.props.filterRating,
-    };
-    this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
-    this.loadMoreReviews = this.loadMoreReviews.bind(this);
-    this.addReviewToggle = this.addReviewToggle.bind(this);
-    this.sortSelected = this.sortSelected.bind(this);
-    // this.filterList = this.filterList.bind(this);
+const ReviewsList = (props) => {
+  // conditionlal rendering MORE VIEW button
+  let moreReviewBtn;
+  if (props.reviews.length !== props.fullreviewsArr.length) {
+    moreReviewBtn = (
+      <ReviewButton
+        onClick={props.loadMoreReviews}
+      >
+        MORE REVIEWS
+      </ReviewButton>
+    );
   }
 
-  componentDidMount() {
-    this.loadFirstTwoReviews(this.props.reviews);
-  }
+  const { reviewsMeta } = props;
+  // get totalReviewCount
+  let totalReviewCount = 0;
+  Object.entries(reviewsMeta.ratings).forEach((rating) => {
+    totalReviewCount += Number(rating[1]);
+  });
 
-  loadFirstTwoReviews(data) {
-    console.log('IN REVIEWLIST', data);
-    const displayArr = [];
-    let tileCount = 0;
-    while (tileCount < this.state.displayLimit) {
-      displayArr.push(data[tileCount]);
-      tileCount += 1;
-    }
-    this.setState({
-      tileMax: data.length,
-      reviewsArr: displayArr,
-      fullreviewsArr: data,
-    });
-  }
-
-  loadMoreReviews() {
-    const loadArr = [];
-    let count = 0;
-    let totalLength = loadArr.length + this.state.reviewsArr.length;
-    while (count < this.state.displayLimit && totalLength < this.state.tileMax) {
-      loadArr.push(this.state.fullreviewsArr[totalLength]);
-      count += 1;
-      totalLength += 1;
-    }
-    this.setState((prevState) => ({
-      reviewsArr: [...prevState.reviewsArr, ...loadArr],
-    }));
-  }
-
-  addReviewToggle() {
-    if (!this.state.addReviewShow) {
-      this.setState({
-        addReviewShow: true,
-      });
-    } else {
-      this.setState({
-        addReviewShow: false,
-      });
-    }
-  }
-
-  sortSelected(event) {
-    const path = window.location.pathname;
-    axios.get(`${path.slice(-6)}reviews/${event.target.value}`)
-      .then((res) => {
-        this.loadFirstTwoReviews(res.data.results);
-        this.setState({
-          fullreviewsArr: res.data.results,
-        });
-      })
-      .catch((err) => { throw err; });
-
-    event.preventDefault();
-  }
-
-  // filterList(filter) {
-  //   console.log(this.props.filterOn);
-  //   console.log(this.props.rating);
-  //   if (filter) {
-  //     this.setState((prevState) => ({
-  //       fullreviewsArr: prevState.fullreviewsArr.filter((tile) => (tile.rating === this.props.rating)),
-  //     }), () => {
-  //       console.log(this.state.fullreviewsArr);
-  //       this.loadFirstTwoReviews(this.state.fullreviewsArr);
-  //     });
-  //   }
-  // }
-
-  render() {
-    // conditionlal rendering MORE VIEW button
-    let moreReviewBtn;
-    if (this.state.reviewsArr.length !== this.state.tileMax) {
-      moreReviewBtn = <ReviewButton onClick={this.loadMoreReviews}>MORE REVIEWS</ReviewButton>;
-    }
-
-    const { reviews, reviewsMeta } = this.props;
-    // get totalReviewCount
-    let totalReviewCount = 0;
-    Object.entries(reviewsMeta.ratings).forEach((rating) => {
-      totalReviewCount += Number(rating[1]);
-    });
-
-    return (
-      <ReviewsWrapper>
-        <ReviewSortWrapper>
-          <h2>
-            {totalReviewCount}
-            {' '}
-            reviews, sorted by
-          </h2>
-          <SelectTag value={this.state.sortValue} onChange={this.sortSelected}>
-            <option defaultValue="relevant">Relevant</option>
-            <option value="helpful">Helpful</option>
-            <option value="newest">Newest</option>
-          </SelectTag>
-        </ReviewSortWrapper>
-        <ListWrapper>
-          {this.state.reviewsArr.map(((review) => (
-            <ReviewTile
-              key={review.review_id}
-              review={review}
-              loadReview={this.loadFirstTwoReviews}
-            />
-          )))}
-        </ListWrapper>
-        <ButtonWrapper>
-          {moreReviewBtn}
-          <ReviewButton onClick={this.addReviewToggle}>ADD A REVIEW   +</ReviewButton>
-          {this.state.addReviewShow && (
+  return (
+    <ReviewsWrapper>
+      <ReviewSortWrapper>
+        <h2>
+          {totalReviewCount}
+          {' '}
+          reviews, sorted by
+        </h2>
+        <SelectTag onChange={(e) => { props.sortSelected(e); }}>
+          <option defaultValue="relevant">Relevant</option>
+          <option value="helpful">Helpful</option>
+          <option value="newest">Newest</option>
+        </SelectTag>
+      </ReviewSortWrapper>
+      <ListWrapper>
+        {props.reviews.map(((review) => (
+          <ReviewTile
+            key={review.review_id}
+            review={review}
+            loadReview={props.loadFirstTwoReviews}
+          />
+        )))}
+      </ListWrapper>
+      <ButtonWrapper>
+        {moreReviewBtn}
+        <ReviewButton onClick={() => props.addReviewToggle()}>ADD A REVIEW   +</ReviewButton>
+        {props.addReviewShow && (
           <Modal content={(
             <AddReviewForm
-              toggle={this.addReviewToggle}
+              toggle={props.addReviewToggle}
               productId={Number(reviewsMeta.product_id)}
               characteristics={reviewsMeta.characteristics}
               loadReview={this.loadFirstTwoReviews}
             />
 )}
           />
-          )}
-        </ButtonWrapper>
-      </ReviewsWrapper>
-    );
-  }
-}
+        )}
+      </ButtonWrapper>
+    </ReviewsWrapper>
+  );
+};
 
 export default ReviewsList;
