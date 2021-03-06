@@ -60,8 +60,6 @@ class ViewerThumbnails extends React.Component {
     this.state = {
       currentStyle: null,
       style_id: null,
-      start: 0,
-      end: 4,
     };
     this.clickHandler = this.clickHandler.bind(this);
     this.clickThumbNavHandler = this.clickThumbNavHandler.bind(this);
@@ -81,14 +79,7 @@ class ViewerThumbnails extends React.Component {
   }
 
   clickThumbNavHandler(event) {
-    const direction = Number(event.target.id);
-    if (this.state.start + direction >= 0
-      && this.state.end + direction < this.props.images.length) {
-      this.setState((prevState) => ({
-        start: prevState.start + direction,
-        end: prevState.end + direction,
-      }));
-    }
+    this.props.indexUpdater(Number(event.target.id));
   }
 
   render() {
@@ -97,7 +88,7 @@ class ViewerThumbnails extends React.Component {
         <Thumbs>
           <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow>
           {this.props.images.map((image, index) => {
-            if (Number(index) >= this.state.start && Number(index) <= this.state.end) {
+            if (Number(index) >= this.props.start && Number(index) <= this.props.end) {
               return (
                 <ImageContainer key={image.url}>
                   <Image

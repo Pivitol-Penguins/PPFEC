@@ -52,27 +52,65 @@ class ProductImages extends React.Component {
     super(props);
     this.state = {
       index: 0,
+      start: 0,
+      end: 4,
     };
     this.clickNavHandler = this.clickNavHandler.bind(this);
     this.clickedThumb = this.clickedThumb.bind(this);
+    this.indexUpdater = this.indexUpdater.bind(this);
+    this.indexChecker = this.indexChecker.bind(this);
   }
 
   clickNavHandler(event) {
     const direction = Number(event.target.id);
     if (this.state.index + direction >= 0
       && this.state.index + direction < this.props.images.length) {
-      this.setState((prevState) => ({ index: prevState.index + direction }));
-    }
+      this.setState((prevState) => ({ index: prevState.index + direction }),
+        () => this.indexChecker());
   }
 
   clickedThumb(index) {
     this.setState({ index: Number(index) });
   }
 
+  indexUpdater(amount) {
+    if (this.state.start + amount >= 0
+      && this.state.end + amount < this.props.images.length) {
+      this.setState((prevState) => ({
+        start: prevState.start + amount,
+        end: prevState.end + amount,
+      }));
+    }
+  }
+
+  indexChecker() {
+    if (this.state.index < 5) {
+      this.setState({
+        start: 0,
+        end: 4,
+      });
+    } else if (this.props.images.length - this.state.index <= 5) {
+      this.setState({
+        start: this.props.images.length - 5,
+        end: this.props.images.length - 1,
+      });
+    } else if (this.state.index < this.state.start) {
+      this.setState((prevState) => ({
+        start: prevState.index,
+        end: prevState.index + 4,
+      }));
+    } else if (this.state.index > this.state.end) {
+      this.setState((prevState) => ({
+        start: prevState.index - 4,
+        end: prevState.index + 1,
+      }));
+    }
+  }
+
   render() {
     return (
       <Wrapper>
-        <ViewerThumbnails start={this.state.start} end={this.state.end} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
+        <ViewerThumbnails start={this.state.start} end={this.state.end} indexUpdater={this.indexUpdater} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
         <RightArrow onClick={this.clickNavHandler}><FontAwesome id="1" name="angle-right" size="2x" /></RightArrow>
         <LeftArrow onClick={this.clickNavHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></LeftArrow>
         <Image src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
