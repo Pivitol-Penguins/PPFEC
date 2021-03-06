@@ -61,7 +61,7 @@ class ProductImages extends React.Component {
     const direction = Number(event.target.id);
     if (this.state.index + direction >= 0
       && this.state.index + direction < this.props.images.length) {
-      this.setState((prevState) => ({ index: prevState.index += direction }));
+      this.setState((prevState) => ({ index: prevState.index + direction }));
     }
   }
 

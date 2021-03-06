@@ -109,11 +109,8 @@ const ProductOverview = ({
       <Rating>★★★★☆</Rating>
       <RatingsAnchor href="RATINGS">Read all reviews</RatingsAnchor>
     </RatingWrapper>
-    <div className="productInfo">
-      <Category>{details.category.toUpperCase()}</Category>
-      <Name>{details.name}</Name>
-      {/* <Price price={price} sale={sale} /> */}
-    </div>
+    <Category>{details.category.toUpperCase()}</Category>
+    <Name>{details.name}</Name>
     <Styles styles={styles} price={price} sale={sale} getStyleID={getStyleID} />
     <Purchasing>
       <Selectors skus={skus} />
