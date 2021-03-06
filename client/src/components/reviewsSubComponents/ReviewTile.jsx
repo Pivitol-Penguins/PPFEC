@@ -8,6 +8,7 @@ const TileContainer = styled.div`
   width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid black;
+  display: ${(props) => (props.reportClick ? 'none' : 'block')};
 `;
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -71,8 +72,8 @@ class ReviewTile extends React.Component {
   handleClickYes() {
     const path = window.location.pathname;
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/helpful`)
-      .then((data) => {
-        console.log(data);
+      .then((res) => {
+        this.props.loadReview(res.data.results);
       })
       .catch((err) => {
         throw err;
@@ -87,9 +88,9 @@ class ReviewTile extends React.Component {
   handleClickReport() {
     const path = window.location.pathname;
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/report`)
-      .then((data) => {
-        console.log(data);
-      })
+      // .then(() => {
+      //   this.props.removeTile(this.state.review_id);
+      // })
       .catch((err) => {
         throw err;
       })
@@ -142,7 +143,7 @@ class ReviewTile extends React.Component {
     }
 
     return (
-      <TileContainer>
+      <TileContainer reportClick={this.state.reportClick}>
         <StarDateWrapper>
           <RatingStars rating={rating} />
           <span>

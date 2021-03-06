@@ -115,7 +115,7 @@ class AddReviewForm extends React.Component {
       headers: { 'Content-Type': 'multipart/form-data' },
     })
       .then((res) => {
-        console.log('FROM server', res.data);
+        this.props.loadReview(res.data.results);
       })
       .catch((err) => { throw err; })
       .then(() => {

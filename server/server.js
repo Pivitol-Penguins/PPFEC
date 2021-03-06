@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const multer = require('multer');
 const multiparty = require('multiparty');
 const api = require('./api_handler.js');
 const app = express();
@@ -55,9 +54,11 @@ app.post('/products/:q/:b/reviews', (req, res) => {
     // console.log('FILES: ', files);
     // console.log('FIELDS: ', fields);
     const photoPaths = [];
-    files.photos.forEach((photo) => {
-      photoPaths.push(photo.path);
-    });
+    if (files.photos) {
+      files.photos.forEach((photo) => {
+        photoPaths.push(photo.path);
+      });
+    }
     const query = fields;
     api.postData('/reviews', {
       product_id: Number(query.productId),
@@ -71,7 +72,9 @@ app.post('/products/:q/:b/reviews', (req, res) => {
       photos: photoPaths,
     }, (data) => {
       console.log(data.data);
-      res.send('Review added');
+      api.fetchData('/reviews', { params: { product_id: Number(query.productId), count: 100 } }, (reviews) => {
+        res.send(reviews.data);
+      });
     });
   });
 });
@@ -79,18 +82,22 @@ app.post('/products/:q/:b/reviews', (req, res) => {
 // handle put request from review section
 app.put('/products/:q/:b/reviews/:review_id/report', (req, res) => {
   const {review_id} = req.params;
+  const product_id = req.params.q;
   console.log(req.params);
   api.updateData(`/reviews/${review_id}/report`, { review_id: review_id }, (data) => {
-    console.log(data);
-    res.send('Report!');
+    api.fetchData('/reviews', { params: { product_id: Number(product_id), count: 100 } }, (reviews) => {
+      res.send(reviews.data);
+    });
   });
 });
 
 app.put('/products/:q/:b/reviews/:review_id/helpful', (req, res) => {
   const {review_id} = req.params;
+  const product_id = req.params.q;
   api.updateData(`/reviews/${review_id}/helpful`, { review_id: review_id }, (data) => {
-    console.log(data);
-    res.send('Yes!');
+    api.fetchData('/reviews', { params: { product_id: Number(product_id), count: 100 } }, (reviews) => {
+      res.send(reviews.data);
+    });
   });
 });
 
