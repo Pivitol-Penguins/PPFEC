@@ -14,9 +14,11 @@ const AddAQ = styled.button`
     cursor: pointer;
     color: #80CCC4;
     border: 1px solid #80CCC4;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
   };
   &:focus {
     outline: none;
+    box-shadow: none;
   };
 `;
 
@@ -38,8 +40,12 @@ class AddQ extends React.Component {
     this.setState({ modal: true });
   }
 
-  exitModal() {
-    this.setState({ modal: false });
+  exitModal(data) {
+    this.setState({ modal: false }, () => {
+      if (data) {
+        this.props.func(data);
+      }
+    });
   }
 
   render() {

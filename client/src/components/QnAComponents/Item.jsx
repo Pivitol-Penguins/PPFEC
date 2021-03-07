@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import AnswerList from './AnswerList.jsx';
 import MoreA from './MoreA.jsx';
 import Modal from './Modal.jsx';
@@ -86,10 +87,12 @@ class Item extends React.Component {
       displayed: 0,
       buttonDisplay: true,
       modal: false,
+      sentH: false,
     };
     this.loadTwoItems = this.loadTwoItems.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.exitModal = this.exitModal.bind(this);
+    this.handleYes = this.handleYes.bind(this);
   }
 
   componentDidMount() {
@@ -106,8 +109,45 @@ class Item extends React.Component {
     this.setState({ modal: true });
   }
 
-  exitModal() {
-    this.setState({ modal: false });
+  handleYes() {
+    if (!this.state.sentH) {
+      this.props.item.question_helpfulness += 1;
+      this.setState({ sentH: true });
+      axios.put(`/h/questions/${this.props.id}`);
+    }
+  }
+
+  exitModal(data) {
+    this.setState({ modal: false }, () => {
+      if (data) {
+        data.results.forEach((answer) => {
+          let duplicate = false;
+          this.state.answers.forEach((item) => {
+            if (answer.answer_id === item.id) {
+              duplicate = true;
+            }
+          });
+          if (!duplicate) {
+            const obj = {
+              id: answer.answer_id,
+              body: answer.body,
+              date: answer.date,
+              answerer_name: answer.answerer_name,
+              helpfulness: answer.helpfulness,
+              photos: [],
+            };
+            answer.photos.forEach((photo) => {
+              obj.photos.push(photo.url);
+            });
+            this.state.answers.push(obj);
+          }
+        });
+        this.setState((prevState) => ({
+          answers: prevState.answers,
+          buttonDisplay: true,
+        }));
+      }
+    });
   }
 
   loadTwoItems() {
@@ -141,7 +181,7 @@ class Item extends React.Component {
           <Helper>
             <div>Helpful?</div>
             <Yes
-              onClick={this.handleClick}
+              onClick={this.handleYes}
             >
               Yes
             </Yes>
@@ -149,6 +189,7 @@ class Item extends React.Component {
               <Modal content={(
                 <FormA
                   func={this.exitModal}
+                  id={this.props.id}
                 />
               )}
               />

@@ -27,7 +27,7 @@ class QnA extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: this.props.questions.results,
+      data: [],
       dd: [],
       max: 0,
       displayed: 0,
@@ -36,10 +36,13 @@ class QnA extends React.Component {
     this.loadTwoItems = this.loadTwoItems.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.resetDefault = this.resetDefault.bind(this);
+    this.addData = this.addData.bind(this);
   }
 
   componentDidMount() {
-    this.loadTwoItems();
+    this.setState({ data: this.props.questions.results }, () => {
+      this.loadTwoItems();
+    });
   }
 
   handleSearch(string) {
@@ -97,6 +100,10 @@ class QnA extends React.Component {
     }, () => (this.loadTwoItems()));
   }
 
+  addData(data) {
+    this.setState({ data }, () => (this.resetDefault()));
+  }
+
   render() {
     return (
       <QnAContainer>
@@ -105,7 +112,7 @@ class QnA extends React.Component {
         <QuestionList items={this.state.dd} />
         <BottomWrap>
           <MoreQ func={this.loadTwoItems} buttonDisplay={this.state.buttonDisplay} />
-          <AddQ />
+          <AddQ func={this.addData} />
         </BottomWrap>
       </QnAContainer>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import Photos from './Photos.jsx';
 
 const BottomContainer = styled.div`
@@ -56,17 +57,35 @@ class Answer extends React.Component {
     super(props);
     this.state = {
       date: '',
+      sentH: false,
+      reported: false,
+      report: 'Report',
     };
     this.dateTranslate = this.dateTranslate.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleYes = this.handleYes.bind(this);
+    this.handleReport = this.handleReport.bind(this);
   }
 
   componentDidMount() {
     this.dateTranslate(this.props.answer.date);
   }
 
-  handleClick() {
-    this.setState({});
+  handleYes() {
+    if (!this.state.sentH) {
+      this.props.answer.helpfulness += 1;
+      this.setState({ sentH: true });
+      axios.put(`/a/questions/${this.props.id}`);
+    }
+  }
+
+  handleReport() {
+    if (!this.state.reported) {
+      axios.put(`/r/questions/${this.props.id}`);
+      this.setState({
+        reported: true,
+        report: 'Reported',
+      });
+    }
   }
 
   dateTranslate(date) {
@@ -88,24 +107,33 @@ class Answer extends React.Component {
             ? <Photos photos={this.props.answer.photos} /> : null}
         </div>
         <BottomContainer>
-          <NameDate>
-            {`By ${this.props.answer.answerer_name} on ${this.state.date}`}
-          </NameDate>
+          { this.props.answer.answerer_name === 'Seller'
+            ? (
+              <NameDate>
+                <h5>SELLER</h5>
+                {`on ${this.state.date}`}
+              </NameDate>
+            )
+            : (
+              <NameDate>
+                {`By ${this.props.answer.answerer_name} on ${this.state.date}`}
+              </NameDate>
+            )}
           |
           <Helpful>
             Helpful?
           </Helpful>
           <Yes
-            onClick={this.handleClick}
+            onClick={this.handleYes}
           >
             Yes
           </Yes>
           <Help>{`(${this.props.answer.helpfulness})`}</Help>
           |
           <Report
-            onClick={this.handleClick}
+            onClick={this.handleReport}
           >
-            Report
+            {this.state.report}
           </Report>
         </BottomContainer>
       </div>

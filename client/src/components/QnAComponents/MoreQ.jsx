@@ -12,6 +12,7 @@ const MoreAQ = styled.button`
     cursor: pointer;
     color: #80CCC4;
     border: 1px solid #80CCC4;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
   };
   &:focus {
     outline: none;
