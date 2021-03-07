@@ -46,7 +46,7 @@ const Image = styled.img`
   padding: 0;
   position: relative;
   z-index: 0;
-  &:hover { cursor: zoom-in; };
+  &:hover { cursor: crosshair; };
 `;
 
 const ModalBackground = styled.div`
