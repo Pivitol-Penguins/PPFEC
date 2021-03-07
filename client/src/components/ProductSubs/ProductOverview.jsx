@@ -105,13 +105,18 @@ const ProductOverview = ({
   details, styles, skus, getStyleID, price, sale,
 }) => (
   <Wrapper>
+
     <RatingWrapper>
       <Rating>★★★★☆</Rating>
       <RatingsAnchor href="RATINGS">Read all reviews</RatingsAnchor>
     </RatingWrapper>
+
     <Category>{details.category.toUpperCase()}</Category>
+
     <Name>{details.name}</Name>
+
     <Styles styles={styles} price={price} sale={sale} getStyleID={getStyleID} />
+
     <Purchasing>
       <Selectors skus={skus} />
       <PurchaseLikeButtons>
@@ -122,6 +127,7 @@ const ProductOverview = ({
         <Like>☆</Like>
       </PurchaseLikeButtons>
     </Purchasing>
+
   </Wrapper>
 );
 

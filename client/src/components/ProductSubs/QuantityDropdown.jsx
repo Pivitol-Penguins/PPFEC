@@ -123,31 +123,26 @@ class QuantityDropdown extends React.Component {
 
     return (
       <DDWrapper>
-        <DDHeader
-          onClick={this.toggleList}
-        >
+
+        <DDHeader onClick={this.toggleList}>
           <DDHeaderTitle>{headerTitle}</DDHeaderTitle>
           {isListOpen
             ? <FontAwesome name="angle-up" size="2x" />
             : <FontAwesome name="angle-down" size="2x" />}
         </DDHeader>
+
         {isListOpen && (
-          <DDList
-            role="list"
-          >
+          <DDList role="list">
             {list.map((item) => (
               item - 1 < this.props.available && (
-              <DDListItem
-                type="button"
-                key={item}
-                onClick={() => this.selectItem(item)}
-              >
+              <DDListItem type="button" key={item} onClick={() => this.selectItem(item)}>
                 {item}
               </DDListItem>
               )
             ))}
           </DDList>
         )}
+
       </DDWrapper>
     );
   }

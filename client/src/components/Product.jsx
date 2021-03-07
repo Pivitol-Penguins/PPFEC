@@ -38,17 +38,12 @@ class Product extends React.Component {
       currentStyle: null,
       stylePhotos: null,
       skus: null,
-      // isModalOpen: false,
     };
     this.getStyleID = this.getStyleID.bind(this);
     this.styleFinder = this.styleFinder.bind(this);
-    // this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
-    // if (this.state.isModalOpen) {
-    //   window.addEventListener('click', () => this.toggleModal());
-    // }
     this.setState({
       currentStyle: this.props.productStyles.results[0].style_id,
       stylePhotos: this.props.productStyles.results[0].photos,
@@ -77,22 +72,15 @@ class Product extends React.Component {
     });
   }
 
-  // toggleModal() {
-  //   this.setState((prevState) => ({
-  //     isModalOpen: !prevState.isModalOpen,
-  //   }));
-  // }
-
   render() {
     if (this.state.currentStyle) {
       return (
         <Wrapper>
+
           <TopWrapper>
             <ProductImages
               images={this.state.stylePhotos}
               id={this.state.currentStyle}
-              // toggleModal={this.toggleModal}
-              // isModalOpen={this.state.isModalOpen}
             />
             <ProductOverview
               details={this.props.productDetails}
@@ -103,6 +91,7 @@ class Product extends React.Component {
               sale={this.state.sale}
             />
           </TopWrapper>
+
           <BottomWrapper>
             <Description info={this.props.productDetails} />
             <FeaturesList
@@ -110,6 +99,7 @@ class Product extends React.Component {
               features={this.props.productDetails.features}
             />
           </BottomWrapper>
+
         </Wrapper>
       );
     }

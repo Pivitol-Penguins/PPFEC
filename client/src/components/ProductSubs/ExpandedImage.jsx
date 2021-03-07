@@ -10,7 +10,7 @@ const Expanded = styled.img`
   bottom: 0;
   align-items: center;
   justify-content: center;
-  z-index: 20;
+  z-index: 5;
   max-width: 85vw;
   max-height: 90vh;
   margin: auto;
@@ -21,18 +21,23 @@ const Expanded = styled.img`
 class ExpandedImage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-
+    this.state = {
+    };
     this.imageClickHandler = this.imageClickHandler.bind(this);
   }
 
-  imageClickHandler() {
-    console.log('clicked');
+  imageClickHandler(event) {
+    event.stopPropagation();
   }
 
   render() {
     return ReactDOM.createPortal(
-      <Expanded key={this.props.id} src={this.props.src} alt={this.props.alt} onClick={() => this.imageClickHandler()} />,
+      <Expanded
+        key={this.props.id}
+        src={this.props.src}
+        alt={this.props.alt}
+        onMouseDown={(event) => this.imageClickHandler(event)}
+      />,
       document.getElementById('modal-root'),
     );
   }
