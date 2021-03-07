@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 
 import ViewerThumbnails from './ViewerThumbnails.jsx';
+import ExpandedImage from './ExpandedImage.jsx';
 
 const Wrapper = styled.div`
   flex-basis: 65%;
@@ -54,11 +55,13 @@ class ProductImages extends React.Component {
       index: 0,
       start: 0,
       end: 4,
+      isModalOpen: false,
     };
     this.clickNavHandler = this.clickNavHandler.bind(this);
     this.clickedThumb = this.clickedThumb.bind(this);
     this.indexUpdater = this.indexUpdater.bind(this);
     this.indexChecker = this.indexChecker.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   clickNavHandler(event) {
@@ -108,12 +111,32 @@ class ProductImages extends React.Component {
     }
   }
 
+  toggleModal() {
+    this.setState({
+      isModalOpen: !this.state.isModalOpen,
+    });
+  }
+
   render() {
     return (
       <Wrapper>
         {this.state.index !== 0 && <LeftArrow onClick={this.clickNavHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></LeftArrow> }
         <ViewerThumbnails viewerIndex={this.state.index} start={this.state.start} end={this.state.end} indexUpdater={this.indexUpdater} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
-        <Image src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
+
+        <Image onClick={() => this.setState({ isModalOpen: !this.state.isModalOpen })} src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
+
+        {this.state.isModalOpen && (
+          <ExpandedImage
+            src={this.props.images[this.state.index].url}
+            key={this.props.id}
+            alt="style photograph"
+            id="modal"
+            isOpen={this.state.isModalOpen}
+            onClose={this.toggleState}
+            class="my-class"
+          />
+        )}
+
         {this.state.index !== this.props.images.length - 1 && <RightArrow onClick={this.clickNavHandler}><FontAwesome id="1" name="angle-right" size="2x" /></RightArrow> }
       </Wrapper>
     );
