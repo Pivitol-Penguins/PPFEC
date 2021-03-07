@@ -15,12 +15,24 @@ const Expanded = styled.img`
   max-height: 90vh;
   margin: auto;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  &:hover { cursor: crosshair; };
 `;
 
 class ExpandedImage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+
+    this.imageClickHandler = this.imageClickHandler.bind(this);
+  }
+
+  imageClickHandler() {
+    console.log('clicked');
+  }
+
   render() {
     return ReactDOM.createPortal(
-      <Expanded key={this.props.key} src={this.props.src} alt={this.props.alt} />,
+      <Expanded key={this.props.id} src={this.props.src} alt={this.props.alt} onClick={() => this.imageClickHandler()} />,
       document.getElementById('modal-root'),
     );
   }

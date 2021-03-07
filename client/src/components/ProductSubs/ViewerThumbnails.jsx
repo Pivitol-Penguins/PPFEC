@@ -126,8 +126,8 @@ class ViewerThumbnails extends React.Component {
             && Number(index) >= this.props.start
             && Number(index) <= this.props.end) {
               return (
-                <div>
-                  <ViewerImageContainer key={image.url}>
+                <div key={image.url}>
+                  <ViewerImageContainer>
                     <Image
                       onClick={this.clickHandler}
                       src={image.thumbnail_url}

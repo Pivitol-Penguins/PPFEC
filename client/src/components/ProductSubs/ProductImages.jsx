@@ -46,6 +46,7 @@ const Image = styled.img`
   padding: 0;
   position: relative;
   z-index: 0;
+  &:hover { cursor: zoom-in; };
 `;
 
 class ProductImages extends React.Component {
@@ -62,6 +63,18 @@ class ProductImages extends React.Component {
     this.indexUpdater = this.indexUpdater.bind(this);
     this.indexChecker = this.indexChecker.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.state.isModalOpen) {
+      window.addEventListener('click',
+        () => {
+          this.toggleModal();
+          console.log('clicked window');
+        });
+    } else {
+      window.removeEventListener('click', () => this.toggleModal());
+    }
   }
 
   clickNavHandler(event) {
@@ -112,9 +125,9 @@ class ProductImages extends React.Component {
   }
 
   toggleModal() {
-    this.setState({
-      isModalOpen: !this.state.isModalOpen,
-    });
+    this.setState((prevState) => ({
+      isModalOpen: !prevState.isModalOpen,
+    }));
   }
 
   render() {
@@ -123,16 +136,15 @@ class ProductImages extends React.Component {
         {this.state.index !== 0 && <LeftArrow onClick={this.clickNavHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></LeftArrow> }
         <ViewerThumbnails viewerIndex={this.state.index} start={this.state.start} end={this.state.end} indexUpdater={this.indexUpdater} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
 
-        <Image onClick={() => this.setState({ isModalOpen: !this.state.isModalOpen })} src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
+        <Image onClick={() => this.toggleModal()} src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
 
         {this.state.isModalOpen && (
           <ExpandedImage
             src={this.props.images[this.state.index].url}
-            key={this.props.id}
+            id={this.props.id}
             alt="style photograph"
-            id="modal"
             isOpen={this.state.isModalOpen}
-            onClose={this.toggleState}
+            closeModal={this.toggleModal}
             class="my-class"
           />
         )}
