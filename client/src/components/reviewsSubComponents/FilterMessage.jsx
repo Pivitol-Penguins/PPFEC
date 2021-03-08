@@ -5,28 +5,31 @@ const ClickTag = styled.div`
   padding: 2px 1vw 0 1vw;
   text-decoration:underline;
 
-  &.not-click {
-    &:hover {
-      cursor: pointer;
-      color: #80CCC4;
-      transform: scale(1.1);
-    }
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    transform: scale(1.1);
   }
+
 `;
 
-// const FilterMessage = (props) => {
-//   return (
-
-//     <div>
-//       <span>Showing</span>
-//       {prpos.filter.map((star) => (
-//         <span>{star} stars reviews</span>
-//       ))}
-//     </div>
-//     <ClickTag>
-//       Remove All Filters
-//     </ClickTag>
-//   )
-// }
+const FilterMessage = (props) => (
+  <div>
+    <div>
+      <span>Showing</span>
+      {props.filter.map((star) => (
+        <span key={star}>
+          {star}
+          {' '}
+          stars
+        </span>
+      ))}
+      <span>reviews</span>
+    </div>
+    <ClickTag onClick={props.handleRemoveLabelClick}>
+      Remove All Filters
+    </ClickTag>
+  </div>
+);
 
 export default FilterMessage;

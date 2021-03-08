@@ -98,9 +98,9 @@ class Reviews extends React.Component {
   }
 
   starFilter(star) {
-    console.log('starFilter===>', this.state.filterStars.includes(star));
-    console.log('before star arr===>', this.state.filterArr);
-    console.log('before star arr===>', this.state.filterStars);
+    // console.log('starFilter===>', this.state.filterStars.includes(star));
+    // console.log('before star arr===>', this.state.filterArr);
+    // console.log('before star arr===>', this.state.filterStars);
     // add filter
     if (!this.state.filterStars.includes(star)) {
       this.setState((prevState) => {
@@ -117,8 +117,8 @@ class Reviews extends React.Component {
           filterArr: this.props.reviews.results.filter((review) => review.rating === star),
         };
       }, () => {
-        console.log('AFTER add star filter', this.state.filterStars);
-        console.log('AFTER add star filter', this.state.filterArr);
+        // console.log('AFTER add star filter', this.state.filterStars);
+        // console.log('AFTER add star filter', this.state.filterArr);
         this.loadFirstTwoReviews(this.state.filterArr);
       });
     } else {
@@ -131,8 +131,8 @@ class Reviews extends React.Component {
           filterArr: prevState.filterArr.filter((review) => review.rating !== star),
         };
       }, () => {
-        console.log('AFTER remove star filter', this.state.filterStars);
-        console.log('AFTER remove star filter', this.state.filterArr);
+        // console.log('AFTER remove star filter', this.state.filterStars);
+        // console.log('AFTER remove star filter', this.state.filterArr);
         if (this.state.filterStars.length === 0) {
           this.loadFirstTwoReviews(this.props.reviews.results);
         } else {
@@ -142,13 +142,14 @@ class Reviews extends React.Component {
     }
   }
 
-  removeAllFilter() {
+  removeAllFilter(callback) {
     this.setState({
       filterArr: [],
       filterStars: [],
     }, () => {
       this.loadFirstTwoReviews(this.props.reviews.results);
     });
+    callback();
   }
 
   sortSelected(event) {
@@ -184,7 +185,11 @@ class Reviews extends React.Component {
           <Wrapper>
             <RatingWrapper>
               <RatingSummary reviewsMeta={this.state.reviewsMeta} />
-              <RatingBreakDown reviewsMeta={this.state.reviewsMeta} starFilter={this.starFilter} />
+              <RatingBreakDown
+                reviewsMeta={this.state.reviewsMeta}
+                starFilter={this.starFilter}
+                removeAllFilter={this.removeAllFilter}
+              />
               <ProductBreakDown
                 reviewsMeta={this.state.reviewsMeta}
               />

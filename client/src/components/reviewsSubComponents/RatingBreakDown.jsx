@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import FilterMessage from './FilterMessage.jsx';
+import FilterMessage from './FilterMessage.jsx';
 
 const BreakDownWrapper = styled.div`
   display: flex;
@@ -61,6 +61,15 @@ class RatingBreakDown extends React.Component {
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
     this.handleStarFilterClick = this.handleStarFilterClick.bind(this);
+    this.handleRemoveLabelClick = this.handleRemoveLabelClick.bind(this);
+  }
+
+  handleRemoveLabelClick() {
+    this.props.removeAllFilter(() => {
+      this.setState({
+        filter: [],
+      });
+    });
   }
 
   handleStarFilterClick(event, star) {
@@ -106,24 +115,12 @@ class RatingBreakDown extends React.Component {
     const { stars } = this.state;
     let filterMessage;
     if (this.state.filter.length > 0) {
-      console.log(this.state.filter);
+      // console.log(this.state.filter);
       filterMessage = (
-        <div>
-          <div>
-            <span>Showing</span>
-            {this.state.filter.map((star) => (
-              <span key={star}>
-                {star}
-                {' '}
-                stars
-              </span>
-            ))}
-            <span>reviews</span>
-          </div>
-          <ClickTag>
-            Remove All Filters
-          </ClickTag>
-        </div>
+        <FilterMessage
+          filter={this.state.filter}
+          handleRemoveLabelClick={this.handleRemoveLabelClick}
+        />
       );
     }
 
