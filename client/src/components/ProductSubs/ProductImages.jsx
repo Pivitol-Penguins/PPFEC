@@ -158,6 +158,7 @@ class ProductImages extends React.Component {
               index={this.state.index}
               images={this.props.images}
               clickNavHandler={this.clickNavHandler}
+              clickedThumb={this.clickedThumb}
             />
           </ModalBackground>
         )}

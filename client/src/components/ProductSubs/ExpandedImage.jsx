@@ -60,6 +60,19 @@ const IconHolder = styled.div`
   z-index: 6;
 `;
 
+const SelectedIcon = styled.div`
+  background-color: #80ccc4;
+  border-radius: 50%;
+  width: .25rem;
+  height: .25rem;
+  z-index: 6;
+  border-width: 0;
+  border-style: none;
+  margin: 0 .25vw;
+  padding: 2px;
+  border: 3px solid #80ccc4;
+`;
+
 const Icon = styled.div`
   border-radius: 50%;
   width: .25rem;
@@ -84,6 +97,7 @@ class ExpandedImage extends React.Component {
     this.expanded = React.createRef();
     this.imageClickHandler = this.imageClickHandler.bind(this);
     this.arrowClickHandler = this.arrowClickHandler.bind(this);
+    this.iconClickHandler = this.iconClickHandler.bind(this);
     this.trackMouse = this.trackMouse.bind(this);
   }
 
@@ -111,6 +125,11 @@ class ExpandedImage extends React.Component {
     this.props.clickNavHandler(event);
   }
 
+  iconClickHandler(event) {
+    event.stopPropagation();
+    this.props.clickedThumb(event.target.id);
+  }
+
   render() {
     return ReactDOM.createPortal(
       <Wrapper>
@@ -128,10 +147,19 @@ class ExpandedImage extends React.Component {
         {this.props.index !== this.props.images.length - 1 && !this.state.zoomed && <ModalRightArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="1" name="angle-right" size="2x" /></ModalRightArrow> }
         {!this.state.zoomed
         && (
-          <IconHolder>
-            {this.props.images.map((image, index) => (
-              <Icon type="button" key={index} />
-            ))}
+          <IconHolder onMouseDown={(event) => event.stopPropagation()}>
+            {this.props.images.map((image, index) => {
+              if (this.props.index === index) {
+                return (
+                  <SelectedIcon type="button" id={index} key={index} onMouseDown={this.iconClickHandler} />
+                );
+              }
+              if (this.props.index !== index) {
+                return (
+                  <Icon type="button" id={index} key={index} onMouseDown={this.iconClickHandler} />
+                );
+              }
+            })}
           </IconHolder>
         )}
       </Wrapper>,
