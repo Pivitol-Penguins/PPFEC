@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const FormQContainer = styled.form`
   display: flex;
@@ -11,18 +12,41 @@ const FormQContainer = styled.form`
   height: 50vw;
   color: #424242;
   font-family: 'Lato', sans-serif;
+  box-shadow: 0 14px 28px #a0a0a0, 0 10px 10px #a0a0a0;
 `;
 
 const Input = styled.input`
+  font-family: 'Lato', sans-serif;
   border: 1px solid #424242;
   width: 30vw;
   z-index: 0;
   position: relative;
   padding: 1.5vh 2vw;
   &:focus {
-    border: 1px solid #424242;
+    border: 1px solid #80CCC4;
     outline: none;
-  }; 
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:hover {
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  }
+`;
+
+const BodyT = styled.textarea`
+font-family: 'Lato', sans-serif;
+border: 1px solid #424242;
+width: 30vw;
+z-index: 0;
+position: relative;
+padding: 1.5vh 2vw;
+&:focus {
+  border: 1px solid #80CCC4;
+  outline: none;
+  box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+};
+&:hover {
+  box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+}
 `;
 
 const Buttons = styled.div`
@@ -31,20 +55,23 @@ const Buttons = styled.div`
 `;
 
 const BC = styled.button`
-background-color: #FFFFFF;
-border: 1px solid #424242;
-height: 6vh;
-width: 20vw;
-font-size: 15px;
-color: #424242;
-&:hover {
-  cursor: pointer;
-  color: #80CCC4;
-  border: 1px solid #80CCC4;
-};
-&:focus {
-  outline: none;
-};
+  font-family: 'Lato', sans-serif;
+  background-color: #FFFFFF;
+  border: 1px solid #424242;
+  height: 6vh;
+  width: 20vw;
+  font-size: 15px;
+  color: #424242;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    border: 1px solid #80CCC4;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  };
 `;
 
 const BP = styled.div`
@@ -61,22 +88,34 @@ const Pair = styled.div`
 const Title = styled.h4`
 `;
 
+const BText = styled.div`
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #424242;
+`;
+
 class FormQ extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // body: '',
-      // name: '',
-      // email: '',
-      // product_id: '',
+      body: '',
+      name: '',
+      email: '',
+      product_id: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.postMan = this.postMan.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ product_id: Number(window.location.pathname.slice(-6, -1)) });
   }
 
   handleChange(e) {
     e.preventDefault();
-    this.setState({});
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleClick(e) {
@@ -86,31 +125,44 @@ class FormQ extends React.Component {
     }
   }
 
+  postMan(e) {
+    e.preventDefault();
+    if (this.state.email.includes('@') && this.state.email.includes('.com')) {
+      axios.post('/questions/', this.state)
+        .catch()
+        .then((data) => {
+          this.props.func(data.data.results);
+        });
+    }
+  }
+
   render() {
     return (
-      <FormQContainer>
+      <FormQContainer onSubmit={this.postMan}>
         COMPLETE THIS FORM TO ADD A QUESTION
         <Pair>
           <Title>
             HAVE A QUESTION?
           </Title>
-          <Input name="body" onChange={this.handleChange} placeholder="ADD IT HERE" />
+          <BodyT cols="55" rows="5" maxLength="1000" name="body" onChange={this.handleChange} placeholder="ADD YOUR QUESTION HERE" value={this.state.body} />
         </Pair>
         <Pair>
           <Title>
             MAY I HAVE YOUR NAME?
           </Title>
-          <Input name="name" onChange={this.handleChange} placeholder="ADD IT HERE" />
+          <Input name="name" onChange={this.handleChange} placeholder="EXAMPLE: jackson11!" value={this.state.name} />
+          <BText>FOR PRIVACY REASONS, DO NOT USE YOUR FULL NAME OR EMAIL ADDRESS</BText>
         </Pair>
         <Pair>
           <Title>
             HOW ABOUT YOUR EMAIL?
           </Title>
-          <Input name="email" onChange={this.handleChange} placeholder="ADD IT HERE" />
+          <Input name="email" type="email" onChange={this.handleChange} placeholder="WHY DID YOU LIKE THE PRODUCT OR NOT?" value={this.state.email} />
+          <BText>FOR AUTHENTICATION REASONS, YOU WILL NOT BE EMAILED</BText>
         </Pair>
         <Buttons>
           <BP>
-            <BC name="Submit" onClick={this.handleClick}>SUBMIT</BC>
+            <BC name="Submit" onClick={this.postMan}>SUBMIT</BC>
           </BP>
           <BP>
             <BC name="Exit" onClick={this.handleClick}>EXIT</BC>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,7 +14,7 @@ const Photo = styled.img`
 
 const Photos = (props) => (
   <div>
-    {props.photos.map((photo) => <Photo src={photo} alt={photo} key={photo} />)}
+    {props.photos.map((photo, i) => <Photo src={photo} alt={photo} key={photo + i} />)}
   </div>
 );
 export default Photos;

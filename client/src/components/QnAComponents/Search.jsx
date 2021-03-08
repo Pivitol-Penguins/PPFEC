@@ -8,10 +8,13 @@ const Input = styled.input`
   position: relative;
   padding: 1.5vh 2vw;
   &:focus {
-    border: 1px solid #424242;
+    border: 1px solid #80CCC4;
     outline: none;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
   };
-  
+  &:hover {
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -26,14 +29,14 @@ const Magnify = styled.div`
   left: 60vw;
   width: 1rem;
   padding-right: 4vw;
-  color: #80CCC4;
+  color: #424242;
   -webkit-transform: rotate(-45deg); 
   -moz-transform: rotate(-45deg); 
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   &:hover {
     cursor: pointer;
-    color: #424242;
+    color: #80CCC4;
   }
 `;
 
