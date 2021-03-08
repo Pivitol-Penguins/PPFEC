@@ -38,7 +38,7 @@ const RatingWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 30px 30px;
+  padding: 40px 55px;
 `;
 
 class Reviews extends React.Component {

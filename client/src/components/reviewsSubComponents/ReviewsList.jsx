@@ -15,6 +15,7 @@ const ReviewsWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
+  padding: 15px 0;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -35,11 +36,24 @@ const ListWrapper = styled.div`
 `;
 
 const ReviewButton = styled.button`
+  font-family: 'Lato', sans-serif;
+  background-color: #FFFFFF;
+  border: 1px solid #424242;
+  height: 6vh;
+  width: 20vw;
   font-size: 15px;
-  padding: 20px 10px;
-  margin: 10px 15px;
-  width: 200px;
-  height: 55px;
+  color: #424242;
+  font-weight: 1000;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    border: 1px solid #80CCC4;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  };
 `;
 
 const ReviewSortWrapper = styled.div`
@@ -104,7 +118,7 @@ const ReviewsList = (props) => {
       </ListWrapper>
       <ButtonWrapper>
         {moreReviewBtn}
-        <ReviewButton onClick={() => props.addReviewToggle()}>ADD A REVIEW   +</ReviewButton>
+        <ReviewButton onClick={() => props.addReviewToggle()}>ADD A REVIEW</ReviewButton>
         {props.addReviewShow && (
           <Modal content={(
             <AddReviewForm

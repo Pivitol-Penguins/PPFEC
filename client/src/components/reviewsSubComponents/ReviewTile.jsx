@@ -42,6 +42,7 @@ const HelpfulnessWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
+  padding: 5px 0;
 `;
 
 const ClickTag = styled.div`

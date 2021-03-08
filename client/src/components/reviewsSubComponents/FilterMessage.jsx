@@ -10,26 +10,49 @@ const ClickTag = styled.div`
     color: #80CCC4;
     transform: scale(1.1);
   }
+`;
 
+const FilterMessageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 5px
 `;
 
 const FilterMessage = (props) => (
-  <div>
+  <FilterMessageContainer>
     <div>
-      <span>Showing</span>
-      {props.filter.map((star) => (
-        <span key={star}>
-          {star}
-          {' '}
-          stars
-        </span>
-      ))}
-      <span>reviews</span>
+      <span>Showing all </span>
+      {props.filter.map((star, index) => {
+        if (index > 0 && index !== props.filter.length - 1) {
+          return (
+            <span key={star}>
+              ,
+              {star}
+            </span>
+          );
+        }
+        if (index > 0 && index === props.filter.length - 1) {
+          return (
+            <span key={star}>
+              {' '}
+              &
+              {star}
+            </span>
+          );
+        }
+        return (
+          <span key={star}>
+            {star}
+          </span>
+        );
+      })}
+      <span> star reviews</span>
     </div>
     <ClickTag onClick={props.handleRemoveLabelClick}>
       Remove All Filters
     </ClickTag>
-  </div>
+  </FilterMessageContainer>
 );
 
 export default FilterMessage;
