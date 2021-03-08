@@ -5,10 +5,10 @@ import FontAwesome from 'react-fontawesome';
 const Thumbs = styled.div`
   z-index: 1;
   position: absolute;
-  left: 14.25vw;
-  top: 2vh;
+  left: 1vw;
+  top: .75vh;
   width: 6vw;
-  height: 53vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
