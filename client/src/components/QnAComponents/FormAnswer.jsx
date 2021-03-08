@@ -172,11 +172,19 @@ class FormA extends React.Component {
 
   handlePSubmit(e) {
     e.preventDefault();
-    this.state.photos.push(this.state.photosI);
-    this.setState((prevState) => ({
-      photosI: '',
-      photos: prevState.photos,
-    }));
+    if (
+      this.state.photosI.includes('.png')
+      || this.state.photosI.includes('.jpeg')
+      || this.state.photosI.includes('.jpg')
+      || this.state.photosI.includes('.gif')
+    ) {
+      this.state.photos.push(this.state.photosI);
+      this.setState((prevState) => ({
+        photosI: '',
+        photos: prevState.photos,
+      }));
+    } else {
+    }
   }
 
   postMan(e) {

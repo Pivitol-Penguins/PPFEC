@@ -103,7 +103,7 @@ class Answer extends React.Component {
           {this.props.answer.body}
         </Body>
         <div>
-          {this.props.answer.photos.length !== 0
+          {this.props.answer.photos
             ? <Photos photos={this.props.answer.photos} /> : null}
         </div>
         <BottomContainer>
