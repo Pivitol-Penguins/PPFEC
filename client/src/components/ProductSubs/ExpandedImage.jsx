@@ -114,7 +114,7 @@ class ExpandedImage extends React.Component {
   render() {
     return ReactDOM.createPortal(
       <Wrapper>
-        {this.props.index !== 0 && <ModalLeftArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></ModalLeftArrow> }
+        {this.props.index !== 0 && !this.state.zoomed && <ModalLeftArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></ModalLeftArrow> }
         <Expanded
           key={this.props.id}
           src={this.props.src}
@@ -125,12 +125,15 @@ class ExpandedImage extends React.Component {
           y={this.state.y}
           onMouseDown={(event) => this.imageClickHandler(event)}
         />
-        {this.props.index !== this.props.images.length - 1 && <ModalRightArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="1" name="angle-right" size="2x" /></ModalRightArrow> }
-        <IconHolder>
-          {this.props.images.map((image, index) => (
-            <Icon type="button" key={index} />
-          ))}
-        </IconHolder>
+        {this.props.index !== this.props.images.length - 1 && !this.state.zoomed && <ModalRightArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="1" name="angle-right" size="2x" /></ModalRightArrow> }
+        {!this.state.zoomed
+        && (
+          <IconHolder>
+            {this.props.images.map((image, index) => (
+              <Icon type="button" key={index} />
+            ))}
+          </IconHolder>
+        )}
       </Wrapper>,
       document.getElementById('modal-root'),
     );
