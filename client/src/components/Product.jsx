@@ -18,12 +18,12 @@ const TopWrapper = styled.div`
   width: 75vw;
   height: auto;
   min-height: 70vh;
-  max-height: 80vh;
+  max-height: 74vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-top: 5px;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 `;
 
 const BottomWrapper = styled.div`
