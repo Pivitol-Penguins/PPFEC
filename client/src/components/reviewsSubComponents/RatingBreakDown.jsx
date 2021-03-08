@@ -55,6 +55,7 @@ class RatingBreakDown extends React.Component {
     super(props);
     this.state = {
       stars: [5, 4, 3, 2, 1],
+
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
@@ -83,6 +84,7 @@ class RatingBreakDown extends React.Component {
 
   render() {
     const { stars } = this.state;
+
     return (
       <div>
         <div>
@@ -100,6 +102,7 @@ class RatingBreakDown extends React.Component {
             </BreakDownWrapper>
           ))}
         </div>
+        {/* {filterMessage} */}
         <RecommendPercentage>
           {this.getRecommendRate()}
           % of reviews recommend this product

@@ -59,7 +59,6 @@ const ProductBreakDown = ({ reviewsMeta }) => {
           <div>{characteristic}</div>
           <CharcBarContainer>
             <Background />
-            {/* <CharValuePercentage percent={charValue} /> */}
             <TriangleScaleIcon percent={charValue} />
           </CharcBarContainer>
           <FeedbackWrapper>

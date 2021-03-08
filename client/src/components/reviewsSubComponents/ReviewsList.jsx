@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import ReviewTile from './ReviewTile.jsx';
 import Modal from './Modal.jsx';
 import AddReviewForm from './AddReviewForm.jsx';
@@ -112,7 +111,7 @@ const ReviewsList = (props) => {
               toggle={props.addReviewToggle}
               productId={Number(reviewsMeta.product_id)}
               characteristics={reviewsMeta.characteristics}
-              loadReview={this.loadFirstTwoReviews}
+              loadReview={props.loadFirstTwoReviews}
             />
 )}
           />

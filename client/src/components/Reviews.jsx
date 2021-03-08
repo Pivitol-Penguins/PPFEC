@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import ReviewsList from './reviewsSubComponents/ReviewsList.jsx';
@@ -47,36 +47,31 @@ class Reviews extends React.Component {
     this.state = {
       reviews: [],
       reviewsMeta: this.props.reviewsMeta,
-      filterOn: false,
+      displayLimit: 2,
+      fullreviewsArr: [],
+      filterArr: [],
+      addReviewShow: false,
+      filterStars: [],
       product_id: this.props.product,
       entriesCount: this.props.count,
       page: this.props.page,
-      displayLimit: 2,
-      fullreviewsArr: [],
       sortSelection: 'relavent',
-      addReviewShow: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
     this.sortSelected = this.sortSelected.bind(this);
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
+    this.removeAllFilter = this.removeAllFilter.bind(this);
+    this.removeStarFilter = this.removeStarFilter.bind(this);
   }
 
   componentDidMount() {
     this.loadFirstTwoReviews(this.props.reviews.results);
   }
 
-  starFilter(star) {
-    this.setState({
-      fullreviewsArr: this.props.reviews.results.filter((review) => review.rating === star),
-      filterOn: true,
-    }, () => {
-      this.loadFirstTwoReviews(this.state.fullreviewsArr);
-    });
-  }
-
   loadFirstTwoReviews(data) {
+    console.log(this.props.reviews);
     const displayArr = [];
     let tileCount = 0;
     while (tileCount < this.state.displayLimit) {
@@ -103,6 +98,54 @@ class Reviews extends React.Component {
     }));
   }
 
+  starFilter(star) {
+    console.log('starFilter===>', this.state.filterStars.includes(star));
+    // add filter
+    if (!this.state.filterStars.includes(star)) {
+      this.setState((prevState) => {
+        // check if it is the first filter
+        if (prevState.filterArr.length > 0 && prevState.filterStars.length > 0) {
+          return {
+            filterStars: [...prevState.filterStars, star],
+            filterArr: [...prevState.filterArr,
+              ...this.props.reviews.results.filter((review) => review.rating === star)],
+          };
+        }
+        return {
+          filterStars: [...prevState.filterStars, star],
+          filterArr: this.props.reviews.results.filter((review) => review.rating === star),
+        };
+      }, () => {
+        this.loadFirstTwoReviews(this.state.filterArr);
+      });
+    } else {
+      // remove filter
+      this.setState((prevState) => {
+        const index = prevState.filterStars.indexOf(star);
+        console.log(index);
+        return {
+          filterStars: prevState.filterStars.splice(index, 1),
+          filterArr: prevState.filterArr.filter((review) => review.rating !== star),
+        };
+      }, () => {
+        this.loadFirstTwoReviews(this.state.filterArr);
+      });
+    }
+  }
+
+  removeStarFilter(star) {
+
+  }
+
+  removeAllFilter() {
+    this.setState({
+      filterArr: [],
+      filterStars: [],
+    }, () => {
+      this.loadFirstTwoReviews(this.props.reviews.results);
+    });
+  }
+
   sortSelected(event) {
     const path = window.location.pathname;
     axios.get(`${path.slice(-6)}reviews/${event.target.value}`)
@@ -127,9 +170,9 @@ class Reviews extends React.Component {
   }
 
   render() {
-    // console.log(this.state.reviews);
-    // console.log(this.state.reviewsMeta);
     if (this.state.reviews.length > 0 && this.state.fullreviewsArr.length > 0) {
+      console.log(this.state.fullreviewsArr);
+      console.log(this.state.reviews);
       return (
         <ReviewsContainer>
           <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
