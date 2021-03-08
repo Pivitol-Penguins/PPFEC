@@ -6,8 +6,10 @@ import ViewerThumbnails from './ViewerThumbnails.jsx';
 import ExpandedImage from './ExpandedImage.jsx';
 
 const Wrapper = styled.div`
+  position: relative;
   flex-basis: 65%;
   width: 50vw;
+  height: 70vh;
   display: flex;
   flex-direction: row;
   border: 2px solid #aeaeae;
@@ -19,7 +21,7 @@ const RightArrow = styled.div`
   z-index: 1;
   position: absolute;
   top: 30vh;
-  right: 40.3vw;
+  right: .25vw;
   &:hover {
     color: #80ccc4;
     transform: scale(1.1);
@@ -32,7 +34,7 @@ const LeftArrow = styled.div`
   z-index: 1;
   position: absolute;
   top: 30vh;
-  left: 12.75vw;
+  left: git.25vw;
   &:hover {
     color: #80ccc4;
     transform: scale(1.1);
