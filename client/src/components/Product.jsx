@@ -23,7 +23,7 @@ const TopWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   padding-top: 5px;
-  margin-bottom: 3vh;
+  margin-bottom: 4vh;
 `;
 
 const BottomWrapper = styled.div`
