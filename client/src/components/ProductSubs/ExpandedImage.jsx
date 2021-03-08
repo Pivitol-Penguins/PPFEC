@@ -18,11 +18,14 @@ const Wrapper = styled.div`
 
 const Expanded = styled.img`
   ${(props) => props.zoomed && 'transform: scale(2.5)'};
+  // top: ${(props) => props.y};
+  // left: ${(props) => props.x};
+  background: url(${(props) => props.src}) no-repeat 0 0 fixed;
   display: block;
   max-height: 95vh;
   cursor: ${(props) => (props.zoomed ? 'zoom-out' : 'zoom-in')};
-  // background-position-x: ${(props) => props.x};
-  // background-position-y: ${(props) => props.y};
+  background-position-x: ${(props) => props.x};
+  background-position-y: ${(props) => props.y};
 `;
 
 const ModalLeftArrow = styled.div`
@@ -91,8 +94,8 @@ class ExpandedImage extends React.Component {
     super(props);
     this.state = {
       zoomed: false,
-      // x: 0,
-      // y: 0,
+      x: 0,
+      y: 0,
     };
     this.expanded = React.createRef();
     this.imageClickHandler = this.imageClickHandler.bind(this);
