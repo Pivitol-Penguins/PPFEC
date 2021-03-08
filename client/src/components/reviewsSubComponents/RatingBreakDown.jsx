@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// import FilterMessage from './FilterMessage.jsx';
 
 const BreakDownWrapper = styled.div`
   display: flex;
@@ -55,10 +56,29 @@ class RatingBreakDown extends React.Component {
     super(props);
     this.state = {
       stars: [5, 4, 3, 2, 1],
-
+      filter: [],
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
+    this.handleStarFilterClick = this.handleStarFilterClick.bind(this);
+  }
+
+  handleStarFilterClick(event, star) {
+    this.props.starFilter(star);
+    console.log('IN RATING BREAK DOWN', this.state.filter);
+    this.setState((prevState) => {
+      if (prevState.filter.includes(star)) {
+        const index = prevState.filter.indexOf(star);
+        prevState.filter.splice(index, 1);
+        return {
+          filter: prevState.filter,
+        };
+      }
+      return {
+        filter: [...prevState.filter, star],
+      };
+    });
+    event.preventDefault();
   }
 
   getPercentage(starNumber) {
@@ -84,13 +104,35 @@ class RatingBreakDown extends React.Component {
 
   render() {
     const { stars } = this.state;
+    let filterMessage;
+    if (this.state.filter.length > 0) {
+      console.log(this.state.filter);
+      filterMessage = (
+        <div>
+          <div>
+            <span>Showing</span>
+            {this.state.filter.map((star) => (
+              <span key={star}>
+                {star}
+                {' '}
+                stars
+              </span>
+            ))}
+            <span>reviews</span>
+          </div>
+          <ClickTag>
+            Remove All Filters
+          </ClickTag>
+        </div>
+      );
+    }
 
     return (
       <div>
         <div>
           {stars.map((star) => (
             <BreakDownWrapper key={star + this.getPercentage(star)}>
-              <ClickTag onClick={(e) => { this.props.starFilter(star); e.preventDefault(); }}>
+              <ClickTag onClick={(e) => this.handleStarFilterClick(e, star)}>
                 {star}
                 {' '}
                 stars
@@ -102,7 +144,7 @@ class RatingBreakDown extends React.Component {
             </BreakDownWrapper>
           ))}
         </div>
-        {/* {filterMessage} */}
+        {filterMessage}
         <RecommendPercentage>
           {this.getRecommendRate()}
           % of reviews recommend this product

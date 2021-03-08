@@ -63,7 +63,6 @@ class Reviews extends React.Component {
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.removeAllFilter = this.removeAllFilter.bind(this);
-    this.removeStarFilter = this.removeStarFilter.bind(this);
   }
 
   componentDidMount() {
@@ -71,7 +70,7 @@ class Reviews extends React.Component {
   }
 
   loadFirstTwoReviews(data) {
-    console.log(this.props.reviews);
+    // console.log(this.props.reviews);
     const displayArr = [];
     let tileCount = 0;
     while (tileCount < this.state.displayLimit) {
@@ -100,6 +99,8 @@ class Reviews extends React.Component {
 
   starFilter(star) {
     console.log('starFilter===>', this.state.filterStars.includes(star));
+    console.log('before star arr===>', this.state.filterArr);
+    console.log('before star arr===>', this.state.filterStars);
     // add filter
     if (!this.state.filterStars.includes(star)) {
       this.setState((prevState) => {
@@ -116,25 +117,29 @@ class Reviews extends React.Component {
           filterArr: this.props.reviews.results.filter((review) => review.rating === star),
         };
       }, () => {
+        console.log('AFTER add star filter', this.state.filterStars);
+        console.log('AFTER add star filter', this.state.filterArr);
         this.loadFirstTwoReviews(this.state.filterArr);
       });
     } else {
       // remove filter
       this.setState((prevState) => {
         const index = prevState.filterStars.indexOf(star);
-        console.log(index);
+        prevState.filterStars.splice(index, 1);
         return {
-          filterStars: prevState.filterStars.splice(index, 1),
+          filterStars: prevState.filterStars,
           filterArr: prevState.filterArr.filter((review) => review.rating !== star),
         };
       }, () => {
-        this.loadFirstTwoReviews(this.state.filterArr);
+        console.log('AFTER remove star filter', this.state.filterStars);
+        console.log('AFTER remove star filter', this.state.filterArr);
+        if (this.state.filterStars.length === 0) {
+          this.loadFirstTwoReviews(this.props.reviews.results);
+        } else {
+          this.loadFirstTwoReviews(this.state.filterArr);
+        }
       });
     }
-  }
-
-  removeStarFilter(star) {
-
   }
 
   removeAllFilter() {
@@ -171,8 +176,8 @@ class Reviews extends React.Component {
 
   render() {
     if (this.state.reviews.length > 0 && this.state.fullreviewsArr.length > 0) {
-      console.log(this.state.fullreviewsArr);
-      console.log(this.state.reviews);
+      // console.log(this.state.fullreviewsArr);
+      // console.log(this.state.reviews);
       return (
         <ReviewsContainer>
           <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
