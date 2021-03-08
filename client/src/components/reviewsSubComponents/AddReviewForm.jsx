@@ -13,19 +13,29 @@ const productCharacteristics = {
   Fit: ['Runs tight', 'Runs slightly tight', 'Perfect', 'Runs slightly long', 'Runs long'],
 };
 
-const RatingWraper = styled.div`
+const VerticalWrapper = styled.div`
   display: flex;
   align-items: baseline;
+  flex-direction: column;
+  padding: 10px 0;
+`;
+
+const HorizontalWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+  justisfy-content: space-around;
 `;
 
 const ValueButtonWrapper = styled.div`
   display: flex;
+  flex-basis: 20%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 const CharateristicsSelectorWrapper = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: baseline;
@@ -35,10 +45,57 @@ const StyledForm = styled.form`
   margin: 0 auto;
   padding: 20px;
   background-color: white;
-  width: 800px;
+  width: 55vw;
   height: 100%;
   font-family: 'Lato', sans-serif;
   box-shadow: 0 19px 38px #6d6d6d, 0 15px 12px #6d6d6d;
+`;
+
+const SytledSubmitButton = styled.input`
+  font-family: 'Lato', sans-serif;
+  background-color: #FFFFFF;
+  border: 1px solid #424242;
+  height: 6vh;
+  width: 20vw;
+  font-size: 15px;
+  color: #424242;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    border: 1px solid #80CCC4;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  };
+`;
+
+const SytledButton = styled.button`
+  font-family: 'Lato', sans-serif;
+  background-color: #FFFFFF;
+  border: 1px solid #424242;
+  height: 6vh;
+  width: 20vw;
+  font-size: 15px;
+  color: #424242;
+  padding: 5px;
+  &:hover {
+    cursor: pointer;
+    color: #80CCC4;
+    border: 1px solid #80CCC4;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  };
+`;
+
+const StyledInput = styled.input`
+  width: 100%;
+  height: 3vh;
+  border-color: #424242;
 `;
 
 class AddReviewForm extends React.Component {
@@ -136,17 +193,19 @@ class AddReviewForm extends React.Component {
     return (
       <StyledForm onSubmit={this.handleSubmit}>
         <h2>Write A Review</h2>
-        <RatingWraper>
+        <VerticalWrapper>
           <span>Overall Rating</span>
           <RatingStars getRating={this.getRating} />
-        </RatingWraper>
-        <div>
+        </VerticalWrapper>
+        <VerticalWrapper>
           <span>Do you recommend this product?</span>
-          <input type="radio" name="recommend" value="true" required onChange={this.handleChange} />
-          <span>Yes</span>
-          <input type="radio" name="recommend" value="false" required onChange={this.handleChange} />
-          <span>No</span>
-        </div>
+          <div>
+            <input type="radio" name="recommend" value="true" required onChange={this.handleChange} />
+            <span>Yes</span>
+            <input type="radio" name="recommend" value="false" required onChange={this.handleChange} />
+            <span>No</span>
+          </div>
+        </VerticalWrapper>
         <div>
           <span>Charateristics</span>
           <ul>
@@ -165,32 +224,31 @@ class AddReviewForm extends React.Component {
             ))}
           </ul>
         </div>
-        <div>
+        <VerticalWrapper>
           <span>Review Summary</span>
-          <input type="text" id="reviewSummary" name="summary" cols="100" maxLength="60" value={this.state.summary} placeholder="Example: Best purchase ever!" onChange={this.handleChange} />
-        </div>
-        <div>
+          <StyledInput type="text" id="reviewSummary" name="summary" cols="100" maxLength="60" value={this.state.summary} placeholder="Example: Best purchase ever!" onChange={this.handleChange} />
+        </VerticalWrapper>
+        <VerticalWrapper>
           <span>Your Review</span>
-          <div>
-            <textarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" value={this.state.body} placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
-          </div>
-        </div>
-        <div>
+          <textarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" value={this.state.body} placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
+        </VerticalWrapper>
+        <HorizontalWrapper>
           <span>Upload the photos of your purchase</span>
-          <div>
-            <input type="file" name="photos" ref={this.photosUpload} onChange={this.handlePhotosUpload} multiple />
-          </div>
-        </div>
-        <div>
-          <span>Your Nickname</span>
-          <input type="text" id="reviewer_name" name="name" maxLength="60" value={this.state.name} placeholder="Example: jackson11!" required onChange={this.handleChange} />
-        </div>
-        <div>
-          <span>Your Email</span>
-          <input type="email" id="email" name="email" maxLength="60" value={this.state.email} placeholder="Example: jackson11@mail.com" required onChange={this.handleChange} />
-        </div>
-        <input type="submit" name="submit" />
-        <button type="button" onClick={this.props.toggle}>Cancel</button>
+          <input type="file" name="photos" ref={this.photosUpload} onChange={this.handlePhotosUpload} multiple />
+        </HorizontalWrapper>
+        <HorizontalWrapper>
+          <VerticalWrapper>
+            <span>Your Nickname</span>
+            <input type="text" id="reviewer_name" name="name" maxLength="60" value={this.state.name} placeholder="Example: jackson11!" required onChange={this.handleChange} />
+          </VerticalWrapper>
+          <VerticalWrapper>
+            <span>Your Email</span>
+            <input type="email" id="email" name="email" maxLength="60" value={this.state.email} placeholder="Example: jackson11@mail.com" required onChange={this.handleChange} />
+          </VerticalWrapper>
+        </HorizontalWrapper>
+
+        <SytledSubmitButton type="submit" name="submit" />
+        <SytledButton type="button" onClick={this.props.toggle}>Cancel</SytledButton>
       </StyledForm>
 
     );

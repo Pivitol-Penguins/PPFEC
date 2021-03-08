@@ -7,8 +7,9 @@ const BreakDownWrapper = styled.div`
   justify-content: space-around;
   align-items: baseline;
   margin: 0 auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 10px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
 `;
 
 const BarContainer = styled.div`
@@ -35,10 +36,11 @@ const Percentage = styled(BaseBox)`
 `;
 
 const RecommendPercentage = styled.div`
+  width: 18vw;
   margin: 0 auto;
   padding-top: 18px;
   padding-bottom: 5px;
-  font-size: 15px;
+  font-size: 1vw;
 `;
 
 const ClickTag = styled.div`
