@@ -51,6 +51,28 @@ const ModalRightArrow = styled.div`
   };
 `;
 
+const IconHolder = styled.div`
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 2vh;
+  z-index: 6;
+`;
+
+const Icon = styled.div`
+  border-radius: 50%;
+  width: .25rem;
+  height: .25rem;
+  z-index: 6;
+  border-width: 0;
+  border-style: none;
+  margin: 0 .25vw;
+  padding: 2px;
+  border: 3px solid #aeaeae;
+  &:hover { border: 3px solid #80ccc4; };
+`;
+
 class ExpandedImage extends React.Component {
   constructor(props) {
     super(props);
@@ -103,7 +125,12 @@ class ExpandedImage extends React.Component {
           y={this.state.y}
           onMouseDown={(event) => this.imageClickHandler(event)}
         />
-        {this.props.index !== this.props.length - 1 && <ModalRightArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="1" name="angle-right" size="2x" /></ModalRightArrow> }
+        {this.props.index !== this.props.images.length - 1 && <ModalRightArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="1" name="angle-right" size="2x" /></ModalRightArrow> }
+        <IconHolder>
+          {this.props.images.map((image, index) => (
+            <Icon type="button" key={index} />
+          ))}
+        </IconHolder>
       </Wrapper>,
       document.getElementById('modal-root'),
     );
