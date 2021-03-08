@@ -155,6 +155,9 @@ class ProductImages extends React.Component {
               alt="style photograph"
               isModalOpen={this.state.isModalOpen}
               toggleModal={this.toggleModal}
+              index={this.state.index}
+              length={this.props.images.length}
+              clickNavHandler={this.clickNavHandler}
             />
           </ModalBackground>
         )}

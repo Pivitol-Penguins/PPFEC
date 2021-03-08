@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import FontAwesome from 'react-fontawesome';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -24,6 +25,32 @@ const Expanded = styled.img`
   // background-position-y: ${(props) => props.y};
 `;
 
+const ModalLeftArrow = styled.div`
+  color: #e0e0e0;
+  font-size: 1.75rem;
+  z-index: 6;
+  position: absolute;
+  top: 44vh;
+  left: .5vw;
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
+`;
+
+const ModalRightArrow = styled.div`
+  color: #e0e0e0;
+  font-size: 1.75rem;
+  z-index: 6;
+  position: absolute;
+  right: .5vw;
+  top: 44vh;
+  &:hover {
+    color: #80ccc4;
+    transform: scale(1.1);
+  };
+`;
+
 class ExpandedImage extends React.Component {
   constructor(props) {
     super(props);
@@ -34,6 +61,7 @@ class ExpandedImage extends React.Component {
     };
     this.expanded = React.createRef();
     this.imageClickHandler = this.imageClickHandler.bind(this);
+    this.arrowClickHandler = this.arrowClickHandler.bind(this);
     this.trackMouse = this.trackMouse.bind(this);
   }
 
@@ -41,7 +69,7 @@ class ExpandedImage extends React.Component {
     const node = this.expanded.current;
 
     node.addEventListener('mousemove', (e) => {
-      console.log('hello');
+      // console.log('hello');
       this.setState({
         x: -e.offsetX,
         y: -e.offsetY,
@@ -56,9 +84,15 @@ class ExpandedImage extends React.Component {
     this.setState((prevState) => ({ zoomed: !prevState.zoomed }), this.trackMouse);
   }
 
+  arrowClickHandler(event) {
+    event.stopPropagation();
+    this.props.clickNavHandler(event);
+  }
+
   render() {
     return ReactDOM.createPortal(
       <Wrapper>
+        {this.props.index !== 0 && <ModalLeftArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></ModalLeftArrow> }
         <Expanded
           key={this.props.id}
           src={this.props.src}
@@ -69,6 +103,7 @@ class ExpandedImage extends React.Component {
           y={this.state.y}
           onMouseDown={(event) => this.imageClickHandler(event)}
         />
+        {this.props.index !== this.props.length - 1 && <ModalRightArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="1" name="angle-right" size="2x" /></ModalRightArrow> }
       </Wrapper>,
       document.getElementById('modal-root'),
     );
