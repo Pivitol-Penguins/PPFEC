@@ -96,11 +96,14 @@ class Styles extends React.Component {
     if (this.state.currentStyle) {
       return (
         <StyleWrapper>
+
           <Price price={this.state.currentPrice} sale={this.state.currentSale} />
+
           <TextWrapper>
             <Style>STYLE &gt;</Style>
             <SelectedStyle>{this.state.currentStyle.toUpperCase()}</SelectedStyle>
           </TextWrapper>
+
           <Thumbs>
             { this.props.styles.results.map((image) => {
               if (image.style_id === this.state.style_id) {
@@ -114,6 +117,7 @@ class Styles extends React.Component {
                   />
                 );
               }
+
               if (image.style_id !== this.state.style_id) {
                 return (
                   <Image
@@ -141,6 +145,7 @@ class Styles extends React.Component {
               return <div>Hello</div>;
             })}
           </Thumbs>
+
         </StyleWrapper>
       );
     }

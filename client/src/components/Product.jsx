@@ -76,6 +76,7 @@ class Product extends React.Component {
     if (this.state.currentStyle) {
       return (
         <Wrapper>
+
           <TopWrapper>
             <ProductImages
               images={this.state.stylePhotos}
@@ -90,6 +91,7 @@ class Product extends React.Component {
               sale={this.state.sale}
             />
           </TopWrapper>
+
           <BottomWrapper>
             <Description info={this.props.productDetails} />
             <FeaturesList
@@ -97,6 +99,7 @@ class Product extends React.Component {
               features={this.props.productDetails.features}
             />
           </BottomWrapper>
+
         </Wrapper>
       );
     }

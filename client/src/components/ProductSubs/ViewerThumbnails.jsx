@@ -57,7 +57,7 @@ const Image = styled.img`
 const UpArrow = styled.div`
   color: #e0e0e0;
   font-size: 1rem;
-  z-index: 12;
+  z-index: 1;
   top: 1vh;
   position: relative;
   &:hover {
@@ -69,7 +69,7 @@ const UpArrow = styled.div`
 const NoArrow = styled.div`
   visibility: hidden;
   font-size: 1rem;
-  z-index: 12;
+  z-index: 1;
   top: 1vh;
   position: relative;
 `;
@@ -77,7 +77,7 @@ const NoArrow = styled.div`
 const DownArrow = styled.div`
   color: #e0e0e0;
   font-size: 1rem;
-  z-index: 12;
+  z-index: 1;
   bottom: 1vh;
   position: relative;
   &:hover {
@@ -116,6 +116,7 @@ class ViewerThumbnails extends React.Component {
     if (this.props.images) {
       return (
         <Thumbs>
+
           {this.props.start !== 0
           && <UpArrow onClick={this.clickThumbNavHandler}><FontAwesome id="-1" name="angle-up" size="2x" /></UpArrow> }
           {this.props.start === 0
@@ -126,8 +127,8 @@ class ViewerThumbnails extends React.Component {
             && Number(index) >= this.props.start
             && Number(index) <= this.props.end) {
               return (
-                <div>
-                  <ViewerImageContainer key={image.url}>
+                <div key={image.url}>
+                  <ViewerImageContainer>
                     <Image
                       onClick={this.clickHandler}
                       src={image.thumbnail_url}
@@ -139,6 +140,7 @@ class ViewerThumbnails extends React.Component {
                 </div>
               );
             }
+
             if (this.props.viewerIndex !== Number(index)
             && Number(index) >= this.props.start
             && Number(index) <= this.props.end) {
@@ -157,6 +159,7 @@ class ViewerThumbnails extends React.Component {
 
           {this.props.end !== this.props.images.length - 1
           && <DownArrow onClick={this.clickThumbNavHandler}><FontAwesome id="1" name="angle-down" size="2x" /></DownArrow> }
+
         </Thumbs>
       );
     }

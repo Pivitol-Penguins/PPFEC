@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 
 import ViewerThumbnails from './ViewerThumbnails.jsx';
+import ExpandedImage from './ExpandedImage.jsx';
 
 const Wrapper = styled.div`
   flex-basis: 65%;
@@ -15,7 +16,7 @@ const Wrapper = styled.div`
 const RightArrow = styled.div`
   color: #e0e0e0;
   font-size: 1.75rem;
-  z-index: 11;
+  z-index: 1;
   position: absolute;
   top: 30vh;
   right: 40.3vw;
@@ -28,7 +29,7 @@ const RightArrow = styled.div`
 const LeftArrow = styled.div`
   color: #e0e0e0;
   font-size: 1.75rem;
-  z-index: 12;
+  z-index: 1;
   position: absolute;
   top: 30vh;
   left: 12.75vw;
@@ -45,6 +46,17 @@ const Image = styled.img`
   padding: 0;
   position: relative;
   z-index: 0;
+  &:hover { cursor: crosshair; };
+`;
+
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: #42424275;
 `;
 
 class ProductImages extends React.Component {
@@ -54,11 +66,13 @@ class ProductImages extends React.Component {
       index: 0,
       start: 0,
       end: 4,
+      isModalOpen: false,
     };
     this.clickNavHandler = this.clickNavHandler.bind(this);
     this.clickedThumb = this.clickedThumb.bind(this);
     this.indexUpdater = this.indexUpdater.bind(this);
     this.indexChecker = this.indexChecker.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   clickNavHandler(event) {
@@ -108,13 +122,49 @@ class ProductImages extends React.Component {
     }
   }
 
+  toggleModal() {
+    this.setState((prevState) => ({
+      isModalOpen: !prevState.isModalOpen,
+    }));
+  }
+
   render() {
     return (
       <Wrapper>
+
         {this.state.index !== 0 && <LeftArrow onClick={this.clickNavHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></LeftArrow> }
-        <ViewerThumbnails viewerIndex={this.state.index} start={this.state.start} end={this.state.end} indexUpdater={this.indexUpdater} images={this.props.images} clickedThumb={this.clickedThumb} id={this.props.id} alt="" />
-        <Image src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
+
+        <ViewerThumbnails
+          viewerIndex={this.state.index}
+          start={this.state.start}
+          end={this.state.end}
+          indexUpdater={this.indexUpdater}
+          images={this.props.images}
+          clickedThumb={this.clickedThumb}
+          id={this.props.id}
+          alt=""
+        />
+
+        <Image onClick={this.toggleModal} src={this.props.images[this.state.index].url} key={this.props.id} alt="style photograph" />
+
+        {this.state.isModalOpen && (
+          <ModalBackground onMouseDown={this.toggleModal}>
+            <ExpandedImage
+              src={this.props.images[this.state.index].url}
+              id={this.props.id}
+              alt="style photograph"
+              isModalOpen={this.state.isModalOpen}
+              toggleModal={this.toggleModal}
+              index={this.state.index}
+              images={this.props.images}
+              clickNavHandler={this.clickNavHandler}
+              clickedThumb={this.clickedThumb}
+            />
+          </ModalBackground>
+        )}
+
         {this.state.index !== this.props.images.length - 1 && <RightArrow onClick={this.clickNavHandler}><FontAwesome id="1" name="angle-right" size="2x" /></RightArrow> }
+
       </Wrapper>
     );
   }
