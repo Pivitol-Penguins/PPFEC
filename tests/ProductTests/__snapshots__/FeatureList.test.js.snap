@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturesList Should render correctly 1`] = `
+<FeaturesList
+  debug={true}
+  features={
+    Array [
+      Object {
+        "feature": "Sole",
+        "value": "Rubber",
+      },
+      Object {
+        "feature": "Mid-Sole",
+        "value": "ControlSupport Arch Bridge",
+      },
+      Object {
+        "feature": "Material",
+        "value": null,
+      },
+    ]
+  }
+>
+  <FeaturesList__List>
+    <ul
+      className="FeaturesList__List-btq5gp-0 gsMclF"
+    >
+      <Feature
+        feature={
+          Object {
+            "feature": "Sole",
+            "value": "Rubber",
+          }
+        }
+        key="undefined + Sole"
+      >
+        <Feature__ListItem>
+          <li
+            className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
+          >
+            Sole: Rubber
+          </li>
+        </Feature__ListItem>
+      </Feature>
+      <Feature
+        feature={
+          Object {
+            "feature": "Mid-Sole",
+            "value": "ControlSupport Arch Bridge",
+          }
+        }
+        key="undefined + Mid-Sole"
+      >
+        <Feature__ListItem>
+          <li
+            className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
+          >
+            Mid-Sole: ControlSupport Arch Bridge
+          </li>
+        </Feature__ListItem>
+      </Feature>
+      <Feature
+        feature={
+          Object {
+            "feature": "Material",
+            "value": null,
+          }
+        }
+        key="undefined + Material"
+      >
+        <Feature__ListItem>
+          <li
+            className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
+          >
+            Material
+          </li>
+        </Feature__ListItem>
+      </Feature>
+    </ul>
+  </FeaturesList__List>
+</FeaturesList>
+`;
