@@ -64,28 +64,11 @@ class Reviews extends React.Component {
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.removeAllFilter = this.removeAllFilter.bind(this);
-    // this.handleClickYes = this.handleClickYes.bind(this);
   }
 
   componentDidMount() {
     this.loadFirstTwoReviews(this.props.reviews.results);
   }
-
-  // handleClickYes(event, reviewId, callback) {
-  //   event.persist();
-  //   const path = window.location.pathname;
-  //   axios.put(`${path.slice(-6)}reviews/${reviewId}/helpful`)
-  //     .then((res) => {
-  //       console.log(res.data.results);
-  //       this.loadFirstTwoReviews(res.data.results);
-  //     })
-  //     .catch((err) => {
-  //       throw err;
-  //     })
-  //     .then(() => {
-  //       callback();
-  //     });
-  // }
 
   loadFirstTwoReviews(data) {
     // console.log(this.props.reviews);
@@ -160,14 +143,13 @@ class Reviews extends React.Component {
     }
   }
 
-  removeAllFilter(callback) {
+  removeAllFilter() {
     this.setState({
       filterArr: [],
       filterStars: [],
     }, () => {
       this.loadFirstTwoReviews(this.props.reviews.results);
     });
-    callback();
   }
 
   sortSelected(event) {
@@ -178,10 +160,10 @@ class Reviews extends React.Component {
       })
       .catch((err) => { throw err; })
       .then(() => {
-        // this.setState({
-        //   sortSelection: event.target.value,
-        //   sortOn: true,
-        // });
+        this.setState({
+          filterStars: [],
+          filterArr: [],
+        });
       });
 
     event.preventDefault();
@@ -213,6 +195,7 @@ class Reviews extends React.Component {
                 reviewsMeta={this.state.reviewsMeta}
                 starFilter={this.starFilter}
                 removeAllFilter={this.removeAllFilter}
+                filterStars={this.state.filterStars}
               />
               <ProductBreakDown
                 reviewsMeta={this.state.reviewsMeta}
@@ -227,7 +210,6 @@ class Reviews extends React.Component {
               sortSelected={this.sortSelected}
               addReviewToggle={this.addReviewToggle}
               addReviewShow={this.state.addReviewShow}
-              // handleClickYes={this.handleClickYes}
             />
           </Wrapper>
         </ReviewsContainer>
