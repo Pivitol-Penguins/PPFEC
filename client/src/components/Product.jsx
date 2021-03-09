@@ -32,6 +32,7 @@ const BottomWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding-top: 5px;
+  margin-bottom: 5vh;
 `;
 
 class Product extends React.Component {
