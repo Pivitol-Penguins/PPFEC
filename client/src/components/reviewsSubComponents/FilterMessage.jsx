@@ -23,8 +23,8 @@ const FilterMessage = (props) => (
   <FilterMessageContainer>
     <div>
       <span>Showing all </span>
-      {props.filter.map((star, index) => {
-        if (index > 0 && index !== props.filter.length - 1) {
+      {props.filterStars.sort().map((star, index) => {
+        if (index > 0 && index !== props.filterStars.length - 1) {
           return (
             <span key={star}>
               ,
@@ -32,7 +32,7 @@ const FilterMessage = (props) => (
             </span>
           );
         }
-        if (index > 0 && index === props.filter.length - 1) {
+        if (index > 0 && index === props.filterStars.length - 1) {
           return (
             <span key={star}>
               {' '}

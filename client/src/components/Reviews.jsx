@@ -49,19 +49,23 @@ class Reviews extends React.Component {
       reviewsMeta: this.props.reviewsMeta,
       displayLimit: 2,
       fullreviewsArr: [],
+      originalArr: this.props.reviews.results,
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
       product_id: this.props.product,
       entriesCount: this.props.count,
       page: this.props.page,
-      sortSelection: 'relavent',
+      sortSelection: 'relavant',
+      sortOn: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
     this.sortSelected = this.sortSelected.bind(this);
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
+    this.addOneFilter = this.addOneFilter.bind(this);
+    this.removeOneFilter = this.removeOneFilter.bind(this);
     this.removeAllFilter = this.removeAllFilter.bind(this);
   }
 
@@ -97,59 +101,57 @@ class Reviews extends React.Component {
     }));
   }
 
+  addOneFilter(star) {
+    // console.log('add', star);
+    this.setState((prevState) => ({
+      filterArr: [...prevState.filterArr,
+        ...prevState.originalArr.filter((review) => (review.rating === star))],
+      filterStars: [...prevState.filterStars, star],
+    }), () => {
+      // console.log('add fullArr', this.state.fullreviewsArr);
+      this.loadFirstTwoReviews(this.state.filterArr);
+      // console.log('add', this.state.filterArr);
+      // console.log('add', this.state.filterStars);
+    });
+  }
+
+  removeOneFilter(star) {
+    // console.log('remove', star);
+    this.setState((prevState) => {
+      const index = prevState.filterStars.indexOf(star);
+      prevState.filterStars.splice(index, 1);
+      return {
+        filterStars: prevState.filterStars,
+        filterArr: prevState.filterArr.filter((review) => review.rating !== star),
+      };
+    }, () => {
+      if (this.state.filterArr.length === 0 || this.state.filterStars.length === 0) {
+        this.loadFirstTwoReviews(this.state.originalArr);
+        // this.loadFirstTwoReviews(this.props.reviews.results);
+      } else {
+        // console.log('remove', this.state.filterArr);
+        this.loadFirstTwoReviews(this.state.filterArr);
+      }
+    });
+  }
+
   starFilter(star) {
-    // console.log('starFilter===>', this.state.filterStars.includes(star));
-    // console.log('before star arr===>', this.state.filterArr);
-    // console.log('before star arr===>', this.state.filterStars);
     // add filter
     if (!this.state.filterStars.includes(star)) {
-      this.setState((prevState) => {
-        // check if it is the first filter
-        if (prevState.filterArr.length > 0 && prevState.filterStars.length > 0) {
-          return {
-            filterStars: [...prevState.filterStars, star],
-            filterArr: [...prevState.filterArr,
-              ...this.props.reviews.results.filter((review) => review.rating === star)],
-          };
-        }
-        return {
-          filterStars: [...prevState.filterStars, star],
-          filterArr: this.props.reviews.results.filter((review) => review.rating === star),
-        };
-      }, () => {
-        // console.log('AFTER add star filter', this.state.filterStars);
-        // console.log('AFTER add star filter', this.state.filterArr);
-        this.loadFirstTwoReviews(this.state.filterArr);
-      });
+      this.addOneFilter(star);
     } else {
       // remove filter
-      this.setState((prevState) => {
-        const index = prevState.filterStars.indexOf(star);
-        prevState.filterStars.splice(index, 1);
-        return {
-          filterStars: prevState.filterStars,
-          filterArr: prevState.filterArr.filter((review) => review.rating !== star),
-        };
-      }, () => {
-        // console.log('AFTER remove star filter', this.state.filterStars);
-        // console.log('AFTER remove star filter', this.state.filterArr);
-        if (this.state.filterStars.length === 0) {
-          this.loadFirstTwoReviews(this.props.reviews.results);
-        } else {
-          this.loadFirstTwoReviews(this.state.filterArr);
-        }
-      });
+      this.removeOneFilter(star);
     }
   }
 
-  removeAllFilter(callback) {
+  removeAllFilter() {
     this.setState({
       filterArr: [],
       filterStars: [],
     }, () => {
       this.loadFirstTwoReviews(this.props.reviews.results);
     });
-    callback();
   }
 
   sortSelected(event) {
@@ -157,8 +159,18 @@ class Reviews extends React.Component {
     axios.get(`${path.slice(-6)}reviews/${event.target.value}`)
       .then((res) => {
         this.loadFirstTwoReviews(res.data.results);
+        this.setState({
+          originalArr: res.data.results,
+        });
       })
-      .catch((err) => { throw err; });
+      .catch((err) => { throw err; })
+      .then(() => {
+        // console.log(this.state.originalArr);
+        this.setState({
+          filterStars: [],
+          filterArr: [],
+        });
+      });
 
     event.preventDefault();
   }
@@ -189,6 +201,7 @@ class Reviews extends React.Component {
                 reviewsMeta={this.state.reviewsMeta}
                 starFilter={this.starFilter}
                 removeAllFilter={this.removeAllFilter}
+                filterStars={this.state.filterStars}
               />
               <ProductBreakDown
                 reviewsMeta={this.state.reviewsMeta}

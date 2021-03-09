@@ -113,6 +113,7 @@ const ReviewsList = (props) => {
             key={review.review_id}
             review={review}
             loadReview={props.loadFirstTwoReviews}
+            handleClickYes={props.handleClickYes}
           />
         )))}
       </ListWrapper>
