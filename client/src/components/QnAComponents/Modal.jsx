@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 const StyledModal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,6 +13,7 @@ const StyledModal = styled.div`
   width: 800px;
   height: 100%;
   margin: 40px auto;
+  transform: translate(-50%, -50%);
 `;
 
 // `
