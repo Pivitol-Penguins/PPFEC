@@ -14,13 +14,12 @@ const fetchData = (path, query, callback) => {
     });
 };
 
-
-const postData = (path, query, callback) => {
+const createData = (path, query, callback) => {
   axios.post(API_URL + path, query)
     .then((res) => {
       callback(res);
     }).catch((err) => {
-      console.log(err);
+      throw err;
     });
 };
 
@@ -29,32 +28,32 @@ const updateData = (path, query, callback) => {
     .then((res) => {
       callback(res);
     }).catch((err) => {
-      console.log(err);
-    });
-};
-
-const postQnA = (path, body, callback) => {
-  axios.post(API_URL + path, body)
-    .then((data) => {
-      callback(data);
-    })
-    .catch((err) => {
       throw err;
     });
 };
 
-const putQnA = (path, body, callback) => {
-  axios.put(API_URL + path, body)
-    .then((data) => {
-      callback(data);
-    })
-    .catch((err) => {
-      throw err;
-    });
-};
+// const postQnA = (path, body, callback) => {
+//   axios.post(API_URL + path, body)
+//     .then((data) => {
+//       callback(data);
+//     })
+//     .catch((err) => {
+//       throw err;
+//     });
+// };
 
-module.exports.putQnA = putQnA;
-module.exports.postQnA = postQnA;
+// const putQnA = (path, body, callback) => {
+//   axios.put(API_URL + path, body)
+//     .then((data) => {
+//       callback(data);
+//     })
+//     .catch((err) => {
+//       throw err;
+//     });
+// };
+
+// module.exports.putQnA = putQnA;
+// module.exports.postQnA = postQnA;
 module.exports.fetchData = fetchData;
-module.exports.postData = postData;
+module.exports.createData = createData;
 module.exports.updateData = updateData;
