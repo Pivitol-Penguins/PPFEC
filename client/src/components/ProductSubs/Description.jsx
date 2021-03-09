@@ -5,6 +5,7 @@ const DescWrapper = styled.div`
   border-right: 3px solid #aeaeae;
   flex-basis: 67%;
   padding: 0 1.5vw;
+  margin-bottom: 5vh;
 `;
 
 const Slogan = styled.h1`

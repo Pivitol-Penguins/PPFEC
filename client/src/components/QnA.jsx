@@ -12,6 +12,7 @@ const QnAContainer = styled.div`
   margin: 0 auto;
   color: #424242;
   font-family: 'Lato', sans-serif;
+  margin-bottom: 5vh;
 `;
 
 const QnATitle = styled.div`

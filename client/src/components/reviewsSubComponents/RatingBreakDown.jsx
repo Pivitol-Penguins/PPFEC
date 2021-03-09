@@ -26,12 +26,12 @@ const BaseBox = styled.div`
 `;
 
 const Background = styled(BaseBox)`
-  background: #c1bdbd;
+  background: #e0e0e0;
   width: 100%;
 `;
 
 const Percentage = styled(BaseBox)`
-  background: green;
+  background: #80ccc4;
   width: ${({ percent }) => percent}%;
 `;
 

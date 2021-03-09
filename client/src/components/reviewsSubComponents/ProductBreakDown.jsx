@@ -25,7 +25,7 @@ const BaseBox = styled.div`
 `;
 
 const Background = styled(BaseBox)`
-  background: #c1bdbd;
+  background: #e0e0e0;
   width: 100%;
 `;
 
@@ -34,7 +34,7 @@ const TriangleScaleIcon = styled(BaseBox)`
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 15px solid black;
+  border-top: 15px solid #80ccc4;
   left: ${({ percent }) => (percent / 100) * 15}vw;
 `;
 
