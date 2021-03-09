@@ -39,7 +39,7 @@ class App extends React.Component {
             productDetails={this.state.productDetails}
             productStyles={this.state.productStyles}
           />
-          <QnA questions={this.state.questions} />
+          <QnA questions={this.state.questions} name={this.state.productDetails.name} />
           <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
         </div>
       );
