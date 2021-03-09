@@ -63,8 +63,8 @@ class ReviewTile extends React.Component {
     super(props);
     this.state = {
       review_id: this.props.review.review_id,
+      yesNum: this.props.review.helpfulness,
       yesClick: false,
-      yesCount: 0,
       reportClick: false,
     };
     this.handleClickYes = this.handleClickYes.bind(this);
@@ -77,15 +77,14 @@ class ReviewTile extends React.Component {
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/helpful`)
       .then((res) => {
         console.log(res.data.results);
-        this.props.loadReview(res.data.results);
+        // this.props.loadReview(res.data.results);
+        this.setState((prevState) => ({
+          yesClick: true,
+          yesNum: prevState.yesNum + 1,
+        }));
       })
       .catch((err) => {
         throw err;
-      })
-      .then(() => {
-        this.setState({
-          yesClick: true,
-        });
       });
   }
 
@@ -105,7 +104,7 @@ class ReviewTile extends React.Component {
   render() {
     const { review } = this.props;
     const {
-      date, rating, reviewer_name, summary, body, helpfulness,
+      date, rating, reviewer_name, summary, body,
     } = review;
     // Formatting date
     const reviewDate = new Date(date);
@@ -173,7 +172,7 @@ class ReviewTile extends React.Component {
             Yes
             {' '}
             (
-            {helpfulness || 0}
+            {this.state.yesNum || 0}
             )
           </ClickTag>
           <div>  |  </div>
