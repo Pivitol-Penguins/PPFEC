@@ -1,8 +1,29 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
 import Product from './Product.jsx';
 import QnA from './QnA.jsx';
 import Reviews from './Reviews.jsx';
+
+const Banner = styled.div`
+  position: relative;
+  margin: auto;
+  width: 75vw;
+  height: 15vh;
+  max-height: 15vh;
+  background: #6d6d6d;
+`;
+
+const Logo = styled.div`
+  position: absolute;
+  bottom: 1vh;
+  left: 2vw;
+  font-family: 'Lato', sans-serif;
+  color: #80ccc4;
+  font-weight: 700;
+  font-size: 3rem;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -35,6 +56,7 @@ class App extends React.Component {
     if (this.state.productDetails) {
       return (
         <div>
+          <Banner><Logo>Ninja Cobbles</Logo></Banner>
           <Product
             productDetails={this.state.productDetails}
             productStyles={this.state.productStyles}
