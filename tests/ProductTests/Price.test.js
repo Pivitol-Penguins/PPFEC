@@ -1,45 +1,53 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { mount } from 'enzyme';
+import styled from 'styled-components';
+
 import Price from '../../client/src/components/ProductSubs/Price.jsx';
-import StylesComponent from '../../client/src/components/ProductSubs/StylesComponent.jsx';
 
-describe('Regular Price with Sale Price', () => {
+const NoSale = styled.p`
+  margin: 0;
+  margin-bottom: 1vh;
+  font-weight: 300;
+`;
+
+describe('Price rendering', () => {
   const props = {
-    price: 40.00,
-    sale: 30.00,
-  };
-  const PriceComponent = mount(<Price {...props} debug />);
-
-  it('Should render correctly', () => {
-    expect(PriceComponent).toMatchSnapshot();
-  });
-
-  it('The form should contain the regular price', () => {
-    expect(PriceComponent.find(<p>{`$${Math.round(props.price)}`}</p>)).toBeTruthy();
-  });
-
-  it('The form should contain the sale price', () => {
-    expect(PriceComponent.find(<p>{`$${Math.round(props.sale)}`}</p>)).toBeTruthy();
-  });
-});
-
-describe('Regular Price without Sale Price', () => {
-  const props = {
-    price: 40.00,
+    price: 40,
     sale: null,
   };
   const PriceComponent = mount(<Price {...props} debug />);
+  const text = (PriceComponent.find('p').text());
 
   it('Should render correctly', () => {
     expect(PriceComponent).toMatchSnapshot();
   });
 
-  it('The form should contain the regular price', () => {
-    expect(PriceComponent.find(<p>{`$${Math.round(props.price)}`}</p>)).toBeTruthy();
+  it('render the price correctly', () => {
+    expect(text).toEqual("$40");
+  });
+});
+
+
+describe('Price rendering', () => {
+  const props = {
+    price: 40,
+    sale: 30,
+  };
+  const PriceComponent = mount(<Price {...props} debug />);
+  const RegPrice = (PriceComponent.find('p').at(0).text());
+  const SalePrice = (PriceComponent.find('p').at(1).text());
+
+  it('Should render correctly', () => {
+    expect(PriceComponent).toMatchSnapshot();
   });
 
-  it('The form should not contain a sale price', () => {
-    expect(PriceComponent.contains(<p>{`$${Math.round(props.sale)}`}</p>)).toBe(false);
+  it('render the regular price correctly', () => {
+    expect(RegPrice).toEqual("$40");
+  });
+
+  it('render the sale price correctly', () => {
+    expect(SalePrice).toEqual("$30");
   });
 });
