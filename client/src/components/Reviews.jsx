@@ -49,6 +49,7 @@ class Reviews extends React.Component {
       reviewsMeta: this.props.reviewsMeta,
       displayLimit: 2,
       fullreviewsArr: [],
+      originalArr: this.props.reviews.results,
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
@@ -101,25 +102,21 @@ class Reviews extends React.Component {
   }
 
   addOneFilter(star) {
-    this.setState((prevState) => {
-      // check if it is the first filter
-      if (prevState.filterArr.length > 0 && prevState.filterStars.length > 0) {
-        return {
-          filterStars: [...prevState.filterStars, star],
-          filterArr: [...prevState.filterArr,
-            ...prevState.fullreviewsArr.filter((review) => review.rating === star)],
-        };
-      }
-      return {
-        filterStars: [...prevState.filterStars, star],
-        filterArr: prevState.fullreviewsArr.filter((review) => review.rating === star),
-      };
-    }, () => {
+    // console.log('add', star);
+    this.setState((prevState) => ({
+      filterArr: [...prevState.filterArr,
+        ...prevState.originalArr.filter((review) => (review.rating === star))],
+      filterStars: [...prevState.filterStars, star],
+    }), () => {
+      // console.log('add fullArr', this.state.fullreviewsArr);
       this.loadFirstTwoReviews(this.state.filterArr);
+      // console.log('add', this.state.filterArr);
+      // console.log('add', this.state.filterStars);
     });
   }
 
   removeOneFilter(star) {
+    // console.log('remove', star);
     this.setState((prevState) => {
       const index = prevState.filterStars.indexOf(star);
       prevState.filterStars.splice(index, 1);
@@ -128,10 +125,11 @@ class Reviews extends React.Component {
         filterArr: prevState.filterArr.filter((review) => review.rating !== star),
       };
     }, () => {
-      if (this.state.filterStars.length === 0) {
-        this.loadFirstTwoReviews(this.state.fullreviewsArr);
+      if (this.state.filterArr.length === 0 || this.state.filterStars.length === 0) {
+        this.loadFirstTwoReviews(this.state.originalArr);
         // this.loadFirstTwoReviews(this.props.reviews.results);
       } else {
+        // console.log('remove', this.state.filterArr);
         this.loadFirstTwoReviews(this.state.filterArr);
       }
     });
@@ -161,9 +159,13 @@ class Reviews extends React.Component {
     axios.get(`${path.slice(-6)}reviews/${event.target.value}`)
       .then((res) => {
         this.loadFirstTwoReviews(res.data.results);
+        this.setState({
+          originalArr: res.data.results,
+        });
       })
       .catch((err) => { throw err; })
       .then(() => {
+        // console.log(this.state.originalArr);
         this.setState({
           filterStars: [],
           filterArr: [],
