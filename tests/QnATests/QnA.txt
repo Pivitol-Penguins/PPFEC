@@ -1,0 +1,48 @@
+// import React from 'react';
+// import { shallow, mount, render } from 'enzyme';
+// import Item from '../../client/src/components/QnAComponents/Item.jsx';
+// import AnswerList from '../../client/src/components/QnAComponents/AnswerList.jsx';
+// import Answer from '../../client/src/components/QnAComponents/Answer.jsx';
+
+// describe('One Question', () => {
+//   const props = {
+//     id: 152944,
+//     item: {
+//       answers: {
+//         1443618: {
+//           answerer_name: 'sadf',
+//           body: 'asdf',
+//           date: '2021-03-08T00:00:00.000Z',
+//           helpfulness: 0,
+//           id: 1443618,
+//           photos: ['https://pngimg.com/uploads/mario/mario_PNG53.png', 'https://pngimg.com/uploads/mario/mario_PNG53.png'],
+//         },
+//         asker_name: 'asdf',
+//         question_body: 'awdsf',
+//         question_date: '2021-03-08T00:00:00.000Z',
+//         question_helpfulness: 1,
+//         question_id: 152944,
+//         reported: false,
+//       },
+//     },
+//   };
+
+//   const answer = {
+//     answer: {
+//       answerer_name: 'sadf',
+//       body: 'asdf',
+//       date: '2021-03-08T00:00:00.000Z',
+//       helpfulness: 0,
+//       id: 1443618,
+//       photos: ['https://pngimg.com/uploads/mario/mario_PNG53.png', 'https://pngimg.com/uploads/mario/mario_PNG53.png'],
+//     },
+//   };
+
+//   const Question = mount(<Item {...props} debug />);
+
+//   const Answer = mount(<Answer {...answer} debug />);
+
+//   it('The form should contain FormA component', () => {
+//     expect(Question.find()).toBeTruthy();
+//   });
+// });
