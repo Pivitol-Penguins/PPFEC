@@ -108,7 +108,7 @@ const ProductOverview = ({
 
     <RatingWrapper>
       <Rating>★★★★☆</Rating>
-      <RatingsAnchor href="RATINGS">Read all reviews</RatingsAnchor>
+      <RatingsAnchor href="#RATINGS">Read all reviews</RatingsAnchor>
     </RatingWrapper>
 
     <Category>{details.category.toUpperCase()}</Category>

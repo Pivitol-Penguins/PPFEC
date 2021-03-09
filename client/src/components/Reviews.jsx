@@ -180,7 +180,7 @@ class Reviews extends React.Component {
       // console.log(this.state.fullreviewsArr);
       // console.log(this.state.reviews);
       return (
-        <ReviewsContainer>
+        <ReviewsContainer id="RATINGS">
           <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
           <Wrapper>
             <RatingWrapper>
