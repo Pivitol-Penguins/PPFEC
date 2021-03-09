@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import AddReviewForm from '../client/src/components/reviewsSubComponents/AddReviewForm.jsx';
-import RatingStars from '../client/src/components/reviewsSubComponents/RatingStars.jsx';
+import AddReviewForm from '../../client/src/components/reviewsSubComponents/AddReviewForm.jsx';
+import RatingStars from '../../client/src/components/reviewsSubComponents/RatingStars.jsx';
 
 describe('Add Review Form test', () => {
   const props = {
