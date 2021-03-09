@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: fixed;
   display: table;
   top: 50%;
   left: 50%;
