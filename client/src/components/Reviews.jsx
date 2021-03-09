@@ -55,7 +55,8 @@ class Reviews extends React.Component {
       product_id: this.props.product,
       entriesCount: this.props.count,
       page: this.props.page,
-      sortSelection: 'relavent',
+      sortSelection: 'relavant',
+      sortOn: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
@@ -63,11 +64,28 @@ class Reviews extends React.Component {
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
     this.addReviewToggle = this.addReviewToggle.bind(this);
     this.removeAllFilter = this.removeAllFilter.bind(this);
+    // this.handleClickYes = this.handleClickYes.bind(this);
   }
 
   componentDidMount() {
     this.loadFirstTwoReviews(this.props.reviews.results);
   }
+
+  // handleClickYes(event, reviewId, callback) {
+  //   event.persist();
+  //   const path = window.location.pathname;
+  //   axios.put(`${path.slice(-6)}reviews/${reviewId}/helpful`)
+  //     .then((res) => {
+  //       console.log(res.data.results);
+  //       this.loadFirstTwoReviews(res.data.results);
+  //     })
+  //     .catch((err) => {
+  //       throw err;
+  //     })
+  //     .then(() => {
+  //       callback();
+  //     });
+  // }
 
   loadFirstTwoReviews(data) {
     // console.log(this.props.reviews);
@@ -158,7 +176,13 @@ class Reviews extends React.Component {
       .then((res) => {
         this.loadFirstTwoReviews(res.data.results);
       })
-      .catch((err) => { throw err; });
+      .catch((err) => { throw err; })
+      .then(() => {
+        // this.setState({
+        //   sortSelection: event.target.value,
+        //   sortOn: true,
+        // });
+      });
 
     event.preventDefault();
   }
@@ -203,6 +227,7 @@ class Reviews extends React.Component {
               sortSelected={this.sortSelected}
               addReviewToggle={this.addReviewToggle}
               addReviewShow={this.state.addReviewShow}
+              // handleClickYes={this.handleClickYes}
             />
           </Wrapper>
         </ReviewsContainer>
