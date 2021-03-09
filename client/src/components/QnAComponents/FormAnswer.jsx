@@ -183,7 +183,6 @@ class FormA extends React.Component {
         photosI: '',
         photos: prevState.photos,
       }));
-    } else {
     }
   }
 

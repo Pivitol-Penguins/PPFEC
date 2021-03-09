@@ -8,21 +8,23 @@ import Reviews from './Reviews.jsx';
 
 const Banner = styled.div`
   position: relative;
-  margin: auto;
+  margin: -10px auto 0 auto;
   width: 75vw;
-  height: 15vh;
-  max-height: 15vh;
+  height: 9vh;
+  max-height: 9vh;
   background: #6d6d6d;
+  margin-bottom: 1vh;
 `;
 
 const Logo = styled.div`
   position: absolute;
   bottom: 1vh;
-  left: 2vw;
+  left: 1vw;
   font-family: 'Lato', sans-serif;
-  color: #80ccc4;
+  color: #fff;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px #80ccc4;
 `;
 
 class App extends React.Component {
@@ -61,7 +63,7 @@ class App extends React.Component {
             productDetails={this.state.productDetails}
             productStyles={this.state.productStyles}
           />
-          <QnA questions={this.state.questions} />
+          <QnA questions={this.state.questions} name={this.state.productDetails.name} />
           <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
         </div>
       );
