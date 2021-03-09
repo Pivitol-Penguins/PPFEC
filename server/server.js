@@ -39,9 +39,9 @@ app.get('/products/:q/:b', (req, res) => {
 
 // handle get request for sort option in Review component
 app.get('/products/:q/:b/reviews/:sort', (req, res) => {
-  const product_id = req.params.q;
-  const { sort } = req.params;
-  api.fetchData('/reviews', { params: { product_id: Number(product_id), sort: sort, count: 100 } }, (reviews) => {
+  const productId = req.params.q;
+  const inputSort = req.params.sort;
+  api.fetchData('/reviews', { params: { product_id: Number(productId), sort: inputSort, count: 100 } }, (reviews) => {
     res.send(reviews.data);
   });
 });
@@ -64,7 +64,7 @@ app.post('/products/:q/:b/reviews', (req, res) => {
       });
     }
     const query = fields;
-    api.postData('/reviews', {
+    api.createData('/reviews', {
       product_id: Number(query.productId),
       rating: Number(query.rating),
       characteristics: JSON.parse(query.characteristics),
@@ -74,8 +74,7 @@ app.post('/products/:q/:b/reviews', (req, res) => {
       name: JSON.parse(query.name),
       email: JSON.parse(query.email),
       photos: photoPaths,
-    }, (data) => {
-      console.log(data.data);
+    }, () => {
       api.fetchData('/reviews', { params: { product_id: Number(query.productId), count: 100 } }, (reviews) => {
         res.send(reviews.data);
       });
@@ -85,33 +84,24 @@ app.post('/products/:q/:b/reviews', (req, res) => {
 
 // handle put request from review section
 app.put('/products/:q/:b/reviews/:review_id/report', (req, res) => {
-  const {review_id} = req.params;
-  const product_id = req.params.q;
-  // console.log(req.params);
-  api.updateData(`/reviews/${review_id}/report`, { review_id: review_id }, (data) => {
-    api.fetchData('/reviews', { params: { product_id: Number(product_id), count: 100 } }, (reviews) => {
+  api.updateData(`/reviews/${req.params.review_id}/report`, { review_id: req.params.review_id }, () => {
+    api.fetchData('/reviews', { params: { product_id: Number(req.params.q), count: 100 } }, (reviews) => {
       res.send(reviews.data);
     });
   });
 });
 
 app.put('/products/:q/:b/reviews/:review_id/helpful', (req, res) => {
-  const {review_id} = req.params;
-  const product_id = req.params.q;
-  api.updateData(`/reviews/${review_id}/helpful`, { review_id: review_id }, (data) => {
-    api.fetchData('/reviews', { params: { product_id: Number(product_id), count: 100 } }, (reviews) => {
+  api.updateData(`/reviews/${req.params.review_id}/helpful`, { review_id: req.params.review_id }, () => {
+    api.fetchData('/reviews', { params: { product_id: Number(req.params.q), count: 100 } }, (reviews) => {
       res.send(reviews.data);
     });
   });
 });
 
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-
+// handle put and post for QnA section
 app.post('/questions/', (req, res) => {
-  api.postQnA('/qa/questions', req.body, () => {
+  api.createData('/qa/questions', req.body, () => {
     api.fetchData('/qa/questions', { params: { product_id: Number(req.body.product_id), count: 100 } }, (questions) => {
       res.send(questions.data);
     });
@@ -119,7 +109,7 @@ app.post('/questions/', (req, res) => {
 });
 
 app.post('/questions/:i', (req, res) => {
-  api.postQnA(`/qa/questions/${req.params.i}/answers`, req.body, () => {
+  api.createData(`/qa/questions/${req.params.i}/answers`, req.body, () => {
     api.fetchData(`/qa/questions/${req.params.i}/answers`, { params: { question_id: Number(req.body.question_id), count: 100 } }, (answer) => {
       res.send(answer.data);
     });
@@ -127,19 +117,24 @@ app.post('/questions/:i', (req, res) => {
 });
 
 app.put('/h/questions/:i', (req, res) => {
-  api.putQnA(`/qa/questions/${req.params.i}/helpful`, { params: { question_id: Number(req.params.i) } }, () => {
+  api.updateData(`/qa/questions/${req.params.i}/helpful`, { params: { question_id: Number(req.params.i) } }, () => {
     res.send(201);
   });
 });
 
 app.put('/a/questions/:i', (req, res) => {
-  api.putQnA(`/qa/answers/${req.params.i}/helpful`, { params: { answer_id: Number(req.params.i) } }, () => {
+  api.updateData(`/qa/answers/${req.params.i}/helpful`, { params: { answer_id: Number(req.params.i) } }, () => {
     res.send(201);
   });
 });
 
 app.put('/r/questions/:i', (req, res) => {
-  api.putQnA(`/qa/answers/${req.params.i}/report`, { params: { answer_id: Number(req.params.i) } }, () => {
+  api.updateData(`/qa/answers/${req.params.i}/report`, { params: { answer_id: Number(req.params.i) } }, () => {
     res.send(201);
   });
+});
+
+app.listen(port, () => {
+  // eslint-disable-next-line no-console
+  console.log(`Example app listening at http://localhost:${port}`);
 });
