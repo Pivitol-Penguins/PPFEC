@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description Should render correctly 1`] = `
+<Description
+  debug={true}
+  info={
+    Object {
+      "description": "The Pumped Up serves up crisp court style with a modern look. These shoes show off tennis-whites shades and are constructed with a supple leather upper and a classic rubber cupsole.",
+      "slogan": "Faster than a just about anything",
+    }
+  }
+>
+  <Description__DescWrapper>
+    <div
+      className="Description__DescWrapper-sc-1a8vwln-0 iuTlrA"
+    >
+      <Description__Slogan>
+        <h1
+          className="Description__Slogan-sc-1a8vwln-1 ixJlAJ"
+        >
+          Faster than a just about anything
+        </h1>
+      </Description__Slogan>
+      <Description__Body>
+        <p
+          className="Description__Body-sc-1a8vwln-2 fDTlPa"
+        >
+          The Pumped Up serves up crisp court style with a modern look. These shoes show off tennis-whites shades and are constructed with a supple leather upper and a classic rubber cupsole.
+        </p>
+      </Description__Body>
+    </div>
+  </Description__DescWrapper>
+</Description>
+`;
