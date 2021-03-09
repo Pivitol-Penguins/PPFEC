@@ -179,7 +179,7 @@ class AddReviewForm extends React.Component {
       .then(() => {
         this.props.toggle();
       });
-    event.preventDefault();
+    // event.preventDefault();
   }
 
   getRating(inputRating) {
@@ -234,7 +234,7 @@ class AddReviewForm extends React.Component {
         </VerticalWrapper>
         <HorizontalWrapper>
           <span>Upload the photos of your purchase</span>
-          <input type="file" name="photos" ref={this.photosUpload} onChange={this.handlePhotosUpload} multiple />
+          <input type="file" name="photos" onChange={this.handlePhotosUpload} multiple />
         </HorizontalWrapper>
         <HorizontalWrapper>
           <VerticalWrapper>

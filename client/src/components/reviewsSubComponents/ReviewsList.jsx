@@ -15,6 +15,7 @@ const ReviewsWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
+  width: 100%;
   padding: 15px 0;
   display: flex;
   flex-wrap: nowrap;
