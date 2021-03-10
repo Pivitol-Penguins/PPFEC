@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RatingStars Component without passing props Should render correctly 1`] = `
+<RatingStars
+  debug={true}
+>
+  <div>
+    <RatingStars__InputStarWrapper>
+      <div
+        className="RatingStars__InputStarWrapper-sc-1djn8fm-1 kKUgkY"
+      >
+        <span
+          key="1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          ☆
+        </span>
+        <span
+          key="2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          ☆
+        </span>
+        <span
+          key="3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          ☆
+        </span>
+        <span
+          key="4"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          ☆
+        </span>
+        <span
+          key="5"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          ☆
+        </span>
+      </div>
+    </RatingStars__InputStarWrapper>
+  </div>
+</RatingStars>
+`;

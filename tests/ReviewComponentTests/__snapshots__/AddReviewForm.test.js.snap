@@ -1,0 +1,683 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
+<AddReviewForm
+  characteristics={
+    Object {
+      "Comfort": Object {
+        "id": 50085,
+        "value": "3.1891891891891892",
+      },
+      "Fit": Object {
+        "id": 50083,
+        "value": "2.9189189189189189",
+      },
+      "Length": Object {
+        "id": 50084,
+        "value": "2.5405405405405405",
+      },
+      "Quality": Object {
+        "id": 50086,
+        "value": "3.1081081081081081",
+      },
+    }
+  }
+  debug={true}
+  productId={14950}
+  summary=""
+>
+  <AddReviewForm__StyledForm
+    onSubmit={[Function]}
+  >
+    <form
+      className="AddReviewForm__StyledForm-kljszx-4 eueujS"
+      onSubmit={[Function]}
+    >
+      <h2>
+        Write A Review
+      </h2>
+      <AddReviewForm__VerticalWrapper>
+        <div
+          className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
+        >
+          <span>
+            Overall Rating
+          </span>
+          <RatingStars
+            getRating={[Function]}
+          >
+            <div>
+              <RatingStars__InputStarWrapper>
+                <div
+                  className="RatingStars__InputStarWrapper-sc-1djn8fm-1 kKUgkY"
+                >
+                  <span
+                    key="1"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    ☆
+                  </span>
+                  <span
+                    key="2"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    ☆
+                  </span>
+                  <span
+                    key="3"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    ☆
+                  </span>
+                  <span
+                    key="4"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    ☆
+                  </span>
+                  <span
+                    key="5"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    ☆
+                  </span>
+                </div>
+              </RatingStars__InputStarWrapper>
+            </div>
+          </RatingStars>
+        </div>
+      </AddReviewForm__VerticalWrapper>
+      <AddReviewForm__VerticalWrapper>
+        <div
+          className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
+        >
+          <span>
+            Do you recommend this product?
+          </span>
+          <div>
+            <input
+              name="recommend"
+              onChange={[Function]}
+              required={true}
+              type="radio"
+              value="true"
+            />
+            <span>
+              Yes
+            </span>
+            <input
+              name="recommend"
+              onChange={[Function]}
+              required={true}
+              type="radio"
+              value="false"
+            />
+            <span>
+              No
+            </span>
+          </div>
+        </div>
+      </AddReviewForm__VerticalWrapper>
+      <div>
+        <span>
+          Charateristics
+        </span>
+        <ul>
+          <li
+            key="Comfort"
+          >
+            <div>
+              Comfort
+            </div>
+            <AddReviewForm__CharateristicsSelectorWrapper>
+              <div
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+              >
+                <AddReviewForm__ValueButtonWrapper
+                  key="Uncomfortable"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Uncomfortable
+                    </span>
+                    <input
+                      name={50085}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={1}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Slightly uncomfortable"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Slightly uncomfortable
+                    </span>
+                    <input
+                      name={50085}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={2}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="OK"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      OK
+                    </span>
+                    <input
+                      name={50085}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={3}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Comfortable"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Comfortable
+                    </span>
+                    <input
+                      name={50085}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={4}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Perfect"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Perfect
+                    </span>
+                    <input
+                      name={50085}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={5}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+              </div>
+            </AddReviewForm__CharateristicsSelectorWrapper>
+          </li>
+          <li
+            key="Fit"
+          >
+            <div>
+              Fit
+            </div>
+            <AddReviewForm__CharateristicsSelectorWrapper>
+              <div
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+              >
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs tight"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs tight
+                    </span>
+                    <input
+                      name={50083}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={1}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs slightly tight"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs slightly tight
+                    </span>
+                    <input
+                      name={50083}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={2}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Perfect"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Perfect
+                    </span>
+                    <input
+                      name={50083}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={3}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs slightly long"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs slightly long
+                    </span>
+                    <input
+                      name={50083}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={4}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs long"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs long
+                    </span>
+                    <input
+                      name={50083}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={5}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+              </div>
+            </AddReviewForm__CharateristicsSelectorWrapper>
+          </li>
+          <li
+            key="Length"
+          >
+            <div>
+              Length
+            </div>
+            <AddReviewForm__CharateristicsSelectorWrapper>
+              <div
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+              >
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs Short"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs Short
+                    </span>
+                    <input
+                      name={50084}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={1}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs slightly short"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs slightly short
+                    </span>
+                    <input
+                      name={50084}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={2}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Perfect"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Perfect
+                    </span>
+                    <input
+                      name={50084}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={3}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs slightly long"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs slightly long
+                    </span>
+                    <input
+                      name={50084}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={4}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Runs long"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Runs long
+                    </span>
+                    <input
+                      name={50084}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={5}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+              </div>
+            </AddReviewForm__CharateristicsSelectorWrapper>
+          </li>
+          <li
+            key="Quality"
+          >
+            <div>
+              Quality
+            </div>
+            <AddReviewForm__CharateristicsSelectorWrapper>
+              <div
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+              >
+                <AddReviewForm__ValueButtonWrapper
+                  key="Poor"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Poor
+                    </span>
+                    <input
+                      name={50086}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={1}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Below average"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Below average
+                    </span>
+                    <input
+                      name={50086}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={2}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="What I expected"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      What I expected
+                    </span>
+                    <input
+                      name={50086}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={3}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Pretty great"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Pretty great
+                    </span>
+                    <input
+                      name={50086}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={4}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+                <AddReviewForm__ValueButtonWrapper
+                  key="Perfect"
+                >
+                  <div
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                  >
+                    <span>
+                      Perfect
+                    </span>
+                    <input
+                      name={50086}
+                      onChange={[Function]}
+                      required={true}
+                      type="radio"
+                      value={5}
+                    />
+                  </div>
+                </AddReviewForm__ValueButtonWrapper>
+              </div>
+            </AddReviewForm__CharateristicsSelectorWrapper>
+          </li>
+        </ul>
+      </div>
+      <AddReviewForm__VerticalWrapper>
+        <div
+          className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
+        >
+          <span>
+            Review Summary
+          </span>
+          <AddReviewForm__StyledInput
+            cols="100"
+            id="reviewSummary"
+            maxLength="60"
+            name="summary"
+            onChange={[Function]}
+            placeholder="Example: Best purchase ever!"
+            type="text"
+            value=""
+          >
+            <input
+              className="AddReviewForm__StyledInput-kljszx-7 fqYKLu"
+              cols="100"
+              id="reviewSummary"
+              maxLength="60"
+              name="summary"
+              onChange={[Function]}
+              placeholder="Example: Best purchase ever!"
+              type="text"
+              value=""
+            />
+          </AddReviewForm__StyledInput>
+        </div>
+      </AddReviewForm__VerticalWrapper>
+      <AddReviewForm__VerticalWrapper>
+        <div
+          className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
+        >
+          <span>
+            Your Review
+          </span>
+          <textarea
+            cols="60"
+            id="reviewBody"
+            maxLength="1000"
+            name="body"
+            onChange={[Function]}
+            placeholder="Why did you like the product or not?"
+            required={true}
+            rows="10"
+            value=""
+          />
+        </div>
+      </AddReviewForm__VerticalWrapper>
+      <AddReviewForm__HorizontalWrapper>
+        <div
+          className="AddReviewForm__HorizontalWrapper-kljszx-1 jReWlW"
+        >
+          <span>
+            Upload the photos of your purchase
+          </span>
+          <input
+            multiple={true}
+            name="photos"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>
+      </AddReviewForm__HorizontalWrapper>
+      <AddReviewForm__HorizontalWrapper>
+        <div
+          className="AddReviewForm__HorizontalWrapper-kljszx-1 jReWlW"
+        >
+          <AddReviewForm__VerticalWrapper>
+            <div
+              className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
+            >
+              <span>
+                Your Nickname
+              </span>
+              <input
+                id="reviewer_name"
+                maxLength="60"
+                name="name"
+                onChange={[Function]}
+                placeholder="Example: jackson11!"
+                required={true}
+                type="text"
+                value=""
+              />
+            </div>
+          </AddReviewForm__VerticalWrapper>
+          <AddReviewForm__VerticalWrapper>
+            <div
+              className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
+            >
+              <span>
+                Your Email
+              </span>
+              <input
+                id="email"
+                maxLength="60"
+                name="email"
+                onChange={[Function]}
+                placeholder="Example: jackson11@mail.com"
+                required={true}
+                type="email"
+                value=""
+              />
+            </div>
+          </AddReviewForm__VerticalWrapper>
+        </div>
+      </AddReviewForm__HorizontalWrapper>
+      <AddReviewForm__SytledSubmitButton
+        name="submit"
+        type="submit"
+      >
+        <input
+          className="AddReviewForm__SytledSubmitButton-kljszx-5 fTAtLV"
+          name="submit"
+          type="submit"
+        />
+      </AddReviewForm__SytledSubmitButton>
+      <AddReviewForm__SytledButton
+        type="button"
+      >
+        <button
+          className="AddReviewForm__SytledButton-kljszx-6 hmrOIX"
+          type="button"
+        >
+          Cancel
+        </button>
+      </AddReviewForm__SytledButton>
+    </form>
+  </AddReviewForm__StyledForm>
+</AddReviewForm>
+`;
