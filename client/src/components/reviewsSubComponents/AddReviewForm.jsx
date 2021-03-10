@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import RatingStars from './RatingStars.jsx';
@@ -287,7 +288,6 @@ class AddReviewForm extends React.Component {
         <SytledSubmitButton type="submit" name="submit" />
         <SytledButton type="button" onClick={this.props.toggle}>Cancel</SytledButton>
       </StyledForm>
-
     );
   }
 }

@@ -55,7 +55,7 @@ class Reviews extends React.Component {
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
-      // isModalOpen: false,
+      isModalOpen: false,
       // product_id: this.props.product,
       // entriesCount: this.props.count,
       // page: this.props.page,
