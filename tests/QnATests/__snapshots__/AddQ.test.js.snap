@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`This is for the Add Questions Should render Add Question Properly 1`] = `
+<<<<<<< HEAD
 <AddQ>
   <AddQ__AQC>
     <div
@@ -24,6 +25,8 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
 `;
 
 exports[`This is for the Add Questions Should render More Answers Properly 1`] = `
+=======
+>>>>>>> 02ee0ec6c214bf9bfe9c4a4496ac203921d04516
 <AddQ>
   <AddQ__AQC>
     <div

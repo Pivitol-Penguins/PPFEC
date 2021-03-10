@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`This is for the Question Form Should render Question Form properly 1`] = `
+<<<<<<< HEAD
 <FormQ
   name="Big Rock"
 >
@@ -165,6 +166,8 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
 `;
 
 exports[`This is for the Question Form Should render properly 1`] = `
+=======
+>>>>>>> 02ee0ec6c214bf9bfe9c4a4496ac203921d04516
 <FormQ
   name="Big Rock"
 >

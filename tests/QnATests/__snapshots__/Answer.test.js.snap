@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`One Answer Test Should render an Answer correctly 1`] = `
+<<<<<<< HEAD
 <Answer
   answer={
     Object {
@@ -114,6 +115,8 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
 `;
 
 exports[`One Answer Test Should render correctly 1`] = `
+=======
+>>>>>>> 02ee0ec6c214bf9bfe9c4a4496ac203921d04516
 <Answer
   answer={
     Object {
