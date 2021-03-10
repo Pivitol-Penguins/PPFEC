@@ -139,7 +139,9 @@ class FormQ extends React.Component {
   render() {
     return (
       <FormQContainer onSubmit={this.postMan}>
-        COMPLETE THIS FORM TO ADD A QUESTION
+        COMPLETE THIS FORM TO ADD A QUESTION FOR
+        {' '}
+        {this.props.name.toUpperCase()}
         <Pair>
           <Title>
             HAVE A QUESTION?

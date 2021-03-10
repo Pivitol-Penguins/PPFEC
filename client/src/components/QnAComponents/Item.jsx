@@ -190,6 +190,8 @@ class Item extends React.Component {
                 <FormA
                   func={this.exitModal}
                   id={this.props.id}
+                  name={this.props.name}
+                  body={this.props.item.question_body}
                 />
               )}
               />

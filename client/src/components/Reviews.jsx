@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -188,8 +189,8 @@ class Reviews extends React.Component {
   }
 
   render() {
-    console.log(this.props.reviewsMeta);
-    console.log(this.props.reviews.results);
+    // console.log(this.props.reviewsMeta);
+    // console.log(this.props.reviews.results);
     if (this.props.reviewsMeta !== {} && this.props.reviews.results.length > 0) {
       return (
         <ReviewsContainer id="RATINGS">

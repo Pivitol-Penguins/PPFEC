@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewTile Component Should render correctly 1`] = `
+<ReviewTile
+  debug={true}
+  review={
+    Object {
+      "body": "Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.",
+      "date": "2021-01-26T00:00:00.000Z",
+      "helpfulness": 12,
+      "photos": Array [
+        Object {
+          "id": 187178,
+          "url": "https://images.unsplash.com/photo-1469617833234-8a6843da14d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2764&q=80",
+        },
+        Object {
+          "id": 187157,
+          "url": "https://images.unsplash.com/uploads/1412198532414025532c0/6a31309c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80",
+        },
+      ],
+      "rating": 2,
+      "recommend": true,
+      "response": null,
+      "review_id": 147659,
+      "reviewer_name": "Shyanne6",
+      "summary": "Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.",
+    }
+  }
+>
+  <ReviewTile__TileContainer
+    reportClick={false}
+  >
+    <div
+      className="ReviewTile__TileContainer-sc-1vbuo4p-0 izQjHl"
+    >
+      <ReviewTile__StarDateWrapper>
+        <div
+          className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+        >
+          <RatingStars
+            rating={2}
+          >
+            <div>
+              <RatingStars__StarsContainer>
+                <div
+                  className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG"
+                >
+                  <RatingStars__StarsContainer
+                    className="top"
+                    rating={2}
+                  >
+                    <div
+                      className="RatingStars__StarsContainer-sc-1djn8fm-0 btLlnX top"
+                    >
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                    </div>
+                  </RatingStars__StarsContainer>
+                  <RatingStars__StarsContainer
+                    className="bottom"
+                  >
+                    <div
+                      className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG bottom"
+                    >
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                      <span>
+                        ★
+                      </span>
+                    </div>
+                  </RatingStars__StarsContainer>
+                </div>
+              </RatingStars__StarsContainer>
+            </div>
+          </RatingStars>
+          <span>
+            Shyanne6
+            ,
+             
+            January
+             
+            26
+            ,
+             
+            2021
+          </span>
+        </div>
+      </ReviewTile__StarDateWrapper>
+      <h3>
+        Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.
+      </h3>
+      <p>
+        Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.
+      </p>
+      <div>
+        <ReviewTile__ReviewThumbsWrapper
+          alt="0reviewPhoto"
+          key="187178"
+          src="https://images.unsplash.com/photo-1469617833234-8a6843da14d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2764&q=80"
+        >
+          <img
+            alt="0reviewPhoto"
+            className="ReviewTile__ReviewThumbsWrapper-sc-1vbuo4p-3 bchCvd"
+            src="https://images.unsplash.com/photo-1469617833234-8a6843da14d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2764&q=80"
+          />
+        </ReviewTile__ReviewThumbsWrapper>
+        <ReviewTile__ReviewThumbsWrapper
+          alt="1reviewPhoto"
+          key="187157"
+          src="https://images.unsplash.com/uploads/1412198532414025532c0/6a31309c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80"
+        >
+          <img
+            alt="1reviewPhoto"
+            className="ReviewTile__ReviewThumbsWrapper-sc-1vbuo4p-3 bchCvd"
+            src="https://images.unsplash.com/uploads/1412198532414025532c0/6a31309c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80"
+          />
+        </ReviewTile__ReviewThumbsWrapper>
+      </div>
+      <div>
+        ✓ I recommend this product
+      </div>
+      <ReviewTile__HelpfulnessWrapper>
+        <div
+          className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+        >
+          Helpful?
+          <ReviewTile__ClickTag
+            className="not-click"
+            onClick={[Function]}
+          >
+            <div
+              className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+              onClick={[Function]}
+            >
+              Yes
+               
+              (
+              12
+              )
+            </div>
+          </ReviewTile__ClickTag>
+          <div>
+              |  
+          </div>
+          <ReviewTile__ClickTag
+            className="not-click"
+            onClick={[Function]}
+          >
+            <div
+              className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+              onClick={[Function]}
+            >
+              Report
+            </div>
+          </ReviewTile__ClickTag>
+        </div>
+      </ReviewTile__HelpfulnessWrapper>
+    </div>
+  </ReviewTile__TileContainer>
+</ReviewTile>
+`;
