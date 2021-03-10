@@ -5,8 +5,8 @@ exports[`Description Should render correctly 1`] = `
   debug={true}
   info={
     Object {
-      "description": "The Pumped Up serves up crisp court style with a modern look. These shoes show off tennis-whites shades and are constructed with a supple leather upper and a classic rubber cupsole.",
-      "slogan": "Faster than a just about anything",
+      "description": "Whether you're a morning person or not.  Whether you're gym bound or not.  Everyone looks good in joggers.",
+      "slogan": "Make yourself a morning person",
     }
   }
 >
@@ -18,14 +18,14 @@ exports[`Description Should render correctly 1`] = `
         <h1
           className="Description__Slogan-sc-1a8vwln-1 ixJlAJ"
         >
-          Faster than a just about anything
+          Make yourself a morning person
         </h1>
       </Description__Slogan>
       <Description__Body>
         <p
           className="Description__Body-sc-1a8vwln-2 fDTlPa"
         >
-          The Pumped Up serves up crisp court style with a modern look. These shoes show off tennis-whites shades and are constructed with a supple leather upper and a classic rubber cupsole.
+          Whether you're a morning person or not.  Whether you're gym bound or not.  Everyone looks good in joggers.
         </p>
       </Description__Body>
     </div>

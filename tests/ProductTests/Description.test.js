@@ -4,9 +4,13 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import Description from '../../client/src/components/ProductSubs/Description.jsx';
+import ProductTestData from '../ProductTestData.js';
 
 const props = {
-  info: { slogan: 'Faster than a just about anything', description: 'The Pumped Up serves up crisp court style with a modern look. These shoes show off tennis-whites shades and are constructed with a supple leather upper and a classic rubber cupsole.' },
+  info: {
+    slogan: ProductTestData.productDetails.slogan,
+    description: ProductTestData.productDetails.description,
+  },
 };
 
 describe('Description', () => {
