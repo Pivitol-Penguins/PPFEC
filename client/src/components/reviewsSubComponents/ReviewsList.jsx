@@ -15,7 +15,7 @@ const ReviewsWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  width: 100%;
+  width: 40vw;
   padding: 15px 0;
   display: flex;
   flex-wrap: nowrap;
@@ -37,14 +37,15 @@ const ListWrapper = styled.div`
 `;
 
 const ReviewButton = styled.button`
+  font-weight: 700;
+  color: #424242;
   font-family: 'Lato', sans-serif;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
   width: 20vw;
-  font-size: 15px;
-  color: #424242;
-  font-weight: 1000;
+  margin: 0 12px;
+  // font-size: 15px;
   &:hover {
     cursor: pointer;
     color: #80CCC4;

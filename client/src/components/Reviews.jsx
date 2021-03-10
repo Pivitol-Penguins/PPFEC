@@ -166,7 +166,6 @@ class Reviews extends React.Component {
       })
       .catch((err) => { throw err; })
       .then(() => {
-        // console.log(this.state.originalArr);
         this.setState({
           filterStars: [],
           filterArr: [],
