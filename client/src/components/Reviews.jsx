@@ -55,6 +55,7 @@ class Reviews extends React.Component {
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
+      isModalOpen: false,
       // product_id: this.props.product,
       // entriesCount: this.props.count,
       // page: this.props.page,
@@ -78,7 +79,7 @@ class Reviews extends React.Component {
   loadFirstTwoReviews(data) {
     const displayArr = [];
     let tileCount = 0;
-    while (tileCount < this.state.displayLimit) {
+    while (tileCount < this.state.displayLimit && tileCount < data.length) {
       displayArr.push(data[tileCount]);
       tileCount += 1;
     }
@@ -166,7 +167,6 @@ class Reviews extends React.Component {
       })
       .catch((err) => { throw err; })
       .then(() => {
-        // console.log(this.state.originalArr);
         this.setState({
           filterStars: [],
           filterArr: [],
@@ -177,15 +177,9 @@ class Reviews extends React.Component {
   }
 
   addReviewToggle() {
-    if (!this.state.addReviewShow) {
-      this.setState({
-        addReviewShow: true,
-      });
-    } else {
-      this.setState({
-        addReviewShow: false,
-      });
-    }
+    this.setState((prevState) => ({
+      addReviewShow: !prevState.addReviewShow,
+    }));
   }
 
   render() {
@@ -217,6 +211,7 @@ class Reviews extends React.Component {
               sortSelected={this.sortSelected}
               addReviewToggle={this.addReviewToggle}
               addReviewShow={this.state.addReviewShow}
+              toggleModal={this.toggleModal}
             />
           </Wrapper>
         </ReviewsContainer>
