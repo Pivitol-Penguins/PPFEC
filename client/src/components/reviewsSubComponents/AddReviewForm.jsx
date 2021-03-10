@@ -179,7 +179,7 @@ class AddReviewForm extends React.Component {
       .then(() => {
         this.props.toggle();
       });
-    // event.preventDefault();
+    event.preventDefault();
   }
 
   getRating(inputRating) {

@@ -75,7 +75,6 @@ class Reviews extends React.Component {
   }
 
   loadFirstTwoReviews(data) {
-    // console.log(this.props.reviews);
     const displayArr = [];
     let tileCount = 0;
     while (tileCount < this.state.displayLimit) {

@@ -61,27 +61,13 @@ describe('Add Review Form test', () => {
   });
 
   it('The form should have a handle submit function', () => {
-    const mockSubmit = jest.fn();
+    // const mockSubmit = jest.fn();
     const spyOnSubmit = jest.spyOn(AddReviewFormComponent.instance(), 'handleSubmit');
+    const mockPreventDefault = jest.fn();
     const mockEvent = {
-      target: {
-        productId: 14950,
-        rating: 5,
-        characteristics: {
-          Comfort: { id: 50085, value: '3.1891891891891892' },
-          Fit: { id: 50083, value: '2.9189189189189189' },
-          Length: { id: 50084, value: '2.5405405405405405' },
-          Quality: { id: 50086, value: '3.1081081081081081' },
-        },
-        recommend: undefined,
-        summary: 'summary testing',
-        body: 'bodytesting',
-        name: 'test',
-        email: 'test@test.com',
-        photos: [],
-      },
+      preventDefault: mockPreventDefault,
     };
     AddReviewFormComponent.instance().handleSubmit(mockEvent);
-    expect(spyOnSubmit).toHaveBeenCalled();
+    expect(spyOnSubmit).toBeCalled();
   });
 });
