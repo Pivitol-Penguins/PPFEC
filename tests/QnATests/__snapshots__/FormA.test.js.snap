@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`This is for the Answer Form Should render properly 1`] = `
+exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
 <FormA
   body="asdf"
   id={1234}
