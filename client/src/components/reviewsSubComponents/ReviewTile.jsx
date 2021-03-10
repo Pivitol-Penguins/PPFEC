@@ -71,13 +71,11 @@ class ReviewTile extends React.Component {
     this.handleClickReport = this.handleClickReport.bind(this);
   }
 
-  handleClickYes(event) {
-    event.persist();
+  handleClickYes() {
+    // event.persist();
     const path = window.location.pathname;
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/helpful`)
       .then((res) => {
-        console.log(res.data.results);
-        // this.props.loadReview(res.data.results);
         this.setState((prevState) => ({
           yesClick: true,
           yesNum: prevState.yesNum + 1,
@@ -86,6 +84,7 @@ class ReviewTile extends React.Component {
       .catch((err) => {
         throw err;
       });
+    // event.preventDefault();
   }
 
   handleClickReport() {

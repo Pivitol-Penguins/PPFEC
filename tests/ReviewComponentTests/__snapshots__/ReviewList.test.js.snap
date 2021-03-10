@@ -55,7 +55,6 @@ exports[`ReviewList Component Should render correctly 1`] = `
       },
     ]
   }
-  loadMoreReviews={[Function]}
   reviews={
     Array [
       Object {
@@ -474,12 +473,9 @@ exports[`ReviewList Component Should render correctly 1`] = `
         <div
           className="ReviewsList__ButtonWrapper-sc-1ulmjy1-1 kBwdVl"
         >
-          <ReviewsList__ReviewButton
-            onClick={[Function]}
-          >
+          <ReviewsList__ReviewButton>
             <button
               className="ReviewsList__ReviewButton-sc-1ulmjy1-3 CnZqw"
-              onClick={[Function]}
             >
               MORE REVIEWS
             </button>
