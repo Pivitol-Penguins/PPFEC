@@ -2,7 +2,6 @@
 
 exports[`QuantityDropdown Should render correctly 1`] = `
 <QuantityDropdown
-  available={6}
   debug={true}
   list={
     Array [
@@ -23,6 +22,7 @@ exports[`QuantityDropdown Should render correctly 1`] = `
       15,
     ]
   }
+  skus={8}
 >
   <QuantityDropdown__DDWrapper>
     <div
