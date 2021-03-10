@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -32,6 +33,7 @@ const Wrapper = styled.div`
 `;
 
 const RatingWrapper = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   flex-basis: 35%;
@@ -53,11 +55,11 @@ class Reviews extends React.Component {
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
-      product_id: this.props.product,
-      entriesCount: this.props.count,
-      page: this.props.page,
-      sortSelection: 'relavant',
-      sortOn: false,
+      // product_id: this.props.product,
+      // entriesCount: this.props.count,
+      // page: this.props.page,
+      // sortSelection: 'relavant',
+      // sortOn: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
@@ -74,7 +76,6 @@ class Reviews extends React.Component {
   }
 
   loadFirstTwoReviews(data) {
-    // console.log(this.props.reviews);
     const displayArr = [];
     let tileCount = 0;
     while (tileCount < this.state.displayLimit) {
@@ -188,9 +189,9 @@ class Reviews extends React.Component {
   }
 
   render() {
-    if (this.state.reviews.length > 0 && this.state.fullreviewsArr.length > 0) {
-      // console.log(this.state.fullreviewsArr);
-      // console.log(this.state.reviews);
+    // console.log(this.props.reviewsMeta);
+    // console.log(this.props.reviews.results);
+    if (this.props.reviewsMeta !== {} && this.props.reviews.results.length > 0) {
       return (
         <ReviewsContainer id="RATINGS">
           <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>

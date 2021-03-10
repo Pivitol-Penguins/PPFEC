@@ -26,9 +26,15 @@ const QList = styled.div`
 
 const QuestionList = (props) => (
   <QList>
-    {props.items.map((item) => (<Item item={item} key={item.question_id} id={item.question_id} />))}
+    {props.items.map((item) => (
+      <Item
+        item={item}
+        key={item.question_id}
+        id={item.question_id}
+        name={props.name}
+      />
+    ))}
   </QList>
-
 );
 
 export default QuestionList;

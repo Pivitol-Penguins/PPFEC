@@ -98,7 +98,7 @@ class RatingStars extends React.Component {
             return (
               <span
                 key={star}
-                onClick={() => { this.setRating(star, () => this.props.getRating(star)); }}
+                onClick={(e) => { this.setRating(star, () => this.props.getRating(star)); }}
                 onMouseEnter={() => { this.hoverRating(star); }}
                 onMouseLeave={() => { this.hoverRating(0); }}
               >
