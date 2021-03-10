@@ -19,11 +19,11 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
           className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
         >
           <FormQuestion__Title>
-            <h4
+            <div
               className="FormQuestion__Title-sc-1wl3416-7"
             >
               HAVE A QUESTION?
-            </h4>
+            </div>
           </FormQuestion__Title>
           <FormQuestion__BodyT
             cols="55"
@@ -52,11 +52,11 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
           className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
         >
           <FormQuestion__Title>
-            <h4
+            <div
               className="FormQuestion__Title-sc-1wl3416-7"
             >
               MAY I HAVE YOUR NAME?
-            </h4>
+            </div>
           </FormQuestion__Title>
           <FormQuestion__Input
             name="name"
@@ -86,11 +86,11 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
           className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
         >
           <FormQuestion__Title>
-            <h4
+            <div
               className="FormQuestion__Title-sc-1wl3416-7"
             >
               HOW ABOUT YOUR EMAIL?
-            </h4>
+            </div>
           </FormQuestion__Title>
           <FormQuestion__Input
             name="email"

@@ -11,11 +11,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
       className="FormAnswer__FormAContainer-xot12g-0 dmqVLc"
     >
       SUBMIT YOUR ANSWER
-      <h4>
+      <div>
         BIG ROCK
         : 
         ASDF
-      </h4>
+      </div>
       <FormAnswer__Pair>
         <div
           className="FormAnswer__Pair-xot12g-6 ndBCE"

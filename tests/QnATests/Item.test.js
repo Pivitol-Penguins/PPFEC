@@ -34,9 +34,9 @@ describe('One Question Test', () => {
     expect(itemComp).toMatchSnapshot();
   });
 
-  // it('Should render the answer body correctly', () => {
-  //   expect(itemBody).toEqual('Q:Helpful?Yes(undefined)|Add AnswerA:<AnswerList /><MoreA />');
-  // });
+  it('calls handleClick', () => {
+    expect(itemBody).toEqual('Q:Helpful?Yes(undefined)|Add AnswerA:<AnswerList /><MoreA />');
+  });
 
   // it('Should render the answer body correctly', () => {
   //   expect(itemHelp).toEqual('Helpful?');

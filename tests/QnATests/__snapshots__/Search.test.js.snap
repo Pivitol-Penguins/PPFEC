@@ -3,6 +3,7 @@
 exports[`One Search Test Should render correctly 1`] = `
 <Search
   debug={true}
+  reset={[Function]}
 >
   <Search__Wrapper>
     <div

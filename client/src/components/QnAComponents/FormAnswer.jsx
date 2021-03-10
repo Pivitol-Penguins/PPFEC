@@ -202,11 +202,11 @@ class FormA extends React.Component {
     return (
       <FormAContainer>
         SUBMIT YOUR ANSWER
-        <h4>
+        <div>
           {this.props.name.toUpperCase()}
           {': '}
           {this.props.body.toUpperCase()}
-        </h4>
+        </div>
 
         <Pair>
           <Title>

@@ -85,7 +85,7 @@ const Pair = styled.div`
   justify-content: space-between;
 `;
 
-const Title = styled.h4`
+const Title = styled.div`
 `;
 
 const BText = styled.div`

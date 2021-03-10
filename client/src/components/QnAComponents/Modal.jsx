@@ -43,7 +43,7 @@ class Modal extends React.Component {
           </div>
         </StyledModal>
       </div>,
-      document.getElementById('modal-root'),
+      document.getElementById('modal-root') || document.createElement('div'),
     );
   }
 }
