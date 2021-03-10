@@ -3,7 +3,6 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import ReviewsList from '../../client/src/components/reviewsSubComponents/ReviewsList.jsx';
 import ReviewTile from '../../client/src/components/reviewsSubComponents/ReviewTile.jsx';
-import Reviews from '../../client/src/components/Reviews.jsx';
 
 describe('ReviewList Component', () => {
   const props = {
@@ -91,19 +90,6 @@ describe('ReviewList Component', () => {
       helpfulness: 28,
       photos: [],
     }],
-    loadMoreReviews: () => {
-      const loadArr = [];
-      let count = 0;
-      let totalLength = loadArr.length + this.state.reviews.length;
-      while (count < this.state.displayLimit && totalLength < this.state.fullreviewsArr.length) {
-        loadArr.push(this.state.fullreviewsArr[totalLength]);
-        count += 1;
-        totalLength += 1;
-      }
-      this.setState((prevState) => ({
-        reviews: [...prevState.reviews, ...loadArr],
-      }));
-    }
   };
 
   let ReviewsListComponent, ReviewsComponent;
@@ -124,13 +110,4 @@ describe('ReviewList Component', () => {
   it('Should render 2 review tiles at a time', () => {
     expect(ReviewsListComponent.find(ReviewTile).length).toEqual(2);
   });
-
-  // it('Should render 2 more review tiles by clicking MORE REVIEW button', () => {
-  //   const spyOnClick = jest.spyOn(ReviewsComponent.instance(), 'loadMoreReviews');
-  //   // ReviewsListComponent.instance().loadMoreReviews();
-  //   const moreReviews = ReviewsListComponent.find('button').at(0);
-  //   moreReviews.instance().loadMoreReviews();
-  //   expect(spyOnClick).toHaveBeenCalled();
-  //   expect(ReviewsListComponent.find(ReviewTile).length).toEqual(4);
-  // });
 });
