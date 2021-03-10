@@ -9,3 +9,13 @@ exports[`This is for the More Questions Component Should render More Questions P
   </MoreQ__MQC>
 </MoreQ>
 `;
+
+exports[`This is for the More Questions Component Should render More Questions Properly 1`] = `
+<MoreQ>
+  <MoreQ__MQC>
+    <div
+      className="MoreQ__MQC-ir99cd-1 fxtzCf"
+    />
+  </MoreQ__MQC>
+</MoreQ>
+`;

@@ -1,6 +1,5 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-
 import styled from 'styled-components';
 
 const DDWrapper = styled.div`

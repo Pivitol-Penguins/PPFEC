@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductImages Should render correctly 1`] = `
+<ProductImages
+  debug={true}
+  images={
+    Array [
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+    ]
+  }
+  index={0}
+>
+  <ProductImages__Wrapper>
+    <div
+      className="ProductImages__Wrapper-sc-1k36oai-0 ffMCcO"
+    >
+      <ViewerThumbnails
+        alt=""
+        clickedThumb={[Function]}
+        end={4}
+        images={
+          Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+          ]
+        }
+        indexUpdater={[Function]}
+        start={0}
+        viewerIndex={0}
+      >
+        <ViewerThumbnails__Thumbs>
+          <div
+            className="ViewerThumbnails__Thumbs-v6hnj6-0 kgjjgM"
+          >
+            <ViewerThumbnails__NoArrow>
+              <div
+                className="ViewerThumbnails__NoArrow-v6hnj6-6 hGnLFc"
+              >
+                <FontAwesome
+                  id="-1"
+                  name="angle-up"
+                  size="2x"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-angle-up fa-2x"
+                    id="-1"
+                  />
+                </FontAwesome>
+              </div>
+            </ViewerThumbnails__NoArrow>
+            <div
+              key="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+            >
+              <ViewerThumbnails__ViewerImageContainer>
+                <div
+                  className="ViewerThumbnails__ViewerImageContainer-v6hnj6-2 kCVtBt"
+                >
+                  <ViewerThumbnails__Image
+                    id={0}
+                    onClick={[Function]}
+                    src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                  >
+                    <img
+                      className="ViewerThumbnails__Image-v6hnj6-4 hXQyqE"
+                      id={0}
+                      onClick={[Function]}
+                      src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                    />
+                  </ViewerThumbnails__Image>
+                </div>
+              </ViewerThumbnails__ViewerImageContainer>
+              <ViewerThumbnails__Highlight>
+                <div
+                  className="ViewerThumbnails__Highlight-v6hnj6-3 kmKkYK"
+                />
+              </ViewerThumbnails__Highlight>
+            </div>
+            <ViewerThumbnails__ImageContainer
+              key="https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+            >
+              <div
+                className="ViewerThumbnails__ImageContainer-v6hnj6-1 dkKLIo"
+              >
+                <ViewerThumbnails__Image
+                  id={1}
+                  onClick={[Function]}
+                  src="https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                >
+                  <img
+                    className="ViewerThumbnails__Image-v6hnj6-4 hXQyqE"
+                    id={1}
+                    onClick={[Function]}
+                    src="https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                  />
+                </ViewerThumbnails__Image>
+              </div>
+            </ViewerThumbnails__ImageContainer>
+            <ViewerThumbnails__ImageContainer
+              key="https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+            >
+              <div
+                className="ViewerThumbnails__ImageContainer-v6hnj6-1 dkKLIo"
+              >
+                <ViewerThumbnails__Image
+                  id={2}
+                  onClick={[Function]}
+                  src="https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                >
+                  <img
+                    className="ViewerThumbnails__Image-v6hnj6-4 hXQyqE"
+                    id={2}
+                    onClick={[Function]}
+                    src="https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                  />
+                </ViewerThumbnails__Image>
+              </div>
+            </ViewerThumbnails__ImageContainer>
+            <ViewerThumbnails__ImageContainer
+              key="https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+            >
+              <div
+                className="ViewerThumbnails__ImageContainer-v6hnj6-1 dkKLIo"
+              >
+                <ViewerThumbnails__Image
+                  id={3}
+                  onClick={[Function]}
+                  src="https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                >
+                  <img
+                    className="ViewerThumbnails__Image-v6hnj6-4 hXQyqE"
+                    id={3}
+                    onClick={[Function]}
+                    src="https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                  />
+                </ViewerThumbnails__Image>
+              </div>
+            </ViewerThumbnails__ImageContainer>
+            <ViewerThumbnails__ImageContainer
+              key="https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80"
+            >
+              <div
+                className="ViewerThumbnails__ImageContainer-v6hnj6-1 dkKLIo"
+              >
+                <ViewerThumbnails__Image
+                  id={4}
+                  onClick={[Function]}
+                  src="https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                >
+                  <img
+                    className="ViewerThumbnails__Image-v6hnj6-4 hXQyqE"
+                    id={4}
+                    onClick={[Function]}
+                    src="https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+                  />
+                </ViewerThumbnails__Image>
+              </div>
+            </ViewerThumbnails__ImageContainer>
+            <ViewerThumbnails__DownArrow
+              onClick={[Function]}
+            >
+              <div
+                className="ViewerThumbnails__DownArrow-v6hnj6-7 iBaJVw"
+                onClick={[Function]}
+              >
+                <FontAwesome
+                  id="1"
+                  name="angle-down"
+                  size="2x"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-angle-down fa-2x"
+                    id="1"
+                  />
+                </FontAwesome>
+              </div>
+            </ViewerThumbnails__DownArrow>
+          </div>
+        </ViewerThumbnails__Thumbs>
+      </ViewerThumbnails>
+      <ProductImages__Image
+        alt="style photograph"
+        onClick={[Function]}
+        src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+      >
+        <img
+          alt="style photograph"
+          className="ProductImages__Image-sc-1k36oai-3 CDgDl"
+          onClick={[Function]}
+          src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+        />
+      </ProductImages__Image>
+      <ProductImages__RightArrow
+        onClick={[Function]}
+      >
+        <div
+          className="ProductImages__RightArrow-sc-1k36oai-1 hSttQB"
+          onClick={[Function]}
+        >
+          <FontAwesome
+            id="1"
+            name="angle-right"
+            size="2x"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-angle-right fa-2x"
+              id="1"
+            />
+          </FontAwesome>
+        </div>
+      </ProductImages__RightArrow>
+    </div>
+  </ProductImages__Wrapper>
+</ProductImages>
+`;

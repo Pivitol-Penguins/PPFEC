@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import RatingStars from './RatingStars.jsx';
@@ -23,7 +24,14 @@ const VerticalWrapper = styled.div`
 const HorizontalWrapper = styled.div`
   display: flex;
   align-items: baseline;
-  justisfy-content: space-around;
+  justify-content: space-around;
+`;
+
+const NameEmailWraper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  margin: 0 10px;
 `;
 
 const ValueButtonWrapper = styled.div`
@@ -32,6 +40,11 @@ const ValueButtonWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const StyledLabel = styled.span`
+  font-weight: 700;
+  padding: 5px 0;
 `;
 
 const CharateristicsSelectorWrapper = styled.div`
@@ -43,20 +56,37 @@ const CharateristicsSelectorWrapper = styled.div`
 
 const StyledForm = styled.form`
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px 30px;
   background-color: white;
   width: 55vw;
   height: 100%;
   font-family: 'Lato', sans-serif;
   box-shadow: 0 19px 38px #6d6d6d, 0 15px 12px #6d6d6d;
+  &:focus {
+    ::-webkit-scrollbar {
+      display: none;
+    };
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+`;
+
+const NameEmailInput = styled.input`
+  width: 23vw;
+  height: 3vh;
+  border-color: #424242;
+  margin: 5px 0;
+  margin-right: 50px;
 `;
 
 const SytledSubmitButton = styled.input`
+  float: right;
   font-family: 'Lato', sans-serif;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
-  width: 20vw;
+  width: 15vw;
+  margin: 0 12px;
   font-size: 15px;
   color: #424242;
   &:hover {
@@ -72,14 +102,16 @@ const SytledSubmitButton = styled.input`
 `;
 
 const SytledButton = styled.button`
+  float: right;
   font-family: 'Lato', sans-serif;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
-  width: 20vw;
+  width: 15vw;
   font-size: 15px;
   color: #424242;
   padding: 5px;
+  margin: 0 12px;
   &:hover {
     cursor: pointer;
     color: #80CCC4;
@@ -93,8 +125,14 @@ const SytledButton = styled.button`
 `;
 
 const StyledInput = styled.input`
-  width: 100%;
+  width: 45vw;
   height: 3vh;
+  border-color: #424242;
+`;
+
+const StyledTextarea = styled.textarea`
+  width: 52vw;
+  height: 12vh;
   border-color: #424242;
 `;
 
@@ -194,11 +232,11 @@ class AddReviewForm extends React.Component {
       <StyledForm onSubmit={this.handleSubmit}>
         <h2>Write A Review</h2>
         <VerticalWrapper>
-          <span>Overall Rating</span>
+          <StyledLabel>Overall Rating</StyledLabel>
           <RatingStars getRating={this.getRating} />
         </VerticalWrapper>
         <VerticalWrapper>
-          <span>Do you recommend this product?</span>
+          <StyledLabel>Do you recommend this product?</StyledLabel>
           <div>
             <input type="radio" name="recommend" value="true" required onChange={this.handleChange} />
             <span>Yes</span>
@@ -207,11 +245,11 @@ class AddReviewForm extends React.Component {
           </div>
         </VerticalWrapper>
         <div>
-          <span>Charateristics</span>
-          <ul>
+          <StyledLabel>Charateristics</StyledLabel>
+          <ul style={{ padding: '10px', margin: '0 auto' }}>
             {charateristicsKeys.map((key) => (
               <li key={key}>
-                <div>{key}</div>
+                <StyledLabel>{key}</StyledLabel>
                 <CharateristicsSelectorWrapper>
                   {productCharacteristics[key].map((value, index) => (
                     <ValueButtonWrapper key={value}>
@@ -225,32 +263,31 @@ class AddReviewForm extends React.Component {
           </ul>
         </div>
         <VerticalWrapper>
-          <span>Review Summary</span>
+          <StyledLabel>Review Summary</StyledLabel>
           <StyledInput type="text" id="reviewSummary" name="summary" cols="100" maxLength="60" value={this.state.summary} placeholder="Example: Best purchase ever!" onChange={this.handleChange} />
         </VerticalWrapper>
         <VerticalWrapper>
-          <span>Your Review</span>
-          <textarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" value={this.state.body} placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
+          <StyledLabel>Your Review</StyledLabel>
+          <StyledTextarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" value={this.state.body} placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
         </VerticalWrapper>
         <HorizontalWrapper>
-          <span>Upload the photos of your purchase</span>
+          <StyledLabel>Upload the photos of your purchase</StyledLabel>
           <input type="file" name="photos" onChange={this.handlePhotosUpload} multiple />
         </HorizontalWrapper>
-        <HorizontalWrapper>
+        <NameEmailWraper>
           <VerticalWrapper>
-            <span>Your Nickname</span>
-            <input type="text" id="reviewer_name" name="name" maxLength="60" value={this.state.name} placeholder="Example: jackson11!" required onChange={this.handleChange} />
+            <StyledLabel>Your Nickname</StyledLabel>
+            <NameEmailInput type="text" id="reviewer_name" name="name" maxLength="60" value={this.state.name} placeholder="Example: jackson11!" required onChange={this.handleChange} />
           </VerticalWrapper>
           <VerticalWrapper>
-            <span>Your Email</span>
-            <input type="email" id="email" name="email" maxLength="60" value={this.state.email} placeholder="Example: jackson11@mail.com" required onChange={this.handleChange} />
+            <StyledLabel>Your Email</StyledLabel>
+            <NameEmailInput type="email" id="email" name="email" maxLength="60" value={this.state.email} placeholder="Example: jackson11@mail.com" required onChange={this.handleChange} />
           </VerticalWrapper>
-        </HorizontalWrapper>
+        </NameEmailWraper>
 
         <SytledSubmitButton type="submit" name="submit" />
         <SytledButton type="button" onClick={this.props.toggle}>Cancel</SytledButton>
       </StyledForm>
-
     );
   }
 }

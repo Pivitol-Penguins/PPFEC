@@ -5,9 +5,10 @@ import { mount } from 'enzyme';
 
 import FeaturesList from '../../client/src/components/ProductSubs/FeaturesList.jsx';
 import Feature from '../../client/src/components/ProductSubs/Feature.jsx';
+import ProductTestData from '../ProductTestData.js';
 
 const props = {
-  features: [{ feature: 'Sole', value: 'Rubber' }, { feature: 'Mid-Sole', value: 'ControlSupport Arch Bridge' }, { feature: 'Material', value: null }],
+  features: ProductTestData.productDetails.features,
 };
 
 describe('FeaturesList', () => {

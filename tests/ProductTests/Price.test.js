@@ -4,12 +4,14 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import Price from '../../client/src/components/ProductSubs/Price.jsx';
+import ProductTestData from '../ProductTestData.js';
 
 describe('Price rendering', () => {
   const props = {
-    price: 40,
-    sale: null,
+    price: ProductTestData.productStyles.results[0].original_price,
+    sale: ProductTestData.productStyles.results[0].sale_price,
   };
+
   const PriceComponent = mount(<Price {...props} debug />);
   const text = (PriceComponent.find('p').text());
 
@@ -24,8 +26,8 @@ describe('Price rendering', () => {
 
 describe('Price rendering', () => {
   const props = {
-    price: 40,
-    sale: 30,
+    price: ProductTestData.productStyles.results[2].original_price,
+    sale: ProductTestData.productStyles.results[2].sale_price,
   };
   const PriceComponent = mount(<Price {...props} debug />);
   const RegPrice = (PriceComponent.find('p').at(0).text());
@@ -40,6 +42,6 @@ describe('Price rendering', () => {
   });
 
   it('render the sale price correctly', () => {
-    expect(SalePrice).toEqual('$30');
+    expect(SalePrice).toEqual('$35');
   });
 });
