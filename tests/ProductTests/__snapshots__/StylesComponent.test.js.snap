@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StylesComponent Should render correctly 1`] = `
+<Styles
+  debug={true}
+  styles={
+    Object {
+      "product_id": "14036",
+      "results": Array [
+        Object {
+          "default?": true,
+          "name": "Black",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+          ],
+          "sale_price": null,
+          "skus": Object {
+            "407566": Object {
+              "quantity": 8,
+              "size": "XS",
+            },
+            "407567": Object {
+              "quantity": 16,
+              "size": "S",
+            },
+            "407568": Object {
+              "quantity": 17,
+              "size": "M",
+            },
+            "407569": Object {
+              "quantity": 10,
+              "size": "L",
+            },
+            "407570": Object {
+              "quantity": 15,
+              "size": "XL",
+            },
+            "407571": Object {
+              "quantity": 6,
+              "size": "XXL",
+            },
+          },
+          "style_id": 70550,
+        },
+        Object {
+          "default?": false,
+          "name": "Grey",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1562542082-519ebcdb43e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1562542082-519ebcdb43e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2057&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1562542132-8555e1b583f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1562542132-8555e1b583f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2057&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1562542096-218d8f9760bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1562542096-218d8f9760bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2057&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1562542119-19d015b93c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1562542119-19d015b93c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2057&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1516684810863-e49c82f1f092?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1516684810863-e49c82f1f092?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=965&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1490427712608-588e68359dbd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1490427712608-588e68359dbd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+          ],
+          "sale_price": null,
+          "skus": Object {
+            "407572": Object {
+              "quantity": 8,
+              "size": "XS",
+            },
+            "407573": Object {
+              "quantity": 16,
+              "size": "S",
+            },
+            "407574": Object {
+              "quantity": 17,
+              "size": "M",
+            },
+            "407575": Object {
+              "quantity": 10,
+              "size": "L",
+            },
+            "407576": Object {
+              "quantity": 15,
+              "size": "XL",
+            },
+            "407577": Object {
+              "quantity": 6,
+              "size": "XXL",
+            },
+          },
+          "style_id": 70551,
+        },
+        Object {
+          "default?": false,
+          "name": "Goldenrod",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1482876555840-f31c5ebbff1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1482876555840-f31c5ebbff1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1426647451887-5f2be01918a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1426647451887-5f2be01918a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1517438476312-10d79c077509?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1517438476312-10d79c077509?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1485646979142-d4abb57a876f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1485646979142-d4abb57a876f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=962&q=80",
+            },
+          ],
+          "sale_price": "35.00",
+          "skus": Object {
+            "407578": Object {
+              "quantity": 8,
+              "size": "XS",
+            },
+            "407579": Object {
+              "quantity": 16,
+              "size": "S",
+            },
+            "407580": Object {
+              "quantity": 17,
+              "size": "M",
+            },
+            "407581": Object {
+              "quantity": 10,
+              "size": "L",
+            },
+            "407582": Object {
+              "quantity": 15,
+              "size": "XL",
+            },
+            "407583": Object {
+              "quantity": 6,
+              "size": "XXL",
+            },
+          },
+          "style_id": 70552,
+        },
+        Object {
+          "default?": false,
+          "name": "Maroon",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1519857609704-61e751edba25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1519857609704-61e751edba25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1499714832275-d6205d94c35d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1499714832275-d6205d94c35d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1532244769164-ff64ddeefa45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1532244769164-ff64ddeefa45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1549540806-76ce9007b674?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1549540806-76ce9007b674?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1554136920-a1df2909d8f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1554136920-a1df2909d8f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1541214880206-03318856c6c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1541214880206-03318856c6c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+          ],
+          "sale_price": "35.00",
+          "skus": Object {
+            "407584": Object {
+              "quantity": 8,
+              "size": "XS",
+            },
+            "407585": Object {
+              "quantity": 16,
+              "size": "S",
+            },
+            "407586": Object {
+              "quantity": 17,
+              "size": "M",
+            },
+            "407587": Object {
+              "quantity": 10,
+              "size": "L",
+            },
+            "407588": Object {
+              "quantity": 15,
+              "size": "XL",
+            },
+            "407589": Object {
+              "quantity": 6,
+              "size": "XXL",
+            },
+          },
+          "style_id": 70553,
+        },
+        Object {
+          "default?": false,
+          "name": "Chartreuse",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1482876555840-f31c5ebbff1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1482876555840-f31c5ebbff1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1426647451887-5f2be01918a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1426647451887-5f2be01918a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1517438476312-10d79c077509?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1517438476312-10d79c077509?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1485646979142-d4abb57a876f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1485646979142-d4abb57a876f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=962&q=80",
+            },
+          ],
+          "sale_price": "25.00",
+          "skus": Object {
+            "407590": Object {
+              "quantity": 8,
+              "size": "XS",
+            },
+            "407591": Object {
+              "quantity": 16,
+              "size": "S",
+            },
+            "407592": Object {
+              "quantity": 17,
+              "size": "M",
+            },
+            "407593": Object {
+              "quantity": 10,
+              "size": "L",
+            },
+            "407594": Object {
+              "quantity": 15,
+              "size": "XL",
+            },
+            "407595": Object {
+              "quantity": 6,
+              "size": "XXL",
+            },
+          },
+          "style_id": 70554,
+        },
+        Object {
+          "default?": false,
+          "name": "White",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1510390099355-23e690d8129d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1510390099355-23e690d8129d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1547257965-087be799b084?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1547257965-087be799b084?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1510217167326-549ae78e4738?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1510217167326-549ae78e4738?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1470282312847-28b943046dc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1470282312847-28b943046dc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1552904219-f4b87efe8792?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1552904219-f4b87efe8792?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80",
+            },
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1519241978701-4302ab53de1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+              "url": "https://images.unsplash.com/photo-1519241978701-4302ab53de1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
+            },
+          ],
+          "sale_price": null,
+          "skus": Object {
+            "407596": Object {
+              "quantity": 8,
+              "size": "XS",
+            },
+            "407597": Object {
+              "quantity": 16,
+              "size": "S",
+            },
+            "407598": Object {
+              "quantity": 17,
+              "size": "M",
+            },
+            "407599": Object {
+              "quantity": 10,
+              "size": "L",
+            },
+            "407600": Object {
+              "quantity": 15,
+              "size": "XL",
+            },
+            "407601": Object {
+              "quantity": 6,
+              "size": "XXL",
+            },
+          },
+          "style_id": 70555,
+        },
+      ],
+    }
+  }
+>
+  <StylesComponent__StyleWrapper>
+    <div
+      className="StylesComponent__StyleWrapper-ajk3ts-0 bQXBFa"
+    >
+      <Price
+        price="40.00"
+        sale={null}
+      >
+        <Price__NoSale>
+          <p
+            className="Price__NoSale-eho440-0 ituvCN"
+          >
+            $40
+          </p>
+        </Price__NoSale>
+      </Price>
+      <StylesComponent__TextWrapper>
+        <div
+          className="StylesComponent__TextWrapper-ajk3ts-1 kDJaHh"
+        >
+          <StylesComponent__Style>
+            <p
+              className="StylesComponent__Style-ajk3ts-2 glNYdS"
+            >
+              STYLE &gt;
+            </p>
+          </StylesComponent__Style>
+          <StylesComponent__SelectedStyle>
+            <p
+              className="StylesComponent__SelectedStyle-ajk3ts-3 RbxlX"
+            >
+              BLACK
+            </p>
+          </StylesComponent__SelectedStyle>
+        </div>
+      </StylesComponent__TextWrapper>
+      <StylesComponent__Thumbs>
+        <div
+          className="StylesComponent__Thumbs-ajk3ts-4 gBVoCt"
+        >
+          <StylesComponent__SelectedImage
+            alt="Black"
+            id={70550}
+            key="70550"
+            onClick={[Function]}
+            src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Black"
+              className="StylesComponent__SelectedImage-ajk3ts-6 eDgpFT"
+              id={70550}
+              onClick={[Function]}
+              src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__SelectedImage>
+          <StylesComponent__Image
+            alt="Grey"
+            id={70551}
+            key="70551"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1562542082-519ebcdb43e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Grey"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70551}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1562542082-519ebcdb43e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="Goldenrod"
+            id={70552}
+            key="70552"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Goldenrod"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70552}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="Maroon"
+            id={70553}
+            key="70553"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1519857609704-61e751edba25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Maroon"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70553}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1519857609704-61e751edba25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="Chartreuse"
+            id={70554}
+            key="70554"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Chartreuse"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70554}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="White"
+            id={70555}
+            key="70555"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1510390099355-23e690d8129d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="White"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70555}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1510390099355-23e690d8129d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+        </div>
+      </StylesComponent__Thumbs>
+    </div>
+  </StylesComponent__StyleWrapper>
+</Styles>
+`;

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuantityDropdown Should render correctly 1`] = `
+<QuantityDropdown
+  debug={true}
+  list={
+    Array [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+    ]
+  }
+  skus={8}
+>
+  <QuantityDropdown__DDWrapper>
+    <div
+      className="QuantityDropdown__DDWrapper-sc-1fwgee9-0 kbjxSC"
+    >
+      <QuantityDropdown__DDHeader
+        onClick={[Function]}
+      >
+        <button
+          className="QuantityDropdown__DDHeader-sc-1fwgee9-1 liwBJT"
+          onClick={[Function]}
+        >
+          <QuantityDropdown__DDHeaderTitle>
+            <div
+              className="QuantityDropdown__DDHeaderTitle-sc-1fwgee9-2 kBnByu"
+            />
+          </QuantityDropdown__DDHeaderTitle>
+          <FontAwesome
+            name="angle-down"
+            size="2x"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-angle-down fa-2x"
+            />
+          </FontAwesome>
+        </button>
+      </QuantityDropdown__DDHeader>
+    </div>
+  </QuantityDropdown__DDWrapper>
+</QuantityDropdown>
+`;
