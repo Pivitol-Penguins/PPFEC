@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewerThumbnails Should render correctly 1`] = `
+<ViewerThumbnails
+  debug={true}
+  images={
+    Array [
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1518687338977-a84d3086a934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1518687338977-a84d3086a934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1556812191-381c7e7d96d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1556812191-381c7e7d96d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2982&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1526330563440-3ae2174b6bce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1526330563440-3ae2174b6bce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1516199707327-5399434d0aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1516199707327-5399434d0aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1083&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1541444446610-749d3299b35e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1541444446610-749d3299b35e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+      },
+    ]
+  }
+>
+  <ViewerThumbnails__Thumbs>
+    <div
+      className="ViewerThumbnails__Thumbs-v6hnj6-0 kgjjgM"
+    >
+      <ViewerThumbnails__UpArrow
+        onClick={[Function]}
+      >
+        <div
+          className="ViewerThumbnails__UpArrow-v6hnj6-5 imDka-d"
+          onClick={[Function]}
+        >
+          <FontAwesome
+            id="-1"
+            name="angle-up"
+            size="2x"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-angle-up fa-2x"
+              id="-1"
+            />
+          </FontAwesome>
+        </div>
+      </ViewerThumbnails__UpArrow>
+      <ViewerThumbnails__DownArrow
+        onClick={[Function]}
+      >
+        <div
+          className="ViewerThumbnails__DownArrow-v6hnj6-7 iBaJVw"
+          onClick={[Function]}
+        >
+          <FontAwesome
+            id="1"
+            name="angle-down"
+            size="2x"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-angle-down fa-2x"
+              id="1"
+            />
+          </FontAwesome>
+        </div>
+      </ViewerThumbnails__DownArrow>
+    </div>
+  </ViewerThumbnails__Thumbs>
+</ViewerThumbnails>
+`;
