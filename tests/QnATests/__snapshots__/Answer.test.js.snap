@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`One Answer Test Should render correctly 1`] = `
+exports[`One Answer Test Should render an Answer correctly 1`] = `
 <Answer
   answer={
     Object {
