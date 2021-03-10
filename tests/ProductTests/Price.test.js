@@ -2,15 +2,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { mount } from 'enzyme';
-import styled from 'styled-components';
 
 import Price from '../../client/src/components/ProductSubs/Price.jsx';
-
-const NoSale = styled.p`
-  margin: 0;
-  margin-bottom: 1vh;
-  font-weight: 300;
-`;
 
 describe('Price rendering', () => {
   const props = {
@@ -25,7 +18,7 @@ describe('Price rendering', () => {
   });
 
   it('render the price correctly', () => {
-    expect(text).toEqual("$40");
+    expect(text).toEqual('$40');
   });
 });
 
@@ -43,10 +36,10 @@ describe('Price rendering', () => {
   });
 
   it('render the regular price correctly', () => {
-    expect(RegPrice).toEqual("$40");
+    expect(RegPrice).toEqual('$40');
   });
 
   it('render the sale price correctly', () => {
-    expect(SalePrice).toEqual("$30");
+    expect(SalePrice).toEqual('$30');
   });
 });

@@ -77,7 +77,6 @@ class Product extends React.Component {
   }
 
   render() {
-    console.log(this.props.productDetails.features);
     if (this.state.currentStyle) {
       return (
         <Wrapper>
