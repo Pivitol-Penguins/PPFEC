@@ -56,6 +56,7 @@ class AddQ extends React.Component {
           <Modal content={(
             <FormQ
               func={this.exitModal}
+              name={this.props.name}
             />
           )}
           />

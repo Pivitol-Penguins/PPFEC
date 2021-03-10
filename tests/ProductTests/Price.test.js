@@ -29,7 +29,6 @@ describe('Price rendering', () => {
   });
 });
 
-
 describe('Price rendering', () => {
   const props = {
     price: 40,

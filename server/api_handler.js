@@ -32,28 +32,6 @@ const updateData = (path, query, callback) => {
     });
 };
 
-// const postQnA = (path, body, callback) => {
-//   axios.post(API_URL + path, body)
-//     .then((data) => {
-//       callback(data);
-//     })
-//     .catch((err) => {
-//       throw err;
-//     });
-// };
-
-// const putQnA = (path, body, callback) => {
-//   axios.put(API_URL + path, body)
-//     .then((data) => {
-//       callback(data);
-//     })
-//     .catch((err) => {
-//       throw err;
-//     });
-// };
-
-// module.exports.putQnA = putQnA;
-// module.exports.postQnA = postQnA;
 module.exports.fetchData = fetchData;
 module.exports.createData = createData;
 module.exports.updateData = updateData;
