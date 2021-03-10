@@ -11,7 +11,7 @@ const ProductTestData = {
     updated_at: '2021-02-23T02:49:02.833Z',
     features: [
       { feature: 'Fabric', value: '100% Cotton' },
-      { feature: 'Cut', value: 'Skinny' },
+      { feature: 'Cut', value: 'Skinny' }, { feature: 'Material', value: null },
     ],
   },
   productStyles: {

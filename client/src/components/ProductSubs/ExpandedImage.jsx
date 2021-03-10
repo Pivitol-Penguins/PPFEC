@@ -134,8 +134,6 @@ class ExpandedImage extends React.Component {
   }
 
   render() {
-    console.log(this.props.src);
-    console.log(this.props.images);
     return ReactDOM.createPortal(
       <Wrapper>
         {this.props.index !== 0 && !this.state.zoomed && <ModalLeftArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></ModalLeftArrow> }
