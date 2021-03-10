@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FilterMessage from './FilterMessage.jsx';
+import CountTag from './CountTag.jsx';
 
 const BreakDownWrapper = styled.div`
   display: flex;
@@ -58,15 +59,24 @@ class RatingBreakDown extends React.Component {
     super(props);
     this.state = {
       stars: [5, 4, 3, 2, 1],
+      isCountTagOn: false,
+      ratingCount: 0,
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
     this.handleStarFilterClick = this.handleStarFilterClick.bind(this);
+    this.showRatingCount =this.showRatingCount.bind(this);
   }
 
   handleStarFilterClick(event, star) {
     // console.log('IN RATING BREAK DOWN', this.state.filter);
     this.props.starFilter(star);
+  }
+
+  showRatingCount() {
+    this.setState((prevState) => ({
+      isCountTagOn: !prevState.isCountTagOn,
+    })
   }
 
   getPercentage(starNumber) {
@@ -112,7 +122,7 @@ class RatingBreakDown extends React.Component {
                 {' '}
                 stars
               </ClickTag>
-              <BarContainer>
+              <BarContainer onMouseEnter={}>
                 <Background />
                 <Percentage percent={this.getPercentage(star)} />
               </BarContainer>
