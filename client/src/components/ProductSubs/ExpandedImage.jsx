@@ -134,6 +134,8 @@ class ExpandedImage extends React.Component {
   }
 
   render() {
+    console.log(this.props.src);
+    console.log(this.props.images);
     return ReactDOM.createPortal(
       <Wrapper>
         {this.props.index !== 0 && !this.state.zoomed && <ModalLeftArrow onMouseDown={this.arrowClickHandler}><FontAwesome id="-1" name="angle-left" size="2x" /></ModalLeftArrow> }
@@ -154,19 +156,19 @@ class ExpandedImage extends React.Component {
             {this.props.images.map((image, index) => {
               if (this.props.index === index) {
                 return (
-                  <SelectedIcon type="button" id={index} key={index} onMouseDown={this.iconClickHandler} />
+                  <SelectedIcon type="button" id={index} key={`${this.props.id * index}`} onMouseDown={this.iconClickHandler} />
                 );
               }
               if (this.props.index !== index) {
                 return (
-                  <Icon type="button" id={index} key={index} onMouseDown={this.iconClickHandler} />
+                  <Icon type="button" id={index} key={`${this.props.id * index}`} onMouseDown={this.iconClickHandler} />
                 );
               }
             })}
           </IconHolder>
         )}
       </Wrapper>,
-      document.getElementById('modal-root'),
+      document.getElementById('modal-root') || document.createElement('div'), // for testing purposes,
     );
   }
 }

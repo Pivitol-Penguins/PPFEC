@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StylesComponent Should render correctly 1`] = `
+<Styles
+  debug={true}
+  styles={
+    Object {
+      "product_id": "14036",
+      "results": Array [
+        Object {
+          "name": "Black",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+            },
+          ],
+          "sale_price": null,
+          "style_id": 70550,
+        },
+        Object {
+          "name": "Grey",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1562542082-519ebcdb43e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+            },
+          ],
+          "sale_price": null,
+          "style_id": 70551,
+        },
+        Object {
+          "name": "Goldenrod",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+            },
+          ],
+          "sale_price": "35.00",
+          "style_id": 70552,
+        },
+        Object {
+          "name": "Maroon",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1519857609704-61e751edba25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+            },
+          ],
+          "sale_price": "35.00",
+          "style_id": 70553,
+        },
+        Object {
+          "name": "Chartreuse",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+            },
+          ],
+          "sale_price": "25.00",
+          "style_id": 70554,
+        },
+        Object {
+          "name": "White",
+          "original_price": "40.00",
+          "photos": Array [
+            Object {
+              "thumbnail_url": "https://images.unsplash.com/photo-1510390099355-23e690d8129d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+            },
+          ],
+          "sale_price": null,
+          "style_id": 70555,
+        },
+      ],
+    }
+  }
+>
+  <StylesComponent__StyleWrapper>
+    <div
+      className="StylesComponent__StyleWrapper-ajk3ts-0 bQXBFa"
+    >
+      <Price
+        price="40.00"
+        sale={null}
+      >
+        <Price__NoSale>
+          <p
+            className="Price__NoSale-eho440-0 ituvCN"
+          >
+            $40
+          </p>
+        </Price__NoSale>
+      </Price>
+      <StylesComponent__TextWrapper>
+        <div
+          className="StylesComponent__TextWrapper-ajk3ts-1 kDJaHh"
+        >
+          <StylesComponent__Style>
+            <p
+              className="StylesComponent__Style-ajk3ts-2 glNYdS"
+            >
+              STYLE &gt;
+            </p>
+          </StylesComponent__Style>
+          <StylesComponent__SelectedStyle>
+            <p
+              className="StylesComponent__SelectedStyle-ajk3ts-3 RbxlX"
+            >
+              BLACK
+            </p>
+          </StylesComponent__SelectedStyle>
+        </div>
+      </StylesComponent__TextWrapper>
+      <StylesComponent__Thumbs>
+        <div
+          className="StylesComponent__Thumbs-ajk3ts-4 gBVoCt"
+        >
+          <StylesComponent__SelectedImage
+            alt="Black"
+            id={70550}
+            key="70550"
+            onClick={[Function]}
+            src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Black"
+              className="StylesComponent__SelectedImage-ajk3ts-6 eDgpFT"
+              id={70550}
+              onClick={[Function]}
+              src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__SelectedImage>
+          <StylesComponent__Image
+            alt="Grey"
+            id={70551}
+            key="70551"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1562542082-519ebcdb43e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Grey"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70551}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1562542082-519ebcdb43e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="Goldenrod"
+            id={70552}
+            key="70552"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Goldenrod"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70552}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="Maroon"
+            id={70553}
+            key="70553"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1519857609704-61e751edba25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Maroon"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70553}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1519857609704-61e751edba25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="Chartreuse"
+            id={70554}
+            key="70554"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="Chartreuse"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70554}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1530073391204-7b34a1497281?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+          <StylesComponent__Image
+            alt="White"
+            id={70555}
+            key="70555"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            src="https://images.unsplash.com/photo-1510390099355-23e690d8129d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+          >
+            <img
+              alt="White"
+              className="StylesComponent__Image-ajk3ts-5 cdIpah"
+              id={70555}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              src="https://images.unsplash.com/photo-1510390099355-23e690d8129d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80"
+            />
+          </StylesComponent__Image>
+        </div>
+      </StylesComponent__Thumbs>
+    </div>
+  </StylesComponent__StyleWrapper>
+</Styles>
+`;
