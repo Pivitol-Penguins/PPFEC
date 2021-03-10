@@ -55,6 +55,7 @@ class Reviews extends React.Component {
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
+      // isModalOpen: false,
       // product_id: this.props.product,
       // entriesCount: this.props.count,
       // page: this.props.page,
@@ -176,15 +177,9 @@ class Reviews extends React.Component {
   }
 
   addReviewToggle() {
-    if (!this.state.addReviewShow) {
-      this.setState({
-        addReviewShow: true,
-      });
-    } else {
-      this.setState({
-        addReviewShow: false,
-      });
-    }
+    this.setState((prevState) => ({
+      addReviewShow: !prevState.addReviewShow,
+    }));
   }
 
   render() {
@@ -216,6 +211,7 @@ class Reviews extends React.Component {
               sortSelected={this.sortSelected}
               addReviewToggle={this.addReviewToggle}
               addReviewShow={this.state.addReviewShow}
+              toggleModal={this.toggleModal}
             />
           </Wrapper>
         </ReviewsContainer>

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
-import Modal from './Modal.jsx';
 import AddReviewForm from './AddReviewForm.jsx';
 
 const ReviewsWrapper = styled.div`
@@ -75,6 +74,16 @@ const SelectTag = styled.select`
   font-family: 'Lato',sans-serif;
 `;
 
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: #42424275;
+`;
+
 const ReviewsList = (props) => {
   // conditionlal rendering MORE VIEW button
   let moreReviewBtn;
@@ -123,15 +132,15 @@ const ReviewsList = (props) => {
         {moreReviewBtn}
         <ReviewButton onClick={() => props.addReviewToggle()}>ADD A REVIEW</ReviewButton>
         {props.addReviewShow && (
-          <Modal content={(
+          <ModalBackground onMouseDown={props.addReviewToggle}>
             <AddReviewForm
+              onMouseDown={props.toggleModal}
               toggle={props.addReviewToggle}
               productId={Number(reviewsMeta.product_id)}
               characteristics={reviewsMeta.characteristics}
               loadReview={props.loadFirstTwoReviews}
             />
-)}
-          />
+          </ModalBackground>
         )}
       </ButtonWrapper>
     </ReviewsWrapper>
