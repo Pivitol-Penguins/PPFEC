@@ -3,7 +3,7 @@
 exports[`Price rendering Should render correctly 1`] = `
 <Price
   debug={true}
-  price={40}
+  price="40.00"
   sale={null}
 >
   <Price__NoSale>
@@ -19,8 +19,8 @@ exports[`Price rendering Should render correctly 1`] = `
 exports[`Price rendering Should render correctly 2`] = `
 <Price
   debug={true}
-  price={40}
-  sale={30}
+  price="40.00"
+  sale="35.00"
 >
   <Price__Discounted>
     <div
@@ -37,7 +37,7 @@ exports[`Price rendering Should render correctly 2`] = `
         <p
           className="Price__SalePrice-eho440-3 fwUqGd"
         >
-          $30
+          $35
         </p>
       </Price__SalePrice>
     </div>

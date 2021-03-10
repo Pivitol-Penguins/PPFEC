@@ -5,6 +5,7 @@ import { mount } from 'enzyme';
 import styled from 'styled-components';
 
 import SizeDropdown from '../../client/src/components/ProductSubs/SizeDropdown.jsx';
+import ProductTestData from '../ProductTestData.js';
 
 const DDWrapper = styled.div`
   position: relative;
@@ -63,7 +64,7 @@ const DDListItem = styled.button`
 `;
 
 const props = {
-  list: [{ quantity: 8, size: 'XS' }, { quantity: 16, size: 'S' }, { quantity: 17, size: 'M' }, { quantity: 10, size: 'L' }, { quantity: 15, size: 'XL' }, { quantity: 6, size: 'XXL' }],
+  list: Object.values(ProductTestData.productStyles.results[0].skus),
 };
 
 describe('SizeDropdown', () => {

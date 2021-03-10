@@ -5,6 +5,7 @@ import { mount } from 'enzyme';
 import styled from 'styled-components';
 
 import QuantityDropdown from '../../client/src/components/ProductSubs/QuantityDropdown.jsx';
+import ProductTestData from '../ProductTestData.js';
 
 const DDWrapper = styled.div`
   position: relative;
@@ -62,10 +63,9 @@ const DDListItem = styled.button`
   };
 `;
 
-
 const props = {
   list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-  available: 6,
+  skus: ProductTestData.productStyles.results[0].skus[407566].quantity,
 };
 
 describe('QuantityDropdown', () => {
