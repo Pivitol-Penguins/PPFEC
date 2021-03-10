@@ -132,7 +132,7 @@ const ReviewsList = (props) => {
         {moreReviewBtn}
         <ReviewButton onClick={props.addReviewToggle}>ADD A REVIEW</ReviewButton>
         {props.addReviewShow && (
-          <ModalBackground>
+          <ModalBackground onMouseDown={props.addReviewToggle}>
             <AddReviewForm
               toggle={props.addReviewToggle}
               productId={Number(reviewsMeta.product_id)}

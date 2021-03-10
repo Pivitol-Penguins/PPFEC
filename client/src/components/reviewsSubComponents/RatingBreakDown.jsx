@@ -17,6 +17,10 @@ const BarContainer = styled.div`
   height: 10px;
   width: 12vw;
   position: relative;
+
+  &:hover {
+    visibility: visible;
+  }
 `;
 
 const BaseBox = styled.div`
@@ -29,11 +33,13 @@ const BaseBox = styled.div`
 const Background = styled(BaseBox)`
   background: #e0e0e0;
   width: 100%;
+
 `;
 
 const Percentage = styled(BaseBox)`
   background: #80ccc4;
   width: ${({ percent }) => percent}%;
+
 `;
 
 const RecommendPercentage = styled.div`
@@ -60,23 +66,16 @@ class RatingBreakDown extends React.Component {
     this.state = {
       stars: [5, 4, 3, 2, 1],
       isCountTagOn: false,
-      ratingCount: 0,
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
     this.handleStarFilterClick = this.handleStarFilterClick.bind(this);
-    this.showRatingCount =this.showRatingCount.bind(this);
+    this.showRatingCount = this.showRatingCount.bind(this);
   }
 
   handleStarFilterClick(event, star) {
     // console.log('IN RATING BREAK DOWN', this.state.filter);
     this.props.starFilter(star);
-  }
-
-  showRatingCount() {
-    this.setState((prevState) => ({
-      isCountTagOn: !prevState.isCountTagOn,
-    })
   }
 
   getPercentage(starNumber) {
@@ -100,6 +99,12 @@ class RatingBreakDown extends React.Component {
     / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100);
   }
 
+  showRatingCount() {
+    this.setState((prevState) => ({
+      isCountTagOn: !prevState.isCountTagOn,
+    }));
+  }
+
   render() {
     const { stars } = this.state;
     let filterMessage;
@@ -111,7 +116,6 @@ class RatingBreakDown extends React.Component {
         />
       );
     }
-
     return (
       <div>
         <div>
@@ -122,7 +126,13 @@ class RatingBreakDown extends React.Component {
                 {' '}
                 stars
               </ClickTag>
-              <BarContainer onMouseEnter={}>
+              {/* `${this.props.reviewsMeta.ratings[star]} people vote` */}
+              <BarContainer
+                onMouseEnter={this.showRatingCount}
+                onMouseLeave={this.showRatingCount}
+              >
+                {this.state.isCountTagOn
+                && <CountTag ratingCount={this.props.reviewsMeta.ratings[star]} />}
                 <Background />
                 <Percentage percent={this.getPercentage(star)} />
               </BarContainer>
