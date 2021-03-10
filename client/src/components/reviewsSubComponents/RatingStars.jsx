@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const StarsContainer = styled.div`
   unicode-bidi: bidi-override;
-  color: #c5c5c5;
+  color: #e0e0e0;
   font-size: 22px;
   height: 22px;
   line-height: 22px;
@@ -15,7 +15,7 @@ const StarsContainer = styled.div`
 
   &.top {
     width: ${({ rating }) => (rating / 5) * 100}%;
-    color: #FDD700;
+    color: #80ccc4;
     padding: 0;
     position: absolute;
     z-index: 1;
@@ -27,6 +27,7 @@ const StarsContainer = styled.div`
 
   &.bottom {
     padding: 0;
+    color: #e0e0e0;
     display: block;
     z-index: 0;
   }

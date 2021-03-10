@@ -26,12 +26,12 @@ const BaseBox = styled.div`
 `;
 
 const Background = styled(BaseBox)`
-  background: #c1bdbd;
+  background: #e0e0e0;
   width: 100%;
 `;
 
 const Percentage = styled(BaseBox)`
-  background: green;
+  background: #80ccc4;
   width: ${({ percent }) => percent}%;
 `;
 
@@ -58,38 +58,15 @@ class RatingBreakDown extends React.Component {
     super(props);
     this.state = {
       stars: [5, 4, 3, 2, 1],
-      filter: [],
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
     this.handleStarFilterClick = this.handleStarFilterClick.bind(this);
-    this.handleRemoveLabelClick = this.handleRemoveLabelClick.bind(this);
-  }
-
-  handleRemoveLabelClick() {
-    this.props.removeAllFilter(() => {
-      this.setState({
-        filter: [],
-      });
-    });
   }
 
   handleStarFilterClick(event, star) {
+    // console.log('IN RATING BREAK DOWN', this.state.filter);
     this.props.starFilter(star);
-    console.log('IN RATING BREAK DOWN', this.state.filter);
-    this.setState((prevState) => {
-      if (prevState.filter.includes(star)) {
-        const index = prevState.filter.indexOf(star);
-        prevState.filter.splice(index, 1);
-        return {
-          filter: prevState.filter,
-        };
-      }
-      return {
-        filter: [...prevState.filter, star],
-      };
-    });
-    event.preventDefault();
   }
 
   getPercentage(starNumber) {
@@ -116,12 +93,11 @@ class RatingBreakDown extends React.Component {
   render() {
     const { stars } = this.state;
     let filterMessage;
-    if (this.state.filter.length > 0) {
-      // console.log(this.state.filter);
+    if (this.props.filterStars.length > 0) {
       filterMessage = (
         <FilterMessage
-          filter={this.state.filter}
-          handleRemoveLabelClick={this.handleRemoveLabelClick}
+          filterStars={this.props.filterStars}
+          handleRemoveLabelClick={this.props.removeAllFilter}
         />
       );
     }

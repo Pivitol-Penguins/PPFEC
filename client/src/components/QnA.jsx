@@ -12,6 +12,7 @@ const QnAContainer = styled.div`
   margin: 0 auto;
   color: #424242;
   font-family: 'Lato', sans-serif;
+  margin-bottom: 5vh;
 `;
 
 const QnATitle = styled.div`
@@ -109,10 +110,10 @@ class QnA extends React.Component {
       <QnAContainer>
         <QnATitle>QUESTIONS & ANSWERS</QnATitle>
         <Search func={this.handleSearch} reset={this.resetDefault} />
-        <QuestionList items={this.state.dd} />
+        <QuestionList items={this.state.dd} name={this.props.name} />
         <BottomWrap>
           <MoreQ func={this.loadTwoItems} buttonDisplay={this.state.buttonDisplay} />
-          <AddQ func={this.addData} />
+          <AddQ func={this.addData} name={this.props.name} />
         </BottomWrap>
       </QnAContainer>
     );

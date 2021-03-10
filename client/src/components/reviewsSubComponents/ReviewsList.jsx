@@ -25,7 +25,7 @@ const ButtonWrapper = styled.div`
 const ListWrapper = styled.div`
   width: 100%;
   display: flex;
-  max-height: 500px;
+  max-height: 100vh;
   overflow-y: scroll;
   flex-direction: column;
   ::-webkit-scrollbar {
@@ -113,6 +113,7 @@ const ReviewsList = (props) => {
             key={review.review_id}
             review={review}
             loadReview={props.loadFirstTwoReviews}
+            handleClickYes={props.handleClickYes}
           />
         )))}
       </ListWrapper>
