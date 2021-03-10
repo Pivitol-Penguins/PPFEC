@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`One Answer Test Should render correctly 1`] = `
+<Answer
+  answer={
+    Object {
+      "answerer_name": "sadf",
+      "body": "asdf",
+      "date": "2021-03-08T00:00:00.000Z",
+      "helpfulness": 0,
+      "id": 1443618,
+      "photos": Array [
+        "https://pngimg.com/uploads/mario/mario_PNG53.png",
+        "https://pngimg.com/uploads/mario/mario_PNG53.png",
+      ],
+    }
+  }
+  debug={true}
+>
+  <div>
+    <Answer__Body>
+      <div
+        className="Answer__Body-sc-3mvxjy-6 gnmbP"
+      >
+        asdf
+      </div>
+    </Answer__Body>
+    <div>
+      <Photos
+        photos={
+          Array [
+            "https://pngimg.com/uploads/mario/mario_PNG53.png",
+            "https://pngimg.com/uploads/mario/mario_PNG53.png",
+          ]
+        }
+      >
+        <div>
+          <Photos__Photo
+            alt="https://pngimg.com/uploads/mario/mario_PNG53.png"
+            key="https://pngimg.com/uploads/mario/mario_PNG53.png0"
+            src="https://pngimg.com/uploads/mario/mario_PNG53.png"
+          >
+            <img
+              alt="https://pngimg.com/uploads/mario/mario_PNG53.png"
+              className="Photos__Photo-sc-1homjbu-0 dZzZNL"
+              src="https://pngimg.com/uploads/mario/mario_PNG53.png"
+            />
+          </Photos__Photo>
+          <Photos__Photo
+            alt="https://pngimg.com/uploads/mario/mario_PNG53.png"
+            key="https://pngimg.com/uploads/mario/mario_PNG53.png1"
+            src="https://pngimg.com/uploads/mario/mario_PNG53.png"
+          >
+            <img
+              alt="https://pngimg.com/uploads/mario/mario_PNG53.png"
+              className="Photos__Photo-sc-1homjbu-0 dZzZNL"
+              src="https://pngimg.com/uploads/mario/mario_PNG53.png"
+            />
+          </Photos__Photo>
+        </div>
+      </Photos>
+    </div>
+    <Answer__BottomContainer>
+      <div
+        className="Answer__BottomContainer-sc-3mvxjy-0 kfNGYX"
+      >
+        <Answer__NameDate>
+          <div
+            className="Answer__NameDate-sc-3mvxjy-1 jcOBlI"
+          >
+            By sadf on  March, 08 2021
+          </div>
+        </Answer__NameDate>
+        |
+        <Answer__Helpful>
+          <div
+            className="Answer__Helpful-sc-3mvxjy-2 iSIJxX"
+          >
+            Helpful?
+          </div>
+        </Answer__Helpful>
+        <Answer__Yes
+          onClick={[Function]}
+        >
+          <div
+            className="Answer__Yes-sc-3mvxjy-3 bpatiV"
+            onClick={[Function]}
+          >
+            Yes
+          </div>
+        </Answer__Yes>
+        <Answer__Help>
+          <div
+            className="Answer__Help-sc-3mvxjy-4 gOKkij"
+          >
+            (0)
+          </div>
+        </Answer__Help>
+        |
+        <Answer__Report
+          onClick={[Function]}
+        >
+          <div
+            className="Answer__Report-sc-3mvxjy-5 fkJrli"
+            onClick={[Function]}
+          >
+            Report
+          </div>
+        </Answer__Report>
+      </div>
+    </Answer__BottomContainer>
+  </div>
+</Answer>
+`;

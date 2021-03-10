@@ -1,7 +1,5 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import Item from '../../client/src/components/QnAComponents/Item.jsx';
-import AnswerList from '../../client/src/components/QnAComponents/AnswerList.jsx';
+import { mount } from 'enzyme';
 import Answer from '../../client/src/components/QnAComponents/Answer.jsx';
 
 describe('One Answer Test', () => {
@@ -17,12 +15,13 @@ describe('One Answer Test', () => {
   };
 
   const answerComp = mount(<Answer {...props} debug />);
+  const answerBody = (answerComp.find('div').at(0).text());
 
-  it('The form should contain Helpful component', () => {
-    expect(answerComp.find(<div>Helpfulish</div>)).toBeTruthy();
+  it('Should render an Answer correctly', () => {
+    expect(answerComp).toMatchSnapshot();
   });
 
-  it('The form should not contain Helpfulish component', () => {
-    expect(answerComp.find(<div>Helpfulish</div>)).toEqual({});
-  })
+  it('Should render the answer body correctly', () => {
+    expect(answerBody).toEqual('asdfBy sadf on  March, 08 2021|Helpful?Yes(0)|Report');
+  });
 });
