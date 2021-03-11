@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
+<FormA
+  body="asdf"
+  id={1234}
+  name="Big Rock"
+>
+  <FormAnswer__FormAContainer>
+    <form
+      className="FormAnswer__FormAContainer-xot12g-0 bkMSBm"
+    >
+      SUBMIT YOUR ANSWER
+      <div>
+        BIG ROCK
+        : 
+        ASDF
+      </div>
+      <FormAnswer__Pair>
+        <div
+          className="FormAnswer__Pair-xot12g-6 ndBCE"
+        >
+          <FormAnswer__Title>
+            <h4
+              className="FormAnswer__Title-xot12g-7"
+            >
+              HOW CAN YOU HELP?
+            </h4>
+          </FormAnswer__Title>
+          <FormAnswer__BodyT
+            cols="55"
+            maxLength="1000"
+            name="body"
+            onChange={[Function]}
+            placeholder="HELP SOMEONE OUT HERE"
+            required={true}
+            rows="5"
+            type="text"
+            value=""
+          >
+            <textarea
+              className="FormAnswer__BodyT-xot12g-2 cpaLRd"
+              cols="55"
+              maxLength="1000"
+              name="body"
+              onChange={[Function]}
+              placeholder="HELP SOMEONE OUT HERE"
+              required={true}
+              rows="5"
+              type="text"
+              value=""
+            />
+          </FormAnswer__BodyT>
+        </div>
+      </FormAnswer__Pair>
+      <FormAnswer__Pair>
+        <div
+          className="FormAnswer__Pair-xot12g-6 ndBCE"
+        >
+          <FormAnswer__Title>
+            <h4
+              className="FormAnswer__Title-xot12g-7"
+            >
+              MAY I HAVE YOUR NAME?
+            </h4>
+          </FormAnswer__Title>
+          <FormAnswer__Input
+            name="name"
+            onChange={[Function]}
+            placeholder="ADD YOUR NAME HERE"
+            value=""
+          >
+            <input
+              className="FormAnswer__Input-xot12g-1 fgjgeo"
+              name="name"
+              onChange={[Function]}
+              placeholder="ADD YOUR NAME HERE"
+              value=""
+            />
+          </FormAnswer__Input>
+          <FormAnswer__BText>
+            <div
+              className="FormAnswer__BText-xot12g-11 cyKKsS"
+            >
+              FOR PRIVACY REASONS, DO NOT USE YOUR FULL NAME OR EMAIL ADDRESS
+            </div>
+          </FormAnswer__BText>
+        </div>
+      </FormAnswer__Pair>
+      <FormAnswer__Pair>
+        <div
+          className="FormAnswer__Pair-xot12g-6 ndBCE"
+        >
+          <FormAnswer__Title>
+            <h4
+              className="FormAnswer__Title-xot12g-7"
+            >
+              HOW ABOUT YOUR EMAIL?
+            </h4>
+          </FormAnswer__Title>
+          <FormAnswer__Input
+            name="email"
+            onChange={[Function]}
+            placeholder="EXAMPLE: jack@email.com"
+            value=""
+          >
+            <input
+              className="FormAnswer__Input-xot12g-1 fgjgeo"
+              name="email"
+              onChange={[Function]}
+              placeholder="EXAMPLE: jack@email.com"
+              value=""
+            />
+          </FormAnswer__Input>
+          <FormAnswer__BText>
+            <div
+              className="FormAnswer__BText-xot12g-11 cyKKsS"
+            >
+              FOR AUTHENTICATION REASONS, YOU WILL NOT BE EMAILED
+            </div>
+          </FormAnswer__BText>
+        </div>
+      </FormAnswer__Pair>
+      <FormAnswer__Pair>
+        <div
+          className="FormAnswer__Pair-xot12g-6 ndBCE"
+        >
+          <FormAnswer__Title>
+            <h4
+              className="FormAnswer__Title-xot12g-7"
+            >
+              ADD A PHOTO
+            </h4>
+          </FormAnswer__Title>
+          <FormAnswer__PhotoC>
+            <div
+              className="FormAnswer__PhotoC-xot12g-9 kKzexq"
+            >
+              <FormAnswer__PhotoI
+                name="photos"
+                onChange={[Function]}
+                onSubmit={[Function]}
+                placeholder="ADD URL"
+                value=""
+              >
+                <input
+                  className="FormAnswer__PhotoI-xot12g-10 dinDFG"
+                  name="photos"
+                  onChange={[Function]}
+                  onSubmit={[Function]}
+                  placeholder="ADD URL"
+                  value=""
+                />
+              </FormAnswer__PhotoI>
+              <FormAnswer__AddP
+                onClick={[Function]}
+              >
+                <button
+                  className="FormAnswer__AddP-xot12g-8 fOWhdT"
+                  onClick={[Function]}
+                >
+                  ADD PHOTO
+                </button>
+              </FormAnswer__AddP>
+            </div>
+          </FormAnswer__PhotoC>
+          <FormAnswer__BText>
+            <div
+              className="FormAnswer__BText-xot12g-11 cyKKsS"
+            >
+              YOU CAN ADD UP TO FIVE, YOU'VE ADDED (0) SO FAR
+            </div>
+          </FormAnswer__BText>
+        </div>
+      </FormAnswer__Pair>
+      <FormAnswer__Buttons>
+        <div
+          className="FormAnswer__Buttons-xot12g-3 hIpbiI"
+        >
+          <FormAnswer__BP>
+            <div
+              className="FormAnswer__BP-xot12g-5 hEyJIA"
+            >
+              <FormAnswer__BC
+                name="Submit"
+                onClick={[Function]}
+              >
+                <button
+                  className="FormAnswer__BC-xot12g-4 gpVpiw"
+                  name="Submit"
+                  onClick={[Function]}
+                >
+                  SUBMIT
+                </button>
+              </FormAnswer__BC>
+            </div>
+          </FormAnswer__BP>
+          <FormAnswer__BP>
+            <div
+              className="FormAnswer__BP-xot12g-5 hEyJIA"
+            >
+              <FormAnswer__BC
+                name="Exit"
+                onClick={[Function]}
+              >
+                <button
+                  className="FormAnswer__BC-xot12g-4 gpVpiw"
+                  name="Exit"
+                  onClick={[Function]}
+                >
+                  EXIT
+                </button>
+              </FormAnswer__BC>
+            </div>
+          </FormAnswer__BP>
+        </div>
+      </FormAnswer__Buttons>
+    </form>
+  </FormAnswer__FormAContainer>
+</FormA>
+`;
