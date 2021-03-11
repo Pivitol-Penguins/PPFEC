@@ -120,12 +120,10 @@ const ReviewsList = (props) => {
     reviewTiles = (
       <>
         <ReviewSortWrapper>
-          <h2>
+          <label>
             {totalReviewCount}
             {' '}
             reviews, sorted by
-          </h2>
-          <label>
             <SelectTag onChange={(e) => { props.sortSelected(e); }}>
               <option defaultValue="relevant">Relevant</option>
               <option value="helpful">Helpful</option>
