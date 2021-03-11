@@ -184,41 +184,38 @@ class Reviews extends React.Component {
   }
 
   render() {
-    console.log(this.props.reviewsMeta);
-    console.log(this.props.reviews.results);
-
-    // if (this.props.reviewsMeta !== {} && this.props.reviews.results.length > 0) {
-
-      return (
-        <ReviewsContainer id="RATINGS">
-          <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
-          <Wrapper>
-            <RatingWrapper>
-              <RatingSummary reviewsMeta={this.state.reviewsMeta} />
-              <RatingBreakDown
-                reviewsMeta={this.state.reviewsMeta}
-                starFilter={this.starFilter}
-                removeAllFilter={this.removeAllFilter}
-                filterStars={this.state.filterStars}
-              />
-              <ProductBreakDown
-                reviewsMeta={this.state.reviewsMeta}
-              />
-            </RatingWrapper>
-            <ReviewsList
-              loadFirstTwoReviews={this.loadFirstTwoReviews}
-              fullreviewsArr={this.state.fullreviewsArr}
-              reviews={this.state.reviews}
+    // console.log(this.props.reviewsMeta);
+    // console.log(this.props.reviews.results);
+    return (
+      <ReviewsContainer id="RATINGS">
+        <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
+        <Wrapper>
+          <RatingWrapper>
+            <RatingSummary reviewsMeta={this.state.reviewsMeta} />
+            <RatingBreakDown
               reviewsMeta={this.state.reviewsMeta}
-              loadMoreReviews={this.loadMoreReviews}
-              sortSelected={this.sortSelected}
-              addReviewToggle={this.addReviewToggle}
-              addReviewShow={this.state.addReviewShow}
-              toggleModal={this.toggleModal}
+              starFilter={this.starFilter}
+              removeAllFilter={this.removeAllFilter}
+              filterStars={this.state.filterStars}
             />
-          </Wrapper>
-        </ReviewsContainer>
-      );
+            <ProductBreakDown
+              reviewsMeta={this.state.reviewsMeta}
+            />
+          </RatingWrapper>
+          <ReviewsList
+            loadFirstTwoReviews={this.loadFirstTwoReviews}
+            fullreviewsArr={this.state.fullreviewsArr}
+            reviews={this.state.reviews}
+            reviewsMeta={this.state.reviewsMeta}
+            loadMoreReviews={this.loadMoreReviews}
+            sortSelected={this.sortSelected}
+            addReviewToggle={this.addReviewToggle}
+            addReviewShow={this.state.addReviewShow}
+            toggleModal={this.toggleModal}
+          />
+        </Wrapper>
+      </ReviewsContainer>
+    );
     // }
     // const noReviewsMeta = {
     //   characteristics: {

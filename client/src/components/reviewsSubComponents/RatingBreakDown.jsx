@@ -88,15 +88,12 @@ class RatingBreakDown extends React.Component {
       });
       percentage = (reviewsMeta.ratings[starNumber] / totalRating) * 100;
     }
-    // if (!stars.includes(starNumber.toString())) {
-    //   return percentage;
-    // }
     return percentage;
   }
 
   getRecommendRate() {
     const { reviewsMeta } = this.props;
-    if (reviewsMeta.recommended !== {}) {
+    if (Object.keys(reviewsMeta.recommended).length > 0) {
       return Math.round((Number(reviewsMeta.recommended.true)
         / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100);
     }
