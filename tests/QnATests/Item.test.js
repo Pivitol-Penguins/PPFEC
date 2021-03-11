@@ -27,8 +27,6 @@ describe('One Question Test', () => {
 
   const itemComp = shallow(<Item {...props} debug />);
   const itemBody = (itemComp.find('div').at(0).text());
-  const itemHelp = (itemComp.find('div').at(1).text());
-  const itemSep = (itemComp.find('div').at(2).text());
 
   it('Should render Item correctly', () => {
     expect(itemComp).toMatchSnapshot();

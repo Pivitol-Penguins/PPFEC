@@ -17,6 +17,7 @@ const QnAContainer = styled.div`
 
 const QnATitle = styled.div`
   padding: 2vh 0;
+  font-weight: 700;
 `;
 
 const BottomWrap = styled.div`

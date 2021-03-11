@@ -30,11 +30,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
     onSubmit={[Function]}
   >
     <form
-<<<<<<< HEAD
       className="AddReviewForm__StyledForm-kljszx-6 gVuYfg"
-=======
-      className="AddReviewForm__StyledForm-kljszx-6 ifPRRz"
->>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
       onSubmit={[Function]}
     >
       <h2>
