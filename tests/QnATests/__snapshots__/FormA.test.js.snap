@@ -8,7 +8,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
 >
   <FormAnswer__FormAContainer>
     <form
-      className="FormAnswer__FormAContainer-xot12g-0 dmqVLc"
+      className="FormAnswer__FormAContainer-xot12g-0 bkMSBm"
     >
       SUBMIT YOUR ANSWER
       <div>
@@ -39,7 +39,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
             value=""
           >
             <textarea
-              className="FormAnswer__BodyT-xot12g-2 eWEeUV"
+              className="FormAnswer__BodyT-xot12g-2 cpaLRd"
               cols="55"
               maxLength="1000"
               name="body"
@@ -71,7 +71,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
             value=""
           >
             <input
-              className="FormAnswer__Input-xot12g-1 jfpGjI"
+              className="FormAnswer__Input-xot12g-1 fgjgeo"
               name="name"
               onChange={[Function]}
               placeholder="ADD YOUR NAME HERE"
@@ -105,7 +105,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
             value=""
           >
             <input
-              className="FormAnswer__Input-xot12g-1 jfpGjI"
+              className="FormAnswer__Input-xot12g-1 fgjgeo"
               name="email"
               onChange={[Function]}
               placeholder="EXAMPLE: jack@email.com"
@@ -144,7 +144,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 value=""
               >
                 <input
-                  className="FormAnswer__PhotoI-xot12g-10 jdjuOu"
+                  className="FormAnswer__PhotoI-xot12g-10 dinDFG"
                   name="photos"
                   onChange={[Function]}
                   onSubmit={[Function]}
@@ -156,7 +156,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 onClick={[Function]}
               >
                 <button
-                  className="FormAnswer__AddP-xot12g-8 eqUxmR"
+                  className="FormAnswer__AddP-xot12g-8 fOWhdT"
                   onClick={[Function]}
                 >
                   ADD PHOTO
@@ -175,7 +175,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
       </FormAnswer__Pair>
       <FormAnswer__Buttons>
         <div
-          className="FormAnswer__Buttons-xot12g-3 jXzctE"
+          className="FormAnswer__Buttons-xot12g-3 hIpbiI"
         >
           <FormAnswer__BP>
             <div
@@ -186,7 +186,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 onClick={[Function]}
               >
                 <button
-                  className="FormAnswer__BC-xot12g-4 dlwryK"
+                  className="FormAnswer__BC-xot12g-4 gpVpiw"
                   name="Submit"
                   onClick={[Function]}
                 >
@@ -204,7 +204,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 onClick={[Function]}
               >
                 <button
-                  className="FormAnswer__BC-xot12g-4 dlwryK"
+                  className="FormAnswer__BC-xot12g-4 gpVpiw"
                   name="Exit"
                   onClick={[Function]}
                 >

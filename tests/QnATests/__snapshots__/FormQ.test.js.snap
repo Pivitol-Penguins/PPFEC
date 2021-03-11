@@ -35,7 +35,7 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
             value=""
           >
             <textarea
-              className="FormQuestion__BodyT-sc-1wl3416-2 ztRTr"
+              className="FormQuestion__BodyT-sc-1wl3416-2 HlKKD"
               cols="55"
               maxLength="1000"
               name="body"
@@ -65,7 +65,7 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
             value=""
           >
             <input
-              className="FormQuestion__Input-sc-1wl3416-1 bPcVJi"
+              className="FormQuestion__Input-sc-1wl3416-1 kRTTO"
               name="name"
               onChange={[Function]}
               placeholder="EXAMPLE: jackson11!"
@@ -100,7 +100,7 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
             value=""
           >
             <input
-              className="FormQuestion__Input-sc-1wl3416-1 bPcVJi"
+              className="FormQuestion__Input-sc-1wl3416-1 kRTTO"
               name="email"
               onChange={[Function]}
               placeholder="WHY DID YOU LIKE THE PRODUCT OR NOT?"
@@ -130,7 +130,7 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
                 onClick={[Function]}
               >
                 <button
-                  className="FormQuestion__BC-sc-1wl3416-4 TOPPO"
+                  className="FormQuestion__BC-sc-1wl3416-4 jMBDCe"
                   name="Submit"
                   onClick={[Function]}
                 >
@@ -148,7 +148,7 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
                 onClick={[Function]}
               >
                 <button
-                  className="FormQuestion__BC-sc-1wl3416-4 TOPPO"
+                  className="FormQuestion__BC-sc-1wl3416-4 jMBDCe"
                   name="Exit"
                   onClick={[Function]}
                 >

@@ -7,7 +7,7 @@ exports[`This is for the Modal Should render More Modal 1`] = `
       <div>
         <div>
           <div
-            class="Modal__StyledModal-sc-1od4ot6-0 hYuCAL"
+            class="Modal__StyledModal-sc-1od4ot6-0 dxWRoo"
           >
             <div />
           </div>
@@ -18,7 +18,7 @@ exports[`This is for the Modal Should render More Modal 1`] = `
     <div>
       <Modal__StyledModal>
         <div
-          className="Modal__StyledModal-sc-1od4ot6-0 hYuCAL"
+          className="Modal__StyledModal-sc-1od4ot6-0 dxWRoo"
         >
           <div />
         </div>

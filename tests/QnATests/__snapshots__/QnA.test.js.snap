@@ -89,7 +89,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
               value=""
             >
               <input
-                className="Search__Input-np7a72-0 gPBnhQ"
+                className="Search__Input-np7a72-0 iZcJlO"
                 onChange={[Function]}
                 placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
                 type="text"
@@ -98,7 +98,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
             </Search__Input>
             <Search__Magnify>
               <div
-                className="Search__Magnify-np7a72-2 flBnwx"
+                className="Search__Magnify-np7a72-2 jCFwuN"
               >
                 ⚲
               </div>
@@ -252,7 +252,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                           onClick={[Function]}
                         >
                           <div
-                            className="Item__AddAButton-nd8d2l-4 enVbgk"
+                            className="Item__AddAButton-nd8d2l-4 jOspkh"
                             onClick={[Function]}
                           >
                             Add Answer
@@ -557,7 +557,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                           onClick={[Function]}
                         >
                           <div
-                            className="Item__AddAButton-nd8d2l-4 enVbgk"
+                            className="Item__AddAButton-nd8d2l-4 jOspkh"
                             onClick={[Function]}
                           >
                             Add Answer
@@ -809,7 +809,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                   type="submit"
                 >
                   <button
-                    className="AddQ__AddAQ-fu61ov-0 dzUWvS"
+                    className="AddQ__AddAQ-fu61ov-0 fsXLKI"
                     onClick={[Function]}
                     type="submit"
                   >

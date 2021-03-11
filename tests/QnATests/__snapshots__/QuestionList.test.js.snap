@@ -147,7 +147,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                     onClick={[Function]}
                   >
                     <div
-                      className="Item__AddAButton-nd8d2l-4 enVbgk"
+                      className="Item__AddAButton-nd8d2l-4 jOspkh"
                       onClick={[Function]}
                     >
                       Add Answer
@@ -452,7 +452,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                     onClick={[Function]}
                   >
                     <div
-                      className="Item__AddAButton-nd8d2l-4 enVbgk"
+                      className="Item__AddAButton-nd8d2l-4 jOspkh"
                       onClick={[Function]}
                     >
                       Add Answer
