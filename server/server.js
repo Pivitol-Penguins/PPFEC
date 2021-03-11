@@ -134,7 +134,4 @@ app.put('/r/questions/:i', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+app.listen(port);

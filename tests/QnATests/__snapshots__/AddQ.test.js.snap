@@ -11,7 +11,11 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
         type="submit"
       >
         <button
+<<<<<<< HEAD
           className="AddQ__AddAQ-fu61ov-0 dzUWvS"
+=======
+          className="AddQ__AddAQ-fu61ov-0 fsXLKI"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
           onClick={[Function]}
           type="submit"
         >

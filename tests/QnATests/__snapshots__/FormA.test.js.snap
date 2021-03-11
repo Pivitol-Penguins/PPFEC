@@ -8,6 +8,7 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
 >
   <FormAnswer__FormAContainer>
     <form
+<<<<<<< HEAD
       className="FormAnswer__FormAContainer-xot12g-0 dmqVLc"
     >
       SUBMIT YOUR ANSWER
@@ -16,6 +17,16 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
         : 
         ASDF
       </h4>
+=======
+      className="FormAnswer__FormAContainer-xot12g-0 bkMSBm"
+    >
+      SUBMIT YOUR ANSWER
+      <div>
+        BIG ROCK
+        : 
+        ASDF
+      </div>
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
       <FormAnswer__Pair>
         <div
           className="FormAnswer__Pair-xot12g-6 ndBCE"
@@ -39,7 +50,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
             value=""
           >
             <textarea
+<<<<<<< HEAD
               className="FormAnswer__BodyT-xot12g-2 eWEeUV"
+=======
+              className="FormAnswer__BodyT-xot12g-2 cpaLRd"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
               cols="55"
               maxLength="1000"
               name="body"
@@ -71,7 +86,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
             value=""
           >
             <input
+<<<<<<< HEAD
               className="FormAnswer__Input-xot12g-1 jfpGjI"
+=======
+              className="FormAnswer__Input-xot12g-1 fgjgeo"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
               name="name"
               onChange={[Function]}
               placeholder="ADD YOUR NAME HERE"
@@ -105,7 +124,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
             value=""
           >
             <input
+<<<<<<< HEAD
               className="FormAnswer__Input-xot12g-1 jfpGjI"
+=======
+              className="FormAnswer__Input-xot12g-1 fgjgeo"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
               name="email"
               onChange={[Function]}
               placeholder="EXAMPLE: jack@email.com"
@@ -144,7 +167,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 value=""
               >
                 <input
+<<<<<<< HEAD
                   className="FormAnswer__PhotoI-xot12g-10 jdjuOu"
+=======
+                  className="FormAnswer__PhotoI-xot12g-10 dinDFG"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
                   name="photos"
                   onChange={[Function]}
                   onSubmit={[Function]}
@@ -156,7 +183,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 onClick={[Function]}
               >
                 <button
+<<<<<<< HEAD
                   className="FormAnswer__AddP-xot12g-8 eqUxmR"
+=======
+                  className="FormAnswer__AddP-xot12g-8 fOWhdT"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
                   onClick={[Function]}
                 >
                   ADD PHOTO
@@ -175,7 +206,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
       </FormAnswer__Pair>
       <FormAnswer__Buttons>
         <div
+<<<<<<< HEAD
           className="FormAnswer__Buttons-xot12g-3 jXzctE"
+=======
+          className="FormAnswer__Buttons-xot12g-3 hIpbiI"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
         >
           <FormAnswer__BP>
             <div
@@ -186,7 +221,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 onClick={[Function]}
               >
                 <button
+<<<<<<< HEAD
                   className="FormAnswer__BC-xot12g-4 dlwryK"
+=======
+                  className="FormAnswer__BC-xot12g-4 gpVpiw"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
                   name="Submit"
                   onClick={[Function]}
                 >
@@ -204,7 +243,11 @@ exports[`This is for the Answer Form Should render Answer Form properly 1`] = `
                 onClick={[Function]}
               >
                 <button
+<<<<<<< HEAD
                   className="FormAnswer__BC-xot12g-4 dlwryK"
+=======
+                  className="FormAnswer__BC-xot12g-4 gpVpiw"
+>>>>>>> b98853f8bfe7cb666fe12c3fd4e9ca4bd19592b9
                   name="Exit"
                   onClick={[Function]}
                 >
