@@ -11,6 +11,7 @@ const props = {
   info: {
     source: ProductTestData.productStyles.results[0].photos[0].url,
   },
+  id: ProductTestData.productStyles.results[0].style_id,
   images: ProductTestData.productStyles.results[0].photos,
 };
 
