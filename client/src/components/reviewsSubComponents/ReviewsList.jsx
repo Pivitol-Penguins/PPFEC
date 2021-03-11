@@ -125,11 +125,13 @@ const ReviewsList = (props) => {
             {' '}
             reviews, sorted by
           </h2>
-          <SelectTag onChange={(e) => { props.sortSelected(e); }}>
-            <option defaultValue="relevant">Relevant</option>
-            <option value="helpful">Helpful</option>
-            <option value="newest">Newest</option>
-          </SelectTag>
+          <label>
+            <SelectTag onChange={(e) => { props.sortSelected(e); }}>
+              <option defaultValue="relevant">Relevant</option>
+              <option value="helpful">Helpful</option>
+              <option value="newest">Newest</option>
+            </SelectTag>
+          </label>
         </ReviewSortWrapper>
         <ListWrapper>
           {props.reviews.map(((review) => (
