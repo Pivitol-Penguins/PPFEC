@@ -66,7 +66,7 @@ const Q = styled.div`
   color: #424242;
 `;
 
-const QB = styled.h4`
+const QB = styled.div`
   display: flex;
   flex-direction: row;
   font-weight: 700;

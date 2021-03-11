@@ -166,7 +166,7 @@ class ReviewTile extends React.Component {
             {year}
           </span>
         </StarDateWrapper>
-        <h3>{summary}</h3>
+        <div>{summary}</div>
         <p>{body}</p>
         {photos}
         {recommendLabel}
