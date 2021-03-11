@@ -3,6 +3,7 @@
 exports[`ExpandedImage Should render correctly 1`] = `
 <ExpandedImage
   debug={true}
+  id={70550}
   images={
     Array [
       Object {
@@ -129,6 +130,7 @@ exports[`ExpandedImage Should render correctly 1`] = `
           </div>
         </ExpandedImage__ModalLeftArrow>
         <ExpandedImage__Expanded
+          key="70550"
           onMouseDown={[Function]}
           x={0}
           y={0}
@@ -170,7 +172,7 @@ exports[`ExpandedImage Should render correctly 1`] = `
           >
             <ExpandedImage__Icon
               id={0}
-              key="NaN"
+              key="0"
               onMouseDown={[Function]}
               type="button"
             >
@@ -183,7 +185,7 @@ exports[`ExpandedImage Should render correctly 1`] = `
             </ExpandedImage__Icon>
             <ExpandedImage__Icon
               id={1}
-              key="NaN"
+              key="70550"
               onMouseDown={[Function]}
               type="button"
             >
@@ -196,7 +198,7 @@ exports[`ExpandedImage Should render correctly 1`] = `
             </ExpandedImage__Icon>
             <ExpandedImage__Icon
               id={2}
-              key="NaN"
+              key="141100"
               onMouseDown={[Function]}
               type="button"
             >
@@ -209,7 +211,7 @@ exports[`ExpandedImage Should render correctly 1`] = `
             </ExpandedImage__Icon>
             <ExpandedImage__Icon
               id={3}
-              key="NaN"
+              key="211650"
               onMouseDown={[Function]}
               type="button"
             >
@@ -222,7 +224,7 @@ exports[`ExpandedImage Should render correctly 1`] = `
             </ExpandedImage__Icon>
             <ExpandedImage__Icon
               id={4}
-              key="NaN"
+              key="282200"
               onMouseDown={[Function]}
               type="button"
             >
@@ -235,7 +237,7 @@ exports[`ExpandedImage Should render correctly 1`] = `
             </ExpandedImage__Icon>
             <ExpandedImage__Icon
               id={5}
-              key="NaN"
+              key="352750"
               onMouseDown={[Function]}
               type="button"
             >
