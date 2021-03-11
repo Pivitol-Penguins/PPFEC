@@ -40,6 +40,17 @@ const DDHeader = styled.button`
   };
 `;
 
+const DDList = styled.div`
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  max-height: 25vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-weight: 400;
+  box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+`;
+
 const DDListItem = styled.button`
   display: inline-block;
   overflow: hidden;
@@ -76,24 +87,13 @@ describe('QuantityDropdown', () => {
   });
 
   const button = QuantityDropdownComponent.find('button');
-  // const ListItem = QuantityDropdownComponent.find(DDListItem).at(6).text();
-
-  // it('renders the correct list of available stock', () => {
-  //   expect(ListItem).toEqual(props.available);
-  // });
 
   it('toggles the list on dropdown header click', () => {
     button.simulate('click');
     expect(QuantityDropdownComponent.state('isListOpen')).toEqual(true);
   });
 
-  // Set-up event listener mock
-  // window.addEventListener = jest.fn((event, callback) => {
-  //   map[event] = callback;
-  // });
-
-  // it('toggles the list closed', () => {
-  //   window.simulate('click');
-  //   expect(QuantityDropdownComponent.state('isListOpen')).toEqual(false);
+  // test('toggle should have been called twice', () => {
+  //   const toggle = jest.fn();
   // });
 });

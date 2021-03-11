@@ -51,6 +51,50 @@ const Message = styled.div`
   font-style: italic;
 `;
 
+const Footer = styled.div`
+  font-family: 'Lato', sans-serif;
+  margin: 0 0 -10px -8px;
+  width: 100vw;
+  height: 2vh;
+  max-height: 2vh;
+  background: #aeaeae;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75vh;
+`;
+
+const Creators = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  flex: space-evenly;
+`;
+
+const FooterMessage = styled.div`
+  font-size: .9rem;
+  font-weight: 300;
+  color: #fff;
+  font-weight: 700;
+  margin-left: 1vw;
+  text-shadow: 1px 1px 2px #80ccc4;
+`;
+
+const Creator = styled.a`
+  margin: 0 2vw;
+  font-size: .9rem;
+  font-weight: 300;
+  color: #fff;;
+`;
+
+const Copyright = styled.div`
+  font-size: .9rem;
+  font-weight: 300;
+  color: #fff;
+  margin-right: 2vw;
+`;
+
 const Link = styled.a`
   margin-left: .5vw;
   font-size: .9rem;
@@ -106,6 +150,15 @@ class App extends React.Component {
           />
           <QnA questions={this.state.questions} name={this.state.productDetails.name} />
           <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
+          <Footer>
+            <Creators>
+              <FooterMessage>Created by:</FooterMessage>
+              <Creator href="https://github.com/benngfour" target="blank">Benjamin Wu</Creator>
+              <Creator href="https://github.com/JacobWPeterson" target="blank">Jacob Peterson</Creator>
+              <Creator href="https://github.com/nilaip96" target="blank">Nilai Patel</Creator>
+            </Creators>
+            <Copyright>PPFEC ©2021</Copyright>
+          </Footer>
         </div>
       );
     }
