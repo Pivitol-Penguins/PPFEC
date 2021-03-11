@@ -8,6 +8,8 @@ const MoreAQ = styled.button`
   width: 20vw;
   font-size: 15px;
   color: #424242;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   &:hover {
     cursor: pointer;
     color: #80CCC4;
