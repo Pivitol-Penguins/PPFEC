@@ -10,13 +10,16 @@ const FormAContainer = styled.form`
   background-color: #FFFFFF;
   width: 60vw;
   height: 60vw;
+  max-height: 90vh;
   color: #424242;
   font-family: 'Lato', sans-serif;
   box-shadow: 0 19px 38px #a0a0a0, 0 15px 12px #a0a0a0;
+  z-index: 6000;
 `;
 
 const Input = styled.input`
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+  font-weight: 700;
 border: 1px solid #424242;
 width: 30vw;
 z-index: 0;
@@ -33,7 +36,8 @@ padding: 1.5vh 2vw;
 `;
 
 const BodyT = styled.textarea`
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+  font-weight: 700;
 border: 1px solid #424242;
 width: 30vw;
 z-index: 0;
@@ -51,11 +55,14 @@ padding: 1.5vh 2vw;
 
 const Buttons = styled.div`
   font-family: 'Lato', sans-serif;  
+  font-weight: 700;
   display: flex;
   flex-direction: row;
 `;
 
 const BC = styled.button`
+font-family: 'Lato', sans-serif;  
+  font-weight: 700;
 background-color: #FFFFFF;
 border: 1px solid #424242;
 height: 6vh;
@@ -89,6 +96,8 @@ const Title = styled.h4`
 `;
 
 const AddP = styled.button`
+font-family: 'Lato', sans-serif;  
+font-weight: 700;
 background-color: #FFFFFF;
 border: 1px solid #424242;
 height: 6vh;
@@ -113,7 +122,8 @@ const PhotoC = styled.div`
 `;
 
 const PhotoI = styled.input`
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+  font-weight: 700;
 border: 1px solid #424242;
 width: 20vw;
 z-index: 0;

@@ -16,7 +16,8 @@ const FormQContainer = styled.form`
 `;
 
 const Input = styled.input`
-  font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+font-weight: 700;
   border: 1px solid #424242;
   width: 30vw;
   z-index: 0;
@@ -33,7 +34,8 @@ const Input = styled.input`
 `;
 
 const BodyT = styled.textarea`
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+font-weight: 700;
 border: 1px solid #424242;
 width: 30vw;
 z-index: 0;
@@ -55,7 +57,8 @@ const Buttons = styled.div`
 `;
 
 const BC = styled.button`
-  font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+font-weight: 700;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;

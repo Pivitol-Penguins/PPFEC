@@ -40,6 +40,7 @@ const Yes = styled.div`
 
 const AddAButton = styled.div`
   padding-left: 1vw;
+  padding-right: 1vw;
   text-decoration: underline;
   &:hover {
     cursor: pointer;
