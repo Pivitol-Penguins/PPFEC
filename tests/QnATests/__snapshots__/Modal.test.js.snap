@@ -7,6 +7,9 @@ exports[`This is for the Modal Should render More Modal 1`] = `
       <div>
         <div>
           <div
+            class="Modal__DarkLayer-sc-1od4ot6-1 ieMmHh"
+          />
+          <div
             class="Modal__StyledModal-sc-1od4ot6-0 dxWRoo"
           >
             <div />
@@ -16,6 +19,11 @@ exports[`This is for the Modal Should render More Modal 1`] = `
     }
   >
     <div>
+      <Modal__DarkLayer>
+        <div
+          className="Modal__DarkLayer-sc-1od4ot6-1 ieMmHh"
+        />
+      </Modal__DarkLayer>
       <Modal__StyledModal>
         <div
           className="Modal__StyledModal-sc-1od4ot6-0 dxWRoo"

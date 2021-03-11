@@ -69,7 +69,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
     >
       <QnA__QnATitle>
         <div
-          className="QnA__QnATitle-sc-1hcdygh-1 icEIA-d"
+          className="QnA__QnATitle-sc-1hcdygh-1 dZBFqZ"
         >
           QUESTIONS & ANSWERS
         </div>
