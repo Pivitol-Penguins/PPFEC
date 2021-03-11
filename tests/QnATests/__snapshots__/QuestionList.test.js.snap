@@ -103,7 +103,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
               className="Item__TopWrapper-nd8d2l-0 dafvsE"
             >
               <Item__QB>
-                <h4
+                <div
                   className="Item__QB-nd8d2l-8 fxalhT"
                 >
                   <Item__Q>
@@ -114,7 +114,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                     </div>
                   </Item__Q>
                   Fugit in recusandae delectus ut.
-                </h4>
+                </div>
               </Item__QB>
               <Item__Helper>
                 <div
@@ -408,7 +408,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
               className="Item__TopWrapper-nd8d2l-0 dafvsE"
             >
               <Item__QB>
-                <h4
+                <div
                   className="Item__QB-nd8d2l-8 fxalhT"
                 >
                   <Item__Q>
@@ -419,7 +419,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                     </div>
                   </Item__Q>
                   Fugit in recusandae delectus ut.
-                </h4>
+                </div>
               </Item__QB>
               <Item__Helper>
                 <div
