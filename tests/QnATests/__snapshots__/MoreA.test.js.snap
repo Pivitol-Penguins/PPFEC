@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`This is for the More Answers Component Should render More Answers Properly 1`] = `
-<MoreA
-  buttonDisplay={true}
->
-  <div />
-</MoreA>
-`;
