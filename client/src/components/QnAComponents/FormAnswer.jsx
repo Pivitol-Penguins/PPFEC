@@ -217,7 +217,6 @@ class FormA extends React.Component {
           {': '}
           {this.props.body.toUpperCase()}
         </div>
-
         <Pair>
           <Title>
             HOW CAN YOU HELP?
