@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
-import Modal from './Modal.jsx';
 import AddReviewForm from './AddReviewForm.jsx';
 
 const ReviewsWrapper = styled.div`
@@ -15,7 +14,7 @@ const ReviewsWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  width: 100%;
+  width: 40vw;
   padding: 15px 0;
   display: flex;
   flex-wrap: nowrap;
@@ -37,14 +36,15 @@ const ListWrapper = styled.div`
 `;
 
 const ReviewButton = styled.button`
+  font-weight: 700;
+  color: #424242;
   font-family: 'Lato', sans-serif;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
   width: 20vw;
-  font-size: 15px;
-  color: #424242;
-  font-weight: 1000;
+  margin: 0 12px;
+  // font-size: 15px;
   &:hover {
     cursor: pointer;
     color: #80CCC4;
@@ -72,6 +72,16 @@ const SelectTag = styled.select`
   outline: 0px;
   font-weight: 600;
   font-family: 'Lato',sans-serif;
+`;
+
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: #42424275;
 `;
 
 const ReviewsList = (props) => {
@@ -120,17 +130,16 @@ const ReviewsList = (props) => {
       </ListWrapper>
       <ButtonWrapper>
         {moreReviewBtn}
-        <ReviewButton onClick={() => props.addReviewToggle()}>ADD A REVIEW</ReviewButton>
+        <ReviewButton onClick={props.addReviewToggle}>ADD A REVIEW</ReviewButton>
         {props.addReviewShow && (
-          <Modal content={(
+          <ModalBackground>
             <AddReviewForm
               toggle={props.addReviewToggle}
               productId={Number(reviewsMeta.product_id)}
               characteristics={reviewsMeta.characteristics}
               loadReview={props.loadFirstTwoReviews}
             />
-)}
-          />
+          </ModalBackground>
         )}
       </ButtonWrapper>
     </ReviewsWrapper>
