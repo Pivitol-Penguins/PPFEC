@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
-import Modal from './Modal.jsx';
 import AddReviewForm from './AddReviewForm.jsx';
 
 const ReviewsWrapper = styled.div`
@@ -15,6 +14,7 @@ const ReviewsWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
+  width: 40vw;
   padding: 15px 0;
   display: flex;
   flex-wrap: nowrap;
@@ -36,14 +36,15 @@ const ListWrapper = styled.div`
 `;
 
 const ReviewButton = styled.button`
+  font-weight: 700;
+  color: #424242;
   font-family: 'Lato', sans-serif;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
   width: 20vw;
-  font-size: 15px;
-  color: #424242;
-  font-weight: 1000;
+  margin: 0 12px;
+  // font-size: 15px;
   &:hover {
     cursor: pointer;
     color: #80CCC4;
@@ -73,10 +74,35 @@ const SelectTag = styled.select`
   font-family: 'Lato',sans-serif;
 `;
 
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: #42424275;
+`;
+
+const NoReviewWrapper = styled.div`
+  color: #424242;
+  font-family: 'Lato',sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+`;
+
+const StyledLabel = styled.label`
+  font-size: 1.4rem;
+  border: 0px;
+  outline: 0px;
+  font-weight: 600;
+  font-family: 'Lato',sans-serif;
+`;
+
 const ReviewsList = (props) => {
   // conditionlal rendering MORE VIEW button
   let moreReviewBtn;
-  if (props.reviews.length !== props.fullreviewsArr.length) {
+  if (props.reviews.length !== props.fullreviewsArr.length && props.reviews.length !== 0) {
     moreReviewBtn = (
       <ReviewButton
         onClick={props.loadMoreReviews}
@@ -89,47 +115,59 @@ const ReviewsList = (props) => {
   const { reviewsMeta } = props;
   // get totalReviewCount
   let totalReviewCount = 0;
-  Object.entries(reviewsMeta.ratings).forEach((rating) => {
-    totalReviewCount += Number(rating[1]);
-  });
+  if (reviewsMeta !== {}) {
+    Object.entries(reviewsMeta.ratings).forEach((rating) => {
+      totalReviewCount += Number(rating[1]);
+    });
+  }
+
+  let reviewTiles;
+  if (props.reviews.length === 0) {
+    reviewTiles = (<NoReviewWrapper>Be the first one to review the product</NoReviewWrapper>);
+  } else {
+    reviewTiles = (
+      <>
+        <ReviewSortWrapper>
+          <StyledLabel>
+            {totalReviewCount}
+            {' '}
+            reviews, sorted by
+            <SelectTag onChange={(e) => { props.sortSelected(e); }}>
+              <option defaultValue="relevant">Relevant</option>
+              <option value="helpful">Helpful</option>
+              <option value="newest">Newest</option>
+            </SelectTag>
+          </StyledLabel>
+        </ReviewSortWrapper>
+        <ListWrapper>
+          {props.reviews.map(((review) => (
+            <ReviewTile
+              key={review.review_id}
+              review={review}
+              loadReview={props.loadFirstTwoReviews}
+              handleClickYes={props.handleClickYes}
+            />
+          )))}
+        </ListWrapper>
+      </>
+    );
+  }
 
   return (
     <ReviewsWrapper>
-      <ReviewSortWrapper>
-        <h2>
-          {totalReviewCount}
-          {' '}
-          reviews, sorted by
-        </h2>
-        <SelectTag onChange={(e) => { props.sortSelected(e); }}>
-          <option defaultValue="relevant">Relevant</option>
-          <option value="helpful">Helpful</option>
-          <option value="newest">Newest</option>
-        </SelectTag>
-      </ReviewSortWrapper>
-      <ListWrapper>
-        {props.reviews.map(((review) => (
-          <ReviewTile
-            key={review.review_id}
-            review={review}
-            loadReview={props.loadFirstTwoReviews}
-            handleClickYes={props.handleClickYes}
-          />
-        )))}
-      </ListWrapper>
+      {reviewTiles}
       <ButtonWrapper>
         {moreReviewBtn}
-        <ReviewButton onClick={() => props.addReviewToggle()}>ADD A REVIEW</ReviewButton>
+        <ReviewButton onClick={props.addReviewToggle}>ADD A REVIEW</ReviewButton>
         {props.addReviewShow && (
-          <Modal content={(
+          <ModalBackground>
             <AddReviewForm
               toggle={props.addReviewToggle}
               productId={Number(reviewsMeta.product_id)}
               characteristics={reviewsMeta.characteristics}
               loadReview={props.loadFirstTwoReviews}
             />
-)}
-          />
+          </ModalBackground>
         )}
       </ButtonWrapper>
     </ReviewsWrapper>

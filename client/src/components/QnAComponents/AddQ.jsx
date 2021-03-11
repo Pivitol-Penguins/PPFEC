@@ -4,6 +4,8 @@ import Modal from './Modal.jsx';
 import FormQ from './FormQuestion.jsx';
 
 const AddAQ = styled.button`
+  font-family: 'Lato', sans-serif;  
+  font-weight: 700;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
@@ -56,6 +58,7 @@ class AddQ extends React.Component {
           <Modal content={(
             <FormQ
               func={this.exitModal}
+              name={this.props.name}
             />
           )}
           />

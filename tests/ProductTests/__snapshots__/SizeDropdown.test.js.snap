@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SizeDropdown Should render correctly 1`] = `
+<SizeDropdown
+  debug={true}
+  list={
+    Array [
+      Object {
+        "quantity": 8,
+        "size": "XS",
+      },
+      Object {
+        "quantity": 16,
+        "size": "S",
+      },
+      Object {
+        "quantity": 17,
+        "size": "M",
+      },
+      Object {
+        "quantity": 10,
+        "size": "L",
+      },
+      Object {
+        "quantity": 15,
+        "size": "XL",
+      },
+      Object {
+        "quantity": 6,
+        "size": "XXL",
+      },
+    ]
+  }
+>
+  <SizeDropdown__DDWrapper>
+    <div
+      className="SizeDropdown__DDWrapper-u3ohyw-0 knauff"
+    >
+      <SizeDropdown__DDHeader
+        onClick={[Function]}
+      >
+        <button
+          className="SizeDropdown__DDHeader-u3ohyw-1 dFNLhV"
+          onClick={[Function]}
+        >
+          <SizeDropdown__DDHeaderTitle>
+            <div
+              className="SizeDropdown__DDHeaderTitle-u3ohyw-2 fzssNQ"
+            />
+          </SizeDropdown__DDHeaderTitle>
+          <FontAwesome
+            name="angle-down"
+            size="2x"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-angle-down fa-2x"
+            />
+          </FontAwesome>
+        </button>
+      </SizeDropdown__DDHeader>
+    </div>
+  </SizeDropdown__DDWrapper>
+</SizeDropdown>
+`;

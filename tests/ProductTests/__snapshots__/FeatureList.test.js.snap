@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturesList Should render correctly 1`] = `
+<FeaturesList
+  debug={true}
+  features={
+    Array [
+      Object {
+        "feature": "Fabric",
+        "value": "100% Cotton",
+      },
+      Object {
+        "feature": "Cut",
+        "value": "Skinny",
+      },
+      Object {
+        "feature": "Material",
+        "value": null,
+      },
+    ]
+  }
+>
+  <FeaturesList__List>
+    <ul
+      className="FeaturesList__List-btq5gp-0 gsMclF"
+    >
+      <Feature
+        feature={
+          Object {
+            "feature": "Fabric",
+            "value": "100% Cotton",
+          }
+        }
+        key="undefined + Fabric"
+      >
+        <Feature__ListItem>
+          <li
+            className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
+          >
+            Fabric: 100% Cotton
+          </li>
+        </Feature__ListItem>
+      </Feature>
+      <Feature
+        feature={
+          Object {
+            "feature": "Cut",
+            "value": "Skinny",
+          }
+        }
+        key="undefined + Cut"
+      >
+        <Feature__ListItem>
+          <li
+            className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
+          >
+            Cut: Skinny
+          </li>
+        </Feature__ListItem>
+      </Feature>
+      <Feature
+        feature={
+          Object {
+            "feature": "Material",
+            "value": null,
+          }
+        }
+        key="undefined + Material"
+      >
+        <Feature__ListItem>
+          <li
+            className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
+          >
+            Material
+          </li>
+        </Feature__ListItem>
+      </Feature>
+    </ul>
+  </FeaturesList__List>
+</FeaturesList>
+`;

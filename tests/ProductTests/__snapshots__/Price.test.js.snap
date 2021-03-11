@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price rendering Should render correctly 1`] = `
+<Price
+  debug={true}
+  price="40.00"
+  sale={null}
+>
+  <Price__NoSale>
+    <p
+      className="Price__NoSale-eho440-0 ituvCN"
+    >
+      $40
+    </p>
+  </Price__NoSale>
+</Price>
+`;
+
+exports[`Price rendering Should render correctly 2`] = `
+<Price
+  debug={true}
+  price="40.00"
+  sale="35.00"
+>
+  <Price__Discounted>
+    <div
+      className="Price__Discounted-eho440-1 kJaIWp"
+    >
+      <Price__SaleReg>
+        <p
+          className="Price__SaleReg-eho440-2 fMsqin"
+        >
+          $40
+        </p>
+      </Price__SaleReg>
+      <Price__SalePrice>
+        <p
+          className="Price__SalePrice-eho440-3 fwUqGd"
+        >
+          $35
+        </p>
+      </Price__SalePrice>
+    </div>
+  </Price__Discounted>
+</Price>
+`;

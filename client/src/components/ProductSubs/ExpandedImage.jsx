@@ -152,21 +152,22 @@ class ExpandedImage extends React.Component {
         && (
           <IconHolder onMouseDown={(event) => event.stopPropagation()}>
             {this.props.images.map((image, index) => {
+              const uniqueID = this.props.id * index;
               if (this.props.index === index) {
                 return (
-                  <SelectedIcon type="button" id={index} key={index} onMouseDown={this.iconClickHandler} />
+                  <SelectedIcon type="button" id={index} key={Number(uniqueID)} onMouseDown={this.iconClickHandler} />
                 );
               }
               if (this.props.index !== index) {
                 return (
-                  <Icon type="button" id={index} key={index} onMouseDown={this.iconClickHandler} />
+                  <Icon type="button" id={index} key={Number(uniqueID)} onMouseDown={this.iconClickHandler} />
                 );
               }
             })}
           </IconHolder>
         )}
       </Wrapper>,
-      document.getElementById('modal-root'),
+      document.getElementById('modal-root') || document.createElement('div'), // for testing purposes,
     );
   }
 }

@@ -40,6 +40,7 @@ const Yes = styled.div`
 
 const AddAButton = styled.div`
   padding-left: 1vw;
+  padding-right: 1vw;
   text-decoration: underline;
   &:hover {
     cursor: pointer;
@@ -65,7 +66,7 @@ const Q = styled.div`
   color: #424242;
 `;
 
-const QB = styled.h4`
+const QB = styled.div`
   display: flex;
   flex-direction: row;
   font-weight: 700;
@@ -190,6 +191,8 @@ class Item extends React.Component {
                 <FormA
                   func={this.exitModal}
                   id={this.props.id}
+                  name={this.props.name}
+                  body={this.props.item.question_body}
                 />
               )}
               />

@@ -24,11 +24,25 @@ const QList = styled.div`
 //   scrollbar-width: none;  /* Firefox */
 // }
 
+const NoR = styled.div`
+display: flex;
+justify-content: center;
+color: #424242;
+font-family: 'Lato', sans-serif;
+font-weight: 700;
+`;
+
 const QuestionList = (props) => (
   <QList>
-    {props.items.map((item) => (<Item item={item} key={item.question_id} id={item.question_id} />))}
+    {props.items.length === 0 ? <NoR>NOTHING HERE...</NoR> : props.items.map((item) => (
+      <Item
+        item={item}
+        key={item.question_id}
+        id={item.question_id}
+        name={props.name}
+      />
+    ))}
   </QList>
-
 );
 
 export default QuestionList;

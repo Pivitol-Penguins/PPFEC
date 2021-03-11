@@ -1,0 +1,1265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review Component Should render correctly 1`] = `
+<Reviews
+  debug={true}
+  reviews={
+    Object {
+      "results": Array [
+        Object {
+          "body": "Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.",
+          "date": "2021-01-26T00:00:00.000Z",
+          "helpfulness": 12,
+          "photos": Array [],
+          "rating": 2,
+          "recommend": true,
+          "response": null,
+          "review_id": 147659,
+          "reviewer_name": "Shyanne6",
+          "summary": "Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.",
+        },
+        Object {
+          "body": "Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.",
+          "date": "2021-01-20T00:00:00.000Z",
+          "helpfulness": 25,
+          "photos": Array [],
+          "rating": 1,
+          "recommend": false,
+          "response": null,
+          "review_id": 147667,
+          "reviewer_name": "Janiya_Frami98",
+          "summary": "Minima repudiandae eligendi nemo sit quia aspernatur.",
+        },
+        Object {
+          "body": "Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.",
+          "date": "2021-01-10T00:00:00.000Z",
+          "helpfulness": 27,
+          "photos": Array [],
+          "rating": 5,
+          "recommend": true,
+          "response": "\\"Cumque aspernatur illum velit dolores minus.\\"",
+          "review_id": 147660,
+          "reviewer_name": "Celestine_Glover",
+          "summary": "Neque repellendus modi eius quaerat ab rerum est animi praesentium.",
+        },
+        Object {
+          "body": "Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.",
+          "date": "2020-12-22T00:00:00.000Z",
+          "helpfulness": 28,
+          "photos": Array [],
+          "rating": 4,
+          "recommend": true,
+          "response": null,
+          "review_id": 147676,
+          "reviewer_name": "Dameon63",
+          "summary": "Officia reiciendis quaerat nam tempore ut ut numquam ut.",
+        },
+      ],
+      "reviews": Array [
+        Object {
+          "body": "Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.",
+          "date": "2021-01-10T00:00:00.000Z",
+          "helpfulness": 27,
+          "photos": Array [],
+          "rating": 5,
+          "recommend": true,
+          "response": "\\"Cumque aspernatur illum velit dolores minus.\\"",
+          "review_id": 147660,
+          "reviewer_name": "Celestine_Glover",
+          "summary": "Neque repellendus modi eius quaerat ab rerum est animi praesentium.",
+        },
+        Object {
+          "body": "Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.",
+          "date": "2020-12-22T00:00:00.000Z",
+          "helpfulness": 28,
+          "photos": Array [],
+          "rating": 4,
+          "recommend": true,
+          "response": null,
+          "review_id": 147676,
+          "reviewer_name": "Dameon63",
+          "summary": "Officia reiciendis quaerat nam tempore ut ut numquam ut.",
+        },
+      ],
+    }
+  }
+  reviewsMeta={
+    Object {
+      "characteristics": Object {
+        "Comfort": Object {
+          "id": 50011,
+          "value": "2.8636363636363636",
+        },
+        "Fit": Object {
+          "id": 50009,
+          "value": "3.0454545454545455",
+        },
+        "Length": Object {
+          "id": 50010,
+          "value": "3.2727272727272727",
+        },
+        "Quality": Object {
+          "id": 50012,
+          "value": "3.1818181818181818",
+        },
+      },
+      "product_id": "14930",
+      "ratings": Object {
+        "1": "5",
+        "2": "7",
+        "3": "3",
+        "4": "5",
+        "5": "2",
+      },
+      "recommended": Object {
+        "false": "5",
+        "true": "17",
+      },
+    }
+  }
+>
+  <Reviews__ReviewsContainer
+    id="RATINGS"
+  >
+    <div
+      className="Reviews__ReviewsContainer-hq3dor-0 TwzmU"
+      id="RATINGS"
+    >
+      <Reviews__ReviewsTitle>
+        <div
+          className="Reviews__ReviewsTitle-hq3dor-1 kJRpwL"
+        >
+          RATINGS & REVIEWS
+        </div>
+      </Reviews__ReviewsTitle>
+      <Reviews__Wrapper>
+        <div
+          className="Reviews__Wrapper-hq3dor-2 hVALIJ"
+        >
+          <Reviews__RatingWrapper>
+            <div
+              className="Reviews__RatingWrapper-hq3dor-3 CRMZT"
+            >
+              <RatingSummary
+                reviewsMeta={
+                  Object {
+                    "characteristics": Object {
+                      "Comfort": Object {
+                        "id": 50011,
+                        "value": "2.8636363636363636",
+                      },
+                      "Fit": Object {
+                        "id": 50009,
+                        "value": "3.0454545454545455",
+                      },
+                      "Length": Object {
+                        "id": 50010,
+                        "value": "3.2727272727272727",
+                      },
+                      "Quality": Object {
+                        "id": 50012,
+                        "value": "3.1818181818181818",
+                      },
+                    },
+                    "product_id": "14930",
+                    "ratings": Object {
+                      "1": "5",
+                      "2": "7",
+                      "3": "3",
+                      "4": "5",
+                      "5": "2",
+                    },
+                    "recommended": Object {
+                      "false": "5",
+                      "true": "17",
+                    },
+                  }
+                }
+              >
+                <RatingSummary__SummaryWrapper>
+                  <div
+                    className="RatingSummary__SummaryWrapper-gha4e3-1 dUrjyl"
+                  >
+                    <RatingSummary__RatingScore>
+                      <span
+                        className="RatingSummary__RatingScore-gha4e3-0 iaeLkE"
+                      >
+                        2.6
+                      </span>
+                    </RatingSummary__RatingScore>
+                    <RatingStars
+                      rating="2.6"
+                    >
+                      <div>
+                        <RatingStars__StarsContainer>
+                          <div
+                            className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG"
+                          >
+                            <RatingStars__StarsContainer
+                              className="top"
+                              rating="2.6"
+                            >
+                              <div
+                                className="RatingStars__StarsContainer-sc-1djn8fm-0 hjNCUo top"
+                              >
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                              </div>
+                            </RatingStars__StarsContainer>
+                            <RatingStars__StarsContainer
+                              className="bottom"
+                            >
+                              <div
+                                className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG bottom"
+                              >
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                              </div>
+                            </RatingStars__StarsContainer>
+                          </div>
+                        </RatingStars__StarsContainer>
+                      </div>
+                    </RatingStars>
+                  </div>
+                </RatingSummary__SummaryWrapper>
+              </RatingSummary>
+              <RatingBreakDown
+                filterStars={Array []}
+                removeAllFilter={[Function]}
+                reviewsMeta={
+                  Object {
+                    "characteristics": Object {
+                      "Comfort": Object {
+                        "id": 50011,
+                        "value": "2.8636363636363636",
+                      },
+                      "Fit": Object {
+                        "id": 50009,
+                        "value": "3.0454545454545455",
+                      },
+                      "Length": Object {
+                        "id": 50010,
+                        "value": "3.2727272727272727",
+                      },
+                      "Quality": Object {
+                        "id": 50012,
+                        "value": "3.1818181818181818",
+                      },
+                    },
+                    "product_id": "14930",
+                    "ratings": Object {
+                      "1": "5",
+                      "2": "7",
+                      "3": "3",
+                      "4": "5",
+                      "5": "2",
+                    },
+                    "recommended": Object {
+                      "false": "5",
+                      "true": "17",
+                    },
+                  }
+                }
+                starFilter={[Function]}
+              >
+                <div>
+                  <div>
+                    <RatingBreakDown__BreakDownWrapper
+                      id={5}
+                      key="5"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={5}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <RatingBreakDown__ClickTag
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="RatingBreakDown__ClickTag-sc-1fiadg8-6 bPxaMl"
+                            onClick={[Function]}
+                          >
+                            5
+                             
+                            stars
+                          </div>
+                        </RatingBreakDown__ClickTag>
+                        <RatingBreakDown__BarContainer>
+                          <div
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
+                          >
+                            <RatingBreakDown__Background>
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Background-sc-1fiadg8-3 iDuJnd eKUnHJ"
+                              />
+                            </RatingBreakDown__Background>
+                            <RatingBreakDown__Percentage
+                              percent={9.090909090909092}
+                            >
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Percentage-sc-1fiadg8-4 iDuJnd bmxHDo"
+                              />
+                            </RatingBreakDown__Percentage>
+                          </div>
+                        </RatingBreakDown__BarContainer>
+                      </div>
+                    </RatingBreakDown__BreakDownWrapper>
+                    <RatingBreakDown__BreakDownWrapper
+                      id={4}
+                      key="4"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={4}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <RatingBreakDown__ClickTag
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="RatingBreakDown__ClickTag-sc-1fiadg8-6 bPxaMl"
+                            onClick={[Function]}
+                          >
+                            4
+                             
+                            stars
+                          </div>
+                        </RatingBreakDown__ClickTag>
+                        <RatingBreakDown__BarContainer>
+                          <div
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
+                          >
+                            <RatingBreakDown__Background>
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Background-sc-1fiadg8-3 iDuJnd eKUnHJ"
+                              />
+                            </RatingBreakDown__Background>
+                            <RatingBreakDown__Percentage
+                              percent={22.727272727272727}
+                            >
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Percentage-sc-1fiadg8-4 iDuJnd gzckFM"
+                              />
+                            </RatingBreakDown__Percentage>
+                          </div>
+                        </RatingBreakDown__BarContainer>
+                      </div>
+                    </RatingBreakDown__BreakDownWrapper>
+                    <RatingBreakDown__BreakDownWrapper
+                      id={3}
+                      key="3"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={3}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <RatingBreakDown__ClickTag
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="RatingBreakDown__ClickTag-sc-1fiadg8-6 bPxaMl"
+                            onClick={[Function]}
+                          >
+                            3
+                             
+                            stars
+                          </div>
+                        </RatingBreakDown__ClickTag>
+                        <RatingBreakDown__BarContainer>
+                          <div
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
+                          >
+                            <RatingBreakDown__Background>
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Background-sc-1fiadg8-3 iDuJnd eKUnHJ"
+                              />
+                            </RatingBreakDown__Background>
+                            <RatingBreakDown__Percentage
+                              percent={13.636363636363635}
+                            >
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Percentage-sc-1fiadg8-4 iDuJnd kkObeY"
+                              />
+                            </RatingBreakDown__Percentage>
+                          </div>
+                        </RatingBreakDown__BarContainer>
+                      </div>
+                    </RatingBreakDown__BreakDownWrapper>
+                    <RatingBreakDown__BreakDownWrapper
+                      id={2}
+                      key="2"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={2}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <RatingBreakDown__ClickTag
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="RatingBreakDown__ClickTag-sc-1fiadg8-6 bPxaMl"
+                            onClick={[Function]}
+                          >
+                            2
+                             
+                            stars
+                          </div>
+                        </RatingBreakDown__ClickTag>
+                        <RatingBreakDown__BarContainer>
+                          <div
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
+                          >
+                            <RatingBreakDown__Background>
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Background-sc-1fiadg8-3 iDuJnd eKUnHJ"
+                              />
+                            </RatingBreakDown__Background>
+                            <RatingBreakDown__Percentage
+                              percent={31.818181818181817}
+                            >
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Percentage-sc-1fiadg8-4 iDuJnd bttFPy"
+                              />
+                            </RatingBreakDown__Percentage>
+                          </div>
+                        </RatingBreakDown__BarContainer>
+                      </div>
+                    </RatingBreakDown__BreakDownWrapper>
+                    <RatingBreakDown__BreakDownWrapper
+                      id={1}
+                      key="1"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={1}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <RatingBreakDown__ClickTag
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="RatingBreakDown__ClickTag-sc-1fiadg8-6 bPxaMl"
+                            onClick={[Function]}
+                          >
+                            1
+                             
+                            stars
+                          </div>
+                        </RatingBreakDown__ClickTag>
+                        <RatingBreakDown__BarContainer>
+                          <div
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
+                          >
+                            <RatingBreakDown__Background>
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Background-sc-1fiadg8-3 iDuJnd eKUnHJ"
+                              />
+                            </RatingBreakDown__Background>
+                            <RatingBreakDown__Percentage
+                              percent={22.727272727272727}
+                            >
+                              <div
+                                className="RatingBreakDown__BaseBox-sc-1fiadg8-2 RatingBreakDown__Percentage-sc-1fiadg8-4 iDuJnd gzckFM"
+                              />
+                            </RatingBreakDown__Percentage>
+                          </div>
+                        </RatingBreakDown__BarContainer>
+                      </div>
+                    </RatingBreakDown__BreakDownWrapper>
+                  </div>
+                  <RatingBreakDown__RecommendPercentage>
+                    <div
+                      className="RatingBreakDown__RecommendPercentage-sc-1fiadg8-5 jNlaQS"
+                    >
+                      77
+                      % of reviews recommend this product
+                    </div>
+                  </RatingBreakDown__RecommendPercentage>
+                </div>
+              </RatingBreakDown>
+              <ProductBreakDown
+                reviewsMeta={
+                  Object {
+                    "characteristics": Object {
+                      "Comfort": Object {
+                        "id": 50011,
+                        "value": "2.8636363636363636",
+                      },
+                      "Fit": Object {
+                        "id": 50009,
+                        "value": "3.0454545454545455",
+                      },
+                      "Length": Object {
+                        "id": 50010,
+                        "value": "3.2727272727272727",
+                      },
+                      "Quality": Object {
+                        "id": 50012,
+                        "value": "3.1818181818181818",
+                      },
+                    },
+                    "product_id": "14930",
+                    "ratings": Object {
+                      "1": "5",
+                      "2": "7",
+                      "3": "3",
+                      "4": "5",
+                      "5": "2",
+                    },
+                    "recommended": Object {
+                      "false": "5",
+                      "true": "17",
+                    },
+                  }
+                }
+              >
+                <ProductBreakDown__CharacBreakDownWrapper
+                  key="50009"
+                >
+                  <div
+                    className="ProductBreakDown__CharacBreakDownWrapper-sc-198pmi9-0 fobpah"
+                  >
+                    <div>
+                      Fit
+                    </div>
+                    <ProductBreakDown__CharcBarContainer>
+                      <div
+                        className="ProductBreakDown__CharcBarContainer-sc-198pmi9-2 jFVpeY"
+                      >
+                        <ProductBreakDown__Background>
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__Background-sc-198pmi9-4 dDDwUl cHIcOv"
+                          />
+                        </ProductBreakDown__Background>
+                        <ProductBreakDown__TriangleScaleIcon
+                          percent={60.909090909090914}
+                        >
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__TriangleScaleIcon-sc-198pmi9-5 dDDwUl gjoHRh"
+                          />
+                        </ProductBreakDown__TriangleScaleIcon>
+                      </div>
+                    </ProductBreakDown__CharcBarContainer>
+                    <ProductBreakDown__FeedbackWrapper>
+                      <div
+                        className="ProductBreakDown__FeedbackWrapper-sc-198pmi9-1 KPyTg"
+                      >
+                        <span
+                          key="500093.0454545454545455Poor"
+                        >
+                          Poor
+                        </span>
+                        <span
+                          key="500093.0454545454545455Great"
+                        >
+                          Great
+                        </span>
+                      </div>
+                    </ProductBreakDown__FeedbackWrapper>
+                  </div>
+                </ProductBreakDown__CharacBreakDownWrapper>
+                <ProductBreakDown__CharacBreakDownWrapper
+                  key="50010"
+                >
+                  <div
+                    className="ProductBreakDown__CharacBreakDownWrapper-sc-198pmi9-0 fobpah"
+                  >
+                    <div>
+                      Length
+                    </div>
+                    <ProductBreakDown__CharcBarContainer>
+                      <div
+                        className="ProductBreakDown__CharcBarContainer-sc-198pmi9-2 jFVpeY"
+                      >
+                        <ProductBreakDown__Background>
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__Background-sc-198pmi9-4 dDDwUl cHIcOv"
+                          />
+                        </ProductBreakDown__Background>
+                        <ProductBreakDown__TriangleScaleIcon
+                          percent={65.45454545454545}
+                        >
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__TriangleScaleIcon-sc-198pmi9-5 dDDwUl kEfSvt"
+                          />
+                        </ProductBreakDown__TriangleScaleIcon>
+                      </div>
+                    </ProductBreakDown__CharcBarContainer>
+                    <ProductBreakDown__FeedbackWrapper>
+                      <div
+                        className="ProductBreakDown__FeedbackWrapper-sc-198pmi9-1 KPyTg"
+                      >
+                        <span
+                          key="500103.2727272727272727Too small"
+                        >
+                          Too small
+                        </span>
+                        <span
+                          key="500103.2727272727272727Perfect"
+                        >
+                          Perfect
+                        </span>
+                        <span
+                          key="500103.2727272727272727Too large"
+                        >
+                          Too large
+                        </span>
+                      </div>
+                    </ProductBreakDown__FeedbackWrapper>
+                  </div>
+                </ProductBreakDown__CharacBreakDownWrapper>
+                <ProductBreakDown__CharacBreakDownWrapper
+                  key="50011"
+                >
+                  <div
+                    className="ProductBreakDown__CharacBreakDownWrapper-sc-198pmi9-0 fobpah"
+                  >
+                    <div>
+                      Comfort
+                    </div>
+                    <ProductBreakDown__CharcBarContainer>
+                      <div
+                        className="ProductBreakDown__CharcBarContainer-sc-198pmi9-2 jFVpeY"
+                      >
+                        <ProductBreakDown__Background>
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__Background-sc-198pmi9-4 dDDwUl cHIcOv"
+                          />
+                        </ProductBreakDown__Background>
+                        <ProductBreakDown__TriangleScaleIcon
+                          percent={57.27272727272727}
+                        >
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__TriangleScaleIcon-sc-198pmi9-5 dDDwUl frAvZT"
+                          />
+                        </ProductBreakDown__TriangleScaleIcon>
+                      </div>
+                    </ProductBreakDown__CharcBarContainer>
+                    <ProductBreakDown__FeedbackWrapper>
+                      <div
+                        className="ProductBreakDown__FeedbackWrapper-sc-198pmi9-1 KPyTg"
+                      >
+                        <span
+                          key="500112.8636363636363636Poor"
+                        >
+                          Poor
+                        </span>
+                        <span
+                          key="500112.8636363636363636Great"
+                        >
+                          Great
+                        </span>
+                      </div>
+                    </ProductBreakDown__FeedbackWrapper>
+                  </div>
+                </ProductBreakDown__CharacBreakDownWrapper>
+                <ProductBreakDown__CharacBreakDownWrapper
+                  key="50012"
+                >
+                  <div
+                    className="ProductBreakDown__CharacBreakDownWrapper-sc-198pmi9-0 fobpah"
+                  >
+                    <div>
+                      Quality
+                    </div>
+                    <ProductBreakDown__CharcBarContainer>
+                      <div
+                        className="ProductBreakDown__CharcBarContainer-sc-198pmi9-2 jFVpeY"
+                      >
+                        <ProductBreakDown__Background>
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__Background-sc-198pmi9-4 dDDwUl cHIcOv"
+                          />
+                        </ProductBreakDown__Background>
+                        <ProductBreakDown__TriangleScaleIcon
+                          percent={63.63636363636363}
+                        >
+                          <div
+                            className="ProductBreakDown__BaseBox-sc-198pmi9-3 ProductBreakDown__TriangleScaleIcon-sc-198pmi9-5 dDDwUl gWfCAQ"
+                          />
+                        </ProductBreakDown__TriangleScaleIcon>
+                      </div>
+                    </ProductBreakDown__CharcBarContainer>
+                    <ProductBreakDown__FeedbackWrapper>
+                      <div
+                        className="ProductBreakDown__FeedbackWrapper-sc-198pmi9-1 KPyTg"
+                      >
+                        <span
+                          key="500123.1818181818181818Poor"
+                        >
+                          Poor
+                        </span>
+                        <span
+                          key="500123.1818181818181818Great"
+                        >
+                          Great
+                        </span>
+                      </div>
+                    </ProductBreakDown__FeedbackWrapper>
+                  </div>
+                </ProductBreakDown__CharacBreakDownWrapper>
+              </ProductBreakDown>
+            </div>
+          </Reviews__RatingWrapper>
+          <ReviewsList
+            addReviewShow={false}
+            addReviewToggle={[Function]}
+            fullreviewsArr={
+              Array [
+                Object {
+                  "body": "Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.",
+                  "date": "2021-01-26T00:00:00.000Z",
+                  "helpfulness": 12,
+                  "photos": Array [],
+                  "rating": 2,
+                  "recommend": true,
+                  "response": null,
+                  "review_id": 147659,
+                  "reviewer_name": "Shyanne6",
+                  "summary": "Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.",
+                },
+                Object {
+                  "body": "Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.",
+                  "date": "2021-01-20T00:00:00.000Z",
+                  "helpfulness": 25,
+                  "photos": Array [],
+                  "rating": 1,
+                  "recommend": false,
+                  "response": null,
+                  "review_id": 147667,
+                  "reviewer_name": "Janiya_Frami98",
+                  "summary": "Minima repudiandae eligendi nemo sit quia aspernatur.",
+                },
+                Object {
+                  "body": "Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.",
+                  "date": "2021-01-10T00:00:00.000Z",
+                  "helpfulness": 27,
+                  "photos": Array [],
+                  "rating": 5,
+                  "recommend": true,
+                  "response": "\\"Cumque aspernatur illum velit dolores minus.\\"",
+                  "review_id": 147660,
+                  "reviewer_name": "Celestine_Glover",
+                  "summary": "Neque repellendus modi eius quaerat ab rerum est animi praesentium.",
+                },
+                Object {
+                  "body": "Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.",
+                  "date": "2020-12-22T00:00:00.000Z",
+                  "helpfulness": 28,
+                  "photos": Array [],
+                  "rating": 4,
+                  "recommend": true,
+                  "response": null,
+                  "review_id": 147676,
+                  "reviewer_name": "Dameon63",
+                  "summary": "Officia reiciendis quaerat nam tempore ut ut numquam ut.",
+                },
+              ]
+            }
+            loadFirstTwoReviews={[Function]}
+            loadMoreReviews={[Function]}
+            reviews={
+              Array [
+                Object {
+                  "body": "Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.",
+                  "date": "2021-01-26T00:00:00.000Z",
+                  "helpfulness": 12,
+                  "photos": Array [],
+                  "rating": 2,
+                  "recommend": true,
+                  "response": null,
+                  "review_id": 147659,
+                  "reviewer_name": "Shyanne6",
+                  "summary": "Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.",
+                },
+                Object {
+                  "body": "Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.",
+                  "date": "2021-01-20T00:00:00.000Z",
+                  "helpfulness": 25,
+                  "photos": Array [],
+                  "rating": 1,
+                  "recommend": false,
+                  "response": null,
+                  "review_id": 147667,
+                  "reviewer_name": "Janiya_Frami98",
+                  "summary": "Minima repudiandae eligendi nemo sit quia aspernatur.",
+                },
+              ]
+            }
+            reviewsMeta={
+              Object {
+                "characteristics": Object {
+                  "Comfort": Object {
+                    "id": 50011,
+                    "value": "2.8636363636363636",
+                  },
+                  "Fit": Object {
+                    "id": 50009,
+                    "value": "3.0454545454545455",
+                  },
+                  "Length": Object {
+                    "id": 50010,
+                    "value": "3.2727272727272727",
+                  },
+                  "Quality": Object {
+                    "id": 50012,
+                    "value": "3.1818181818181818",
+                  },
+                },
+                "product_id": "14930",
+                "ratings": Object {
+                  "1": "5",
+                  "2": "7",
+                  "3": "3",
+                  "4": "5",
+                  "5": "2",
+                },
+                "recommended": Object {
+                  "false": "5",
+                  "true": "17",
+                },
+              }
+            }
+            sortSelected={[Function]}
+          >
+            <ReviewsList__ReviewsWrapper>
+              <div
+                className="ReviewsList__ReviewsWrapper-sc-1ulmjy1-0 eNhjVC"
+              >
+                <ReviewsList__ReviewSortWrapper>
+                  <div
+                    className="ReviewsList__ReviewSortWrapper-sc-1ulmjy1-4 ctmMjX"
+                  >
+                    <ReviewsList__StyledLabel>
+                      <label
+                        className="ReviewsList__StyledLabel-sc-1ulmjy1-8 bpytbN"
+                      >
+                        22
+                         
+                        reviews, sorted by
+                        <ReviewsList__SelectTag
+                          onChange={[Function]}
+                        >
+                          <select
+                            className="ReviewsList__SelectTag-sc-1ulmjy1-5 gUTFzi"
+                            onChange={[Function]}
+                          >
+                            <option
+                              defaultValue="relevant"
+                            >
+                              Relevant
+                            </option>
+                            <option
+                              value="helpful"
+                            >
+                              Helpful
+                            </option>
+                            <option
+                              value="newest"
+                            >
+                              Newest
+                            </option>
+                          </select>
+                        </ReviewsList__SelectTag>
+                      </label>
+                    </ReviewsList__StyledLabel>
+                  </div>
+                </ReviewsList__ReviewSortWrapper>
+                <ReviewsList__ListWrapper>
+                  <div
+                    className="ReviewsList__ListWrapper-sc-1ulmjy1-2 qQXjV"
+                  >
+                    <ReviewTile
+                      key="147659"
+                      loadReview={[Function]}
+                      review={
+                        Object {
+                          "body": "Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.",
+                          "date": "2021-01-26T00:00:00.000Z",
+                          "helpfulness": 12,
+                          "photos": Array [],
+                          "rating": 2,
+                          "recommend": true,
+                          "response": null,
+                          "review_id": 147659,
+                          "reviewer_name": "Shyanne6",
+                          "summary": "Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.",
+                        }
+                      }
+                    >
+                      <ReviewTile__TileContainer
+                        reportClick={false}
+                      >
+                        <div
+                          className="ReviewTile__TileContainer-sc-1vbuo4p-0 izQjHl"
+                        >
+                          <ReviewTile__StarDateWrapper>
+                            <div
+                              className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 hAYJuv"
+                            >
+                              <RatingStars
+                                rating={2}
+                              >
+                                <div>
+                                  <RatingStars__StarsContainer>
+                                    <div
+                                      className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG"
+                                    >
+                                      <RatingStars__StarsContainer
+                                        className="top"
+                                        rating={2}
+                                      >
+                                        <div
+                                          className="RatingStars__StarsContainer-sc-1djn8fm-0 btLlnX top"
+                                        >
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                        </div>
+                                      </RatingStars__StarsContainer>
+                                      <RatingStars__StarsContainer
+                                        className="bottom"
+                                      >
+                                        <div
+                                          className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG bottom"
+                                        >
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                        </div>
+                                      </RatingStars__StarsContainer>
+                                    </div>
+                                  </RatingStars__StarsContainer>
+                                </div>
+                              </RatingStars>
+                              <span>
+                                Shyanne6
+                                ,
+                                 
+                                January
+                                 
+                                26
+                                ,
+                                 
+                                2021
+                              </span>
+                            </div>
+                          </ReviewTile__StarDateWrapper>
+                          <ReviewTile__StyledSummary>
+                            <div
+                              className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+                            >
+                              Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.
+                            </div>
+                          </ReviewTile__StyledSummary>
+                          <ReviewTile__StyledBody>
+                            <p
+                              className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+                            >
+                              Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.
+                            </p>
+                          </ReviewTile__StyledBody>
+                          <ReviewTile__StyledRecommend>
+                            <div
+                              className="ReviewTile__StyledRecommend-sc-1vbuo4p-8 hHkGbK"
+                            >
+                              ✓ I recommend this product
+                            </div>
+                          </ReviewTile__StyledRecommend>
+                          <ReviewTile__HelpfulnessWrapper>
+                            <div
+                              className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
+                            >
+                              Helpful?
+                              <ReviewTile__ClickTag
+                                className="not-click"
+                                onClick={[Function]}
+                              >
+                                <div
+                                  className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                                  onClick={[Function]}
+                                >
+                                  Yes
+                                   
+                                  (
+                                  12
+                                  )
+                                </div>
+                              </ReviewTile__ClickTag>
+                              <div>
+                                  |  
+                              </div>
+                              <ReviewTile__ClickTag
+                                className="not-click"
+                                onClick={[Function]}
+                              >
+                                <div
+                                  className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                                  onClick={[Function]}
+                                >
+                                  Report
+                                </div>
+                              </ReviewTile__ClickTag>
+                            </div>
+                          </ReviewTile__HelpfulnessWrapper>
+                        </div>
+                      </ReviewTile__TileContainer>
+                    </ReviewTile>
+                    <ReviewTile
+                      key="147667"
+                      loadReview={[Function]}
+                      review={
+                        Object {
+                          "body": "Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.",
+                          "date": "2021-01-20T00:00:00.000Z",
+                          "helpfulness": 25,
+                          "photos": Array [],
+                          "rating": 1,
+                          "recommend": false,
+                          "response": null,
+                          "review_id": 147667,
+                          "reviewer_name": "Janiya_Frami98",
+                          "summary": "Minima repudiandae eligendi nemo sit quia aspernatur.",
+                        }
+                      }
+                    >
+                      <ReviewTile__TileContainer
+                        reportClick={false}
+                      >
+                        <div
+                          className="ReviewTile__TileContainer-sc-1vbuo4p-0 izQjHl"
+                        >
+                          <ReviewTile__StarDateWrapper>
+                            <div
+                              className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 hAYJuv"
+                            >
+                              <RatingStars
+                                rating={1}
+                              >
+                                <div>
+                                  <RatingStars__StarsContainer>
+                                    <div
+                                      className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG"
+                                    >
+                                      <RatingStars__StarsContainer
+                                        className="top"
+                                        rating={1}
+                                      >
+                                        <div
+                                          className="RatingStars__StarsContainer-sc-1djn8fm-0 JWyDF top"
+                                        >
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                        </div>
+                                      </RatingStars__StarsContainer>
+                                      <RatingStars__StarsContainer
+                                        className="bottom"
+                                      >
+                                        <div
+                                          className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG bottom"
+                                        >
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                          <span>
+                                            ★
+                                          </span>
+                                        </div>
+                                      </RatingStars__StarsContainer>
+                                    </div>
+                                  </RatingStars__StarsContainer>
+                                </div>
+                              </RatingStars>
+                              <span>
+                                Janiya_Frami98
+                                ,
+                                 
+                                January
+                                 
+                                20
+                                ,
+                                 
+                                2021
+                              </span>
+                            </div>
+                          </ReviewTile__StarDateWrapper>
+                          <ReviewTile__StyledSummary>
+                            <div
+                              className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+                            >
+                              Minima repudiandae eligendi nemo sit quia aspernatur.
+                            </div>
+                          </ReviewTile__StyledSummary>
+                          <ReviewTile__StyledBody>
+                            <p
+                              className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+                            >
+                              Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.
+                            </p>
+                          </ReviewTile__StyledBody>
+                          <ReviewTile__HelpfulnessWrapper>
+                            <div
+                              className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
+                            >
+                              Helpful?
+                              <ReviewTile__ClickTag
+                                className="not-click"
+                                onClick={[Function]}
+                              >
+                                <div
+                                  className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                                  onClick={[Function]}
+                                >
+                                  Yes
+                                   
+                                  (
+                                  25
+                                  )
+                                </div>
+                              </ReviewTile__ClickTag>
+                              <div>
+                                  |  
+                              </div>
+                              <ReviewTile__ClickTag
+                                className="not-click"
+                                onClick={[Function]}
+                              >
+                                <div
+                                  className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                                  onClick={[Function]}
+                                >
+                                  Report
+                                </div>
+                              </ReviewTile__ClickTag>
+                            </div>
+                          </ReviewTile__HelpfulnessWrapper>
+                        </div>
+                      </ReviewTile__TileContainer>
+                    </ReviewTile>
+                  </div>
+                </ReviewsList__ListWrapper>
+                <ReviewsList__ButtonWrapper>
+                  <div
+                    className="ReviewsList__ButtonWrapper-sc-1ulmjy1-1 gExWQo"
+                  >
+                    <ReviewsList__ReviewButton
+                      onClick={[Function]}
+                    >
+                      <button
+                        className="ReviewsList__ReviewButton-sc-1ulmjy1-3 jjgJVM"
+                        onClick={[Function]}
+                      >
+                        MORE REVIEWS
+                      </button>
+                    </ReviewsList__ReviewButton>
+                    <ReviewsList__ReviewButton
+                      onClick={[Function]}
+                    >
+                      <button
+                        className="ReviewsList__ReviewButton-sc-1ulmjy1-3 jjgJVM"
+                        onClick={[Function]}
+                      >
+                        ADD A REVIEW
+                      </button>
+                    </ReviewsList__ReviewButton>
+                  </div>
+                </ReviewsList__ButtonWrapper>
+              </div>
+            </ReviewsList__ReviewsWrapper>
+          </ReviewsList>
+        </div>
+      </Reviews__Wrapper>
+    </div>
+  </Reviews__ReviewsContainer>
+</Reviews>
+`;

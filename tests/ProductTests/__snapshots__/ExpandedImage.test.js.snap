@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpandedImage Should render correctly 1`] = `
+<ExpandedImage
+  debug={true}
+  id={70550}
+  images={
+    Array [
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1492447105260-2e947425b5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1548133464-29abc661eb5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1500340520802-1687634cbe38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1559304022-afbf28f53c4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80",
+      },
+      Object {
+        "thumbnail_url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+        "url": "https://images.unsplash.com/photo-1554921148-83d8ceda2095?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      },
+    ]
+  }
+  info={
+    Object {
+      "source": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+    }
+  }
+>
+  <Portal
+    containerInfo={
+      <div>
+        <div
+          class="ExpandedImage__Wrapper-sc-1g7vqin-0 iJrbzo"
+        >
+          <div
+            class="ExpandedImage__ModalLeftArrow-sc-1g7vqin-2 ZdNkZ"
+          >
+            <span
+              aria-hidden="true"
+              class="fa fa-angle-left fa-2x"
+              id="-1"
+            />
+          </div>
+          <img
+            class="ExpandedImage__Expanded-sc-1g7vqin-1 iLUdGR"
+            x="0"
+            y="0"
+          />
+          <div
+            class="ExpandedImage__ModalRightArrow-sc-1g7vqin-3 kMeIWk"
+          >
+            <span
+              aria-hidden="true"
+              class="fa fa-angle-right fa-2x"
+              id="1"
+            />
+          </div>
+          <div
+            class="ExpandedImage__IconHolder-sc-1g7vqin-4 iGQpBV"
+          >
+            <div
+              class="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+              id="0"
+              type="button"
+            />
+            <div
+              class="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+              id="1"
+              type="button"
+            />
+            <div
+              class="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+              id="2"
+              type="button"
+            />
+            <div
+              class="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+              id="3"
+              type="button"
+            />
+            <div
+              class="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+              id="4"
+              type="button"
+            />
+            <div
+              class="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+              id="5"
+              type="button"
+            />
+          </div>
+        </div>
+      </div>
+    }
+  >
+    <ExpandedImage__Wrapper>
+      <div
+        className="ExpandedImage__Wrapper-sc-1g7vqin-0 iJrbzo"
+      >
+        <ExpandedImage__ModalLeftArrow
+          onMouseDown={[Function]}
+        >
+          <div
+            className="ExpandedImage__ModalLeftArrow-sc-1g7vqin-2 ZdNkZ"
+            onMouseDown={[Function]}
+          >
+            <FontAwesome
+              id="-1"
+              name="angle-left"
+              size="2x"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-left fa-2x"
+                id="-1"
+              />
+            </FontAwesome>
+          </div>
+        </ExpandedImage__ModalLeftArrow>
+        <ExpandedImage__Expanded
+          key="70550"
+          onMouseDown={[Function]}
+          x={0}
+          y={0}
+          zoomed={false}
+        >
+          <img
+            className="ExpandedImage__Expanded-sc-1g7vqin-1 iLUdGR"
+            onMouseDown={[Function]}
+            x={0}
+            y={0}
+          />
+        </ExpandedImage__Expanded>
+        <ExpandedImage__ModalRightArrow
+          onMouseDown={[Function]}
+        >
+          <div
+            className="ExpandedImage__ModalRightArrow-sc-1g7vqin-3 kMeIWk"
+            onMouseDown={[Function]}
+          >
+            <FontAwesome
+              id="1"
+              name="angle-right"
+              size="2x"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-right fa-2x"
+                id="1"
+              />
+            </FontAwesome>
+          </div>
+        </ExpandedImage__ModalRightArrow>
+        <ExpandedImage__IconHolder
+          onMouseDown={[Function]}
+        >
+          <div
+            className="ExpandedImage__IconHolder-sc-1g7vqin-4 iGQpBV"
+            onMouseDown={[Function]}
+          >
+            <ExpandedImage__Icon
+              id={0}
+              key="0"
+              onMouseDown={[Function]}
+              type="button"
+            >
+              <div
+                className="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+                id={0}
+                onMouseDown={[Function]}
+                type="button"
+              />
+            </ExpandedImage__Icon>
+            <ExpandedImage__Icon
+              id={1}
+              key="70550"
+              onMouseDown={[Function]}
+              type="button"
+            >
+              <div
+                className="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+                id={1}
+                onMouseDown={[Function]}
+                type="button"
+              />
+            </ExpandedImage__Icon>
+            <ExpandedImage__Icon
+              id={2}
+              key="141100"
+              onMouseDown={[Function]}
+              type="button"
+            >
+              <div
+                className="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+                id={2}
+                onMouseDown={[Function]}
+                type="button"
+              />
+            </ExpandedImage__Icon>
+            <ExpandedImage__Icon
+              id={3}
+              key="211650"
+              onMouseDown={[Function]}
+              type="button"
+            >
+              <div
+                className="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+                id={3}
+                onMouseDown={[Function]}
+                type="button"
+              />
+            </ExpandedImage__Icon>
+            <ExpandedImage__Icon
+              id={4}
+              key="282200"
+              onMouseDown={[Function]}
+              type="button"
+            >
+              <div
+                className="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+                id={4}
+                onMouseDown={[Function]}
+                type="button"
+              />
+            </ExpandedImage__Icon>
+            <ExpandedImage__Icon
+              id={5}
+              key="352750"
+              onMouseDown={[Function]}
+              type="button"
+            >
+              <div
+                className="ExpandedImage__Icon-sc-1g7vqin-6 hFSqpB"
+                id={5}
+                onMouseDown={[Function]}
+                type="button"
+              />
+            </ExpandedImage__Icon>
+          </div>
+        </ExpandedImage__IconHolder>
+      </div>
+    </ExpandedImage__Wrapper>
+  </Portal>
+</ExpandedImage>
+`;

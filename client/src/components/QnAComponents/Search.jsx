@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const Input = styled.input`
   border: 1px solid #424242;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   width: 60vw;
   z-index: 0;
   position: relative;
@@ -17,12 +19,13 @@ const Input = styled.input`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   width: 100%;
 `;
 
 const Magnify = styled.div`
   text-align: right;
+  font-weight: 700;
   z-index: 50;
   position: relative;
   bottom: 5.5vh;
@@ -30,8 +33,8 @@ const Magnify = styled.div`
   width: 1rem;
   padding-right: 4vw;
   color: #424242;
-  -webkit-transform: rotate(-45deg); 
-  -moz-transform: rotate(-45deg); 
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   &:hover {

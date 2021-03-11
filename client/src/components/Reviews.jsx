@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -32,6 +33,7 @@ const Wrapper = styled.div`
 `;
 
 const RatingWrapper = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   flex-basis: 35%;
@@ -53,11 +55,12 @@ class Reviews extends React.Component {
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
-      product_id: this.props.product,
-      entriesCount: this.props.count,
-      page: this.props.page,
-      sortSelection: 'relavant',
-      sortOn: false,
+      isModalOpen: false,
+      // product_id: this.props.product,
+      // entriesCount: this.props.count,
+      // page: this.props.page,
+      // sortSelection: 'relavant',
+      // sortOn: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
@@ -74,10 +77,9 @@ class Reviews extends React.Component {
   }
 
   loadFirstTwoReviews(data) {
-    // console.log(this.props.reviews);
     const displayArr = [];
     let tileCount = 0;
-    while (tileCount < this.state.displayLimit) {
+    while (tileCount < this.state.displayLimit && tileCount < data.length) {
       displayArr.push(data[tileCount]);
       tileCount += 1;
     }
@@ -165,7 +167,6 @@ class Reviews extends React.Component {
       })
       .catch((err) => { throw err; })
       .then(() => {
-        // console.log(this.state.originalArr);
         this.setState({
           filterStars: [],
           filterArr: [],
@@ -175,54 +176,45 @@ class Reviews extends React.Component {
     event.preventDefault();
   }
 
-  addReviewToggle() {
-    if (!this.state.addReviewShow) {
-      this.setState({
-        addReviewShow: true,
-      });
-    } else {
-      this.setState({
-        addReviewShow: false,
-      });
-    }
+  addReviewToggle(event) {
+    event.stopPropagation();
+    this.setState((prevState) => ({
+      addReviewShow: !prevState.addReviewShow,
+    }));
   }
 
   render() {
-    if (this.state.reviews.length > 0 && this.state.fullreviewsArr.length > 0) {
-      // console.log(this.state.fullreviewsArr);
-      // console.log(this.state.reviews);
-      return (
-        <ReviewsContainer id="RATINGS">
-          <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
-          <Wrapper>
-            <RatingWrapper>
-              <RatingSummary reviewsMeta={this.state.reviewsMeta} />
-              <RatingBreakDown
-                reviewsMeta={this.state.reviewsMeta}
-                starFilter={this.starFilter}
-                removeAllFilter={this.removeAllFilter}
-                filterStars={this.state.filterStars}
-              />
-              <ProductBreakDown
-                reviewsMeta={this.state.reviewsMeta}
-              />
-            </RatingWrapper>
-            <ReviewsList
-              loadFirstTwoReviews={this.loadFirstTwoReviews}
-              fullreviewsArr={this.state.fullreviewsArr}
-              reviews={this.state.reviews}
-              reviewsMeta={this.state.reviewsMeta}
-              loadMoreReviews={this.loadMoreReviews}
-              sortSelected={this.sortSelected}
-              addReviewToggle={this.addReviewToggle}
-              addReviewShow={this.state.addReviewShow}
-            />
-          </Wrapper>
-        </ReviewsContainer>
-      );
-    }
+    // console.log(this.props.reviewsMeta);
+    // console.log(this.props.reviews.results);
     return (
-      <div>Loading Data</div>
+      <ReviewsContainer id="RATINGS">
+        <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
+        <Wrapper>
+          <RatingWrapper>
+            <RatingSummary reviewsMeta={this.state.reviewsMeta} />
+            <RatingBreakDown
+              reviewsMeta={this.state.reviewsMeta}
+              starFilter={this.starFilter}
+              removeAllFilter={this.removeAllFilter}
+              filterStars={this.state.filterStars}
+            />
+            <ProductBreakDown
+              reviewsMeta={this.state.reviewsMeta}
+            />
+          </RatingWrapper>
+          <ReviewsList
+            loadFirstTwoReviews={this.loadFirstTwoReviews}
+            fullreviewsArr={this.state.fullreviewsArr}
+            reviews={this.state.reviews}
+            reviewsMeta={this.state.reviewsMeta}
+            loadMoreReviews={this.loadMoreReviews}
+            sortSelected={this.sortSelected}
+            addReviewToggle={this.addReviewToggle}
+            addReviewShow={this.state.addReviewShow}
+            toggleModal={this.toggleModal}
+          />
+        </Wrapper>
+      </ReviewsContainer>
     );
   }
 }

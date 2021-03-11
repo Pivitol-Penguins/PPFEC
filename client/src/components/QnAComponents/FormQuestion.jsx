@@ -16,7 +16,8 @@ const FormQContainer = styled.form`
 `;
 
 const Input = styled.input`
-  font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+font-weight: 700;
   border: 1px solid #424242;
   width: 30vw;
   z-index: 0;
@@ -33,7 +34,8 @@ const Input = styled.input`
 `;
 
 const BodyT = styled.textarea`
-font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+font-weight: 700;
 border: 1px solid #424242;
 width: 30vw;
 z-index: 0;
@@ -55,7 +57,8 @@ const Buttons = styled.div`
 `;
 
 const BC = styled.button`
-  font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;  
+font-weight: 700;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
@@ -85,7 +88,7 @@ const Pair = styled.div`
   justify-content: space-between;
 `;
 
-const Title = styled.h4`
+const Title = styled.div`
 `;
 
 const BText = styled.div`
@@ -139,7 +142,9 @@ class FormQ extends React.Component {
   render() {
     return (
       <FormQContainer onSubmit={this.postMan}>
-        COMPLETE THIS FORM TO ADD A QUESTION
+        COMPLETE THIS FORM TO ADD A QUESTION FOR
+        {' '}
+        {this.props.name.toUpperCase()}
         <Pair>
           <Title>
             HAVE A QUESTION?

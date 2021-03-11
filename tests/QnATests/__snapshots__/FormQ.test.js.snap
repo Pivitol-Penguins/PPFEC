@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`This is for the Question Form Should render Question Form properly 1`] = `
+<FormQ
+  name="Big Rock"
+>
+  <FormQuestion__FormQContainer
+    onSubmit={[Function]}
+  >
+    <form
+      className="FormQuestion__FormQContainer-sc-1wl3416-0 bIHMlt"
+      onSubmit={[Function]}
+    >
+      COMPLETE THIS FORM TO ADD A QUESTION FOR
+       
+      BIG ROCK
+      <FormQuestion__Pair>
+        <div
+          className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
+        >
+          <FormQuestion__Title>
+            <div
+              className="FormQuestion__Title-sc-1wl3416-7"
+            >
+              HAVE A QUESTION?
+            </div>
+          </FormQuestion__Title>
+          <FormQuestion__BodyT
+            cols="55"
+            maxLength="1000"
+            name="body"
+            onChange={[Function]}
+            placeholder="ADD YOUR QUESTION HERE"
+            rows="5"
+            value=""
+          >
+            <textarea
+              className="FormQuestion__BodyT-sc-1wl3416-2 HlKKD"
+              cols="55"
+              maxLength="1000"
+              name="body"
+              onChange={[Function]}
+              placeholder="ADD YOUR QUESTION HERE"
+              rows="5"
+              value=""
+            />
+          </FormQuestion__BodyT>
+        </div>
+      </FormQuestion__Pair>
+      <FormQuestion__Pair>
+        <div
+          className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
+        >
+          <FormQuestion__Title>
+            <div
+              className="FormQuestion__Title-sc-1wl3416-7"
+            >
+              MAY I HAVE YOUR NAME?
+            </div>
+          </FormQuestion__Title>
+          <FormQuestion__Input
+            name="name"
+            onChange={[Function]}
+            placeholder="EXAMPLE: jackson11!"
+            value=""
+          >
+            <input
+              className="FormQuestion__Input-sc-1wl3416-1 kRTTO"
+              name="name"
+              onChange={[Function]}
+              placeholder="EXAMPLE: jackson11!"
+              value=""
+            />
+          </FormQuestion__Input>
+          <FormQuestion__BText>
+            <div
+              className="FormQuestion__BText-sc-1wl3416-8 jDeZxy"
+            >
+              FOR PRIVACY REASONS, DO NOT USE YOUR FULL NAME OR EMAIL ADDRESS
+            </div>
+          </FormQuestion__BText>
+        </div>
+      </FormQuestion__Pair>
+      <FormQuestion__Pair>
+        <div
+          className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
+        >
+          <FormQuestion__Title>
+            <div
+              className="FormQuestion__Title-sc-1wl3416-7"
+            >
+              HOW ABOUT YOUR EMAIL?
+            </div>
+          </FormQuestion__Title>
+          <FormQuestion__Input
+            name="email"
+            onChange={[Function]}
+            placeholder="WHY DID YOU LIKE THE PRODUCT OR NOT?"
+            type="email"
+            value=""
+          >
+            <input
+              className="FormQuestion__Input-sc-1wl3416-1 kRTTO"
+              name="email"
+              onChange={[Function]}
+              placeholder="WHY DID YOU LIKE THE PRODUCT OR NOT?"
+              type="email"
+              value=""
+            />
+          </FormQuestion__Input>
+          <FormQuestion__BText>
+            <div
+              className="FormQuestion__BText-sc-1wl3416-8 jDeZxy"
+            >
+              FOR AUTHENTICATION REASONS, YOU WILL NOT BE EMAILED
+            </div>
+          </FormQuestion__BText>
+        </div>
+      </FormQuestion__Pair>
+      <FormQuestion__Buttons>
+        <div
+          className="FormQuestion__Buttons-sc-1wl3416-3 esQSac"
+        >
+          <FormQuestion__BP>
+            <div
+              className="FormQuestion__BP-sc-1wl3416-5 epupde"
+            >
+              <FormQuestion__BC
+                name="Submit"
+                onClick={[Function]}
+              >
+                <button
+                  className="FormQuestion__BC-sc-1wl3416-4 jMBDCe"
+                  name="Submit"
+                  onClick={[Function]}
+                >
+                  SUBMIT
+                </button>
+              </FormQuestion__BC>
+            </div>
+          </FormQuestion__BP>
+          <FormQuestion__BP>
+            <div
+              className="FormQuestion__BP-sc-1wl3416-5 epupde"
+            >
+              <FormQuestion__BC
+                name="Exit"
+                onClick={[Function]}
+              >
+                <button
+                  className="FormQuestion__BC-sc-1wl3416-4 jMBDCe"
+                  name="Exit"
+                  onClick={[Function]}
+                >
+                  EXIT
+                </button>
+              </FormQuestion__BC>
+            </div>
+          </FormQuestion__BP>
+        </div>
+      </FormQuestion__Buttons>
+    </form>
+  </FormQuestion__FormQContainer>
+</FormQ>
+`;
