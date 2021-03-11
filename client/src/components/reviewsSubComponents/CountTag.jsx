@@ -7,9 +7,9 @@ const StyledTag = styled.div`
   font-size: 10px;
   text-align: center;
   border-radius: 6px;
-  border: 0.3px solid #424242
-  position: absolute
-  top: 0;
+  // border: 0.3px solid #424242;
+  position: absolute;
+  top: -1.2vh;
   left: 50%;
   z-index: 1;
   margin-left: -60px;
@@ -24,11 +24,9 @@ const CountTag = (props) => {
   }
   return (
     <StyledTag>
-      <p>
-        {ratingCount}
-        {' '}
-        people voted
-      </p>
+      {ratingCount}
+      {' '}
+      votes
     </StyledTag>
   );
 };

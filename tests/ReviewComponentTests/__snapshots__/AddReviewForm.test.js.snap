@@ -30,7 +30,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
     onSubmit={[Function]}
   >
     <form
-      className="AddReviewForm__StyledForm-kljszx-4 eueujS"
+      className="AddReviewForm__StyledForm-kljszx-6 gVuYfg"
       onSubmit={[Function]}
     >
       <h2>
@@ -40,9 +40,13 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
         <div
           className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
         >
-          <span>
-            Overall Rating
-          </span>
+          <AddReviewForm__StyledLabel>
+            <span
+              className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+            >
+              Overall Rating
+            </span>
+          </AddReviewForm__StyledLabel>
           <RatingStars
             getRating={[Function]}
           >
@@ -101,9 +105,13 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
         <div
           className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
         >
-          <span>
-            Do you recommend this product?
-          </span>
+          <AddReviewForm__StyledLabel>
+            <span
+              className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+            >
+              Do you recommend this product?
+            </span>
+          </AddReviewForm__StyledLabel>
           <div>
             <input
               name="recommend"
@@ -129,25 +137,40 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
         </div>
       </AddReviewForm__VerticalWrapper>
       <div>
-        <span>
-          Charateristics
-        </span>
-        <ul>
+        <AddReviewForm__StyledLabel>
+          <span
+            className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+          >
+            Charateristics
+          </span>
+        </AddReviewForm__StyledLabel>
+        <ul
+          style={
+            Object {
+              "margin": "0 auto",
+              "padding": "10px",
+            }
+          }
+        >
           <li
             key="Comfort"
           >
-            <div>
-              Comfort
-            </div>
+            <AddReviewForm__StyledLabel>
+              <span
+                className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+              >
+                Comfort
+              </span>
+            </AddReviewForm__StyledLabel>
             <AddReviewForm__CharateristicsSelectorWrapper>
               <div
-                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-5 kwtDeo"
               >
                 <AddReviewForm__ValueButtonWrapper
                   key="Uncomfortable"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Uncomfortable
@@ -165,7 +188,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Slightly uncomfortable"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Slightly uncomfortable
@@ -183,7 +206,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="OK"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       OK
@@ -201,7 +224,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Comfortable"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Comfortable
@@ -219,7 +242,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Perfect"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Perfect
@@ -239,18 +262,22 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
           <li
             key="Fit"
           >
-            <div>
-              Fit
-            </div>
+            <AddReviewForm__StyledLabel>
+              <span
+                className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+              >
+                Fit
+              </span>
+            </AddReviewForm__StyledLabel>
             <AddReviewForm__CharateristicsSelectorWrapper>
               <div
-                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-5 kwtDeo"
               >
                 <AddReviewForm__ValueButtonWrapper
                   key="Runs tight"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs tight
@@ -268,7 +295,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Runs slightly tight"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs slightly tight
@@ -286,7 +313,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Perfect"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Perfect
@@ -304,7 +331,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Runs slightly long"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs slightly long
@@ -322,7 +349,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Runs long"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs long
@@ -342,18 +369,22 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
           <li
             key="Length"
           >
-            <div>
-              Length
-            </div>
+            <AddReviewForm__StyledLabel>
+              <span
+                className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+              >
+                Length
+              </span>
+            </AddReviewForm__StyledLabel>
             <AddReviewForm__CharateristicsSelectorWrapper>
               <div
-                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-5 kwtDeo"
               >
                 <AddReviewForm__ValueButtonWrapper
                   key="Runs Short"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs Short
@@ -371,7 +402,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Runs slightly short"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs slightly short
@@ -389,7 +420,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Perfect"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Perfect
@@ -407,7 +438,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Runs slightly long"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs slightly long
@@ -425,7 +456,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Runs long"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Runs long
@@ -445,18 +476,22 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
           <li
             key="Quality"
           >
-            <div>
-              Quality
-            </div>
+            <AddReviewForm__StyledLabel>
+              <span
+                className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+              >
+                Quality
+              </span>
+            </AddReviewForm__StyledLabel>
             <AddReviewForm__CharateristicsSelectorWrapper>
               <div
-                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-3 cJKxTu"
+                className="AddReviewForm__CharateristicsSelectorWrapper-kljszx-5 kwtDeo"
               >
                 <AddReviewForm__ValueButtonWrapper
                   key="Poor"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Poor
@@ -474,7 +509,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Below average"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Below average
@@ -492,7 +527,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="What I expected"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       What I expected
@@ -510,7 +545,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Pretty great"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Pretty great
@@ -528,7 +563,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                   key="Perfect"
                 >
                   <div
-                    className="AddReviewForm__ValueButtonWrapper-kljszx-2 eQBbmq"
+                    className="AddReviewForm__ValueButtonWrapper-kljszx-3 camWqr"
                   >
                     <span>
                       Perfect
@@ -551,9 +586,13 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
         <div
           className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
         >
-          <span>
-            Review Summary
-          </span>
+          <AddReviewForm__StyledLabel>
+            <span
+              className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+            >
+              Review Summary
+            </span>
+          </AddReviewForm__StyledLabel>
           <AddReviewForm__StyledInput
             cols="100"
             id="reviewSummary"
@@ -565,7 +604,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
             value=""
           >
             <input
-              className="AddReviewForm__StyledInput-kljszx-7 fqYKLu"
+              className="AddReviewForm__StyledInput-kljszx-10 folYNU"
               cols="100"
               id="reviewSummary"
               maxLength="60"
@@ -582,10 +621,14 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
         <div
           className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
         >
-          <span>
-            Your Review
-          </span>
-          <textarea
+          <AddReviewForm__StyledLabel>
+            <span
+              className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+            >
+              Your Review
+            </span>
+          </AddReviewForm__StyledLabel>
+          <AddReviewForm__StyledTextarea
             cols="60"
             id="reviewBody"
             maxLength="1000"
@@ -595,16 +638,33 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
             required={true}
             rows="10"
             value=""
-          />
+          >
+            <textarea
+              className="AddReviewForm__StyledTextarea-kljszx-11 KyGPD"
+              cols="60"
+              id="reviewBody"
+              maxLength="1000"
+              name="body"
+              onChange={[Function]}
+              placeholder="Why did you like the product or not?"
+              required={true}
+              rows="10"
+              value=""
+            />
+          </AddReviewForm__StyledTextarea>
         </div>
       </AddReviewForm__VerticalWrapper>
       <AddReviewForm__HorizontalWrapper>
         <div
-          className="AddReviewForm__HorizontalWrapper-kljszx-1 jReWlW"
+          className="AddReviewForm__HorizontalWrapper-kljszx-1 kHOVap"
         >
-          <span>
-            Upload the photos of your purchase
-          </span>
+          <AddReviewForm__StyledLabel>
+            <span
+              className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+            >
+              Upload the photos of your purchase
+            </span>
+          </AddReviewForm__StyledLabel>
           <input
             multiple={true}
             name="photos"
@@ -613,18 +673,22 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
           />
         </div>
       </AddReviewForm__HorizontalWrapper>
-      <AddReviewForm__HorizontalWrapper>
+      <AddReviewForm__NameEmailWraper>
         <div
-          className="AddReviewForm__HorizontalWrapper-kljszx-1 jReWlW"
+          className="AddReviewForm__NameEmailWraper-kljszx-2 bQdAvP"
         >
           <AddReviewForm__VerticalWrapper>
             <div
               className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
             >
-              <span>
-                Your Nickname
-              </span>
-              <input
+              <AddReviewForm__StyledLabel>
+                <span
+                  className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+                >
+                  Your Nickname
+                </span>
+              </AddReviewForm__StyledLabel>
+              <AddReviewForm__NameEmailInput
                 id="reviewer_name"
                 maxLength="60"
                 name="name"
@@ -633,17 +697,33 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                 required={true}
                 type="text"
                 value=""
-              />
+              >
+                <input
+                  className="AddReviewForm__NameEmailInput-kljszx-7 iLzyob"
+                  id="reviewer_name"
+                  maxLength="60"
+                  name="name"
+                  onChange={[Function]}
+                  placeholder="Example: jackson11!"
+                  required={true}
+                  type="text"
+                  value=""
+                />
+              </AddReviewForm__NameEmailInput>
             </div>
           </AddReviewForm__VerticalWrapper>
           <AddReviewForm__VerticalWrapper>
             <div
               className="AddReviewForm__VerticalWrapper-kljszx-0 NSeLo"
             >
-              <span>
-                Your Email
-              </span>
-              <input
+              <AddReviewForm__StyledLabel>
+                <span
+                  className="AddReviewForm__StyledLabel-kljszx-4 bIiwfI"
+                >
+                  Your Email
+                </span>
+              </AddReviewForm__StyledLabel>
+              <AddReviewForm__NameEmailInput
                 id="email"
                 maxLength="60"
                 name="email"
@@ -652,17 +732,29 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
                 required={true}
                 type="email"
                 value=""
-              />
+              >
+                <input
+                  className="AddReviewForm__NameEmailInput-kljszx-7 iLzyob"
+                  id="email"
+                  maxLength="60"
+                  name="email"
+                  onChange={[Function]}
+                  placeholder="Example: jackson11@mail.com"
+                  required={true}
+                  type="email"
+                  value=""
+                />
+              </AddReviewForm__NameEmailInput>
             </div>
           </AddReviewForm__VerticalWrapper>
         </div>
-      </AddReviewForm__HorizontalWrapper>
+      </AddReviewForm__NameEmailWraper>
       <AddReviewForm__SytledSubmitButton
         name="submit"
         type="submit"
       >
         <input
-          className="AddReviewForm__SytledSubmitButton-kljszx-5 fTAtLV"
+          className="AddReviewForm__SytledSubmitButton-kljszx-8 cxbQoL"
           name="submit"
           type="submit"
         />
@@ -671,7 +763,7 @@ exports[`Add Review Form test Should render correctly Add Review Form 1`] = `
         type="button"
       >
         <button
-          className="AddReviewForm__SytledButton-kljszx-6 hmrOIX"
+          className="AddReviewForm__SytledButton-kljszx-9 bXkUT"
           type="button"
         >
           Cancel

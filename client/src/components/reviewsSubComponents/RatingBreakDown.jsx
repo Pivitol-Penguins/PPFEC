@@ -66,6 +66,7 @@ class RatingBreakDown extends React.Component {
     this.state = {
       stars: [5, 4, 3, 2, 1],
       isCountTagOn: false,
+      hoverBar: null,
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.getRecommendRate = this.getRecommendRate.bind(this);
@@ -99,10 +100,13 @@ class RatingBreakDown extends React.Component {
     / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100);
   }
 
-  showRatingCount() {
-    this.setState((prevState) => ({
-      isCountTagOn: !prevState.isCountTagOn,
-    }));
+  showRatingCount(event) {
+    // event.persist();
+    // console.log(event.target.id);
+    this.setState({
+      hoverBar: Number(event.target.id),
+    });
+    event.preventDefault();
   }
 
   render() {
@@ -120,18 +124,18 @@ class RatingBreakDown extends React.Component {
       <div>
         <div>
           {stars.map((star) => (
-            <BreakDownWrapper key={star + this.getPercentage(star)}>
+            <BreakDownWrapper key={star + this.getPercentage(star)}
+            id={star}
+            onMouseEnter={(e) => this.showRatingCount(e)}
+            onMouseLeave={() => this.setState({hoverBar: null})}
+            >
               <ClickTag onClick={(e) => this.handleStarFilterClick(e, star)}>
                 {star}
                 {' '}
                 stars
               </ClickTag>
-              {/* `${this.props.reviewsMeta.ratings[star]} people vote` */}
-              <BarContainer
-                onMouseEnter={this.showRatingCount}
-                onMouseLeave={this.showRatingCount}
-              >
-                {this.state.isCountTagOn
+              <BarContainer>
+                {this.state.hoverBar === star
                 && <CountTag ratingCount={this.props.reviewsMeta.ratings[star]} />}
                 <Background />
                 <Percentage percent={this.getPercentage(star)} />

@@ -1,9 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import waitUntil from "async-wait-until";
+import MockAdapter from "axios-mock-adapter";
+import axios from "axios";
+import _ from "lodash";
 import ReviewTile from '../../client/src/components/reviewsSubComponents/ReviewTile.jsx';
 
 describe('ReviewTile Component', () => {
+  jest.mock('axios', () => ({
+    __esModule: true,
+    default: jest.fn(),
+  }));
+
   const props = {
     review: {
       review_id: 147659,
@@ -37,18 +46,21 @@ describe('ReviewTile Component', () => {
   });
 
   // it('Should increment the helpfulness number when clicking "Yes" label', () => {
+  //   jest.spyOn(axios, 'dafault').mockResolvedValue({});
   //   const spyOnYesClick = jest.spyOn(ReviewTileComponent.instance(), 'handleClickYes');
-  //   const mockPreventDefault = jest.fn();
-  //   const mockPersist = jest.fn();
-  //   const mockEvent = {
-  //     preventDefault: mockPreventDefault,
-  //     persist: mockPersist,
-  //   };
+  //   // const mockPreventDefault = jest.fn();
+  //   // const mockPersist = jest.fn();
+  //   // const mockEvent = {
+  //   //   preventDefault: mockPreventDefault,
+  //   //   persist: mockPersist,
+  //   // };
   //   const yesClick = ReviewTileComponent.find('.not-click').at(0);
   //   ReviewTileComponent.instance().handleClickYes();
   //   yesClick.simulate('click');
   //   yesClick.props('onClick');
   //   expect(spyOnYesClick).toBeCalled();
-  //   expect(ReviewTileComponent.state('yesNum')).toBe(props.review.helpfulness + 1);
+  //   process.nextTick(() => {
+  //     expect(ReviewTileComponent.state('yesNum')).toBe(props.review.helpfulness + 1);
+  //   });
   // });
 });
