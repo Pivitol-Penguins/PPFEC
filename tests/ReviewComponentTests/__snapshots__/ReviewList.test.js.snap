@@ -186,7 +186,7 @@ exports[`ReviewList Component Should render correctly 1`] = `
               >
                 <ReviewTile__StarDateWrapper>
                   <div
-                    className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+                    className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 hAYJuv"
                   >
                     <RatingStars
                       rating={5}
@@ -271,7 +271,7 @@ exports[`ReviewList Component Should render correctly 1`] = `
                 </div>
                 <ReviewTile__ResponseWrapper>
                   <div
-                    className="ReviewTile__ResponseWrapper-sc-1vbuo4p-2 iCAzHl"
+                    className="ReviewTile__ResponseWrapper-sc-1vbuo4p-2 flpuKM"
                   >
                     <h4>
                       Response from seller
@@ -283,7 +283,7 @@ exports[`ReviewList Component Should render correctly 1`] = `
                 </ReviewTile__ResponseWrapper>
                 <ReviewTile__HelpfulnessWrapper>
                   <div
-                    className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+                    className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
                   >
                     Helpful?
                     <ReviewTile__ClickTag
@@ -345,7 +345,7 @@ exports[`ReviewList Component Should render correctly 1`] = `
               >
                 <ReviewTile__StarDateWrapper>
                   <div
-                    className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+                    className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 hAYJuv"
                   >
                     <RatingStars
                       rating={4}
@@ -430,7 +430,7 @@ exports[`ReviewList Component Should render correctly 1`] = `
                 </div>
                 <ReviewTile__HelpfulnessWrapper>
                   <div
-                    className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+                    className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
                   >
                     Helpful?
                     <ReviewTile__ClickTag

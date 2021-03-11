@@ -291,10 +291,16 @@ exports[`Review Component Should render correctly 1`] = `
                 <div>
                   <div>
                     <RatingBreakDown__BreakDownWrapper
+                      id={5}
                       key="14.090909090909092"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                     >
                       <div
                         className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={5}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                       >
                         <RatingBreakDown__ClickTag
                           onClick={[Function]}
@@ -310,7 +316,7 @@ exports[`Review Component Should render correctly 1`] = `
                         </RatingBreakDown__ClickTag>
                         <RatingBreakDown__BarContainer>
                           <div
-                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 czsjNT"
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
                           >
                             <RatingBreakDown__Background>
                               <div
@@ -329,10 +335,16 @@ exports[`Review Component Should render correctly 1`] = `
                       </div>
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
+                      id={4}
                       key="26.727272727272727"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                     >
                       <div
                         className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={4}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                       >
                         <RatingBreakDown__ClickTag
                           onClick={[Function]}
@@ -348,7 +360,7 @@ exports[`Review Component Should render correctly 1`] = `
                         </RatingBreakDown__ClickTag>
                         <RatingBreakDown__BarContainer>
                           <div
-                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 czsjNT"
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
                           >
                             <RatingBreakDown__Background>
                               <div
@@ -367,10 +379,16 @@ exports[`Review Component Should render correctly 1`] = `
                       </div>
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
+                      id={3}
                       key="16.636363636363633"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                     >
                       <div
                         className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={3}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                       >
                         <RatingBreakDown__ClickTag
                           onClick={[Function]}
@@ -386,7 +404,7 @@ exports[`Review Component Should render correctly 1`] = `
                         </RatingBreakDown__ClickTag>
                         <RatingBreakDown__BarContainer>
                           <div
-                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 czsjNT"
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
                           >
                             <RatingBreakDown__Background>
                               <div
@@ -405,10 +423,16 @@ exports[`Review Component Should render correctly 1`] = `
                       </div>
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
+                      id={2}
                       key="33.81818181818181"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                     >
                       <div
                         className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={2}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                       >
                         <RatingBreakDown__ClickTag
                           onClick={[Function]}
@@ -424,7 +448,7 @@ exports[`Review Component Should render correctly 1`] = `
                         </RatingBreakDown__ClickTag>
                         <RatingBreakDown__BarContainer>
                           <div
-                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 czsjNT"
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
                           >
                             <RatingBreakDown__Background>
                               <div
@@ -443,10 +467,16 @@ exports[`Review Component Should render correctly 1`] = `
                       </div>
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
+                      id={1}
                       key="23.727272727272727"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
                     >
                       <div
                         className="RatingBreakDown__BreakDownWrapper-sc-1fiadg8-0 issHiB"
+                        id={1}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
                       >
                         <RatingBreakDown__ClickTag
                           onClick={[Function]}
@@ -462,7 +492,7 @@ exports[`Review Component Should render correctly 1`] = `
                         </RatingBreakDown__ClickTag>
                         <RatingBreakDown__BarContainer>
                           <div
-                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 czsjNT"
+                            className="RatingBreakDown__BarContainer-sc-1fiadg8-1 hPWLaS"
                           >
                             <RatingBreakDown__Background>
                               <div
@@ -905,7 +935,7 @@ exports[`Review Component Should render correctly 1`] = `
                         >
                           <ReviewTile__StarDateWrapper>
                             <div
-                              className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+                              className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 hAYJuv"
                             >
                               <RatingStars
                                 rating={2}
@@ -990,7 +1020,7 @@ exports[`Review Component Should render correctly 1`] = `
                           </div>
                           <ReviewTile__HelpfulnessWrapper>
                             <div
-                              className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+                              className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
                             >
                               Helpful?
                               <ReviewTile__ClickTag
@@ -1053,7 +1083,7 @@ exports[`Review Component Should render correctly 1`] = `
                         >
                           <ReviewTile__StarDateWrapper>
                             <div
-                              className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+                              className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 hAYJuv"
                             >
                               <RatingStars
                                 rating={1}
@@ -1135,7 +1165,7 @@ exports[`Review Component Should render correctly 1`] = `
                           </p>
                           <ReviewTile__HelpfulnessWrapper>
                             <div
-                              className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+                              className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
                             >
                               Helpful?
                               <ReviewTile__ClickTag

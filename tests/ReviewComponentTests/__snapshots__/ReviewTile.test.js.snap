@@ -35,7 +35,7 @@ exports[`ReviewTile Component Should render correctly 1`] = `
     >
       <ReviewTile__StarDateWrapper>
         <div
-          className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+          className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 hAYJuv"
         >
           <RatingStars
             rating={2}
@@ -144,7 +144,7 @@ exports[`ReviewTile Component Should render correctly 1`] = `
       </div>
       <ReviewTile__HelpfulnessWrapper>
         <div
-          className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+          className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
         >
           Helpful?
           <ReviewTile__ClickTag
