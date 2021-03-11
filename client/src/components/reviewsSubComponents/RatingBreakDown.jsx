@@ -65,7 +65,6 @@ class RatingBreakDown extends React.Component {
     super(props);
     this.state = {
       stars: [5, 4, 3, 2, 1],
-      isCountTagOn: false,
       hoverBar: null,
     };
     this.getPercentage = this.getPercentage.bind(this);
@@ -75,7 +74,6 @@ class RatingBreakDown extends React.Component {
   }
 
   handleStarFilterClick(event, star) {
-    // console.log('IN RATING BREAK DOWN', this.state.filter);
     this.props.starFilter(star);
   }
 
@@ -83,21 +81,26 @@ class RatingBreakDown extends React.Component {
     const { reviewsMeta } = this.props;
     let totalRating = 0;
     let percentage = 0;
-    const stars = Object.keys(reviewsMeta.ratings);
-    stars.forEach((star) => {
-      totalRating += Number(reviewsMeta.ratings[star]);
-    });
-    if (!stars.includes(starNumber.toString())) {
-      return percentage;
+    if (reviewsMeta.ratings !== {}) {
+      const stars = Object.keys(reviewsMeta.ratings);
+      stars.forEach((star) => {
+        totalRating += Number(reviewsMeta.ratings[star]);
+      });
+      percentage = (reviewsMeta.ratings[starNumber] / totalRating) * 100;
     }
-    percentage = (reviewsMeta.ratings[starNumber] / totalRating) * 100;
+    // if (!stars.includes(starNumber.toString())) {
+    //   return percentage;
+    // }
     return percentage;
   }
 
   getRecommendRate() {
     const { reviewsMeta } = this.props;
-    return Math.round((Number(reviewsMeta.recommended.true)
-    / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100);
+    if (reviewsMeta.recommended !== {}) {
+      return Math.round((Number(reviewsMeta.recommended.true)
+        / (Number(reviewsMeta.recommended.true) + Number(reviewsMeta.recommended.false))) * 100);
+    }
+    return 0;
   }
 
   showRatingCount(event) {
@@ -120,28 +123,39 @@ class RatingBreakDown extends React.Component {
         />
       );
     }
+
     return (
       <div>
         <div>
-          {stars.map((star) => (
-            <BreakDownWrapper key={star + this.getPercentage(star)}
-            id={star}
-            onMouseEnter={(e) => this.showRatingCount(e)}
-            onMouseLeave={() => this.setState({hoverBar: null})}
-            >
-              <ClickTag onClick={(e) => this.handleStarFilterClick(e, star)}>
-                {star}
-                {' '}
-                stars
-              </ClickTag>
-              <BarContainer>
-                {this.state.hoverBar === star
-                && <CountTag ratingCount={this.props.reviewsMeta.ratings[star]} />}
-                <Background />
-                <Percentage percent={this.getPercentage(star)} />
-              </BarContainer>
-            </BreakDownWrapper>
-          ))}
+          {stars.map((star) => {
+            let ratingCount;
+            if (Object.keys(this.props.reviewsMeta.ratings).length > 0) {
+              ratingCount = this.props.reviewsMeta.ratings[star];
+            } else {
+              ratingCount = 0;
+            }
+            return (
+              <BreakDownWrapper
+                key={star}
+                id={star}
+                onMouseEnter={(e) => this.showRatingCount(e)}
+                onMouseLeave={() => this.setState({ hoverBar: null })}
+              >
+                <ClickTag onClick={(e) => this.handleStarFilterClick(e, star)}>
+                  {star}
+                  {' '}
+                  stars
+                </ClickTag>
+                <BarContainer>
+                  {this.state.hoverBar === star
+                  && <CountTag ratingCount={ratingCount} />}
+                  <Background />
+                  <Percentage percent={this.getPercentage(star)} />
+                </BarContainer>
+              </BreakDownWrapper>
+            );
+          })}
+
         </div>
         {filterMessage}
         <RecommendPercentage>

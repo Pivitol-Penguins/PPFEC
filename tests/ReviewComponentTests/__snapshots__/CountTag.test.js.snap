@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountTag Component Should render correctly 1`] = `
+<CountTag
+  debug={true}
+  ratingCount={4}
+>
+  <CountTag__StyledTag>
+    <div
+      className="CountTag__StyledTag-sc-169gb2y-0 jPeXft"
+    >
+      4
+       
+      votes
+    </div>
+  </CountTag__StyledTag>
+</CountTag>
+`;
