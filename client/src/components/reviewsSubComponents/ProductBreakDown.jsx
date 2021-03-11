@@ -52,7 +52,13 @@ const ProductBreakDown = ({ reviewsMeta }) => {
   const characteristics = Object.keys(reviewsMeta.characteristics);
   return (
     characteristics.map((characteristic) => {
-      const charValue = (Number(reviewsMeta.characteristics[characteristic].value / 5) * 100);
+      let value;
+      if (reviewsMeta.characteristics[characteristic].value !== null) {
+        value = reviewsMeta.characteristics[characteristic].value;
+      } else {
+        value = 0;
+      }
+      const charValue = ((value / 5) * 100);
       const ranges = getRange(characteristic);
       return (
         <CharacBreakDownWrapper key={reviewsMeta.characteristics[characteristic].id}>

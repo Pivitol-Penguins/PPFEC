@@ -18,14 +18,17 @@ const SummaryWrapper = styled.div`
 const RatingSummary = ({ reviewsMeta }) => {
   let totalRating = 0;
   let totalRatingCount = 0;
-  let avgRating = 0;
-  if (reviewsMeta !== {}) {
-    const stars = Object.keys(reviewsMeta.ratings);
+  let avgRating;
+
+  const stars = Object.keys(reviewsMeta.ratings);
+  if (stars.length !== 0) {
     stars.forEach((star) => {
       totalRating += (Number(star) * Number(reviewsMeta.ratings[star]));
       totalRatingCount += Number(reviewsMeta.ratings[star]);
     });
     avgRating = (Math.round((totalRating / totalRatingCount) * 10) / 10).toFixed(1);
+  } else {
+    avgRating = '0.0';
   }
   return (
     <SummaryWrapper>

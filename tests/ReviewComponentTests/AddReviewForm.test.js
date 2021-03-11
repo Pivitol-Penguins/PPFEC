@@ -15,9 +15,19 @@ describe('Add Review Form test', () => {
       Quality: { id: 50086, value: '3.1081081081081081' },
     },
   };
+
+  const ratingStarsProps = {
+    selectedStars: [1, 2, 3, 4, 5],
+    rating: 4,
+    hovered: 0,
+    selectedIcon: '★',
+    deselectedIcon: '☆',
+  };
   let AddReviewFormComponent;
+  let RatingStarsComponent;
   beforeEach(() => {
     AddReviewFormComponent = mount(<AddReviewForm {...props} debug />);
+    RatingStarsComponent = mount(<RatingStars {...ratingStarsProps} debug />);
   });
 
   afterEach(() => {
@@ -61,7 +71,6 @@ describe('Add Review Form test', () => {
   });
 
   it('The form should have a handle submit function', () => {
-    // const mockSubmit = jest.fn();
     const spyOnSubmit = jest.spyOn(AddReviewFormComponent.instance(), 'handleSubmit');
     const mockPreventDefault = jest.fn();
     const mockEvent = {
@@ -70,4 +79,11 @@ describe('Add Review Form test', () => {
     AddReviewFormComponent.instance().handleSubmit(mockEvent);
     expect(spyOnSubmit).toBeCalled();
   });
+
+  // it('Should have the correct rating when user click on the stars', () => {
+  //   const spyOnRatingStarClick = jest.spyOn(RatingStarsComponent.instance(), 'setRating');
+  //   const mockPreventDefault = jest.fn();
+
+  //   expect(AddReviewFormComponent.state('rating')).toBe(ratingStarsProps.rating);
+  // });
 });

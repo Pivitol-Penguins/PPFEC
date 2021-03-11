@@ -176,7 +176,8 @@ class Reviews extends React.Component {
     event.preventDefault();
   }
 
-  addReviewToggle() {
+  addReviewToggle(event) {
+    event.stopPropagation();
     this.setState((prevState) => ({
       addReviewShow: !prevState.addReviewShow,
     }));
@@ -185,41 +186,54 @@ class Reviews extends React.Component {
   render() {
     // console.log(this.props.reviewsMeta);
     // console.log(this.props.reviews.results);
-    if (this.props.reviewsMeta !== {} && this.props.reviews.results.length > 0) {
-      return (
-        <ReviewsContainer id="RATINGS">
-          <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
-          <Wrapper>
-            <RatingWrapper>
-              <RatingSummary reviewsMeta={this.state.reviewsMeta} />
-              <RatingBreakDown
-                reviewsMeta={this.state.reviewsMeta}
-                starFilter={this.starFilter}
-                removeAllFilter={this.removeAllFilter}
-                filterStars={this.state.filterStars}
-              />
-              <ProductBreakDown
-                reviewsMeta={this.state.reviewsMeta}
-              />
-            </RatingWrapper>
-            <ReviewsList
-              loadFirstTwoReviews={this.loadFirstTwoReviews}
-              fullreviewsArr={this.state.fullreviewsArr}
-              reviews={this.state.reviews}
-              reviewsMeta={this.state.reviewsMeta}
-              loadMoreReviews={this.loadMoreReviews}
-              sortSelected={this.sortSelected}
-              addReviewToggle={this.addReviewToggle}
-              addReviewShow={this.state.addReviewShow}
-              toggleModal={this.toggleModal}
-            />
-          </Wrapper>
-        </ReviewsContainer>
-      );
-    }
     return (
-      <div>Loading Data</div>
+      <ReviewsContainer id="RATINGS">
+        <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
+        <Wrapper>
+          <RatingWrapper>
+            <RatingSummary reviewsMeta={this.state.reviewsMeta} />
+            <RatingBreakDown
+              reviewsMeta={this.state.reviewsMeta}
+              starFilter={this.starFilter}
+              removeAllFilter={this.removeAllFilter}
+              filterStars={this.state.filterStars}
+            />
+            <ProductBreakDown
+              reviewsMeta={this.state.reviewsMeta}
+            />
+          </RatingWrapper>
+          <ReviewsList
+            loadFirstTwoReviews={this.loadFirstTwoReviews}
+            fullreviewsArr={this.state.fullreviewsArr}
+            reviews={this.state.reviews}
+            reviewsMeta={this.state.reviewsMeta}
+            loadMoreReviews={this.loadMoreReviews}
+            sortSelected={this.sortSelected}
+            addReviewToggle={this.addReviewToggle}
+            addReviewShow={this.state.addReviewShow}
+            toggleModal={this.toggleModal}
+          />
+        </Wrapper>
+      </ReviewsContainer>
     );
+    // }
+    // const noReviewsMeta = {
+    //   characteristics: {
+    //     Comfort: { id: 3255413, value: '2.5178571428571429' },
+    //     Fit: { id: 3255414, value: '2.4695652173913043' },
+    //     Length: { id: 3255415, value: '2.4336283185840708' },
+    //     Quality: { id: 3255410, value: '2.9622641509433962' },
+    //     Size: { id: 3255412, value: '0' },
+    //   },
+    //   product_id: this.state.reviewsMeta.product_id,
+    //   ratings: {
+    //     0: '0', 1: '0', 2: '0', 3: '0', 4: '0', 5: '0',
+    //   },
+    //   recommended: { false: '0', true: '0' },
+    // };
+    // return (
+    //   <div>Loading Data</div>
+    // );
   }
 }
 
