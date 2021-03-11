@@ -471,21 +471,18 @@ exports[`ReviewList Component Should render correctly 1`] = `
       </ReviewsList__ListWrapper>
       <ReviewsList__ButtonWrapper>
         <div
-          className="ReviewsList__ButtonWrapper-sc-1ulmjy1-1 kBwdVl"
+          className="ReviewsList__ButtonWrapper-sc-1ulmjy1-1 gExWQo"
         >
           <ReviewsList__ReviewButton>
             <button
-              className="ReviewsList__ReviewButton-sc-1ulmjy1-3 CnZqw"
+              className="ReviewsList__ReviewButton-sc-1ulmjy1-3 jjgJVM"
             >
               MORE REVIEWS
             </button>
           </ReviewsList__ReviewButton>
-          <ReviewsList__ReviewButton
-            onClick={[Function]}
-          >
+          <ReviewsList__ReviewButton>
             <button
-              className="ReviewsList__ReviewButton-sc-1ulmjy1-3 CnZqw"
-              onClick={[Function]}
+              className="ReviewsList__ReviewButton-sc-1ulmjy1-3 jjgJVM"
             >
               ADD A REVIEW
             </button>
