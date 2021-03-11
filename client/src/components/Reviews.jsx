@@ -33,6 +33,7 @@ const Wrapper = styled.div`
 `;
 
 const RatingWrapper = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   flex-basis: 35%;
@@ -54,11 +55,12 @@ class Reviews extends React.Component {
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
-      product_id: this.props.product,
-      entriesCount: this.props.count,
-      page: this.props.page,
-      sortSelection: 'relavant',
-      sortOn: false,
+      isModalOpen: false,
+      // product_id: this.props.product,
+      // entriesCount: this.props.count,
+      // page: this.props.page,
+      // sortSelection: 'relavant',
+      // sortOn: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
@@ -75,10 +77,9 @@ class Reviews extends React.Component {
   }
 
   loadFirstTwoReviews(data) {
-    // console.log(this.props.reviews);
     const displayArr = [];
     let tileCount = 0;
-    while (tileCount < this.state.displayLimit) {
+    while (tileCount < this.state.displayLimit && tileCount < data.length) {
       displayArr.push(data[tileCount]);
       tileCount += 1;
     }
@@ -166,7 +167,6 @@ class Reviews extends React.Component {
       })
       .catch((err) => { throw err; })
       .then(() => {
-        // console.log(this.state.originalArr);
         this.setState({
           filterStars: [],
           filterArr: [],
@@ -177,21 +177,15 @@ class Reviews extends React.Component {
   }
 
   addReviewToggle() {
-    if (!this.state.addReviewShow) {
-      this.setState({
-        addReviewShow: true,
-      });
-    } else {
-      this.setState({
-        addReviewShow: false,
-      });
-    }
+    this.setState((prevState) => ({
+      addReviewShow: !prevState.addReviewShow,
+    }));
   }
 
   render() {
-    if (this.state.reviews.length > 0 && this.state.fullreviewsArr.length > 0) {
-      // console.log(this.state.fullreviewsArr);
-      // console.log(this.state.reviews);
+    // console.log(this.props.reviewsMeta);
+    // console.log(this.props.reviews.results);
+    if (this.props.reviewsMeta !== {} && this.props.reviews.results.length > 0) {
       return (
         <ReviewsContainer id="RATINGS">
           <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
@@ -217,6 +211,7 @@ class Reviews extends React.Component {
               sortSelected={this.sortSelected}
               addReviewToggle={this.addReviewToggle}
               addReviewShow={this.state.addReviewShow}
+              toggleModal={this.toggleModal}
             />
           </Wrapper>
         </ReviewsContainer>

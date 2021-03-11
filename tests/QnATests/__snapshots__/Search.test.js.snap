@@ -3,6 +3,7 @@
 exports[`One Search Test Should render correctly 1`] = `
 <Search
   debug={true}
+  reset={[Function]}
 >
   <Search__Wrapper>
     <div
@@ -15,7 +16,7 @@ exports[`One Search Test Should render correctly 1`] = `
         value=""
       >
         <input
-          className="Search__Input-np7a72-0 gPBnhQ"
+          className="Search__Input-np7a72-0 iZcJlO"
           onChange={[Function]}
           placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
           type="text"
@@ -24,7 +25,7 @@ exports[`One Search Test Should render correctly 1`] = `
       </Search__Input>
       <Search__Magnify>
         <div
-          className="Search__Magnify-np7a72-2 flBnwx"
+          className="Search__Magnify-np7a72-2 jCFwuN"
         >
           ⚲
         </div>

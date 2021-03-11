@@ -1,0 +1,495 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewList Component Should render correctly 1`] = `
+<ReviewsList
+  debug={true}
+  fullreviewsArr={
+    Array [
+      Object {
+        "body": "Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.",
+        "date": "2021-01-26T00:00:00.000Z",
+        "helpfulness": 12,
+        "photos": Array [],
+        "rating": 2,
+        "recommend": true,
+        "response": null,
+        "review_id": 147659,
+        "reviewer_name": "Shyanne6",
+        "summary": "Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.",
+      },
+      Object {
+        "body": "Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.",
+        "date": "2021-01-20T00:00:00.000Z",
+        "helpfulness": 25,
+        "photos": Array [],
+        "rating": 1,
+        "recommend": false,
+        "response": null,
+        "review_id": 147667,
+        "reviewer_name": "Janiya_Frami98",
+        "summary": "Minima repudiandae eligendi nemo sit quia aspernatur.",
+      },
+      Object {
+        "body": "Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.",
+        "date": "2021-01-10T00:00:00.000Z",
+        "helpfulness": 27,
+        "photos": Array [],
+        "rating": 5,
+        "recommend": true,
+        "response": "\\"Cumque aspernatur illum velit dolores minus.\\"",
+        "review_id": 147660,
+        "reviewer_name": "Celestine_Glover",
+        "summary": "Neque repellendus modi eius quaerat ab rerum est animi praesentium.",
+      },
+      Object {
+        "body": "Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.",
+        "date": "2020-12-22T00:00:00.000Z",
+        "helpfulness": 28,
+        "photos": Array [],
+        "rating": 4,
+        "recommend": true,
+        "response": null,
+        "review_id": 147676,
+        "reviewer_name": "Dameon63",
+        "summary": "Officia reiciendis quaerat nam tempore ut ut numquam ut.",
+      },
+    ]
+  }
+  reviews={
+    Array [
+      Object {
+        "body": "Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.",
+        "date": "2021-01-10T00:00:00.000Z",
+        "helpfulness": 27,
+        "photos": Array [],
+        "rating": 5,
+        "recommend": true,
+        "response": "\\"Cumque aspernatur illum velit dolores minus.\\"",
+        "review_id": 147660,
+        "reviewer_name": "Celestine_Glover",
+        "summary": "Neque repellendus modi eius quaerat ab rerum est animi praesentium.",
+      },
+      Object {
+        "body": "Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.",
+        "date": "2020-12-22T00:00:00.000Z",
+        "helpfulness": 28,
+        "photos": Array [],
+        "rating": 4,
+        "recommend": true,
+        "response": null,
+        "review_id": 147676,
+        "reviewer_name": "Dameon63",
+        "summary": "Officia reiciendis quaerat nam tempore ut ut numquam ut.",
+      },
+    ]
+  }
+  reviewsMeta={
+    Object {
+      "characteristics": Object {
+        "Comfort": Object {
+          "id": 50011,
+          "value": "2.8636363636363636",
+        },
+        "Fit": Object {
+          "id": 50009,
+          "value": "3.0454545454545455",
+        },
+        "Length": Object {
+          "id": 50010,
+          "value": "3.2727272727272727",
+        },
+        "Quality": Object {
+          "id": 50012,
+          "value": "3.1818181818181818",
+        },
+      },
+      "product_id": "14930",
+      "ratings": Object {
+        "1": "5",
+        "2": "7",
+        "3": "3",
+        "4": "5",
+        "5": "2",
+      },
+      "recommended": Object {
+        "false": "5",
+        "true": "17",
+      },
+    }
+  }
+>
+  <ReviewsList__ReviewsWrapper>
+    <div
+      className="ReviewsList__ReviewsWrapper-sc-1ulmjy1-0 eNhjVC"
+    >
+      <ReviewsList__ReviewSortWrapper>
+        <div
+          className="ReviewsList__ReviewSortWrapper-sc-1ulmjy1-4 ctmMjX"
+        >
+          <h2>
+            22
+             
+            reviews, sorted by
+          </h2>
+          <ReviewsList__SelectTag
+            onChange={[Function]}
+          >
+            <select
+              className="ReviewsList__SelectTag-sc-1ulmjy1-5 gUTFzi"
+              onChange={[Function]}
+            >
+              <option
+                defaultValue="relevant"
+              >
+                Relevant
+              </option>
+              <option
+                value="helpful"
+              >
+                Helpful
+              </option>
+              <option
+                value="newest"
+              >
+                Newest
+              </option>
+            </select>
+          </ReviewsList__SelectTag>
+        </div>
+      </ReviewsList__ReviewSortWrapper>
+      <ReviewsList__ListWrapper>
+        <div
+          className="ReviewsList__ListWrapper-sc-1ulmjy1-2 qQXjV"
+        >
+          <ReviewTile
+            key="147660"
+            review={
+              Object {
+                "body": "Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.",
+                "date": "2021-01-10T00:00:00.000Z",
+                "helpfulness": 27,
+                "photos": Array [],
+                "rating": 5,
+                "recommend": true,
+                "response": "\\"Cumque aspernatur illum velit dolores minus.\\"",
+                "review_id": 147660,
+                "reviewer_name": "Celestine_Glover",
+                "summary": "Neque repellendus modi eius quaerat ab rerum est animi praesentium.",
+              }
+            }
+          >
+            <ReviewTile__TileContainer
+              reportClick={false}
+            >
+              <div
+                className="ReviewTile__TileContainer-sc-1vbuo4p-0 izQjHl"
+              >
+                <ReviewTile__StarDateWrapper>
+                  <div
+                    className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+                  >
+                    <RatingStars
+                      rating={5}
+                    >
+                      <div>
+                        <RatingStars__StarsContainer>
+                          <div
+                            className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG"
+                          >
+                            <RatingStars__StarsContainer
+                              className="top"
+                              rating={5}
+                            >
+                              <div
+                                className="RatingStars__StarsContainer-sc-1djn8fm-0 VrplK top"
+                              >
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                              </div>
+                            </RatingStars__StarsContainer>
+                            <RatingStars__StarsContainer
+                              className="bottom"
+                            >
+                              <div
+                                className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG bottom"
+                              >
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                              </div>
+                            </RatingStars__StarsContainer>
+                          </div>
+                        </RatingStars__StarsContainer>
+                      </div>
+                    </RatingStars>
+                    <span>
+                      Celestine_Glover
+                      ,
+                       
+                      January
+                       
+                      10
+                      ,
+                       
+                      2021
+                    </span>
+                  </div>
+                </ReviewTile__StarDateWrapper>
+                <h3>
+                  Neque repellendus modi eius quaerat ab rerum est animi praesentium.
+                </h3>
+                <p>
+                  Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.
+                </p>
+                <div>
+                  ✓ I recommend this product
+                </div>
+                <ReviewTile__ResponseWrapper>
+                  <div
+                    className="ReviewTile__ResponseWrapper-sc-1vbuo4p-2 iCAzHl"
+                  >
+                    <h4>
+                      Response from seller
+                    </h4>
+                    <p>
+                      "Cumque aspernatur illum velit dolores minus."
+                    </p>
+                  </div>
+                </ReviewTile__ResponseWrapper>
+                <ReviewTile__HelpfulnessWrapper>
+                  <div
+                    className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+                  >
+                    Helpful?
+                    <ReviewTile__ClickTag
+                      className="not-click"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                        onClick={[Function]}
+                      >
+                        Yes
+                         
+                        (
+                        27
+                        )
+                      </div>
+                    </ReviewTile__ClickTag>
+                    <div>
+                        |  
+                    </div>
+                    <ReviewTile__ClickTag
+                      className="not-click"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                        onClick={[Function]}
+                      >
+                        Report
+                      </div>
+                    </ReviewTile__ClickTag>
+                  </div>
+                </ReviewTile__HelpfulnessWrapper>
+              </div>
+            </ReviewTile__TileContainer>
+          </ReviewTile>
+          <ReviewTile
+            key="147676"
+            review={
+              Object {
+                "body": "Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.",
+                "date": "2020-12-22T00:00:00.000Z",
+                "helpfulness": 28,
+                "photos": Array [],
+                "rating": 4,
+                "recommend": true,
+                "response": null,
+                "review_id": 147676,
+                "reviewer_name": "Dameon63",
+                "summary": "Officia reiciendis quaerat nam tempore ut ut numquam ut.",
+              }
+            }
+          >
+            <ReviewTile__TileContainer
+              reportClick={false}
+            >
+              <div
+                className="ReviewTile__TileContainer-sc-1vbuo4p-0 izQjHl"
+              >
+                <ReviewTile__StarDateWrapper>
+                  <div
+                    className="ReviewTile__StarDateWrapper-sc-1vbuo4p-1 darHKr"
+                  >
+                    <RatingStars
+                      rating={4}
+                    >
+                      <div>
+                        <RatingStars__StarsContainer>
+                          <div
+                            className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG"
+                          >
+                            <RatingStars__StarsContainer
+                              className="top"
+                              rating={4}
+                            >
+                              <div
+                                className="RatingStars__StarsContainer-sc-1djn8fm-0 jmELFT top"
+                              >
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                              </div>
+                            </RatingStars__StarsContainer>
+                            <RatingStars__StarsContainer
+                              className="bottom"
+                            >
+                              <div
+                                className="RatingStars__StarsContainer-sc-1djn8fm-0 cYnGWG bottom"
+                              >
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                                <span>
+                                  ★
+                                </span>
+                              </div>
+                            </RatingStars__StarsContainer>
+                          </div>
+                        </RatingStars__StarsContainer>
+                      </div>
+                    </RatingStars>
+                    <span>
+                      Dameon63
+                      ,
+                       
+                      December
+                       
+                      22
+                      ,
+                       
+                      2020
+                    </span>
+                  </div>
+                </ReviewTile__StarDateWrapper>
+                <h3>
+                  Officia reiciendis quaerat nam tempore ut ut numquam ut.
+                </h3>
+                <p>
+                  Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.
+                </p>
+                <div>
+                  ✓ I recommend this product
+                </div>
+                <ReviewTile__HelpfulnessWrapper>
+                  <div
+                    className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 doSZNz"
+                  >
+                    Helpful?
+                    <ReviewTile__ClickTag
+                      className="not-click"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                        onClick={[Function]}
+                      >
+                        Yes
+                         
+                        (
+                        28
+                        )
+                      </div>
+                    </ReviewTile__ClickTag>
+                    <div>
+                        |  
+                    </div>
+                    <ReviewTile__ClickTag
+                      className="not-click"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="ReviewTile__ClickTag-sc-1vbuo4p-5 jSpjYR not-click"
+                        onClick={[Function]}
+                      >
+                        Report
+                      </div>
+                    </ReviewTile__ClickTag>
+                  </div>
+                </ReviewTile__HelpfulnessWrapper>
+              </div>
+            </ReviewTile__TileContainer>
+          </ReviewTile>
+        </div>
+      </ReviewsList__ListWrapper>
+      <ReviewsList__ButtonWrapper>
+        <div
+          className="ReviewsList__ButtonWrapper-sc-1ulmjy1-1 gExWQo"
+        >
+          <ReviewsList__ReviewButton>
+            <button
+              className="ReviewsList__ReviewButton-sc-1ulmjy1-3 jjgJVM"
+            >
+              MORE REVIEWS
+            </button>
+          </ReviewsList__ReviewButton>
+          <ReviewsList__ReviewButton>
+            <button
+              className="ReviewsList__ReviewButton-sc-1ulmjy1-3 jjgJVM"
+            >
+              ADD A REVIEW
+            </button>
+          </ReviewsList__ReviewButton>
+        </div>
+      </ReviewsList__ButtonWrapper>
+    </div>
+  </ReviewsList__ReviewsWrapper>
+</ReviewsList>
+`;

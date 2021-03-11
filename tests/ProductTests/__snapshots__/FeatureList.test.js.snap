@@ -6,12 +6,12 @@ exports[`FeaturesList Should render correctly 1`] = `
   features={
     Array [
       Object {
-        "feature": "Sole",
-        "value": "Rubber",
+        "feature": "Fabric",
+        "value": "100% Cotton",
       },
       Object {
-        "feature": "Mid-Sole",
-        "value": "ControlSupport Arch Bridge",
+        "feature": "Cut",
+        "value": "Skinny",
       },
       Object {
         "feature": "Material",
@@ -27,34 +27,34 @@ exports[`FeaturesList Should render correctly 1`] = `
       <Feature
         feature={
           Object {
-            "feature": "Sole",
-            "value": "Rubber",
+            "feature": "Fabric",
+            "value": "100% Cotton",
           }
         }
-        key="undefined + Sole"
+        key="undefined + Fabric"
       >
         <Feature__ListItem>
           <li
             className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
           >
-            Sole: Rubber
+            Fabric: 100% Cotton
           </li>
         </Feature__ListItem>
       </Feature>
       <Feature
         feature={
           Object {
-            "feature": "Mid-Sole",
-            "value": "ControlSupport Arch Bridge",
+            "feature": "Cut",
+            "value": "Skinny",
           }
         }
-        key="undefined + Mid-Sole"
+        key="undefined + Cut"
       >
         <Feature__ListItem>
           <li
             className="Feature__ListItem-sc-2j09xg-0 kZXsUK"
           >
-            Mid-Sole: ControlSupport Arch Bridge
+            Cut: Skinny
           </li>
         </Feature__ListItem>
       </Feature>

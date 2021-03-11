@@ -2,21 +2,16 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { mount } from 'enzyme';
-import styled from 'styled-components';
 
 import Price from '../../client/src/components/ProductSubs/Price.jsx';
-
-const NoSale = styled.p`
-  margin: 0;
-  margin-bottom: 1vh;
-  font-weight: 300;
-`;
+import ProductTestData from '../ProductTestData.js';
 
 describe('Price rendering', () => {
   const props = {
-    price: 40,
-    sale: null,
+    price: ProductTestData.productStyles.results[0].original_price,
+    sale: ProductTestData.productStyles.results[0].sale_price,
   };
+
   const PriceComponent = mount(<Price {...props} debug />);
   const text = (PriceComponent.find('p').text());
 
@@ -25,14 +20,14 @@ describe('Price rendering', () => {
   });
 
   it('render the price correctly', () => {
-    expect(text).toEqual("$40");
+    expect(text).toEqual('$40');
   });
 });
 
 describe('Price rendering', () => {
   const props = {
-    price: 40,
-    sale: 30,
+    price: ProductTestData.productStyles.results[2].original_price,
+    sale: ProductTestData.productStyles.results[2].sale_price,
   };
   const PriceComponent = mount(<Price {...props} debug />);
   const RegPrice = (PriceComponent.find('p').at(0).text());
@@ -43,10 +38,10 @@ describe('Price rendering', () => {
   });
 
   it('render the regular price correctly', () => {
-    expect(RegPrice).toEqual("$40");
+    expect(RegPrice).toEqual('$40');
   });
 
   it('render the sale price correctly', () => {
-    expect(SalePrice).toEqual("$30");
+    expect(SalePrice).toEqual('$35');
   });
 });

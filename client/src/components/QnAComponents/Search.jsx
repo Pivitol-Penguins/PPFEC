@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const Input = styled.input`
   border: 1px solid #424242;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   width: 60vw;
   z-index: 0;
   position: relative;
@@ -23,6 +25,7 @@ const Wrapper = styled.div`
 
 const Magnify = styled.div`
   text-align: right;
+  font-weight: 700;
   z-index: 50;
   position: relative;
   bottom: 5.5vh;

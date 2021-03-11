@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description Should render correctly 1`] = `
+<Description
+  debug={true}
+  info={
+    Object {
+      "description": "Whether you're a morning person or not.  Whether you're gym bound or not.  Everyone looks good in joggers.",
+      "slogan": "Make yourself a morning person",
+    }
+  }
+>
+  <Description__DescWrapper>
+    <div
+      className="Description__DescWrapper-sc-1a8vwln-0 iuTlrA"
+    >
+      <Description__Slogan>
+        <h1
+          className="Description__Slogan-sc-1a8vwln-1 ixJlAJ"
+        >
+          Make yourself a morning person
+        </h1>
+      </Description__Slogan>
+      <Description__Body>
+        <p
+          className="Description__Body-sc-1a8vwln-2 fDTlPa"
+        >
+          Whether you're a morning person or not.  Whether you're gym bound or not.  Everyone looks good in joggers.
+        </p>
+      </Description__Body>
+    </div>
+  </Description__DescWrapper>
+</Description>
+`;

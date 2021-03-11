@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`This is for the Question Form Should render properly 1`] = `
+exports[`This is for the Question Form Should render Question Form properly 1`] = `
 <FormQ
   name="Big Rock"
 >
@@ -19,11 +19,11 @@ exports[`This is for the Question Form Should render properly 1`] = `
           className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
         >
           <FormQuestion__Title>
-            <h4
+            <div
               className="FormQuestion__Title-sc-1wl3416-7"
             >
               HAVE A QUESTION?
-            </h4>
+            </div>
           </FormQuestion__Title>
           <FormQuestion__BodyT
             cols="55"
@@ -35,7 +35,7 @@ exports[`This is for the Question Form Should render properly 1`] = `
             value=""
           >
             <textarea
-              className="FormQuestion__BodyT-sc-1wl3416-2 ztRTr"
+              className="FormQuestion__BodyT-sc-1wl3416-2 HlKKD"
               cols="55"
               maxLength="1000"
               name="body"
@@ -52,11 +52,11 @@ exports[`This is for the Question Form Should render properly 1`] = `
           className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
         >
           <FormQuestion__Title>
-            <h4
+            <div
               className="FormQuestion__Title-sc-1wl3416-7"
             >
               MAY I HAVE YOUR NAME?
-            </h4>
+            </div>
           </FormQuestion__Title>
           <FormQuestion__Input
             name="name"
@@ -65,7 +65,7 @@ exports[`This is for the Question Form Should render properly 1`] = `
             value=""
           >
             <input
-              className="FormQuestion__Input-sc-1wl3416-1 bPcVJi"
+              className="FormQuestion__Input-sc-1wl3416-1 kRTTO"
               name="name"
               onChange={[Function]}
               placeholder="EXAMPLE: jackson11!"
@@ -86,11 +86,11 @@ exports[`This is for the Question Form Should render properly 1`] = `
           className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"
         >
           <FormQuestion__Title>
-            <h4
+            <div
               className="FormQuestion__Title-sc-1wl3416-7"
             >
               HOW ABOUT YOUR EMAIL?
-            </h4>
+            </div>
           </FormQuestion__Title>
           <FormQuestion__Input
             name="email"
@@ -100,7 +100,7 @@ exports[`This is for the Question Form Should render properly 1`] = `
             value=""
           >
             <input
-              className="FormQuestion__Input-sc-1wl3416-1 bPcVJi"
+              className="FormQuestion__Input-sc-1wl3416-1 kRTTO"
               name="email"
               onChange={[Function]}
               placeholder="WHY DID YOU LIKE THE PRODUCT OR NOT?"
@@ -130,7 +130,7 @@ exports[`This is for the Question Form Should render properly 1`] = `
                 onClick={[Function]}
               >
                 <button
-                  className="FormQuestion__BC-sc-1wl3416-4 TOPPO"
+                  className="FormQuestion__BC-sc-1wl3416-4 jMBDCe"
                   name="Submit"
                   onClick={[Function]}
                 >
@@ -148,7 +148,7 @@ exports[`This is for the Question Form Should render properly 1`] = `
                 onClick={[Function]}
               >
                 <button
-                  className="FormQuestion__BC-sc-1wl3416-4 TOPPO"
+                  className="FormQuestion__BC-sc-1wl3416-4 jMBDCe"
                   name="Exit"
                   onClick={[Function]}
                 >

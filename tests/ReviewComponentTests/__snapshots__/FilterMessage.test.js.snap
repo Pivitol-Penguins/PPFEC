@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterMessage Component Test Should render correctly 1`] = `
+<FilterMessage
+  debug={true}
+  filterStars={
+    Array [
+      1,
+      2,
+      4,
+    ]
+  }
+>
+  <FilterMessage__FilterMessageContainer>
+    <div
+      className="FilterMessage__FilterMessageContainer-pnsqsl-1 iypfKb"
+    >
+      <div>
+        <span>
+          Showing all 
+        </span>
+        <span
+          key="1"
+        >
+          1
+        </span>
+        <span
+          key="2"
+        >
+          ,
+          2
+        </span>
+        <span
+          key="4"
+        >
+           
+          &
+          4
+        </span>
+        <span>
+           star reviews
+        </span>
+      </div>
+      <FilterMessage__ClickTag>
+        <div
+          className="FilterMessage__ClickTag-pnsqsl-0 cuCkFY"
+        >
+          Remove All Filters
+        </div>
+      </FilterMessage__ClickTag>
+    </div>
+  </FilterMessage__FilterMessageContainer>
+</FilterMessage>
+`;
