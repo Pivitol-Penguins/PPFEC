@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import RatingStars from './RatingStars.jsx';
@@ -62,13 +61,6 @@ const StyledForm = styled.form`
   height: 100%;
   font-family: 'Lato', sans-serif;
   box-shadow: 0 19px 38px #6d6d6d, 0 15px 12px #6d6d6d;
-  &:focus {
-    ::-webkit-scrollbar {
-      display: none;
-    };
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 `;
 
 const NameEmailInput = styled.input`

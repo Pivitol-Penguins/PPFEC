@@ -26,25 +26,21 @@ const StyledModal = styled.div`
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 `;
 
-// const DarkLayer = styled.div`
-//   background-color: #424242;
-//   opacity: 0.6;
-//   position: absolute;
-//   z-index: 200;
-//   width: 100%;
-//   height: 100%;
-//   display: table;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     overflow: hidden;
-// `;
+const DarkLayer = styled.div`
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 4;
+background-color: #42424275;
+`;
 
 class Modal extends React.Component {
   render() {
     return ReactDOM.createPortal(
       <div>
-        {/* <DarkLayer /> */}
+        <DarkLayer />
         <StyledModal>
           <div>
             {this.props.content}

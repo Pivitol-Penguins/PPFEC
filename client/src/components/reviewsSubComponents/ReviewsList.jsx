@@ -84,10 +84,17 @@ const ModalBackground = styled.div`
   background-color: #42424275;
 `;
 
+const NoReviewWrapper = styled.div`
+  color: #424242;
+  font-family: 'Lato',sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+`;
+
 const ReviewsList = (props) => {
   // conditionlal rendering MORE VIEW button
   let moreReviewBtn;
-  if (props.reviews.length !== props.fullreviewsArr.length) {
+  if (props.reviews.length !== props.fullreviewsArr.length && props.reviews.length !== 0) {
     moreReviewBtn = (
       <ReviewButton
         onClick={props.loadMoreReviews}
@@ -100,34 +107,47 @@ const ReviewsList = (props) => {
   const { reviewsMeta } = props;
   // get totalReviewCount
   let totalReviewCount = 0;
-  Object.entries(reviewsMeta.ratings).forEach((rating) => {
-    totalReviewCount += Number(rating[1]);
-  });
+  if (reviewsMeta !== {}) {
+    Object.entries(reviewsMeta.ratings).forEach((rating) => {
+      totalReviewCount += Number(rating[1]);
+    });
+  }
+
+  let reviewTiles;
+  if (props.reviews.length === 0) {
+    reviewTiles = (<NoReviewWrapper>Be the first one to review the product</NoReviewWrapper>);
+  } else {
+    reviewTiles = (
+      <>
+        <ReviewSortWrapper>
+          <h2>
+            {totalReviewCount}
+            {' '}
+            reviews, sorted by
+          </h2>
+          <SelectTag onChange={(e) => { props.sortSelected(e); }}>
+            <option defaultValue="relevant">Relevant</option>
+            <option value="helpful">Helpful</option>
+            <option value="newest">Newest</option>
+          </SelectTag>
+        </ReviewSortWrapper>
+        <ListWrapper>
+          {props.reviews.map(((review) => (
+            <ReviewTile
+              key={review.review_id}
+              review={review}
+              loadReview={props.loadFirstTwoReviews}
+              handleClickYes={props.handleClickYes}
+            />
+          )))}
+        </ListWrapper>
+      </>
+    );
+  }
 
   return (
     <ReviewsWrapper>
-      <ReviewSortWrapper>
-        <h2>
-          {totalReviewCount}
-          {' '}
-          reviews, sorted by
-        </h2>
-        <SelectTag onChange={(e) => { props.sortSelected(e); }}>
-          <option defaultValue="relevant">Relevant</option>
-          <option value="helpful">Helpful</option>
-          <option value="newest">Newest</option>
-        </SelectTag>
-      </ReviewSortWrapper>
-      <ListWrapper>
-        {props.reviews.map(((review) => (
-          <ReviewTile
-            key={review.review_id}
-            review={review}
-            loadReview={props.loadFirstTwoReviews}
-            handleClickYes={props.handleClickYes}
-          />
-        )))}
-      </ListWrapper>
+      {reviewTiles}
       <ButtonWrapper>
         {moreReviewBtn}
         <ReviewButton onClick={props.addReviewToggle}>ADD A REVIEW</ReviewButton>
