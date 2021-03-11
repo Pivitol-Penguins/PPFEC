@@ -19,7 +19,7 @@ const Input = styled.input`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   width: 100%;
 `;
 
@@ -33,8 +33,8 @@ const Magnify = styled.div`
   width: 1rem;
   padding-right: 4vw;
   color: #424242;
-  -webkit-transform: rotate(-45deg); 
-  -moz-transform: rotate(-45deg); 
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   &:hover {

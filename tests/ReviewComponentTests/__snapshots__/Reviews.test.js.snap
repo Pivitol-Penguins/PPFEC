@@ -292,7 +292,7 @@ exports[`Review Component Should render correctly 1`] = `
                   <div>
                     <RatingBreakDown__BreakDownWrapper
                       id={5}
-                      key="14.090909090909092"
+                      key="5"
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
                     >
@@ -336,7 +336,7 @@ exports[`Review Component Should render correctly 1`] = `
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
                       id={4}
-                      key="26.727272727272727"
+                      key="4"
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
                     >
@@ -380,7 +380,7 @@ exports[`Review Component Should render correctly 1`] = `
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
                       id={3}
-                      key="16.636363636363633"
+                      key="3"
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
                     >
@@ -424,7 +424,7 @@ exports[`Review Component Should render correctly 1`] = `
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
                       id={2}
-                      key="33.81818181818181"
+                      key="2"
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
                     >
@@ -468,7 +468,7 @@ exports[`Review Component Should render correctly 1`] = `
                     </RatingBreakDown__BreakDownWrapper>
                     <RatingBreakDown__BreakDownWrapper
                       id={1}
-                      key="23.727272727272727"
+                      key="1"
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
                     >
