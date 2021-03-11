@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
 import Product from './Product.jsx';
-import QnA from './QnA.jsx';
-import Reviews from './Reviews.jsx';
+const QnA = React.lazy(() => import('./QnA.jsx'));
+const Reviews = React.lazy(() => import('./Reviews.jsx'));
+
+// import QnA from './QnA.jsx';
+// import Reviews from './Reviews.jsx';
 
 const Lead = styled.div`
   font-family: 'Lato', sans-serif;
@@ -57,7 +60,7 @@ const Footer = styled.div`
   width: 100vw;
   height: 2vh;
   max-height: 2vh;
-  background: #aeaeae;
+  background: #6d6d6d;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -148,8 +151,12 @@ class App extends React.Component {
             productDetails={this.state.productDetails}
             productStyles={this.state.productStyles}
           />
-          <QnA questions={this.state.questions} name={this.state.productDetails.name} />
-          <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <QnA questions={this.state.questions} name={this.state.productDetails.name} />
+          </Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
+          </Suspense>
           <Footer>
             <Creators>
               <FooterMessage>Created by:</FooterMessage>

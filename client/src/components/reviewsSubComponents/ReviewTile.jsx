@@ -15,6 +15,9 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
 
 const StarDateWrapper = styled.div`
+  font-size: 1rem;
+  font-weight: 300;
+  color: #424242;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -23,6 +26,9 @@ const StarDateWrapper = styled.div`
 const ResponseWrapper = styled.div`
   margin: 0 auto;
   background-color: bisque;
+  // font-size: 1rem;
+  // font-weight: 300;
+  color: #424242;
 `;
 
 const ReviewThumbsWrapper = styled.img`
@@ -39,6 +45,9 @@ const ReviewThumbsWrapper = styled.img`
 `;
 
 const HelpfulnessWrapper = styled.div`
+  font-size: 1rem;
+  font-weight: 300;
+  color: #424242;
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
@@ -157,7 +166,7 @@ class ReviewTile extends React.Component {
             {year}
           </span>
         </StarDateWrapper>
-        <h3>{summary}</h3>
+        <div>{summary}</div>
         <p>{body}</p>
         {photos}
         {recommendLabel}
