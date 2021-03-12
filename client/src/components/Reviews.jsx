@@ -163,7 +163,7 @@ class Reviews extends React.Component {
     event.preventDefault();
   }
 
-  addReviewToggle(event) {
+  addReviewToggle() {
     this.setState((prevState) => ({
       addReviewShow: !prevState.addReviewShow,
     }));
