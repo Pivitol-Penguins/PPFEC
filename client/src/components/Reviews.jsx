@@ -56,11 +56,6 @@ class Reviews extends React.Component {
       addReviewShow: false,
       filterStars: [],
       isModalOpen: false,
-      // product_id: this.props.product,
-      // entriesCount: this.props.count,
-      // page: this.props.page,
-      // sortSelection: 'relavant',
-      // sortOn: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
@@ -110,15 +105,11 @@ class Reviews extends React.Component {
         ...prevState.originalArr.filter((review) => (review.rating === star))],
       filterStars: [...prevState.filterStars, star],
     }), () => {
-      // console.log('add fullArr', this.state.fullreviewsArr);
       this.loadFirstTwoReviews(this.state.filterArr);
-      // console.log('add', this.state.filterArr);
-      // console.log('add', this.state.filterStars);
     });
   }
 
   removeOneFilter(star) {
-    // console.log('remove', star);
     this.setState((prevState) => {
       const index = prevState.filterStars.indexOf(star);
       prevState.filterStars.splice(index, 1);
@@ -129,20 +120,16 @@ class Reviews extends React.Component {
     }, () => {
       if (this.state.filterArr.length === 0 || this.state.filterStars.length === 0) {
         this.loadFirstTwoReviews(this.state.originalArr);
-        // this.loadFirstTwoReviews(this.props.reviews.results);
       } else {
-        // console.log('remove', this.state.filterArr);
         this.loadFirstTwoReviews(this.state.filterArr);
       }
     });
   }
 
   starFilter(star) {
-    // add filter
     if (!this.state.filterStars.includes(star)) {
       this.addOneFilter(star);
     } else {
-      // remove filter
       this.removeOneFilter(star);
     }
   }
