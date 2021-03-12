@@ -7,12 +7,6 @@ const api = require('./api_handler.js');
 const app = express();
 const port = 3000;
 
-app.get('*.js', (req, res, next) => {
-  req.url = `${req.url}.gz`;
-  res.set('Content-Encoding', 'brotli');
-  next();
-});
-
 const staticMiddleware = express.static(path.join(__dirname, '../client/dist'));
 
 app.use(express.json());
