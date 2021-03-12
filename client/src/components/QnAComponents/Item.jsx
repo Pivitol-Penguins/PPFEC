@@ -78,6 +78,10 @@ const ListContainer = styled.div`
   flex-direction: column;
 `;
 
+const Highlight = styled.div`
+  background: #80ccc4;
+`;
+
 class Item extends React.Component {
   constructor(props) {
     super(props);
@@ -172,12 +176,19 @@ class Item extends React.Component {
   }
 
   render() {
+    console.log(this.props.item.search ? '0' + this.props.item.search[0] : 'not search');
+    console.log(this.props.item.search ? '1' + this.props.item.search[1] : 'not search');
+    console.log(this.props.item.search ? '2' + this.props.item.search[2] : 'not search');
     return (
       <div>
         <TopWrapper>
           <QB>
             <Q>Q:</Q>
-            {this.props.item.question_body}
+            {this.props.item.search ? this.props.item.search[0] : null}
+            {this.props.item.search && this.props.item.search[0][this.props.item.search[0].length - 1] === ' ' ? <div>&nbsp;</div> : null}
+            {this.props.item.search ? <Highlight>{this.props.item.search[1]}</Highlight> : this.props.item.question_body}
+            {this.props.item.search && (this.props.item.search[2][0] === ' ' || this.props.item.search[1][this.props.item.search[1].length - 1] === ' ') ? <div>&nbsp;</div> : null}
+            {this.props.item.search ? this.props.item.search[2] : null}
           </QB>
           <Helper>
             <div>Helpful?</div>

@@ -52,7 +52,14 @@ class QnA extends React.Component {
       const results = [];
       this.state.data.forEach((element, index) => {
         if (element.question_body.toLowerCase().includes(string.toLowerCase())) {
-          results.push(this.state.data[index]);
+          const obj = {};
+          Object.assign(obj, this.state.data[index]);
+          obj.search = [
+            element.question_body.slice(0, element.question_body.toLowerCase().indexOf(string.toLowerCase())),
+            element.question_body.slice(element.question_body.toLowerCase().indexOf(string.toLowerCase()) , element.question_body.toLowerCase().indexOf(string.toLowerCase()) + string.length),
+            element.question_body.slice(element.question_body.toLowerCase().indexOf(string.toLowerCase()) + string.length, element.question_body.length),
+          ];
+          results.push(obj);
         }
         let count = 0;
         Object.entries(element.answers).forEach((answer) => {
