@@ -6,9 +6,9 @@ import styled from 'styled-components';
 const StarsContainer = styled.div`
   unicode-bidi: bidi-override;
   color: #e0e0e0;
-  font-size: 22px;
-  height: 22px;
-  line-height: 22px;
+  font-size: 1rem;
+  height: 1rem;
+  line-height: 1rem;
   position: relative;
   padding: 0;
   text-shadow: 0px 1px 0 #a2a2a2;

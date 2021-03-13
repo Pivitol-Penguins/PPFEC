@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RatingStars from '../reviewsSubComponents/RatingStars.jsx';
+import RatingStars from './RatingStars.jsx';
 import Styles from './StylesComponent.jsx';
 import Selectors from './Selectors.jsx';
 
@@ -18,16 +18,6 @@ const RatingWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`;
-
-const Rating = styled.div`
-  font-size: 1rem;
-  font-weight: 300;
-  color: #424242;
-  &:hover {
-    color: #80ccc4;
-    cursor: pointer;
-  };
 `;
 
 const RatingsAnchor = styled.a`
@@ -123,7 +113,7 @@ const ProductOverview = ({
     <Wrapper>
 
       <RatingWrapper>
-        <Rating><RatingStars rating={avgRating} /></Rating>
+        <RatingStars rating={avgRating} />
         <RatingsAnchor href="#RATINGS">Read all reviews</RatingsAnchor>
       </RatingWrapper>
 
