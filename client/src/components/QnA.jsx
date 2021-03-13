@@ -145,7 +145,12 @@ class QnA extends React.Component {
       <QnAContainer>
         <QnATitle>QUESTIONS & ANSWERS</QnATitle>
         <Search func={this.handleSearch} reset={this.resetDefault} />
-        <QuestionList items={this.state.dd} name={this.props.name} />
+        <QuestionList
+          items={this.state.dd}
+          name={this.props.name}
+          loadTwo={this.loadTwoItems}
+          data={this.state.data}
+        />
         <BottomWrap>
           <MoreQ func={this.loadTwoItems} buttonDisplay={this.state.buttonDisplay} />
           <AddQ func={this.addData} name={this.props.name} />

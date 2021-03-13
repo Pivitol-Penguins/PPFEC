@@ -15,13 +15,13 @@ const SummaryWrapper = styled.div`
   align-item: flex-start;
 `;
 
-const RatingSummary = ({ reviewsMeta }) => {
+const RatingSummary = ({ reviewsMeta, reviews }) => {
   let totalRating = 0;
   let totalRatingCount = 0;
   let avgRating;
 
   const stars = Object.keys(reviewsMeta.ratings);
-  if (stars.length !== 0) {
+  if (stars.length !== 0 && reviews.length > 0) {
     stars.forEach((star) => {
       totalRating += (Number(star) * Number(reviewsMeta.ratings[star]));
       totalRatingCount += Number(reviewsMeta.ratings[star]);

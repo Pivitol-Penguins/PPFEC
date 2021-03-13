@@ -52,6 +52,7 @@ const RecommendPercentage = styled.div`
 
 const ClickTag = styled.div`
   padding: 2px 1vw 0 0;
+  color: #424242;
   text-decoration:underline;
   &:hover {
     cursor: pointer;
@@ -73,15 +74,23 @@ class RatingBreakDown extends React.Component {
     this.showRatingCount = this.showRatingCount.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.reviews.length > 0) {
+      this.setState({
+        stars: [5, 4, 3, 2, 1],
+      });
+    }
+  }
+
   handleStarFilterClick(event, star) {
     this.props.starFilter(star);
   }
 
   getPercentage(starNumber) {
-    const { reviewsMeta } = this.props;
+    const { reviewsMeta, reviews } = this.props;
     let totalRating = 0;
     let percentage = 0;
-    if (reviewsMeta.ratings !== {}) {
+    if (reviewsMeta.ratings !== {} && reviews.length > 0) {
       const stars = Object.keys(reviewsMeta.ratings);
       stars.forEach((star) => {
         totalRating += Number(reviewsMeta.ratings[star]);
@@ -126,7 +135,8 @@ class RatingBreakDown extends React.Component {
         <div>
           {stars.map((star) => {
             let ratingCount;
-            if (Object.keys(this.props.reviewsMeta.ratings).length > 0) {
+            if (Object.keys(this.props.reviewsMeta.ratings).length > 0
+            && this.props.reviews.length > 0) {
               ratingCount = this.props.reviewsMeta.ratings[star];
             } else {
               ratingCount = 0;
