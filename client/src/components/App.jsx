@@ -3,8 +3,6 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import Product from './Product.jsx';
-// import QnA from './QnA.jsx';
-// import Reviews from './Reviews.jsx';
 const QnA = React.lazy(() => import('./QnA.jsx'));
 const Reviews = React.lazy(() => import('./Reviews.jsx'));
 
