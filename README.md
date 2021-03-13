@@ -13,6 +13,8 @@
 1. React.js
 2. Express.js
 3. Styled-Components
+4. Jest
+5. Enzyme
 
 ### Deployed On Amazon AWS with Forever.js
 
