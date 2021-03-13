@@ -159,7 +159,7 @@ class ReviewTile extends React.Component {
     }
     // conditional rendering for response
     if (review.response) {
-      console.log(review.response);
+      // console.log(review.response);
       response = (
         <ResponseWrapper>
           <StyledResponseHead>Response from seller</StyledResponseHead>

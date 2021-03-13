@@ -1,6 +1,7 @@
 config
 node_modules
 client/dist/bundle.js
+client/dist/0.bundle.js
 client/dist/1.bundle.js
 client/dist/2.bundle.js
 coverage

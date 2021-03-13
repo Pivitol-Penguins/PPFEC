@@ -17,10 +17,12 @@ const ReviewsContainer = styled.div`
   margin: 0 auto;
   padding: 10px 20px 10px 20px;
   font-family: 'Lato', sans-serif;
+  color: #424242
 `;
 
 const ReviewsTitle = styled.div`
-  color: black;
+  padding: 10px 0;
+  color: #424242;
   font-size: 20px;
   text-align: left;
 `;
@@ -49,7 +51,7 @@ class Reviews extends React.Component {
     this.state = {
       reviews: [],
       reviewsMeta: this.props.reviewsMeta,
-      displayLimit: 2,
+      displayLimit: 3,
       fullreviewsArr: [],
       originalArr: this.props.reviews.results,
       filterArr: [],
@@ -177,14 +179,19 @@ class Reviews extends React.Component {
         <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
         <Wrapper>
           <RatingWrapper>
-            <RatingSummary reviewsMeta={this.state.reviewsMeta} />
+            <RatingSummary
+              reviews={this.state.reviews}
+              reviewsMeta={this.state.reviewsMeta}
+            />
             <RatingBreakDown
+              reviews={this.state.reviews}
               reviewsMeta={this.state.reviewsMeta}
               starFilter={this.starFilter}
               removeAllFilter={this.removeAllFilter}
               filterStars={this.state.filterStars}
             />
             <ProductBreakDown
+              reviews={this.state.reviews}
               reviewsMeta={this.state.reviewsMeta}
             />
           </RatingWrapper>
