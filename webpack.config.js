@@ -2,7 +2,7 @@ const path = require('path');
 const BrotliGzipPlugin = require('brotli-gzip-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './client/src/index.jsx',
   output: {
     path: path.resolve(__dirname, './client/dist'),

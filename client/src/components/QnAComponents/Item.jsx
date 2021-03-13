@@ -80,6 +80,7 @@ const ListContainer = styled.div`
 
 const Highlight = styled.div`
   background: #80ccc4;
+  color: #FFFFFF;
 `;
 
 class Item extends React.Component {
