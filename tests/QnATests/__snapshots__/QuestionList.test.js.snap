@@ -212,7 +212,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                         <div>
                           <Answer__Body>
                             <div
-                              className="Answer__Body-sc-3mvxjy-6 gnmbP"
+                              className="Answer__Body-sc-3mvxjy-7 iyZViq"
                             >
                               Laborum voluptatum aut et ex occaecati magni quas.
                             </div>
@@ -230,7 +230,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                             >
                               <Answer__NameDate>
                                 <div
-                                  className="Answer__NameDate-sc-3mvxjy-1 jcOBlI"
+                                  className="Answer__NameDate-sc-3mvxjy-1 fSGVLo"
                                 >
                                   By Koby72 on  July, 28 2020
                                 </div>
@@ -238,7 +238,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               |
                               <Answer__Helpful>
                                 <div
-                                  className="Answer__Helpful-sc-3mvxjy-2 iSIJxX"
+                                  className="Answer__Helpful-sc-3mvxjy-3 cETxxq"
                                 >
                                   Helpful?
                                 </div>
@@ -247,7 +247,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Yes-sc-3mvxjy-3 bpatiV"
+                                  className="Answer__Yes-sc-3mvxjy-4 ckktoq"
                                   onClick={[Function]}
                                 >
                                   Yes
@@ -255,7 +255,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               </Answer__Yes>
                               <Answer__Help>
                                 <div
-                                  className="Answer__Help-sc-3mvxjy-4 gOKkij"
+                                  className="Answer__Help-sc-3mvxjy-5 dfMkPu"
                                 >
                                   (15)
                                 </div>
@@ -265,7 +265,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Report-sc-3mvxjy-5 fkJrli"
+                                  className="Answer__Report-sc-3mvxjy-6 bkhcCN"
                                   onClick={[Function]}
                                 >
                                   Report
@@ -292,7 +292,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                         <div>
                           <Answer__Body>
                             <div
-                              className="Answer__Body-sc-3mvxjy-6 gnmbP"
+                              className="Answer__Body-sc-3mvxjy-7 iyZViq"
                             >
                               Laborum volupt aut et ex occaecati magni quas.
                             </div>
@@ -310,7 +310,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                             >
                               <Answer__NameDate>
                                 <div
-                                  className="Answer__NameDate-sc-3mvxjy-1 jcOBlI"
+                                  className="Answer__NameDate-sc-3mvxjy-1 fSGVLo"
                                 >
                                   By Ko2 on  July, 28 2020
                                 </div>
@@ -318,7 +318,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               |
                               <Answer__Helpful>
                                 <div
-                                  className="Answer__Helpful-sc-3mvxjy-2 iSIJxX"
+                                  className="Answer__Helpful-sc-3mvxjy-3 cETxxq"
                                 >
                                   Helpful?
                                 </div>
@@ -327,7 +327,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Yes-sc-3mvxjy-3 bpatiV"
+                                  className="Answer__Yes-sc-3mvxjy-4 ckktoq"
                                   onClick={[Function]}
                                 >
                                   Yes
@@ -335,7 +335,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               </Answer__Yes>
                               <Answer__Help>
                                 <div
-                                  className="Answer__Help-sc-3mvxjy-4 gOKkij"
+                                  className="Answer__Help-sc-3mvxjy-5 dfMkPu"
                                 >
                                   (15)
                                 </div>
@@ -345,7 +345,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Report-sc-3mvxjy-5 fkJrli"
+                                  className="Answer__Report-sc-3mvxjy-6 bkhcCN"
                                   onClick={[Function]}
                                 >
                                   Report
@@ -517,7 +517,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                         <div>
                           <Answer__Body>
                             <div
-                              className="Answer__Body-sc-3mvxjy-6 gnmbP"
+                              className="Answer__Body-sc-3mvxjy-7 iyZViq"
                             >
                               Laborum voluptatum aut et ex occaecati magni quas.
                             </div>
@@ -535,7 +535,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                             >
                               <Answer__NameDate>
                                 <div
-                                  className="Answer__NameDate-sc-3mvxjy-1 jcOBlI"
+                                  className="Answer__NameDate-sc-3mvxjy-1 fSGVLo"
                                 >
                                   By Koby72 on  July, 28 2020
                                 </div>
@@ -543,7 +543,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               |
                               <Answer__Helpful>
                                 <div
-                                  className="Answer__Helpful-sc-3mvxjy-2 iSIJxX"
+                                  className="Answer__Helpful-sc-3mvxjy-3 cETxxq"
                                 >
                                   Helpful?
                                 </div>
@@ -552,7 +552,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Yes-sc-3mvxjy-3 bpatiV"
+                                  className="Answer__Yes-sc-3mvxjy-4 ckktoq"
                                   onClick={[Function]}
                                 >
                                   Yes
@@ -560,7 +560,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               </Answer__Yes>
                               <Answer__Help>
                                 <div
-                                  className="Answer__Help-sc-3mvxjy-4 gOKkij"
+                                  className="Answer__Help-sc-3mvxjy-5 dfMkPu"
                                 >
                                   (15)
                                 </div>
@@ -570,7 +570,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Report-sc-3mvxjy-5 fkJrli"
+                                  className="Answer__Report-sc-3mvxjy-6 bkhcCN"
                                   onClick={[Function]}
                                 >
                                   Report
@@ -597,7 +597,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                         <div>
                           <Answer__Body>
                             <div
-                              className="Answer__Body-sc-3mvxjy-6 gnmbP"
+                              className="Answer__Body-sc-3mvxjy-7 iyZViq"
                             >
                               Laborum volupt aut et ex occaecati magni quas.
                             </div>
@@ -615,7 +615,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                             >
                               <Answer__NameDate>
                                 <div
-                                  className="Answer__NameDate-sc-3mvxjy-1 jcOBlI"
+                                  className="Answer__NameDate-sc-3mvxjy-1 fSGVLo"
                                 >
                                   By Ko2 on  July, 28 2020
                                 </div>
@@ -623,7 +623,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               |
                               <Answer__Helpful>
                                 <div
-                                  className="Answer__Helpful-sc-3mvxjy-2 iSIJxX"
+                                  className="Answer__Helpful-sc-3mvxjy-3 cETxxq"
                                 >
                                   Helpful?
                                 </div>
@@ -632,7 +632,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Yes-sc-3mvxjy-3 bpatiV"
+                                  className="Answer__Yes-sc-3mvxjy-4 ckktoq"
                                   onClick={[Function]}
                                 >
                                   Yes
@@ -640,7 +640,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                               </Answer__Yes>
                               <Answer__Help>
                                 <div
-                                  className="Answer__Help-sc-3mvxjy-4 gOKkij"
+                                  className="Answer__Help-sc-3mvxjy-5 dfMkPu"
                                 >
                                   (15)
                                 </div>
@@ -650,7 +650,7 @@ exports[`This is for the Question List Should render More Answers Properly 1`] =
                                 onClick={[Function]}
                               >
                                 <div
-                                  className="Answer__Report-sc-3mvxjy-5 fkJrli"
+                                  className="Answer__Report-sc-3mvxjy-6 bkhcCN"
                                   onClick={[Function]}
                                 >
                                   Report
