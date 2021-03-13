@@ -114,12 +114,12 @@ const ReviewsList = (props) => {
 
   const { reviewsMeta } = props;
   // get totalReviewCount
-  let totalReviewCount = 0;
-  if (reviewsMeta !== {}) {
-    Object.entries(reviewsMeta.ratings).forEach((rating) => {
-      totalReviewCount += Number(rating[1]);
-    });
-  }
+  // let totalReviewCount = 0;
+  // if (reviewsMeta !== {}) {
+  //   Object.entries(reviewsMeta.ratings).forEach((rating) => {
+  //     totalReviewCount += Number(rating[1]);
+  //   });
+  // }
 
   let reviewTiles;
   if (props.reviews.length === 0) {
@@ -129,7 +129,7 @@ const ReviewsList = (props) => {
       <>
         <ReviewSortWrapper>
           <StyledLabel>
-            {totalReviewCount}
+            {props.fullreviewsArr.length || 0}
             {' '}
             reviews, sorted by
             <SelectTag onChange={(e) => { props.sortSelected(e); }}>
