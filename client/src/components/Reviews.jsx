@@ -190,6 +190,7 @@ class Reviews extends React.Component {
           </RatingWrapper>
           <ReviewsList
             loadFirstTwoReviews={this.loadFirstTwoReviews}
+            reviewsCount={this.state.originalArr.length}
             fullreviewsArr={this.state.fullreviewsArr}
             reviews={this.state.reviews}
             reviewsMeta={this.state.reviewsMeta}

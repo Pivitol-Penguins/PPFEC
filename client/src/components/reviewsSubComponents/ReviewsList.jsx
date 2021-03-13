@@ -129,7 +129,7 @@ const ReviewsList = (props) => {
       <>
         <ReviewSortWrapper>
           <StyledLabel>
-            {props.fullreviewsArr.length || 0}
+            {props.reviewsCount || 0}
             {' '}
             reviews, sorted by
             <SelectTag onChange={(e) => { props.sortSelected(e); }}>

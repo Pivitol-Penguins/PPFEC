@@ -180,7 +180,7 @@ class ReviewTile extends React.Component {
     }
 
     return (
-      <TileContainer reportClick={this.state.reportClick}>
+      <TileContainer className="tile" reportClick={this.state.reportClick}>
         <StarDateWrapper>
           <RatingStars rating={rating} />
           <span>
