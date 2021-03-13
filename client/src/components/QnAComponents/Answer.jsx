@@ -102,8 +102,9 @@ class Answer extends React.Component {
   }
 
   dateTranslate(date) {
+    const reviewDate = new Date(date);
     const months = ['Janurary', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    this.state.date = ` ${months[Number(date.slice(5, 7)) - 1]}, ${date.slice(8, 10)} ${date.slice(0, 4)}`;
+    this.state.date = ` ${months[reviewDate.getUTCMonth()]}, ${reviewDate.getUTCDate()} ${reviewDate.getUTCFullYear()}`;
     this.setState((preState) => ({
       date: preState.date,
     }));
