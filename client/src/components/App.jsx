@@ -6,9 +6,6 @@ import Product from './Product.jsx';
 const QnA = React.lazy(() => import('./QnA.jsx'));
 const Reviews = React.lazy(() => import('./Reviews.jsx'));
 
-// import QnA from './QnA.jsx';
-// import Reviews from './Reviews.jsx';
-
 const Lead = styled.div`
   font-family: 'Lato', sans-serif;
   display: flex;
@@ -77,23 +74,21 @@ const Creators = styled.div`
 
 const FooterMessage = styled.div`
   font-size: .9rem;
-  font-weight: 300;
   color: #fff;
   font-weight: 700;
   margin-left: 1vw;
-  text-shadow: 1px 1px 2px #80ccc4;
 `;
 
 const Creator = styled.a`
   margin: 0 2vw;
   font-size: .9rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;;
 `;
 
 const Copyright = styled.div`
   font-size: .9rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;
   margin-right: 2vw;
 `;
