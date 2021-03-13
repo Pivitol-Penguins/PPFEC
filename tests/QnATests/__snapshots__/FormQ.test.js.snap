@@ -8,7 +8,7 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
     onSubmit={[Function]}
   >
     <form
-      className="FormQuestion__FormQContainer-sc-1wl3416-0 bIHMlt"
+      className="FormQuestion__FormQContainer-sc-1wl3416-0 jasTlZ"
       onSubmit={[Function]}
     >
       ASK YOUR QUESTION
