@@ -6,7 +6,7 @@ import ReviewTile from './ReviewTile.jsx';
 const ListWrapper = styled.div`
   width: 100%;
   display: flex;
-  height: 80vh;
+  height: 70vh;
   overflow-y: scroll;
   flex-direction: column;
   ::-webkit-scrollbar {
@@ -29,9 +29,8 @@ class ReviewListView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // reviews: this.props.reviews,
-      allLoaded: false,
-      prevY: 2300,
+      allLoaded: (this.props.fullreviewsArr.length === this.props.reviews.length) || false,
+      prevY: 0,
     };
   }
 
@@ -48,10 +47,8 @@ class ReviewListView extends React.Component {
   handleObserver(entities) {
     // console.log(entities[0]);
     const { y } = entities[0].boundingClientRect;
+    // console.log(y);
     if (this.state.prevY > y) {
-      // this.setState({
-      //   loading: true,
-      // });
       setTimeout(this.props.loadMoreReviews, 1000);
     }
     this.setState({ prevY: y });
@@ -64,6 +61,7 @@ class ReviewListView extends React.Component {
 
   render() {
     // console.log(this.state.allLoaded);
+    // console.log((this.props.fullreviewsArr.length === this.props.reviews.length));
     return (
       <ListWrapper id="view">
         {this.props.reviews.map(((review) => (

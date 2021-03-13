@@ -51,7 +51,7 @@ class Reviews extends React.Component {
     this.state = {
       reviews: [],
       reviewsMeta: this.props.reviewsMeta,
-      displayLimit: 3,
+      displayLimit: 4,
       fullreviewsArr: [],
       originalArr: this.props.reviews.results,
       filterArr: [],
@@ -199,6 +199,7 @@ class Reviews extends React.Component {
             loadFirstTwoReviews={this.loadFirstTwoReviews}
             reviewsCount={this.state.originalArr.length}
             fullreviewsArr={this.state.fullreviewsArr}
+            filterArr={this.state.filterArr}
             reviews={this.state.reviews}
             reviewsMeta={this.state.reviewsMeta}
             loadMoreReviews={this.loadMoreReviews}

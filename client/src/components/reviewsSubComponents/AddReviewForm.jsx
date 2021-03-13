@@ -69,6 +69,14 @@ const NameEmailInput = styled.input`
   border-color: #424242;
   margin: 5px 0;
   margin-right: 50px;
+  &:focus {
+    border: 1px solid #80CCC4;
+    outline: none;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:hover {
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  }
 `;
 
 const SytledSubmitButton = styled.input`
@@ -117,15 +125,38 @@ const SytledButton = styled.button`
 `;
 
 const StyledInput = styled.input`
-  width: 45vw;
+  width: 51.5vw;
   height: 3vh;
-  border-color: #424242;
+  border: 1px solid #424242;
+  font-family: 'Lato', sans-serif;
+  &:focus {
+    border: 1px solid #80CCC4;
+    outline: none;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:hover {
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  }
 `;
 
 const StyledTextarea = styled.textarea`
-  width: 52vw;
+  width: 48vw;
   height: 12vh;
-  border-color: #424242;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  border: 1px solid #424242;
+  z-index: 0;
+  position: relative;
+  padding: 1.5vh 2vw;
+
+  &:focus {
+    border: 1px solid #80CCC4;
+    outline: none;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:hover {
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  }
 `;
 
 class AddReviewForm extends React.Component {
@@ -178,6 +209,7 @@ class AddReviewForm extends React.Component {
     if (uploadPhotos.length > 5) {
       alert('The number of the photos you selected is exceeded 5.');
     } else {
+      // eslint-disable-next-line no-unused-vars
       Object.entries(uploadPhotos).forEach(([number, photo]) => {
         console.log(photo.name);
         this.setState((prevState) => ({
@@ -191,6 +223,7 @@ class AddReviewForm extends React.Component {
     const formdata = new FormData();
     Object.entries(this.state).forEach(([key, value]) => {
       if (key === 'photos') {
+        // eslint-disable-next-line no-unused-vars
         Object.entries(this.state.photos).forEach(([photoKey, photo]) => {
           formdata.append('photos', photo);
         });
@@ -260,7 +293,7 @@ class AddReviewForm extends React.Component {
         </VerticalWrapper>
         <VerticalWrapper>
           <StyledLabel>Your Review</StyledLabel>
-          <StyledTextarea id="reviewBody" name="body" cols="60" rows="10" maxLength="1000" value={this.state.body} placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
+          <StyledTextarea id="reviewBody" name="body" maxLength="1000" value={this.state.body} placeholder="Why did you like the product or not?" required onChange={this.handleChange} />
         </VerticalWrapper>
         <HorizontalWrapper>
           <StyledLabel>Upload the photos of your purchase</StyledLabel>
