@@ -1,5 +1,4 @@
 const path = require('path');
-const BrotliGzipPlugin = require('brotli-gzip-webpack-plugin');
 
 module.exports = {
   mode: 'production',

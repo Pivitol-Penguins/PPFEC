@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import RatingStars from '../reviewsSubComponents/RatingStars.jsx';
 import Styles from './StylesComponent.jsx';
 import Selectors from './Selectors.jsx';
 
@@ -102,33 +103,49 @@ const Like = styled.button`
 `;
 
 const ProductOverview = ({
-  details, styles, skus, getStyleID, price, sale,
-}) => (
-  <Wrapper>
+  details, styles, skus, getStyleID, price, sale, reviewsMeta,
+}) => {
+  let totalRating = 0;
+  let totalRatingCount = 0;
+  let avgRating;
 
-    <RatingWrapper>
-      <Rating>★★★★☆</Rating>
-      <RatingsAnchor href="#RATINGS">Read all reviews</RatingsAnchor>
-    </RatingWrapper>
+  const stars = Object.keys(reviewsMeta.ratings);
+  if (stars.length !== 0) {
+    stars.forEach((star) => {
+      totalRating += (Number(star) * Number(reviewsMeta.ratings[star]));
+      totalRatingCount += Number(reviewsMeta.ratings[star]);
+    });
+    avgRating = (Math.round((totalRating / totalRatingCount) * 10) / 10).toFixed(1);
+  } else {
+    avgRating = '0.0';
+  }
+  return (
+    <Wrapper>
 
-    <Category>{details.category.toUpperCase()}</Category>
+      <RatingWrapper>
+        <Rating><RatingStars rating={avgRating} /></Rating>
+        <RatingsAnchor href="#RATINGS">Read all reviews</RatingsAnchor>
+      </RatingWrapper>
 
-    <Name>{details.name}</Name>
+      <Category>{details.category.toUpperCase()}</Category>
 
-    <Styles styles={styles} price={price} sale={sale} getStyleID={getStyleID} />
+      <Name>{details.name}</Name>
 
-    <Purchasing>
-      <Selectors skus={skus} />
-      <PurchaseLikeButtons>
-        <AddToCart>
-          <div>ADD TO BAG</div>
-          <Plus>+</Plus>
-        </AddToCart>
-        <Like>☆</Like>
-      </PurchaseLikeButtons>
-    </Purchasing>
+      <Styles styles={styles} price={price} sale={sale} getStyleID={getStyleID} />
 
-  </Wrapper>
-);
+      <Purchasing>
+        <Selectors skus={skus} />
+        <PurchaseLikeButtons>
+          <AddToCart>
+            <div>ADD TO BAG</div>
+            <Plus>+</Plus>
+          </AddToCart>
+          <Like>☆</Like>
+        </PurchaseLikeButtons>
+      </Purchasing>
+
+    </Wrapper>
+  );
+};
 
 export default ProductOverview;
