@@ -25,7 +25,8 @@ const StarDateWrapper = styled.div`
 
 const ResponseWrapper = styled.div`
   margin: 0 auto;
-  background-color: bisque;
+  padding: 0.5vw;
+  background-color: #80ccc4;
   // font-size: 1rem;
   // font-weight: 300;
   color: #424242;
@@ -35,12 +36,21 @@ const ReviewThumbsWrapper = styled.img`
   display: inline-flex;
   justify-content: space-around;
   align-items: flex-start;
-  border: 1px solid #ddd;
-  padding: 5px;
-  height: 80px;
+  // border: 1px solid #ddd;
+  // padding: 5px;
+  // height: 80px;
 
+  // &:hover {
+  //   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  // }
+  height: 10vh;
+  weight: 10vw;
+  margin: 0 1vw 1vh 1vw;
+  border: 1px solid #424242;
   &:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    transform: scale(1.1);
+    border: 1px solid #80CCC4;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
   }
 `;
 
@@ -81,11 +91,50 @@ const StyledBody = styled.p`
   line-height: 21px;
 `;
 
+const StyledResponseHead = styled.div`
+  font-size: 1.2rem;
+  padding-top: 15px;
+  font-weight: 600;
+  font-family: 'Lato',sans-serif;
+`;
+
 const StyledRecommend = styled.div`
   font-size: 1rem;
   padding: 15px 0;
   font-weight: 400;
   font-family: 'Lato',sans-serif;
+`;
+
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-color: #42424275;
+`;
+
+const Img = styled.img`
+  max-height: 60vh;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+`;
+
+const ImgWrapper = styled.div`
+  position: fixed;
+  display: table;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70vw;
+  max-height; 60vh;
+  margin: 0px auto;
+`;
+
+const PhotosWrapper = styled.div`
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: flex-start;
 `;
 
 class ReviewTile extends React.Component {
@@ -96,16 +145,17 @@ class ReviewTile extends React.Component {
       yesNum: this.props.review.helpfulness,
       yesClick: false,
       reportClick: false,
+      photoClick: false,
+      photoURL: '',
     };
     this.handleClickYes = this.handleClickYes.bind(this);
-    this.handleClickReport = this.handleClickReport.bind(this);
+    this.togglePhoto = this.togglePhoto.bind(this);
   }
 
   handleClickYes() {
-    // event.persist();
     const path = window.location.pathname;
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/helpful`)
-      .then((res) => {
+      .then(() => {
         this.setState((prevState) => ({
           yesClick: true,
           yesNum: prevState.yesNum + 1,
@@ -130,6 +180,14 @@ class ReviewTile extends React.Component {
       });
   }
 
+  togglePhoto(event) {
+    event.persist();
+    this.setState((prevState) => ({
+      photoClick: !prevState.photoClick,
+      photoURL: event.target.src,
+    }));
+  }
+
   render() {
     const { review } = this.props;
     const {
@@ -152,10 +210,11 @@ class ReviewTile extends React.Component {
     }
     // conditional rendering for response
     if (review.response) {
+      // console.log(review.response);
       response = (
         <ResponseWrapper>
-          <StyledSummary>Response from seller</StyledSummary>
-          <StyledBody>{review.resStyledBodyonse}</StyledBody>
+          <StyledResponseHead>Response from seller</StyledResponseHead>
+          <StyledBody>{review.response}</StyledBody>
         </ResponseWrapper>
       );
     }
@@ -165,14 +224,22 @@ class ReviewTile extends React.Component {
       photos = (
         <div>
           {review.photos.map((photo, index) => (
-            <ReviewThumbsWrapper key={photo.id} src={photo.url} alt={`${index}reviewPhoto`} />
+            <PhotosWrapper key={photo.id}>
+              <ReviewThumbsWrapper onClick={(e) => this.togglePhoto(e)} src={photo.url} alt={`${index}reviewPhoto`} />
+              {this.state.photoClick ? (
+                <ModalBackground onMouseDown={this.togglePhoto}>
+                  <ImgWrapper><Img src={this.state.photoURL} alt={index} /></ImgWrapper>
+                </ModalBackground>
+              ) : (<div />)}
+            </PhotosWrapper>
           ))}
+
         </div>
       );
     }
 
     return (
-      <TileContainer reportClick={this.state.reportClick}>
+      <TileContainer className="tile" reportClick={this.state.reportClick}>
         <StarDateWrapper>
           <RatingStars rating={rating} />
           <span>

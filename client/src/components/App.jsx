@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import Product from './Product.jsx';
 const QnA = React.lazy(() => import('./QnA.jsx'));
 const Reviews = React.lazy(() => import('./Reviews.jsx'));
@@ -174,3 +173,27 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+
+
+
+// const Interaction = (Child) => {
+//   return class TrackInteraction extends React.Component {
+//     constructor() {
+//       super();
+//       this.state = {
+//         componentName: '',
+//         time: '',
+//         element: '',
+//       }
+//       this.handleClickComponent = this.handleClickComponent.bind(this);
+//     }
+
+
+
+//     render() {
+//       return <Child onClick={this.handleClickComponent} {...this.props} />
+//     }
+//   }
+// }

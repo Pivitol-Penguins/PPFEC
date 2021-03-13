@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReviewTile from './ReviewTile.jsx';
+import ReviewListView from './ReviewListView.jsx';
 import AddReviewForm from './AddReviewForm.jsx';
 
 const ReviewsWrapper = styled.div`
@@ -16,23 +16,11 @@ const ReviewsWrapper = styled.div`
 const ButtonWrapper = styled.div`
   width: 40vw;
   padding: 15px 0;
+  margin-top: 20px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: baseline;
-`;
-
-const ListWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  max-height: 100vh;
-  overflow-y: scroll;
-  flex-direction: column;
-  ::-webkit-scrollbar {
-    display: none;
-  };
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 `;
 
 const ReviewButton = styled.button`
@@ -43,7 +31,7 @@ const ReviewButton = styled.button`
   border: 1px solid #424242;
   height: 6vh;
   width: 20vw;
-  margin: 0 12px;
+  margin: 2vh auto;
   // font-size: 15px;
   &:hover {
     cursor: pointer;
@@ -60,6 +48,8 @@ const ReviewButton = styled.button`
 const ReviewSortWrapper = styled.div`
   display: flex;
   align-items: baseline;
+  color: #424242;
+  padding-bottom: 5vh;
 `;
 
 const SelectTag = styled.select`
@@ -89,6 +79,7 @@ const NoReviewWrapper = styled.div`
   font-family: 'Lato',sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
+  padding: 7vw 4vh;
 `;
 
 const StyledLabel = styled.label`
@@ -99,65 +90,53 @@ const StyledLabel = styled.label`
   font-family: 'Lato',sans-serif;
 `;
 
-const ReviewsList = (props) => {
+const ReviewList = (props) => {
   // conditionlal rendering MORE VIEW button
-  let moreReviewBtn;
-  if (props.reviews.length !== props.fullreviewsArr.length && props.reviews.length !== 0) {
-    moreReviewBtn = (
-      <ReviewButton
-        onClick={props.loadMoreReviews}
-      >
-        MORE REVIEWS
-      </ReviewButton>
-    );
-  }
+  // let moreReviewBtn;
+  // if (props.reviews.length !== props.fullreviewsArr.length && props.reviews.length !== 0) {
+  //   moreReviewBtn = (
+  //     <ReviewButton
+  //       onClick={props.loadMoreReviews}
+  //     >
+  //       MORE REVIEWS
+  //     </ReviewButton>
+  //   );
+  // }
 
   const { reviewsMeta } = props;
-  // get totalReviewCount
-  let totalReviewCount = 0;
-  if (reviewsMeta !== {}) {
-    Object.entries(reviewsMeta.ratings).forEach((rating) => {
-      totalReviewCount += Number(rating[1]);
-    });
-  }
 
   let reviewTiles;
   if (props.reviews.length === 0) {
     reviewTiles = (<NoReviewWrapper>Be the first one to review the product</NoReviewWrapper>);
   } else {
     reviewTiles = (
-      <>
-        <ReviewSortWrapper>
-          <StyledLabel>
-            {totalReviewCount}
-            {' '}
-            reviews, sorted by
-            <SelectTag onChange={(e) => { props.sortSelected(e); }}>
-              <option defaultValue="relevant">Relevant</option>
-              <option value="helpful">Helpful</option>
-              <option value="newest">Newest</option>
-            </SelectTag>
-          </StyledLabel>
-        </ReviewSortWrapper>
-        <ListWrapper>
-          {props.reviews.map(((review) => (
-            <ReviewTile
-              key={review.review_id}
-              review={review}
-              loadReview={props.loadFirstTwoReviews}
-              handleClickYes={props.handleClickYes}
-            />
-          )))}
-        </ListWrapper>
-      </>
+      <ReviewListView
+        fullreviewsArr={props.fullreviewsArr}
+        loadMoreReviews={props.loadMoreReviews}
+        reviews={props.reviews}
+        loadReview={props.loadFirstTwoReviews}
+        handleClickYes={props.handleClickYes}
+      />
     );
   }
 
   return (
     <ReviewsWrapper>
+      <ReviewSortWrapper>
+        <StyledLabel>
+          {props.reviewsCount || 0}
+          {' '}
+          reviews, sorted by
+          <SelectTag onChange={(e) => { props.sortSelected(e); }}>
+            <option defaultValue="relevant">Relevant</option>
+            <option value="helpful">Helpful</option>
+            <option value="newest">Newest</option>
+          </SelectTag>
+        </StyledLabel>
+      </ReviewSortWrapper>
       {reviewTiles}
       <ButtonWrapper>
-        {moreReviewBtn}
+        {/* {moreReviewBtn} */}
         <ReviewButton onClick={props.addReviewToggle}>ADD A REVIEW</ReviewButton>
         {props.addReviewShow && (
           <ModalBackground>
@@ -174,4 +153,4 @@ const ReviewsList = (props) => {
   );
 };
 
-export default ReviewsList;
+export default ReviewList;

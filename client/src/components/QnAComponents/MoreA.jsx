@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LoadMoreA = styled.div`
-  padding: 2vh 0 2vh 0;
+  padding: 2vh 0 2vh 0.3vw;
   font-weight: 700;
   color: #424242;
   &:hover {
+    transform: scale(1.05);
     cursor: pointer;
     color: #80CCC4;
   };

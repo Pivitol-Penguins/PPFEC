@@ -14,6 +14,12 @@ const BottomContainer = styled.div`
 
 const NameDate = styled.div`
   padding-right: 1vw;
+  display: flex;
+`;
+
+const Seller = styled.div`
+  font-weight: 700;
+  margin-right: .2vw;
 `;
 
 const Helpful = styled.div`
@@ -110,8 +116,8 @@ class Answer extends React.Component {
           { this.props.answer.answerer_name === 'Seller'
             ? (
               <NameDate>
-                <h5>SELLER</h5>
-                {`on ${this.state.date}`}
+                <Seller>SELLER</Seller>
+                <div>{`on ${this.state.date}`}</div>
               </NameDate>
             )
             : (

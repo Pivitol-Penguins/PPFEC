@@ -17,10 +17,12 @@ const ReviewsContainer = styled.div`
   margin: 0 auto;
   padding: 10px 20px 10px 20px;
   font-family: 'Lato', sans-serif;
+  color: #424242
 `;
 
 const ReviewsTitle = styled.div`
-  color: black;
+  padding: 10px 0;
+  color: #424242;
   font-size: 20px;
   text-align: left;
 `;
@@ -49,18 +51,13 @@ class Reviews extends React.Component {
     this.state = {
       reviews: [],
       reviewsMeta: this.props.reviewsMeta,
-      displayLimit: 2,
+      displayLimit: 3,
       fullreviewsArr: [],
       originalArr: this.props.reviews.results,
       filterArr: [],
       addReviewShow: false,
       filterStars: [],
       isModalOpen: false,
-      // product_id: this.props.product,
-      // entriesCount: this.props.count,
-      // page: this.props.page,
-      // sortSelection: 'relavant',
-      // sortOn: false,
     };
     this.starFilter = this.starFilter.bind(this);
     this.loadFirstTwoReviews = this.loadFirstTwoReviews.bind(this);
@@ -110,15 +107,11 @@ class Reviews extends React.Component {
         ...prevState.originalArr.filter((review) => (review.rating === star))],
       filterStars: [...prevState.filterStars, star],
     }), () => {
-      // console.log('add fullArr', this.state.fullreviewsArr);
       this.loadFirstTwoReviews(this.state.filterArr);
-      // console.log('add', this.state.filterArr);
-      // console.log('add', this.state.filterStars);
     });
   }
 
   removeOneFilter(star) {
-    // console.log('remove', star);
     this.setState((prevState) => {
       const index = prevState.filterStars.indexOf(star);
       prevState.filterStars.splice(index, 1);
@@ -129,20 +122,16 @@ class Reviews extends React.Component {
     }, () => {
       if (this.state.filterArr.length === 0 || this.state.filterStars.length === 0) {
         this.loadFirstTwoReviews(this.state.originalArr);
-        // this.loadFirstTwoReviews(this.props.reviews.results);
       } else {
-        // console.log('remove', this.state.filterArr);
         this.loadFirstTwoReviews(this.state.filterArr);
       }
     });
   }
 
   starFilter(star) {
-    // add filter
     if (!this.state.filterStars.includes(star)) {
       this.addOneFilter(star);
     } else {
-      // remove filter
       this.removeOneFilter(star);
     }
   }
@@ -176,8 +165,7 @@ class Reviews extends React.Component {
     event.preventDefault();
   }
 
-  addReviewToggle(event) {
-    event.stopPropagation();
+  addReviewToggle() {
     this.setState((prevState) => ({
       addReviewShow: !prevState.addReviewShow,
     }));
@@ -191,19 +179,25 @@ class Reviews extends React.Component {
         <ReviewsTitle>RATINGS & REVIEWS</ReviewsTitle>
         <Wrapper>
           <RatingWrapper>
-            <RatingSummary reviewsMeta={this.state.reviewsMeta} />
+            <RatingSummary
+              reviews={this.state.reviews}
+              reviewsMeta={this.state.reviewsMeta}
+            />
             <RatingBreakDown
+              reviews={this.state.reviews}
               reviewsMeta={this.state.reviewsMeta}
               starFilter={this.starFilter}
               removeAllFilter={this.removeAllFilter}
               filterStars={this.state.filterStars}
             />
             <ProductBreakDown
+              reviews={this.state.reviews}
               reviewsMeta={this.state.reviewsMeta}
             />
           </RatingWrapper>
           <ReviewsList
             loadFirstTwoReviews={this.loadFirstTwoReviews}
+            reviewsCount={this.state.originalArr.length}
             fullreviewsArr={this.state.fullreviewsArr}
             reviews={this.state.reviews}
             reviewsMeta={this.state.reviewsMeta}

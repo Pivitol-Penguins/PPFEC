@@ -11,9 +11,9 @@ exports[`This is for the Question Form Should render Question Form properly 1`] 
       className="FormQuestion__FormQContainer-sc-1wl3416-0 bIHMlt"
       onSubmit={[Function]}
     >
-      COMPLETE THIS FORM TO ADD A QUESTION FOR
+      ASK YOUR QUESTION
        
-      BIG ROCK
+      ABOUT THE BIG ROCK
       <FormQuestion__Pair>
         <div
           className="FormQuestion__Pair-sc-1wl3416-6 gTYGLy"

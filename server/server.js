@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/products/:q', staticMiddleware);
 
 app.get('/products/:q/:b', (req, res) => {
-  // console.log('SERVER URL=> ', req.url);
+  // console.log('SERVER URL=> ', req.url); products/14931/14931
   const memCache = [];
   const id = req.params.b;
   // console.log('SERVER params==> ', id);
