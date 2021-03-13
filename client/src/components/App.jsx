@@ -98,11 +98,11 @@ const Copyright = styled.div`
 `;
 
 const Link = styled.a`
-  margin-left: .5vw;
-  font-size: .9rem;
-  font-weight: 300;
-  text-decoration: underline;
-  color: #424242;
+margin-left: .5vw;
+font-size: .9rem;
+font-weight: 300;
+text-decoration: underline;
+color: #424242;
 `;
 
 class App extends React.Component {
@@ -176,24 +176,3 @@ export default App;
 
 
 
-
-
-// const Interaction = (Child) => {
-//   return class TrackInteraction extends React.Component {
-//     constructor() {
-//       super();
-//       this.state = {
-//         componentName: '',
-//         time: '',
-//         element: '',
-//       }
-//       this.handleClickComponent = this.handleClickComponent.bind(this);
-//     }
-
-
-
-//     render() {
-//       return <Child onClick={this.handleClickComponent} {...this.props} />
-//     }
-//   }
-// }

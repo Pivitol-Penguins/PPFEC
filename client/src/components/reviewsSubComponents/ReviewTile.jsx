@@ -150,6 +150,7 @@ class ReviewTile extends React.Component {
     };
     this.handleClickYes = this.handleClickYes.bind(this);
     this.togglePhoto = this.togglePhoto.bind(this);
+    this.handleClickReport = this.handleClickReport.bind(this);
   }
 
   handleClickYes() {

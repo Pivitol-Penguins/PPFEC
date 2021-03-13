@@ -111,6 +111,7 @@ const ReviewList = (props) => {
   } else {
     reviewTiles = (
       <ReviewListView
+        filterArr={props.filterArr}
         fullreviewsArr={props.fullreviewsArr}
         loadMoreReviews={props.loadMoreReviews}
         reviews={props.reviews}
