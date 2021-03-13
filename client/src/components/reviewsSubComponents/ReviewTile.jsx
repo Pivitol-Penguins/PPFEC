@@ -25,7 +25,8 @@ const StarDateWrapper = styled.div`
 
 const ResponseWrapper = styled.div`
   margin: 0 auto;
-  background-color: bisque;
+  padding: 0.5vw;
+  background-color: #80ccc4;
   // font-size: 1rem;
   // font-weight: 300;
   color: #424242;
@@ -81,6 +82,13 @@ const StyledBody = styled.p`
   line-height: 21px;
 `;
 
+const StyledResponseHead = styled.div`
+  font-size: 1.2rem;
+  padding-top: 15px;
+  font-weight: 600;
+  font-family: 'Lato',sans-serif;
+`;
+
 const StyledRecommend = styled.div`
   font-size: 1rem;
   padding: 15px 0;
@@ -102,10 +110,9 @@ class ReviewTile extends React.Component {
   }
 
   handleClickYes() {
-    // event.persist();
     const path = window.location.pathname;
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/helpful`)
-      .then((res) => {
+      .then(() => {
         this.setState((prevState) => ({
           yesClick: true,
           yesNum: prevState.yesNum + 1,
@@ -152,10 +159,11 @@ class ReviewTile extends React.Component {
     }
     // conditional rendering for response
     if (review.response) {
+      console.log(review.response);
       response = (
         <ResponseWrapper>
-          <StyledSummary>Response from seller</StyledSummary>
-          <StyledBody>{review.resStyledBodyonse}</StyledBody>
+          <StyledResponseHead>Response from seller</StyledResponseHead>
+          <StyledBody>{review.response}</StyledBody>
         </ResponseWrapper>
       );
     }
