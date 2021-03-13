@@ -62,6 +62,7 @@ class QuestionList extends React.Component {
 
   handleObserver(entities) {
     // console.log(entities[0]);
+
     const { y } = entities[0].boundingClientRect;
     if (this.state.prevY > y) {
       // this.setState({
