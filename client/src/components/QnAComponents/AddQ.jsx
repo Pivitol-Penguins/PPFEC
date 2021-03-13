@@ -24,7 +24,7 @@ const AddAQ = styled.button`
   };
 `;
 
-const AQC = styled.div`
+const AddQuestionContainer = styled.div`
   padding: 1vh 2vw 1vh 2vw;
 `;
 
@@ -52,7 +52,7 @@ class AddQ extends React.Component {
 
   render() {
     return (
-      <AQC>
+      <AddQuestionContainer>
         <AddAQ type="submit" onClick={this.handleClick}>ADD A QUESTION +</AddAQ>
         {this.state.modal ? (
           <Modal content={(
@@ -63,7 +63,7 @@ class AddQ extends React.Component {
           )}
           />
         ) : null}
-      </AQC>
+      </AddQuestionContainer>
     );
   }
 }
