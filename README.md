@@ -20,12 +20,12 @@ Amazon AWS with Forever.js
 ---
 
 ### Valid URL Endpoints
-1. [/14036]((http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14036/))
-2. [/14037]((http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14037/))
-3. [/14038]((http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14038/))
-4. [/14039]((http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14038/))
-5. [/14040]((http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14040/))
-6. [/14041]((http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14041/))
+1. [/14036](http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14036/)
+2. [/14037](http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14037/)
+3. [/14038](http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14038/)
+4. [/14039](http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14038/)
+5. [/14040](http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14040/)
+6. [/14041](http://ec2-50-18-94-151.us-west-1.compute.amazonaws.com/products/14041/)
 
 ---
 
