@@ -25,7 +25,8 @@ const StarDateWrapper = styled.div`
 
 const ResponseWrapper = styled.div`
   margin: 0 auto;
-  background-color: bisque;
+  padding: 0.5vw;
+  background-color: #80ccc4;
   // font-size: 1rem;
   // font-weight: 300;
   color: #424242;
@@ -67,6 +68,34 @@ const ClickTag = styled.div`
   }
 `;
 
+const StyledSummary = styled.div`
+  font-size: 1.45rem;
+  padding: 15px 0;
+  font-weight: 600;
+  font-family: 'Lato',sans-serif;
+`;
+
+const StyledBody = styled.p`
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Lato',sans-serif;
+  line-height: 21px;
+`;
+
+const StyledResponseHead = styled.div`
+  font-size: 1.2rem;
+  padding-top: 15px;
+  font-weight: 600;
+  font-family: 'Lato',sans-serif;
+`;
+
+const StyledRecommend = styled.div`
+  font-size: 1rem;
+  padding: 15px 0;
+  font-weight: 400;
+  font-family: 'Lato',sans-serif;
+`;
+
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
@@ -81,10 +110,9 @@ class ReviewTile extends React.Component {
   }
 
   handleClickYes() {
-    // event.persist();
     const path = window.location.pathname;
     axios.put(`${path.slice(-6)}reviews/${this.state.review_id}/helpful`)
-      .then((res) => {
+      .then(() => {
         this.setState((prevState) => ({
           yesClick: true,
           yesNum: prevState.yesNum + 1,
@@ -127,14 +155,15 @@ class ReviewTile extends React.Component {
     let recommendLabel;
     let response;
     if (review.recommend) {
-      recommendLabel = <div>✓ I recommend this product</div>;
+      recommendLabel = <StyledRecommend>✓ I recommend this product</StyledRecommend>;
     }
     // conditional rendering for response
     if (review.response) {
+      console.log(review.response);
       response = (
         <ResponseWrapper>
-          <h4>Response from seller</h4>
-          <p>{review.response}</p>
+          <StyledResponseHead>Response from seller</StyledResponseHead>
+          <StyledBody>{review.response}</StyledBody>
         </ResponseWrapper>
       );
     }
@@ -166,8 +195,8 @@ class ReviewTile extends React.Component {
             {year}
           </span>
         </StarDateWrapper>
-        <div>{summary}</div>
-        <p>{body}</p>
+        <StyledSummary>{summary}</StyledSummary>
+        <StyledBody>{body}</StyledBody>
         {photos}
         {recommendLabel}
         {response}

@@ -69,7 +69,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
     >
       <QnA__QnATitle>
         <div
-          className="QnA__QnATitle-sc-1hcdygh-1 icEIA-d"
+          className="QnA__QnATitle-sc-1hcdygh-1 dZBFqZ"
         >
           QUESTIONS & ANSWERS
         </div>
@@ -79,7 +79,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
         reset={[Function]}
       >
         <Search__Wrapper>
-          <div
+          <label
             className="Search__Wrapper-np7a72-1 biulzn"
           >
             <Search__Input
@@ -103,7 +103,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                 ⚲
               </div>
             </Search__Magnify>
-          </div>
+          </label>
         </Search__Wrapper>
       </Search>
       <QuestionList
@@ -208,7 +208,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                     className="Item__TopWrapper-nd8d2l-0 dafvsE"
                   >
                     <Item__QB>
-                      <h4
+                      <div
                         className="Item__QB-nd8d2l-8 fxalhT"
                       >
                         <Item__Q>
@@ -219,7 +219,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                           </div>
                         </Item__Q>
                         Fugit in recusandae delectus ut.
-                      </h4>
+                      </div>
                     </Item__QB>
                     <Item__Helper>
                       <div
@@ -513,7 +513,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                     className="Item__TopWrapper-nd8d2l-0 dafvsE"
                   >
                     <Item__QB>
-                      <h4
+                      <div
                         className="Item__QB-nd8d2l-8 fxalhT"
                       >
                         <Item__Q>
@@ -524,7 +524,7 @@ exports[`This is for the Add Questions Should render Add Question Properly 1`] =
                           </div>
                         </Item__Q>
                         Fugit in recusandae delectus ut.
-                      </h4>
+                      </div>
                     </Item__QB>
                     <Item__Helper>
                       <div

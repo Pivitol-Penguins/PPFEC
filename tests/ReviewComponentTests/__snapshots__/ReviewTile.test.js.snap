@@ -109,12 +109,20 @@ exports[`ReviewTile Component Should render correctly 1`] = `
           </span>
         </div>
       </ReviewTile__StarDateWrapper>
-      <h3>
-        Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.
-      </h3>
-      <p>
-        Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.
-      </p>
+      <ReviewTile__StyledSummary>
+        <div
+          className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+        >
+          Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.
+        </div>
+      </ReviewTile__StyledSummary>
+      <ReviewTile__StyledBody>
+        <p
+          className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+        >
+          Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.
+        </p>
+      </ReviewTile__StyledBody>
       <div>
         <ReviewTile__ReviewThumbsWrapper
           alt="0reviewPhoto"
@@ -139,9 +147,13 @@ exports[`ReviewTile Component Should render correctly 1`] = `
           />
         </ReviewTile__ReviewThumbsWrapper>
       </div>
-      <div>
-        ✓ I recommend this product
-      </div>
+      <ReviewTile__StyledRecommend>
+        <div
+          className="ReviewTile__StyledRecommend-sc-1vbuo4p-8 hHkGbK"
+        >
+          ✓ I recommend this product
+        </div>
+      </ReviewTile__StyledRecommend>
       <ReviewTile__HelpfulnessWrapper>
         <div
           className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"

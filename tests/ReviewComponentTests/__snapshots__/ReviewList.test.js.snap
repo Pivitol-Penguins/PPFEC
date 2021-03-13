@@ -126,35 +126,39 @@ exports[`ReviewList Component Should render correctly 1`] = `
         <div
           className="ReviewsList__ReviewSortWrapper-sc-1ulmjy1-4 ctmMjX"
         >
-          <h2>
-            22
-             
-            reviews, sorted by
-          </h2>
-          <ReviewsList__SelectTag
-            onChange={[Function]}
-          >
-            <select
-              className="ReviewsList__SelectTag-sc-1ulmjy1-5 gUTFzi"
-              onChange={[Function]}
+          <ReviewsList__StyledLabel>
+            <label
+              className="ReviewsList__StyledLabel-sc-1ulmjy1-8 bpytbN"
             >
-              <option
-                defaultValue="relevant"
+              22
+               
+              reviews, sorted by
+              <ReviewsList__SelectTag
+                onChange={[Function]}
               >
-                Relevant
-              </option>
-              <option
-                value="helpful"
-              >
-                Helpful
-              </option>
-              <option
-                value="newest"
-              >
-                Newest
-              </option>
-            </select>
-          </ReviewsList__SelectTag>
+                <select
+                  className="ReviewsList__SelectTag-sc-1ulmjy1-5 gUTFzi"
+                  onChange={[Function]}
+                >
+                  <option
+                    defaultValue="relevant"
+                  >
+                    Relevant
+                  </option>
+                  <option
+                    value="helpful"
+                  >
+                    Helpful
+                  </option>
+                  <option
+                    value="newest"
+                  >
+                    Newest
+                  </option>
+                </select>
+              </ReviewsList__SelectTag>
+            </label>
+          </ReviewsList__StyledLabel>
         </div>
       </ReviewsList__ReviewSortWrapper>
       <ReviewsList__ListWrapper>
@@ -260,25 +264,43 @@ exports[`ReviewList Component Should render correctly 1`] = `
                     </span>
                   </div>
                 </ReviewTile__StarDateWrapper>
-                <h3>
-                  Neque repellendus modi eius quaerat ab rerum est animi praesentium.
-                </h3>
-                <p>
-                  Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.
-                </p>
-                <div>
-                  ✓ I recommend this product
-                </div>
+                <ReviewTile__StyledSummary>
+                  <div
+                    className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+                  >
+                    Neque repellendus modi eius quaerat ab rerum est animi praesentium.
+                  </div>
+                </ReviewTile__StyledSummary>
+                <ReviewTile__StyledBody>
+                  <p
+                    className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+                  >
+                    Quo tempore est recusandae nobis. Asperiores ut qui dolor. Ducimus modi delectus illum tenetur excepturi.
+                  </p>
+                </ReviewTile__StyledBody>
+                <ReviewTile__StyledRecommend>
+                  <div
+                    className="ReviewTile__StyledRecommend-sc-1vbuo4p-8 hHkGbK"
+                  >
+                    ✓ I recommend this product
+                  </div>
+                </ReviewTile__StyledRecommend>
                 <ReviewTile__ResponseWrapper>
                   <div
                     className="ReviewTile__ResponseWrapper-sc-1vbuo4p-2 flpuKM"
                   >
-                    <h4>
-                      Response from seller
-                    </h4>
-                    <p>
-                      "Cumque aspernatur illum velit dolores minus."
-                    </p>
+                    <ReviewTile__StyledSummary>
+                      <div
+                        className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+                      >
+                        Response from seller
+                      </div>
+                    </ReviewTile__StyledSummary>
+                    <ReviewTile__StyledBody>
+                      <p
+                        className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+                      />
+                    </ReviewTile__StyledBody>
                   </div>
                 </ReviewTile__ResponseWrapper>
                 <ReviewTile__HelpfulnessWrapper>
@@ -419,15 +441,27 @@ exports[`ReviewList Component Should render correctly 1`] = `
                     </span>
                   </div>
                 </ReviewTile__StarDateWrapper>
-                <h3>
-                  Officia reiciendis quaerat nam tempore ut ut numquam ut.
-                </h3>
-                <p>
-                  Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.
-                </p>
-                <div>
-                  ✓ I recommend this product
-                </div>
+                <ReviewTile__StyledSummary>
+                  <div
+                    className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+                  >
+                    Officia reiciendis quaerat nam tempore ut ut numquam ut.
+                  </div>
+                </ReviewTile__StyledSummary>
+                <ReviewTile__StyledBody>
+                  <p
+                    className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+                  >
+                    Earum ut laborum reprehenderit ipsa tempore sit. Odit rerum cum vitae autem eveniet. Qui qui repellat.
+                  </p>
+                </ReviewTile__StyledBody>
+                <ReviewTile__StyledRecommend>
+                  <div
+                    className="ReviewTile__StyledRecommend-sc-1vbuo4p-8 hHkGbK"
+                  >
+                    ✓ I recommend this product
+                  </div>
+                </ReviewTile__StyledRecommend>
                 <ReviewTile__HelpfulnessWrapper>
                   <div
                     className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"

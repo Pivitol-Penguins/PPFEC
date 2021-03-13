@@ -93,6 +93,7 @@ class Product extends React.Component {
               getStyleID={this.getStyleID}
               price={this.state.price}
               sale={this.state.sale}
+              reviewsMeta={this.props.reviewsMeta}
             />
           </TopWrapper>
 
