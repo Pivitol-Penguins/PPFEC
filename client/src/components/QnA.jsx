@@ -55,9 +55,19 @@ class QnA extends React.Component {
           const obj = {};
           Object.assign(obj, this.state.data[index]);
           obj.search = [
-            element.question_body.slice(0, element.question_body.toLowerCase().indexOf(string.toLowerCase())),
-            element.question_body.slice(element.question_body.toLowerCase().indexOf(string.toLowerCase()) , element.question_body.toLowerCase().indexOf(string.toLowerCase()) + string.length),
-            element.question_body.slice(element.question_body.toLowerCase().indexOf(string.toLowerCase()) + string.length, element.question_body.length),
+            element.question_body.slice(
+              0, element.question_body.toLowerCase().indexOf(string.toLowerCase()),
+            ),
+            element.question_body.slice(
+              element.question_body.toLowerCase().indexOf(
+                string.toLowerCase(),
+              ), element.question_body.toLowerCase().indexOf(string.toLowerCase()) + string.length,
+            ),
+            element.question_body.slice(
+              element.question_body.toLowerCase().indexOf(
+                string.toLowerCase(),
+              ) + string.length, element.question_body.length,
+            ),
           ];
           results.push(obj);
         }
@@ -65,8 +75,25 @@ class QnA extends React.Component {
         Object.entries(element.answers).forEach((answer) => {
           if (answer[1].body.toLowerCase().includes(string.toLowerCase())) {
             const obj = {};
+            const highlightAnswer = {};
             Object.assign(obj, this.state.data[index]);
-            obj.answers = { [answer[0]]: answer[1] };
+            Object.assign(highlightAnswer, answer[1]);
+            obj.answers = { [answer[0]]: highlightAnswer };
+            obj.answers[answer[0]].search = [
+              highlightAnswer.body.slice(
+                0, highlightAnswer.body.toLowerCase().indexOf(string.toLowerCase()),
+              ),
+              highlightAnswer.body.slice(
+                highlightAnswer.body.toLowerCase().indexOf(
+                  string.toLowerCase(),
+                ), highlightAnswer.body.toLowerCase().indexOf(string.toLowerCase()) + string.length,
+              ),
+              highlightAnswer.body.slice(
+                highlightAnswer.body.toLowerCase().indexOf(
+                  string.toLowerCase(),
+                ) + string.length, highlightAnswer.body.length,
+              ),
+            ];
             count += 1;
             obj.question_id += `a${count}`;
             results.push(obj);
