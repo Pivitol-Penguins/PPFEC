@@ -3,6 +3,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import Product from './Product.jsx';
+// import QnA from './QnA.jsx';
+// import Reviews from './Reviews.jsx';
 const QnA = React.lazy(() => import('./QnA.jsx'));
 const Reviews = React.lazy(() => import('./Reviews.jsx'));
 
@@ -110,6 +112,7 @@ class App extends React.Component {
       reviews: null,
       reviewsMeta: null,
       questions: null,
+      averageRating: 0,
     };
   }
 
@@ -123,7 +126,7 @@ class App extends React.Component {
           reviews: res.data[2],
           reviewsMeta: res.data[3],
           questions: res.data[4],
-        });
+        }, this.averageRatingGetter);
       })
       .catch((err) => { throw err; });
   }
@@ -145,12 +148,17 @@ class App extends React.Component {
           <Product
             productDetails={this.state.productDetails}
             productStyles={this.state.productStyles}
+            averageRating={this.state.averageRating}
+            reviewsMeta={this.state.reviewsMeta}
           />
           <Suspense fallback={<div>Loading...</div>}>
             <QnA questions={this.state.questions} name={this.state.productDetails.name} />
           </Suspense>
           <Suspense fallback={<div>Loading...</div>}>
-            <Reviews reviews={this.state.reviews} reviewsMeta={this.state.reviewsMeta} />
+            <Reviews
+              reviews={this.state.reviews}
+              reviewsMeta={this.state.reviewsMeta}
+            />
           </Suspense>
           <Footer>
             <Creators>
