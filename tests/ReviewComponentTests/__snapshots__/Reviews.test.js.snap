@@ -874,35 +874,39 @@ exports[`Review Component Should render correctly 1`] = `
                   <div
                     className="ReviewsList__ReviewSortWrapper-sc-1ulmjy1-4 ctmMjX"
                   >
-                    <h2>
-                      22
-                       
-                      reviews, sorted by
-                    </h2>
-                    <ReviewsList__SelectTag
-                      onChange={[Function]}
-                    >
-                      <select
-                        className="ReviewsList__SelectTag-sc-1ulmjy1-5 gUTFzi"
-                        onChange={[Function]}
+                    <ReviewsList__StyledLabel>
+                      <label
+                        className="ReviewsList__StyledLabel-sc-1ulmjy1-8 bpytbN"
                       >
-                        <option
-                          defaultValue="relevant"
+                        22
+                         
+                        reviews, sorted by
+                        <ReviewsList__SelectTag
+                          onChange={[Function]}
                         >
-                          Relevant
-                        </option>
-                        <option
-                          value="helpful"
-                        >
-                          Helpful
-                        </option>
-                        <option
-                          value="newest"
-                        >
-                          Newest
-                        </option>
-                      </select>
-                    </ReviewsList__SelectTag>
+                          <select
+                            className="ReviewsList__SelectTag-sc-1ulmjy1-5 gUTFzi"
+                            onChange={[Function]}
+                          >
+                            <option
+                              defaultValue="relevant"
+                            >
+                              Relevant
+                            </option>
+                            <option
+                              value="helpful"
+                            >
+                              Helpful
+                            </option>
+                            <option
+                              value="newest"
+                            >
+                              Newest
+                            </option>
+                          </select>
+                        </ReviewsList__SelectTag>
+                      </label>
+                    </ReviewsList__StyledLabel>
                   </div>
                 </ReviewsList__ReviewSortWrapper>
                 <ReviewsList__ListWrapper>
@@ -1009,15 +1013,27 @@ exports[`Review Component Should render correctly 1`] = `
                               </span>
                             </div>
                           </ReviewTile__StarDateWrapper>
-                          <h3>
-                            Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.
-                          </h3>
-                          <p>
-                            Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.
-                          </p>
-                          <div>
-                            ✓ I recommend this product
-                          </div>
+                          <ReviewTile__StyledSummary>
+                            <div
+                              className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+                            >
+                              Tenetur quo blanditiis necessitatibus eveniet quo ipsa quia alias voluptas.
+                            </div>
+                          </ReviewTile__StyledSummary>
+                          <ReviewTile__StyledBody>
+                            <p
+                              className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+                            >
+                              Non amet dolorem ut tempora perferendis sint ut adipisci suscipit. Sint ea itaque debitis quos enim odit. Ad perferendis nihil quisquam est. Laboriosam fuga ea amet repellat. Blanditiis aspernatur nostrum aspernatur quas necessitatibus.
+                            </p>
+                          </ReviewTile__StyledBody>
+                          <ReviewTile__StyledRecommend>
+                            <div
+                              className="ReviewTile__StyledRecommend-sc-1vbuo4p-8 hHkGbK"
+                            >
+                              ✓ I recommend this product
+                            </div>
+                          </ReviewTile__StyledRecommend>
                           <ReviewTile__HelpfulnessWrapper>
                             <div
                               className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"
@@ -1157,12 +1173,20 @@ exports[`Review Component Should render correctly 1`] = `
                               </span>
                             </div>
                           </ReviewTile__StarDateWrapper>
-                          <h3>
-                            Minima repudiandae eligendi nemo sit quia aspernatur.
-                          </h3>
-                          <p>
-                            Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.
-                          </p>
+                          <ReviewTile__StyledSummary>
+                            <div
+                              className="ReviewTile__StyledSummary-sc-1vbuo4p-6 hKqFGZ"
+                            >
+                              Minima repudiandae eligendi nemo sit quia aspernatur.
+                            </div>
+                          </ReviewTile__StyledSummary>
+                          <ReviewTile__StyledBody>
+                            <p
+                              className="ReviewTile__StyledBody-sc-1vbuo4p-7 hxWBm"
+                            >
+                              Corporis voluptate dolore earum voluptas numquam. Perspiciatis cumque et. Dignissimos asperiores ab repudiandae. Consectetur et exercitationem hic. Ut repudiandae dolorum id.
+                            </p>
+                          </ReviewTile__StyledBody>
                           <ReviewTile__HelpfulnessWrapper>
                             <div
                               className="ReviewTile__HelpfulnessWrapper-sc-1vbuo4p-4 kfimVf"

@@ -20,7 +20,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
   <div>
     <Answer__Body>
       <div
-        className="Answer__Body-sc-3mvxjy-6 gnmbP"
+        className="Answer__Body-sc-3mvxjy-7 iyZViq"
       >
         asdf
       </div>
@@ -42,7 +42,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
           >
             <img
               alt="https://pngimg.com/uploads/mario/mario_PNG53.png"
-              className="Photos__Photo-sc-1homjbu-0 dZzZNL"
+              className="Photos__Photo-sc-1homjbu-0 fKnZih"
               src="https://pngimg.com/uploads/mario/mario_PNG53.png"
             />
           </Photos__Photo>
@@ -53,7 +53,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
           >
             <img
               alt="https://pngimg.com/uploads/mario/mario_PNG53.png"
-              className="Photos__Photo-sc-1homjbu-0 dZzZNL"
+              className="Photos__Photo-sc-1homjbu-0 fKnZih"
               src="https://pngimg.com/uploads/mario/mario_PNG53.png"
             />
           </Photos__Photo>
@@ -66,7 +66,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
       >
         <Answer__NameDate>
           <div
-            className="Answer__NameDate-sc-3mvxjy-1 jcOBlI"
+            className="Answer__NameDate-sc-3mvxjy-1 fSGVLo"
           >
             By sadf on  March, 08 2021
           </div>
@@ -74,7 +74,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
         |
         <Answer__Helpful>
           <div
-            className="Answer__Helpful-sc-3mvxjy-2 iSIJxX"
+            className="Answer__Helpful-sc-3mvxjy-3 cETxxq"
           >
             Helpful?
           </div>
@@ -83,7 +83,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
           onClick={[Function]}
         >
           <div
-            className="Answer__Yes-sc-3mvxjy-3 bpatiV"
+            className="Answer__Yes-sc-3mvxjy-4 ckktoq"
             onClick={[Function]}
           >
             Yes
@@ -91,7 +91,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
         </Answer__Yes>
         <Answer__Help>
           <div
-            className="Answer__Help-sc-3mvxjy-4 gOKkij"
+            className="Answer__Help-sc-3mvxjy-5 dfMkPu"
           >
             (0)
           </div>
@@ -101,7 +101,7 @@ exports[`One Answer Test Should render an Answer correctly 1`] = `
           onClick={[Function]}
         >
           <div
-            className="Answer__Report-sc-3mvxjy-5 fkJrli"
+            className="Answer__Report-sc-3mvxjy-6 bkhcCN"
             onClick={[Function]}
           >
             Report

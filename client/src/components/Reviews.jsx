@@ -216,24 +216,6 @@ class Reviews extends React.Component {
         </Wrapper>
       </ReviewsContainer>
     );
-    // }
-    // const noReviewsMeta = {
-    //   characteristics: {
-    //     Comfort: { id: 3255413, value: '2.5178571428571429' },
-    //     Fit: { id: 3255414, value: '2.4695652173913043' },
-    //     Length: { id: 3255415, value: '2.4336283185840708' },
-    //     Quality: { id: 3255410, value: '2.9622641509433962' },
-    //     Size: { id: 3255412, value: '0' },
-    //   },
-    //   product_id: this.state.reviewsMeta.product_id,
-    //   ratings: {
-    //     0: '0', 1: '0', 2: '0', 3: '0', 4: '0', 5: '0',
-    //   },
-    //   recommended: { false: '0', true: '0' },
-    // };
-    // return (
-    //   <div>Loading Data</div>
-    // );
   }
 }
 

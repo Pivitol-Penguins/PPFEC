@@ -122,14 +122,14 @@ const PhotoC = styled.div`
 `;
 
 const PhotoI = styled.input`
-font-family: 'Lato', sans-serif;  
+  font-family: 'Lato', sans-serif;  
   font-weight: 700;
-border: 1px solid #424242;
-width: 20vw;
-z-index: 0;
-position: relative;
-padding: 1.5vh 2vw;
-&:focus {
+  border: 1px solid #424242;
+  width: 20vw;
+  z-index: 0;
+  position: relative;
+  padding: 1.5vh 2vw;
+  &:focus {
   border: 1px solid #80CCC4;
   outline: none;
   box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
@@ -145,6 +145,12 @@ const BText = styled.div`
   color: #424242;
 `;
 
+const Alert = styled.div`
+  font-size: 13px;
+  font-weight: 300;
+  color: #424242;
+`;
+
 class FormA extends React.Component {
   constructor(props) {
     super(props);
@@ -154,6 +160,10 @@ class FormA extends React.Component {
       email: '',
       photos: [],
       photosI: '',
+      bodyAlert: false,
+      nameAlert: false,
+      emailAlert: false,
+      photosIAlert: false,
     };
     this.photoInput = '';
     this.handleChange = this.handleChange.bind(this);
@@ -192,14 +202,42 @@ class FormA extends React.Component {
       this.setState((prevState) => ({
         photosI: '',
         photos: prevState.photos,
+        photosIAlert: false,
       }));
+    } else {
+      this.setState({ photosIAlert: true });
     }
   }
 
   postMan(e) {
     e.preventDefault();
-    if (this.state.email.includes('@') && this.state.email.includes('.com')) {
+    if (this.state.body.length === 0) {
+      this.setState({ bodyAlert: true });
+    } else {
+      this.setState({ bodyAlert: false });
+    }
+    if (this.state.name.length === 0) {
+      this.setState({ nameAlert: true });
+    } else {
+      this.setState({ nameAlert: false });
+    }
+    if (this.state.email.length === 0 || (!this.state.email.includes('@')
+    && !this.state.email.includes('.com'))) {
+      this.setState({ emailAlert: true });
+    } else {
+      this.setState({ emailAlert: false });
+    }
+    if (this.state.email.includes('@')
+      && this.state.email.includes('.com')
+      && this.state.body.length > 0
+      && this.state.email.length > 0
+      && this.state.name.length > 0
+    ) {
       delete this.state.photosI;
+      delete this.state.photosIAlert;
+      delete this.state.bodyAlert;
+      delete this.state.emailAlert;
+      delete this.state.nameAlert;
       axios.post(`/questions/${this.props.id}`, this.state)
         .catch((err) => { throw err; })
         .then((data) => {
@@ -221,12 +259,14 @@ class FormA extends React.Component {
           <Title>
             HOW CAN YOU HELP?
           </Title>
+          {this.state.bodyAlert ? <Alert>PLEASE ENTER THE FOLLOWING</Alert> : null}
           <BodyT name="body" type="text" cols="55" rows="5" maxLength="1000" required onChange={this.handleChange} placeholder="HELP SOMEONE OUT HERE" value={this.state.body} />
         </Pair>
         <Pair>
           <Title>
             MAY I HAVE YOUR NAME?
           </Title>
+          {this.state.nameAlert ? <Alert>PLEASE ENTER THE FOLLOWING</Alert> : null}
           <Input name="name" onChange={this.handleChange} placeholder="ADD YOUR NAME HERE" value={this.state.name} />
           <BText>FOR PRIVACY REASONS, DO NOT USE YOUR FULL NAME OR EMAIL ADDRESS</BText>
         </Pair>
@@ -234,6 +274,7 @@ class FormA extends React.Component {
           <Title>
             HOW ABOUT YOUR EMAIL?
           </Title>
+          {this.state.emailAlert ? <Alert>PLEASE ENTER A VALID EMAIL ADDRESS</Alert> : null}
           <Input name="email" onChange={this.handleChange} placeholder="EXAMPLE: jack@email.com" value={this.state.email} />
           <BText>FOR AUTHENTICATION REASONS, YOU WILL NOT BE EMAILED</BText>
         </Pair>
@@ -241,6 +282,7 @@ class FormA extends React.Component {
           <Title>
             ADD A PHOTO
           </Title>
+          {this.state.photosIAlert ? <Alert>PLEASE ENTER A PNG, JPEG, JPG, or GIF</Alert> : null}
           <PhotoC>
             {this.state.photos.length < 5
               ? <PhotoI name="photos" onChange={this.handlePChange} placeholder="ADD URL" onSubmit={this.handlePSubmit} value={this.state.photosI} />

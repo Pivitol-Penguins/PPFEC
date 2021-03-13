@@ -14,6 +14,12 @@ const BottomContainer = styled.div`
 
 const NameDate = styled.div`
   padding-right: 1vw;
+  display: flex;
+`;
+
+const Seller = styled.div`
+  font-weight: 700;
+  margin-right: .2vw;
 `;
 
 const Helpful = styled.div`
@@ -45,11 +51,18 @@ const Report = styled.div`
 `;
 
 const Body = styled.div`
+  display: flex;
+  justify-content: left;
   padding-top: 2px;
   padding-bottom: 1.75vh;
   font-size: 16px;
   font-weight: 400;
   color: #424242;
+`;
+
+const Highlight = styled.div`
+  background: #80ccc4;
+  color: #FFFFFF;
 `;
 
 class Answer extends React.Component {
@@ -100,7 +113,23 @@ class Answer extends React.Component {
     return (
       <div>
         <Body>
-          {this.props.answer.body}
+          {this.props.answer.search
+            ? this.props.answer.search[0]
+            : null}
+          {this.props.answer.search && this.props.answer.search[0][this.props.answer.search[0].length - 1] === ' '
+            ? <div>&nbsp;</div>
+            : null}
+          {this.props.answer.search
+            ? <Highlight>{this.props.answer.search[1]}</Highlight>
+            : this.props.answer.body}
+          {this.props.answer.search
+            && (this.props.answer.search[2][0] === ' '
+              || this.props.answer.search[1][this.props.answer.search[1].length - 1] === ' ')
+            ? <div>&nbsp;</div>
+            : null}
+          {this.props.answer.search
+            ? this.props.answer.search[2]
+            : null}
         </Body>
         <div>
           {this.props.answer.photos
@@ -110,8 +139,8 @@ class Answer extends React.Component {
           { this.props.answer.answerer_name === 'Seller'
             ? (
               <NameDate>
-                <h5>SELLER</h5>
-                {`on ${this.state.date}`}
+                <Seller>SELLER</Seller>
+                <div>{`on ${this.state.date}`}</div>
               </NameDate>
             )
             : (

@@ -6,7 +6,7 @@ exports[`One Search Test Should render correctly 1`] = `
   reset={[Function]}
 >
   <Search__Wrapper>
-    <div
+    <label
       className="Search__Wrapper-np7a72-1 biulzn"
     >
       <Search__Input
@@ -30,7 +30,7 @@ exports[`One Search Test Should render correctly 1`] = `
           ⚲
         </div>
       </Search__Magnify>
-    </div>
+    </label>
   </Search__Wrapper>
 </Search>
 `;

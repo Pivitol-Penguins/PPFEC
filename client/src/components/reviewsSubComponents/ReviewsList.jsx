@@ -91,6 +91,14 @@ const NoReviewWrapper = styled.div`
   font-weight: 700;
 `;
 
+const StyledLabel = styled.label`
+  font-size: 1.4rem;
+  border: 0px;
+  outline: 0px;
+  font-weight: 600;
+  font-family: 'Lato',sans-serif;
+`;
+
 const ReviewsList = (props) => {
   // conditionlal rendering MORE VIEW button
   let moreReviewBtn;
@@ -120,16 +128,16 @@ const ReviewsList = (props) => {
     reviewTiles = (
       <>
         <ReviewSortWrapper>
-          <h2>
+          <StyledLabel>
             {totalReviewCount}
             {' '}
             reviews, sorted by
-          </h2>
-          <SelectTag onChange={(e) => { props.sortSelected(e); }}>
-            <option defaultValue="relevant">Relevant</option>
-            <option value="helpful">Helpful</option>
-            <option value="newest">Newest</option>
-          </SelectTag>
+            <SelectTag onChange={(e) => { props.sortSelected(e); }}>
+              <option defaultValue="relevant">Relevant</option>
+              <option value="helpful">Helpful</option>
+              <option value="newest">Newest</option>
+            </SelectTag>
+          </StyledLabel>
         </ReviewSortWrapper>
         <ListWrapper>
           {props.reviews.map(((review) => (

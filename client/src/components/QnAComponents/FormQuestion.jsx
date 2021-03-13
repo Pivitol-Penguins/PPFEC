@@ -10,14 +10,15 @@ const FormQContainer = styled.form`
   background-color: #FFFFFF;
   width: 50vw;
   height: 50vw;
+  max-height: 90vh;
   color: #424242;
   font-family: 'Lato', sans-serif;
   box-shadow: 0 14px 28px #a0a0a0, 0 10px 10px #a0a0a0;
 `;
 
 const Input = styled.input`
-font-family: 'Lato', sans-serif;  
-font-weight: 700;
+  font-family: 'Lato', sans-serif;  
+  font-weight: 700;
   border: 1px solid #424242;
   width: 30vw;
   z-index: 0;
@@ -34,20 +35,20 @@ font-weight: 700;
 `;
 
 const BodyT = styled.textarea`
-font-family: 'Lato', sans-serif;  
-font-weight: 700;
-border: 1px solid #424242;
-width: 30vw;
-z-index: 0;
-position: relative;
-padding: 1.5vh 2vw;
-&:focus {
-  border: 1px solid #80CCC4;
-  outline: none;
-  box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
-};
-&:hover {
-  box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  font-family: 'Lato', sans-serif;  
+  font-weight: 700;
+  border: 1px solid #424242;
+  width: 30vw;
+  z-index: 0;
+  position: relative;
+  padding: 1.5vh 2vw;
+  &:focus {
+    border: 1px solid #80CCC4;
+    outline: none;
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
+  };
+  &:hover {
+    box-shadow: 0 3px 6px #a0a0a0, 0 3px 6px #a0a0a0;
 }
 `;
 
@@ -57,8 +58,8 @@ const Buttons = styled.div`
 `;
 
 const BC = styled.button`
-font-family: 'Lato', sans-serif;  
-font-weight: 700;
+  font-family: 'Lato', sans-serif;  
+  font-weight: 700;
   background-color: #FFFFFF;
   border: 1px solid #424242;
   height: 6vh;
@@ -98,6 +99,13 @@ const BText = styled.div`
   color: #424242;
 `;
 
+const Alert = styled.div`
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #424242;
+`;
+
 class FormQ extends React.Component {
   constructor(props) {
     super(props);
@@ -106,6 +114,9 @@ class FormQ extends React.Component {
       name: '',
       email: '',
       product_id: '',
+      bodyAlert: false,
+      nameAlert: false,
+      emailAlert: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -130,7 +141,30 @@ class FormQ extends React.Component {
 
   postMan(e) {
     e.preventDefault();
-    if (this.state.email.includes('@') && this.state.email.includes('.com')) {
+    if (this.state.body.length === 0) {
+      this.setState({ bodyAlert: true });
+    } else {
+      this.setState({ bodyAlert: false });
+    }
+    if (this.state.name.length === 0) {
+      this.setState({ nameAlert: true });
+    } else {
+      this.setState({ nameAlert: false });
+    }
+    if (this.state.email.length === 0 || (!this.state.email.includes('@') && !this.state.email.includes('.com'))) {
+      this.setState({ emailAlert: true });
+    } else {
+      this.setState({ emailAlert: false });
+    }
+    if (this.state.email.includes('@')
+      && this.state.email.includes('.com')
+      && this.state.body.length > 0
+      && this.state.email.length > 0
+      && this.state.name.length > 0
+    ) {
+      delete this.state.bodyAlert;
+      delete this.state.nameAlert;
+      delete this.state.emailAlert;
       axios.post('/questions/', this.state)
         .catch()
         .then((data) => {
@@ -149,12 +183,14 @@ class FormQ extends React.Component {
           <Title>
             HAVE A QUESTION?
           </Title>
+          {this.state.bodyAlert ? <Alert>PLEASE ENTER THE FOLLOWING</Alert> : null}
           <BodyT cols="55" rows="5" maxLength="1000" name="body" onChange={this.handleChange} placeholder="ADD YOUR QUESTION HERE" value={this.state.body} />
         </Pair>
         <Pair>
           <Title>
             MAY I HAVE YOUR NAME?
           </Title>
+          {this.state.nameAlert ? <Alert>PLEASE ENTER THE FOLLOWING</Alert> : null}
           <Input name="name" onChange={this.handleChange} placeholder="EXAMPLE: jackson11!" value={this.state.name} />
           <BText>FOR PRIVACY REASONS, DO NOT USE YOUR FULL NAME OR EMAIL ADDRESS</BText>
         </Pair>
@@ -162,6 +198,7 @@ class FormQ extends React.Component {
           <Title>
             HOW ABOUT YOUR EMAIL?
           </Title>
+          {this.state.emailAlert ? <Alert>PLEASE ENTER A VALID EMAIL ADDRESS</Alert> : null}
           <Input name="email" type="email" onChange={this.handleChange} placeholder="WHY DID YOU LIKE THE PRODUCT OR NOT?" value={this.state.email} />
           <BText>FOR AUTHENTICATION REASONS, YOU WILL NOT BE EMAILED</BText>
         </Pair>
