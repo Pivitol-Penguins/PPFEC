@@ -48,12 +48,12 @@ function getRange(characteristic) {
   return pgRange;
 }
 
-const ProductBreakDown = ({ reviewsMeta }) => {
+const ProductBreakDown = ({ reviewsMeta, reviews }) => {
   const characteristics = Object.keys(reviewsMeta.characteristics);
   return (
     characteristics.map((characteristic) => {
       let value;
-      if (reviewsMeta.characteristics[characteristic].value !== null) {
+      if (reviewsMeta.characteristics[characteristic].value !== null && reviews.length > 0) {
         value = reviewsMeta.characteristics[characteristic].value;
       } else {
         value = 0;
